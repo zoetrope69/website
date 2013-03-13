@@ -1,0 +1,286 @@
+/* these are the styles yo */
+
+*{  margin:  0;
+	padding: 0;
+	outline: none;
+	border: none;
+
+	-webkit-box-sizing: border-box;
+	   -moz-box-sizing: border-box;
+			box-sizing: border-box;
+}
+
+h1, h2, h3{ font-weight: normal; }
+
+html{
+	-webkit-animation: hueRotate 150s infinite linear;
+	   -moz-animation: hueRotate 150s infinite linear;
+	     -o-animation: hueRotate 150s infinite linear;
+	     	animation: hueRotate 150s infinite linear;
+}
+
+	@-webkit-keyframes hueRotate { to { -webkit-filter: hue-rotate(360deg); } }
+	   @-moz-keyframes hueRotate { to {    -moz-filter: hue-rotate(360deg); } }
+	     @-o-keyframes hueRotate { to { 	 -o-filter: hue-rotate(360deg); } }
+			@keyframes hueRotate { to { 		filter: hue-rotate(360deg); } }
+
+
+body{ /* I ROYGBIVed all over this background */
+    background-image: -webkit-linear-gradient(top, #E96C6C, #E2BA70, #E4E47F, #89DB89, #9797DF, #C08BE7, #E99EE9, #E96C6C);
+	background-image:    -moz-radial-gradient(top, #E96C6C, #E2BA70, #E4E47F, #89DB89, #9797DF, #C08BE7, #E99EE9, #E96C6C);
+	background-image:     -ms-radial-gradient(top, #E96C6C, #E2BA70, #E4E47F, #89DB89, #9797DF, #C08BE7, #E99EE9, #E96C6C);
+	background-image:      -o-radial-gradient(top, #E96C6C, #E2BA70, #E4E47F, #89DB89, #9797DF, #C08BE7, #E99EE9, #E96C6C);
+}
+
+.notepad, header li{
+	padding: 2px;
+	border: 1px solid;
+	border-color: #CfD0C8;
+	border-bottom-color: #404040;
+	border-right-color: #404040;
+	background-color: #CfD0C8;
+
+	-webkit-box-shadow: inset 1px 1px 0 #FFF, inset -1px -1px 0 #808080;
+	   -moz-box-shadow: inset 1px 1px 0 #FFF, inset -1px -1px 0 #808080;
+			box-shadow: inset 1px 1px 0 #FFF, inset -1px -1px 0 #808080;
+}
+
+.notepad{
+	width: 50%;
+	margin: 5% auto 0;
+	font-family: monospace;
+}
+ 
+header{	
+	cursor: default;
+	overflow: auto;
+	padding: 1px;
+
+	background: #122A70;
+	background: -webkit-gradient(linear, left top, right top, from(#122A70), to(#9fC6ED));
+	background: -webkit-linear-gradient(left, #122A70, #9fC6ED);
+	background:    -moz-linear-gradient(left, #122A70, #9fC6ED);
+	background:     -ms-linear-gradient(left, #122A70, #9fC6ED);
+	background:      -o-linear-gradient(left, #122A70, #9fC6ED);
+
+	-webkit-touch-callout: none;
+	  -webkit-user-select: none;
+	   -khtml-user-select: none;
+		 -moz-user-select: none;
+		  -ms-user-select: none;
+}
+
+header h1{
+	float: left;
+	color: #FFF;
+	font-size: 1em;
+	padding-left: 20px;
+	background: url('../img/notepad.png') no-repeat 1px center;
+}
+
+header ul{
+	margin-right: 1px;
+	float:right;
+}
+
+header li{
+	float:left;
+	margin-left: 2px;
+	width: 16px;
+	height: 16px;
+	color: #000;
+	list-style-type: none;
+}
+
+.min{
+	-webkit-box-shadow: inset 1px 1px 0 #FFF, inset -1px -1px 0 #808080,
+						inset 0 0 0 2px #CFD0C8,inset 2px 0 0 2px #CFD0C8,
+						inset -3px 0 0 2px #CFD0C8, inset 0 -2px 0 2px #000;
+	   -moz-box-shadow: inset 1px 1px 0 #FFF, inset -1px -1px 0 #808080,
+						inset 0 0 0 2px #CFD0C8,inset 2px 0 0 2px #CFD0C8,
+						inset -3px 0 0 2px #CFD0C8, inset 0 -2px 0 2px #000;
+			box-shadow: inset 1px 1px 0 #FFF, inset -1px -1px 0 #808080,
+						inset 0 0 0 2px #CFD0C8,inset 2px 0 0 2px #CFD0C8,
+						inset -3px 0 0 2px #CFD0C8, inset 0 -2px 0 2px #000;
+}
+
+.min:active{
+	border-color: #404040;
+	border-bottom-color: #CFD0C8;
+	border-right-color: #CFD0C8;
+
+	-webkit-box-shadow:inset 1px 1px 0 #808080, inset -1px -1px 0 #FFF,
+						inset 0 0 0 2px #CFD0C8, inset 2px 0 0 2px #cfd0c8,
+						inset -3px 0 0 2px #CFD0C8, inset 0 -2px 0 2px #000;
+	   -moz-box-shadow:inset 1px 1px 0 #808080, inset -1px -1px 0 #FFF,
+						inset 0 0 0 2px #CFD0C8, inset 2px 0 0 2px #cfd0c8,
+						inset -3px 0 0 2px #CFD0C8, inset 0 -2px 0 2px #000;
+			box-shadow: inset 1px 1px 0 #808080, inset -1px -1px 0 #FFF,
+						inset 0 0 0 2px #CFD0C8, inset 2px 0 0 2px #cfd0c8,
+						inset -3px 0 0 2px #CFD0C8, inset 0 -2px 0 2px #000;	
+}
+
+.max{
+	-webkit-box-shadow: inset 1px 1px 0 #FFF, inset -1px -1px 0 #808080,
+						inset 0 0 0 2px #CFD0C8, inset 1px 0 0 2px #CFD0C8,
+						inset -1px 0 0 2px #CFD0C8, inset 0px 1px 0 2px #CFD0C8, inset 0 1px 0 4px #000;
+	   -moz-box-shadow: inset 1px 1px 0 #FFF, inset -1px -1px 0 #808080,
+						inset 0 0 0 2px #CFD0C8, inset 1px 0 0 2px #CFD0C8,
+						inset -1px 0 0 2px #CFD0C8, inset 0px 1px 0 2px #CFD0C8, inset 0 1px 0 4px #000;
+			box-shadow: inset 1px 1px 0 #FFF, inset -1px -1px 0 #808080,
+						inset 0 0 0 2px #CFD0C8, inset 1px 0 0 2px #CFD0C8,
+						inset -1px 0 0 2px #CFD0C8, inset 0px 1px 0 2px #CFD0C8, inset 0 1px 0 4px #000;
+}
+
+.max:active{
+	border-color: #404040;
+	border-bottom-color: #CFD0C8;
+	border-right-color: #CFD0C8;
+
+	-webkit-box-shadow: inset 1px 1px 0 #808080, inset -1px -1px 0 #FFF,
+						inset 0 0 0 2px #CFD0C8, inset 1px 0 0 2px #CFD0C8,
+						inset -1px 0 0 2px #CFD0C8, inset 0px 1px 0 2px #CFD0C8, inset 0 1px 0 4px #000;
+	   -moz-box-shadow: inset 1px 1px 0 #808080, inset -1px -1px 0 #FFF,
+						inset 0 0 0 2px #CFD0C8, inset 1px 0 0 2px #CFD0C8,
+						inset -1px 0 0 2px #CFD0C8, inset 0px 1px 0 2px #CFD0C8, inset 0 1px 0 4px #000;
+			box-shadow: inset 1px 1px 0 #808080, inset -1px -1px 0 #FFF,
+						inset 0 0 0 2px #CFD0C8, inset 1px 0 0 2px #CFD0C8,
+						inset -1px 0 0 2px #CFD0C8, inset 0px 1px 0 2px #CFD0C8, inset 0 1px 0 4px #000;
+}
+
+.close{
+	line-height: 10px;
+	text-align: center;
+	text-transform: uppercase;
+	font-size: 12px;
+	font-family: Verdana, sans-serif;
+}
+
+.close:active{
+	border-color: #404040;
+	border-bottom-color: #cfd0c8;
+	border-right-color: #cfd0c8;
+
+	-webkit-box-shadow: inset 1px 1px 0 #808080, inset -1px -1px 0 #FFF;
+	   -moz-box-shadow: inset 1px 1px 0 #808080, inset -1px -1px 0 #FFF;
+			box-shadow: inset 1px 1px 0 #808080, inset -1px -1px 0 #FFF;
+}
+
+.close a{
+	cursor: default;
+	color: #000;
+	text-decoration: none;
+}
+
+.notepad > ul{
+	padding: 3px 0;
+	overflow: auto;
+}
+
+.notepad > ul li{
+	cursor: default;
+	border: 1px solid;	
+	border-color: transparent;
+	padding: 3px;
+	float: left;
+	list-style: none;
+
+	-webkit-touch-callout: none;
+	  -webkit-user-select: none;
+	   -khtml-user-select: none;
+		 -moz-user-select: none;
+		  -ms-user-select: none;
+}
+
+.notepad > ul li:hover{
+	border-color: #FFF;
+	border-bottom-color: #808080;
+	border-right-color: #808080;
+}
+
+.notepad > ul li:active{
+	padding: 5px 1px 1px 5px;
+	border-color: #808080;
+	border-bottom-color: #FFF;
+	border-right-color: #FFF;
+}
+
+.textarea{
+	height: 60vh;
+	overflow-y: scroll;
+	padding: 0.5em;
+	border: 1px solid;
+	border-color: #808080;
+	border-bottom-color: #FFF;
+	border-right-color: #FFF;
+	background-color: #FFF;
+	line-height: 1.5em;
+
+	-webkit-box-shadow: inset -1px -1px 0 #CFD0C8, inset 1px 1px 0 #404040;
+	   -moz-box-shadow: inset -1px -1px 0 #CFD0C8, inset 1px 1px 0 #404040;
+			box-shadow: inset -1px -1px 0 #CFD0C8, inset 1px 1px 0 #404040;
+}
+
+.textarea h1, .textarea h2{
+	font-size: 1em;
+}
+
+.textarea h2{
+	font-size: 13px;
+}
+
+.textarea p{
+	color: rgba(0,0,0,0.85);
+}
+
+.textarea h2:nth-child(1){ color: red; }
+.textarea h2:nth-child(2){ color: green; }
+
+.textarea::-webkit-scrollbar{
+    width: 16px;
+}
+ 
+.textarea::-webkit-scrollbar-track{
+	background: #CFD0C8;
+}
+ 
+.textarea::-webkit-scrollbar-thumb, .textarea::-webkit-scrollbar-button{
+    border: 1px solid;
+	border-color: #CFD0C8;
+	border-bottom-color: #404040;
+	border-right-color: #404040;
+	background-color: #CFD0C8;
+
+	-webkit-box-shadow: inset 1px 1px 0 #FFF, inset -1px -1px 0 #808080;
+	   -moz-box-shadow: inset 1px 1px 0 #FFF, inset -1px -1px 0 #808080;
+			box-shadow: inset 1px 1px 0 #FFF, inset -1px -1px 0 #808080;
+}
+
+.textarea::-webkit-scrollbar-button:active{
+	border: 1px solid;
+	border-color: #404040;
+	border-bottom-color: #CFD0C8;
+	border-right-color: #CFD0C8;
+	background-color: #CFD0C8;
+
+	-webkit-box-shadow: inset 1px 1px 0 #808080, inset -1px -1px 0 #FFF;
+	   -moz-box-shadow: inset 1px 1px 0 #808080, inset -1px -1px 0 #FFF;
+			box-shadow: inset 1px 1px 0 #808080, inset -1px -1px 0 #FFF;
+}
+
+.textarea::-webkit-scrollbar-button:start{
+	background: url('../img/startbuttonscroll.png') center no-repeat #cfd0c8;
+}
+
+.textarea::-webkit-scrollbar-button:end{
+	background: url('../img/endbuttonscroll.png') center no-repeat #cfd0c8;
+}
+
+@media (max-width: 500px){
+	.notepad{
+		width: 70%;
+	}
+	header h1{
+		font-size: 0.85em;
+	}
+}
