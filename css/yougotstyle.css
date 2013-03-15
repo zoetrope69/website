@@ -12,24 +12,13 @@
 
 h1, h2, h3{ font-weight: normal; }
 
-html{
-	-webkit-animation: hueRotate 150s infinite linear;
-	   -moz-animation: hueRotate 150s infinite linear;
-	     -o-animation: hueRotate 150s infinite linear;
-	     	animation: hueRotate 150s infinite linear;
-}
-
-	@-webkit-keyframes hueRotate { to { -webkit-filter: hue-rotate(360deg); } }
-	   @-moz-keyframes hueRotate { to {    -moz-filter: hue-rotate(360deg); } }
-	     @-o-keyframes hueRotate { to { 	 -o-filter: hue-rotate(360deg); } }
-			@keyframes hueRotate { to { 		filter: hue-rotate(360deg); } }
-
-
-body{ /* I ROYGBIVed all over this background */
-    background-image: -webkit-linear-gradient(top, #E96C6C, #E2BA70, #E4E47F, #89DB89, #9797DF, #C08BE7, #E99EE9, #E96C6C);
-	background-image:    -moz-radial-gradient(top, #E96C6C, #E2BA70, #E4E47F, #89DB89, #9797DF, #C08BE7, #E99EE9, #E96C6C);
-	background-image:     -ms-radial-gradient(top, #E96C6C, #E2BA70, #E4E47F, #89DB89, #9797DF, #C08BE7, #E99EE9, #E96C6C);
-	background-image:      -o-radial-gradient(top, #E96C6C, #E2BA70, #E4E47F, #89DB89, #9797DF, #C08BE7, #E99EE9, #E96C6C);
+body{
+	background: #E9ABA7;
+	-webkit-transition: background 1s;
+	   -moz-transition: background 1s;
+	    -ms-transition: background 1s;
+	     -o-transition: background 1s;
+			transition: background 1s;
 }
 
 .notepad, header li{
@@ -46,9 +35,27 @@ body{ /* I ROYGBIVed all over this background */
 }
 
 .notepad{
-	width: 50%;
+	overflow-y: hidden;
+	width: 60vw;
+	height: 500px;
 	margin: 5% auto 0;
 	font-family: monospace;
+	
+	-webkit-transition: height 0.5s, width 0.5s, margin 0.5s;
+	   -moz-transition: height 0.5s, width 0.5s, margin 0.5s;
+	    -ms-transition: height 0.5s, width 0.5s, margin 0.5s;
+	     -o-transition: height 0.5s, width 0.5s, margin 0.5s;
+			transition: height 0.5s, width 0.5s, margin 0.5s;
+}
+
+.notepad-max{
+	width: 75% !important;
+}
+
+.notepad-min{
+	margin-top: 475px;
+	height: 25px;
+	overflow: hidden;
 }
  
 header{	
@@ -167,17 +174,18 @@ header li{
 }
 
 .close a{
+	display: block;
 	cursor: default;
 	color: #000;
 	text-decoration: none;
 }
 
-.notepad > ul{
+.notepad nav ul{
 	padding: 3px 0;
 	overflow: auto;
 }
 
-.notepad > ul li{
+.notepad nav ul li{
 	cursor: default;
 	border: 1px solid;	
 	border-color: transparent;
@@ -192,21 +200,25 @@ header li{
 		  -ms-user-select: none;
 }
 
-.notepad > ul li:hover{
+.notepad nav ul li:hover{
 	border-color: #FFF;
 	border-bottom-color: #808080;
 	border-right-color: #808080;
 }
 
-.notepad > ul li:active{
+.notepad nav ul li:active{
 	padding: 5px 1px 1px 5px;
 	border-color: #808080;
 	border-bottom-color: #FFF;
 	border-right-color: #FFF;
 }
+.notepad nav ul li a{
+	color: #000;
+	text-decoration: none;
+}
 
 .textarea{
-	height: 60vh;
+	height: 90%;
 	overflow-y: scroll;
 	padding: 0.5em;
 	border: 1px solid;
@@ -232,9 +244,6 @@ header li{
 .textarea p{
 	color: rgba(0,0,0,0.85);
 }
-
-.textarea h2:nth-child(1){ color: red; }
-.textarea h2:nth-child(2){ color: green; }
 
 .textarea::-webkit-scrollbar{
     width: 16px;
@@ -284,3 +293,15 @@ header li{
 		font-size: 0.85em;
 	}
 }
+
+.trip{
+	-webkit-animation: hueRotate 1s infinite linear;
+	   -moz-animation: hueRotate 1s infinite linear;
+	     -o-animation: hueRotate 1s infinite linear;
+	     	animation: hueRotate 1s infinite linear;
+}
+
+	@-webkit-keyframes hueRotate { to { -webkit-filter: hue-rotate(360deg);} }
+	   @-moz-keyframes hueRotate { to {    -moz-filter: hue-rotate(360deg); } }
+	     @-o-keyframes hueRotate { to { 	 -o-filter: hue-rotate(360deg); } }
+			@keyframes hueRotate { to { 		filter: hue-rotate(360deg); } }
