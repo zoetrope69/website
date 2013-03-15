@@ -2,7 +2,7 @@
 
 $('#home').click(function(){
 	$.ajax({
-		url: "home.html",
+		url: "content/home.html",
 		cache: false
 	}).done(function(html){
 		$(".textarea").html(html);
@@ -12,7 +12,7 @@ $('#home').click(function(){
 
 $('#me').click(function(){
 	$.ajax({
-		url: "me.html",
+		url: "content/me.html",
 		cache: false
 	}).done(function(html){
 		$(".textarea").html(html);
@@ -22,7 +22,7 @@ $('#me').click(function(){
 
 $('#work').click(function(){
 	$.ajax({
-		url: "work.html",
+		url: "content/work.html",
 		cache: false
 	}).done(function(html){
 		$(".textarea").html(html);
