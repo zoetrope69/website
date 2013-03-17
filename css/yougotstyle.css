@@ -13,12 +13,16 @@
 h1, h2, h3{ font-weight: normal; }
 
 body{
-	background: #E9ABA7;
-	-webkit-transition: background 1s;
-	   -moz-transition: background 1s;
-	    -ms-transition: background 1s;
-	     -o-transition: background 1s;
-			transition: background 1s;
+	background-color: #525877;
+	-webkit-transition: background .75s ease-in;
+	   -moz-transition: background .75s ease-in;
+	    -ms-transition: background .75s ease-in;
+	     -o-transition: background .75s ease-in;
+			transition: background .75s ease-in;
+}
+
+.colourvariation{
+	background-color: #717752;
 }
 
 .notepad, header li{
@@ -49,7 +53,7 @@ body{
 }
 
 .notepad-max{
-	width: 75% !important;
+	width: 90vw !important;
 }
 
 .notepad-min{
@@ -99,7 +103,7 @@ header li{
 	list-style-type: none;
 }
 
-.min{
+#min{
 	-webkit-box-shadow: inset 1px 1px 0 #FFF, inset -1px -1px 0 #808080,
 						inset 0 0 0 2px #CFD0C8,inset 2px 0 0 2px #CFD0C8,
 						inset -3px 0 0 2px #CFD0C8, inset 0 -2px 0 2px #000;
@@ -111,7 +115,7 @@ header li{
 						inset -3px 0 0 2px #CFD0C8, inset 0 -2px 0 2px #000;
 }
 
-.min:active{
+#min:active{
 	border-color: #404040;
 	border-bottom-color: #CFD0C8;
 	border-right-color: #CFD0C8;
@@ -127,7 +131,7 @@ header li{
 						inset -3px 0 0 2px #CFD0C8, inset 0 -2px 0 2px #000;	
 }
 
-.max{
+#max{
 	-webkit-box-shadow: inset 1px 1px 0 #FFF, inset -1px -1px 0 #808080,
 						inset 0 0 0 2px #CFD0C8, inset 1px 0 0 2px #CFD0C8,
 						inset -1px 0 0 2px #CFD0C8, inset 0px 1px 0 2px #CFD0C8, inset 0 1px 0 4px #000;
@@ -139,7 +143,7 @@ header li{
 						inset -1px 0 0 2px #CFD0C8, inset 0px 1px 0 2px #CFD0C8, inset 0 1px 0 4px #000;
 }
 
-.max:active{
+#max:active{
 	border-color: #404040;
 	border-bottom-color: #CFD0C8;
 	border-right-color: #CFD0C8;
@@ -155,7 +159,7 @@ header li{
 						inset -1px 0 0 2px #CFD0C8, inset 0px 1px 0 2px #CFD0C8, inset 0 1px 0 4px #000;
 }
 
-.close{
+#close{
 	line-height: 10px;
 	text-align: center;
 	text-transform: uppercase;
@@ -163,7 +167,7 @@ header li{
 	font-family: Verdana, sans-serif;
 }
 
-.close:active{
+#close:active{
 	border-color: #404040;
 	border-bottom-color: #cfd0c8;
 	border-right-color: #cfd0c8;
@@ -173,7 +177,7 @@ header li{
 			box-shadow: inset 1px 1px 0 #808080, inset -1px -1px 0 #FFF;
 }
 
-.close a{
+#close a{
 	display: block;
 	cursor: default;
 	color: #000;
