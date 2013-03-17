@@ -1,9 +1,8 @@
 /* on load */
 
 (function(){
-	$('#homecontent').show();
-	$('#mecontent').hide();
-	$('#workcontent').hide();
+	$('.textarea section').hide();
+	$('#homecontent').fadeIn(500);
 })();
 
 /* nav links */
@@ -37,10 +36,10 @@ $.getJSON(url, function(json){
 		var url = json.recenttracks.track[0].url;
 
 		if(typeof json.recenttracks.track[0]["@attr"] !== 'undefined'){ // if the track is now playing
-			output = output + "I'm now listening to <a href='" + url + "' target='_blank' contenteditable='false'>'" + name + "'' by " + artist + "</a>. ";
+			output = output + "I'm now listening to <a href='" + url + "' target='_blank' contenteditable='false'>'" + name + "' by " + artist + "</a>. ";
 		}else{
 			var time = +new Date()/1000 - json.recenttracks.track[0].date["uts"]; // get the time in seconds of when it was scrobbled
-			output = output + "I listened to <a href='" + url + "' target='_blank' contenteditable='false'>'" + name + "'' by " + artist + "</a> " + time + " seconds ago. ";
+			output = output + "I listened to <a href='" + url + "' target='_blank' contenteditable='false'>'" + name + "' by " + artist + "</a> " + time + " seconds ago. ";
 		}
 	}
 	$('#mostrecenttrack').html(output);
