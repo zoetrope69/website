@@ -12,6 +12,8 @@ $('nav li').mouseup(function(){
 	$('.textarea section').hide();
 	$('#' + this.id + 'content').fadeIn(500);
 	$('body').toggleClass('colourvariation');
+	var pageName = this.id.charAt(0).toUpperCase() + this.id.slice(1);
+	document.title = pageName  + " - Zac Colley";
 });
 
 /* top right buttons */
