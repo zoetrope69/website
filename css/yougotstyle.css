@@ -216,10 +216,13 @@ header li{
 	border-bottom-color: #FFF;
 	border-right-color: #FFF;
 }
-.notepad nav ul li a{
+.notepad nav ul a{
+	cursor: default;
+	display: block;
 	color: #000;
 	text-decoration: none;
 }
+
 
 .textarea{
 	height: 90%;
