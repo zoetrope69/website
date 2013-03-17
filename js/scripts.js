@@ -3,8 +3,6 @@
 (function(){
 	$('.textarea section').hide();
 	$('#homecontent').fadeIn(500);
-	/* every 2.5 minutes update lastfm text */
-	var minutes = 2.5;
 	updateLastfmText();
 })();
 
