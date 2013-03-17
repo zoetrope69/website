@@ -1,33 +1,32 @@
+/* on load */
+
+(function(){
+	$('#homecontent').show();
+	$('#mecontent').hide();
+	$('#workcontent').hide();
+})();
+
 /* nav links */
 
-$('#home').click(function(){
-	$.ajax({
-		url: "home.html",
-		cache: false
-	}).done(function(html){
-		$(".textarea").html(html);
-		$('body').css("background", "#E9ABA7");
-	});
+$('#home').mousedown(function(){
+	$('#homecontent').show();
+	$('#mecontent').hide();
+	$('#workcontent').hide();
+	$('body').css("background", "#E9ABA7");
 });
 
-$('#me').click(function(){
-	$.ajax({
-		url: "me.html",
-		cache: false
-	}).done(function(html){
-		$(".textarea").html(html);
-		$('body').css("background", "#306DBF");
-	});
+$('#me').mousedown(function(){
+	$('#homecontent').hide();
+	$('#mecontent').show();
+	$('#workcontent').hide();
+	$('body').css("background", "#306DBF");
 });
 
-$('#work').click(function(){
-	$.ajax({
-		url: "work.html",
-		cache: false
-	}).done(function(html){
-		$(".textarea").html(html);
-		$('body').css("background", "#CBD966");
-	});
+$('#work').mousedown(function(){
+	$('#homecontent').hide();
+	$('#mecontent').hide();
+	$('#workcontent').show();
+	$('body').css("background", "#CBD966");
 });
 
 /* top right buttons */
