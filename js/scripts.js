@@ -1,15 +1,15 @@
 /* on load */
 
 (function(){
-	$('.textarea section').hide();
+	$('.textarea').find('section').hide();
 	$('#homecontent').fadeIn(500);
 	updateLastfmText();
 })();
 
 /* nav links */
 
-$('nav li').mouseup(function(){
-	$('.textarea section').hide();
+$('nav').find('li').mouseup(function(){
+	$('.textarea').find('section').hide();
 	$('#' + this.id + 'content').fadeIn(500);
 	$('body').toggleClass('colourvariation');
 	var pageName = this.id.charAt(0).toUpperCase() + this.id.slice(1);
@@ -18,7 +18,7 @@ $('nav li').mouseup(function(){
 
 /* top right buttons */
 
-$('header li').mouseup(function(){
+$('header').find('li').mouseup(function(){
 	$('.notepad').toggleClass('notepad-' + this.id);
 	if(this.id == 'close'){
 		$('.notepad').fadeOut(500);
