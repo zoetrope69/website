@@ -193,7 +193,6 @@ header li{
 	cursor: default;
 	border: 1px solid;	
 	border-color: transparent;
-	padding: 3px;
 	float: left;
 	list-style: none;
 
@@ -211,18 +210,22 @@ header li{
 }
 
 .notepad nav ul li:active{
-	padding: 5px 1px 1px 5px;
 	border-color: #808080;
 	border-bottom-color: #FFF;
 	border-right-color: #FFF;
 }
-.notepad nav ul a{
+
+.notepad nav ul li a{
+	padding: 3px;
 	cursor: default;
 	display: block;
 	color: #000;
 	text-decoration: none;
 }
 
+.notepad nav ul li a:active{
+	padding: 5px 1px 1px 5px;
+}
 
 .textarea{
 	height: 90%;
@@ -251,6 +254,20 @@ header li{
 .textarea p{
 	color: rgba(0,0,0,0.85);
 }
+
+.textarea hr{
+	height: 1em;
+}
+
+.textarea hr::after{
+	content: '-~-~-~-~-~-';
+	display: inline-block;
+	position: absolute;
+	margin-top: -.25em;
+}
+
+.textarea hr:first-of-type::after{ content: '-----------'; }
+.textarea hr:last-of-type::after{  content: '==========='; }
 
 .textarea::-webkit-scrollbar{
     width: 16px;
