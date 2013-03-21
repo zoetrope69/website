@@ -1,6 +1,7 @@
 /* on load */
 
 (function(){
+	$('.notepad').addClass('notepad-transitions'); // Adding in after loading to try and combat transitions on load?..
 	$('.textarea').find('section').hide();
 	$('#homecontent').fadeIn(500);
 	updateLastfmText();
