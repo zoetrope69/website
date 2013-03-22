@@ -5,6 +5,7 @@
 	$('.textarea').find('section').hide();
 	$('#homecontent').fadeIn(500);
 	updateLastfmText();
+	updateGitHubText();
 })();
 
 /* nav links */
@@ -27,6 +28,33 @@ $('header').find('li').mouseup(function(){
 		$('.notepad').fadeIn(500);
 	}
 });
+
+/* github data grabbing */
+
+function updateGitHubText(){
+	var user = 'zaccolley';
+	var url = 'https://api.github.com/users/' + user + '/repos';
+	var output = "";
+	$.get(url, function(data) {
+
+		var ownedRepos = new Array();
+		for(var repo = 0; repo < data.length; repo++){ 
+			var forked = data[repo].fork;
+			if(!forked){ // add to array only repos that are from original account, no forks
+				ownedRepos.push(data[repo]);
+			}
+		}
+
+		// get a psuedo-randomly selected repo
+		var repo = ownedRepos[Math.floor(Math.random() * ownedRepos.length)];
+
+		// process all that data into a nice lil' link
+		var linkedRepo = "<a href='" +  repo.svn_url + "' title='" +  repo.description + "' target='_blank' contenteditable='false'>" + repo.name + "</a>";
+		output = "I started, " + linkedRepo + ", which was wrote in " + repo.language + ".";
+		$('#githubrepos').html(output);
+
+	});
+}
 
 /* last.fm data grabbing */
 
@@ -51,6 +79,7 @@ function updateLastfmText(){
 			}
 		}
 		$('#mostrecenttrack').html(output);
+
 	});
 }
 
