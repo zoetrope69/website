@@ -40,27 +40,24 @@ function updateData(){
 
 function updateGitHubText(){
 	var user = 'zaccolley';
-	var url = 'https://api.github.com/users/' + user + '/repos';
-	var output = "";
-	$.get(url, function(data) {
+	var callback = 'displayGithubData'; // the callback calls the function below which handles the json
+	var url = 'https://api.github.com/users/' + user + '/repos?callback=' + callback; 
+	var output = "";	
+	$.getScript(url); // get and run displayGithubData() from url
+}
 
-		var ownedRepos = new Array();
-		for(var repo = 0; repo < data.length; repo++){ 
-			var forked = data[repo].fork;
-			if(!forked){ // add to array only repos that are from original account, no forks
-				ownedRepos.push(data[repo]);
-			}
-		}
-
-		// get a psuedo-randomly selected repo
-		var repo = ownedRepos[Math.floor(Math.random() * ownedRepos.length)];
-
-		// process all that data into a nice lil' link
-		var linkedRepo = "<a href='" +  repo.svn_url + "' title='" +  repo.description + "' target='_blank' contenteditable='false'>" + repo.name + "</a>";
-		output = "I started, " + linkedRepo + ", which was wrote in " + repo.language + ".";
-		$('#githubrepos').html(output);
-
-	});
+function displayGithubData(json){
+	var ownedRepos = new Array();
+	for(var repo = 0; repo < json.data.length; repo++){ 
+		var forked = json.data[repo].fork; // add to array only repos that are from original account, no forks
+		if(!forked){ ownedRepos.push(json.data[repo]); }
+	}
+	// get a psuedo-randomly selected repo
+	var repo = ownedRepos[Math.floor(Math.random() * ownedRepos.length)];
+	// process all that data into a nice lil' link
+	var linkedRepo = "<a href='" +  repo.svn_url + "' title='" +  repo.description + "' target='_blank' contenteditable='false'>" + repo.name + "</a>";
+	output = "I started, " + linkedRepo + ", which was wrote in " + repo.language + ".";
+	$('#githubrepos').html(output);
 }
 
 /* last.fm */
@@ -79,10 +76,10 @@ function updateLastfmText(){
 			var url = json.recenttracks.track[0].url;
 
 			if(typeof json.recenttracks.track[0]["@attr"] !== 'undefined'){ // if the track is now playing
-				output = output + "I'm listening to <a href='" + url + "' target='_blank' contenteditable='false'>'" + name + "' by " + artist + "</a>. ";
+				output += "I'm listening to <a href='" + url + "' target='_blank' contenteditable='false'>'" + name + "' by " + artist + "</a>. ";
 			}else{
 				var time = +new Date()/1000 - json.recenttracks.track[0].date["uts"]; // get the time in seconds of when it was scrobbled
-				output = output + "I listened to <a href='" + url + "' target='_blank' contenteditable='false'>'" + name + "' by " + artist + "</a> " + timeConvert(time);
+				output += "I listened to <a href='" + url + "' target='_blank' contenteditable='false'>'" + name + "' by " + artist + "</a> " + timeConvert(time);
 			}
 		}
 		$('#mostrecenttrack').html(output);
