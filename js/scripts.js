@@ -4,8 +4,7 @@
 	$('.notepad').addClass('notepad-transitions'); // Adding in after loading to try and combat transitions on load?..
 	$('.textarea').find('section').hide();
 	$('#homecontent').fadeIn(500);
-	updateLastfmText();
-	updateGitHubText();
+	updateData();
 })();
 
 /* nav links */
@@ -29,7 +28,15 @@ $('header').find('li').mouseup(function(){
 	}
 });
 
-/* github data grabbing */
+/* data getting */
+/* ------------ */
+
+function updateData(){
+	updateLastfmText();
+	updateGitHubText();
+}
+
+/* github */
 
 function updateGitHubText(){
 	var user = 'zaccolley';
@@ -56,7 +63,7 @@ function updateGitHubText(){
 	});
 }
 
-/* last.fm data grabbing */
+/* last.fm */
 
 function updateLastfmText(){
 	var user = 'zaccolley';
