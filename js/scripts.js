@@ -1,12 +1,10 @@
 /* on load */
-
 (function(){
 	$('.notepad').addClass('notepad-transitions'); // Adding in after loading to try and combat transitions on load?..
     $('.notepad').draggable({ handle: 'header' });
 	$('.textarea').find('section').hide();
 	$('#homecontent').fadeIn(500);
 	updateData();
-
 })();
 
 /* nav links */
@@ -14,9 +12,12 @@
 $('nav').find('li').mouseup(function(){
 	$('.textarea').find('section').hide();
 	$('#' + this.id + 'content').fadeIn(500);
-	$('body').toggleClass('colourvariation');
+
 	var pageName = this.id.charAt(0).toUpperCase() + this.id.slice(1);
 	document.title = pageName  + " - Zac Colley";
+	
+	var randColour = 'hsl(' + Math.floor(Math.random() * 360) + ', 20%, 40%)';
+	$('body').css('background-color', randColour);
 });
 
 /* top right buttons */

@@ -21,10 +21,6 @@ body{
 			transition: background .75s ease-in;
 }
 
-.colourvariation{
-	background-color: #717752;
-}
-
 .notepad, header li{
 	padding: 2px;
 	border: 1px solid;
@@ -319,15 +315,3 @@ header li{
 		font-size: 0.85em;
 	}
 }
-
-.trip{
-	-webkit-animation: hueRotate 1s infinite linear;
-	   -moz-animation: hueRotate 1s infinite linear;
-	     -o-animation: hueRotate 1s infinite linear;
-	     	animation: hueRotate 1s infinite linear;
-}
-
-	@-webkit-keyframes hueRotate { to { -webkit-filter: hue-rotate(360deg);} }
-	   @-moz-keyframes hueRotate { to {    -moz-filter: hue-rotate(360deg); } }
-	     @-o-keyframes hueRotate { to { 	 -o-filter: hue-rotate(360deg); } }
-			@keyframes hueRotate { to { 		filter: hue-rotate(360deg); } }
