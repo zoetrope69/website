@@ -13,7 +13,7 @@
 h1, h2, h3{ font-weight: normal; }
 
 body{
-	background-color: #525877;
+	background-color: hsl(230, 20%, 40%);
 	-webkit-transition: background .75s ease-in;
 	   -moz-transition: background .75s ease-in;
 	    -ms-transition: background .75s ease-in;
