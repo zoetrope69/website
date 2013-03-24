@@ -2,9 +2,11 @@
 
 (function(){
 	$('.notepad').addClass('notepad-transitions'); // Adding in after loading to try and combat transitions on load?..
+    $('.notepad').draggable({ handle: 'header' });
 	$('.textarea').find('section').hide();
 	$('#homecontent').fadeIn(500);
 	updateData();
+
 })();
 
 /* nav links */
