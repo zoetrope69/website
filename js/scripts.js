@@ -1,7 +1,7 @@
 /* on load */
 (function(){
 	$('.notepad').addClass('notepad-transitions'); // Adding in after loading to try and combat transitions on load?..
-    $('.notepad').draggable({ handle: 'header' });
+    $('.notepad').draggable({ handle: 'header', containment: 'document', revert: true});
 	$('.textarea').find('section').hide();
 	$('#homecontent').fadeIn(500);
 	updateData();
@@ -19,9 +19,13 @@ $('nav').find('li').mouseup(function(){
 	
 	var randNo = Math.floor(Math.random() * 360); 
 	var randBackColour = 'hsl(' + randNo + ', 20%, 40%)';
-	var randTitleColour = 'hsl(' + (randNo - 180) + ', 50%, 40%)';
+	var randTitleColour = 'hsl(' + (randNo - 180);
+	var randTitleFrontColour = randTitleColour + ', 50%, 40%)';
+	var randTitleShadowColour = randTitleColour + ', 50%, 20%)';
+
 	$('body').css('background-color', randBackColour);
-	$('#title').css('color', randTitleColour);
+	$('#title').css('color', randTitleFrontColour);
+	$('#title').css('text-shadow', 	'0 0.1em ' + randTitleShadowColour);
 });
 
 /* top right buttons */

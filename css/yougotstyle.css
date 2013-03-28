@@ -1,9 +1,9 @@
 /* these are the styles yo */
 
 @font-face {
-  font-family: 'Droid Serif';
-  font-weight: 700;
-  src: local('Droid Serif Bold Italic'), local('DroidSerif-BoldItalic'), url(http://themes.googleusercontent.com/static/fonts/droidserif/v3/c92rD_x0V1LslSFt3-QEpgRV2F9RPTaqyJ4QibDfkzM.woff) format('woff');
+  font-family: 'Alfa Slab One';
+  font-weight: 400;
+  src: local('Alfa Slab One'), local('AlfaSlabOne-Regular'), url(http://themes.googleusercontent.com/static/fonts/alfaslabone/v2/Qx6FPcitRwTC_k88tLPc-fn8qdNnd5eCmWXua5W-n7c.woff) format('woff');
 }
 
 *{  margin:  0;
@@ -18,6 +18,10 @@
 
 h1, h2, h3{ font-weight: normal; }
 
+html{
+	height: 100%;
+}
+
 body{
 	background-color: hsl(230, 20%, 40%);
 	-webkit-transition: background .75s ease-in;
@@ -29,22 +33,25 @@ body{
 
 article{
 	width: 60vw;
-	margin: 5% auto 0;
+	margin: 0 auto;
 }
 
 article #title{
+	margin: 2.5% auto;
 	text-align: center;
-	line-height: .5em;
-	letter-spacing: -.05em;
+	text-transform: uppercase;
+	text-shadow: 0 0.1em hsl(25, 50%, 40%);
+	line-height: 1em;
+	letter-spacing: 0em;
 	color: hsl(50, 50%, 40%);
-	font-size: 7.5em;
-	font-family: 'Droid Serif', Georgia, 'Times New Roman', serif;
-
-	-webkit-transition: color .75s ease-in;
-	   -moz-transition: color .75s ease-in;
-	    -ms-transition: color .75s ease-in;
-	     -o-transition: color .75s ease-in;
-			transition: color .75s ease-in;
+	font-size: 6.5em;
+	font-family: 'Alfa Slab One', Helvetica, Arial, sans-serif;
+	
+	-webkit-transition: color .75s ease-in, text-shadow .75s ease-in;
+	   -moz-transition: color .75s ease-in, text-shadow .75s ease-in;
+	    -ms-transition: color .75s ease-in, text-shadow .75s ease-in;
+	     -o-transition: color .75s ease-in, text-shadow .75s ease-in;
+			transition: color .75s ease-in, text-shadow .75s ease-in;
 }
 
 .notepad, header li{
@@ -61,25 +68,25 @@ article #title{
 }
 
 .notepad{
+	width: 100%;
 	overflow-y: hidden;
 	height: 400px;
 	font-family: monospace;
 }
 
 .notepad-transitions{
-	-webkit-transition: height 0.5s, width 0.5s, margin 0.5s;
-	   -moz-transition: height 0.5s, width 0.5s, margin 0.5s;
-	    -ms-transition: height 0.5s, width 0.5s, margin 0.5s;
-	     -o-transition: height 0.5s, width 0.5s, margin 0.5s;
-			transition: height 0.5s, width 0.5s, margin 0.5s;
+	-webkit-transition: height 0.5s, width 0.5s;
+	   -moz-transition: height 0.5s, width 0.5s;
+	    -ms-transition: height 0.5s, width 0.5s;
+	     -o-transition: height 0.5s, width 0.5s;
+			transition: height 0.5s, width 0.5s;
 }
 
 .notepad-max{
-	width: 90vw !important;
+	width: 120%;
 }
 
 .notepad-min{
-	margin-top: 475px;
 	height: 25px;
 	overflow: hidden;
 }
