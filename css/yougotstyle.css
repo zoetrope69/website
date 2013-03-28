@@ -1,5 +1,11 @@
 /* these are the styles yo */
 
+@font-face {
+  font-family: 'Droid Serif';
+  font-weight: 700;
+  src: local('Droid Serif Bold Italic'), local('DroidSerif-BoldItalic'), url(http://themes.googleusercontent.com/static/fonts/droidserif/v3/c92rD_x0V1LslSFt3-QEpgRV2F9RPTaqyJ4QibDfkzM.woff) format('woff');
+}
+
 *{  margin:  0;
 	padding: 0;
 	outline: none;
@@ -21,6 +27,26 @@ body{
 			transition: background .75s ease-in;
 }
 
+article{
+	width: 60vw;
+	margin: 5% auto 0;
+}
+
+article #title{
+	text-align: center;
+	line-height: .5em;
+	letter-spacing: -.05em;
+	color: hsl(50, 50%, 40%);
+	font-size: 7.5em;
+	font-family: 'Droid Serif', Georgia, 'Times New Roman', serif;
+
+	-webkit-transition: color .75s ease-in;
+	   -moz-transition: color .75s ease-in;
+	    -ms-transition: color .75s ease-in;
+	     -o-transition: color .75s ease-in;
+			transition: color .75s ease-in;
+}
+
 .notepad, header li{
 	padding: 2px;
 	border: 1px solid;
@@ -36,9 +62,7 @@ body{
 
 .notepad{
 	overflow-y: hidden;
-	width: 60vw;
-	height: 500px;
-	margin: 5% auto 0;
+	height: 400px;
 	font-family: monospace;
 }
 
@@ -226,7 +250,7 @@ header li{
 }
 
 .textarea{
-	height: 90%;
+	height: 345px;
 	overflow-y: scroll;
 	padding: 0.5em;
 	border: 1px solid;
@@ -307,11 +331,12 @@ header li{
 	background: url('../img/endbuttonscroll.png') center no-repeat #cfd0c8;
 }
 
+@media (max-width: 1200px){
+	article #title{ font-size: 5em; }
+}
+
 @media (max-width: 500px){
-	.notepad{
-		width: 70%;
-	}
-	header h1{
-		font-size: 0.85em;
-	}
+	article{ width: 70%; }
+	article #title{ font-size: 4em; }
+	header h1{ font-size: 0.85em; }
 }

@@ -14,10 +14,14 @@ $('nav').find('li').mouseup(function(){
 	$('#' + this.id + 'content').fadeIn(500);
 
 	var pageName = this.id.charAt(0).toUpperCase() + this.id.slice(1);
-	document.title = pageName  + " - Zac Colley";
+	document.title = pageName  + ' - Zac Colley';
+	$('header').find('h1').text(this.id + ' - Notepad');
 	
-	var randColour = 'hsl(' + Math.floor(Math.random() * 360) + ', 20%, 40%)';
-	$('body').css('background-color', randColour);
+	var randNo = Math.floor(Math.random() * 360); 
+	var randBackColour = 'hsl(' + randNo + ', 20%, 40%)';
+	var randTitleColour = 'hsl(' + (randNo - 180) + ', 50%, 40%)';
+	$('body').css('background-color', randBackColour);
+	$('#title').css('color', randTitleColour);
 });
 
 /* top right buttons */
