@@ -1,4 +1,3 @@
-sight
-=====
+# sight
 
-my website
+my [current](http://www.zaccolley.com) website
