@@ -67,7 +67,7 @@ function displayGithubData(json){
 	var repo = ownedRepos[Math.floor(Math.random() * ownedRepos.length)];
 	// process all that data into a nice lil' link
 	var linkedRepo = "<a href='" +  repo.svn_url + "' title='" +  repo.description + "' target='_blank' contenteditable='false'>" + repo.name + "</a>";
-	output = "I started " + linkedRepo + ", which was wrote in " + repo.language + ".";
+	output = "I started " + linkedRepo + ", which was mostly wrote in " + repo.language + ".";
 	$('#githubrepos').html(output);
 }
 
