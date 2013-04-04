@@ -23,7 +23,7 @@ html{
 }
 
 body{
-	background-color: hsl(230, 10%, 95%);
+	background-color: hsl(230, 10%, 5%);
 	-webkit-transition: background .75s ease-in;
 	   -moz-transition: background .75s ease-in;
 	    -ms-transition: background .75s ease-in;
@@ -40,10 +40,10 @@ article #title{
 	margin: 2.5% auto;
 	text-align: center;
 	text-transform: uppercase;
-	text-shadow: 0 0.1em hsl(25, 10%, 5%);
+	text-shadow: 0 0.1em hsl(25, 10%, 90%);
 	line-height: 1em;
 	letter-spacing: 0em;
-	color: hsl(50, 10%, 10%);
+	color: hsl(50, 10%, 95%);
 	font-size: 6.5em;
 	font-family: 'Alfa Slab One', Helvetica, Arial, sans-serif;
 	
