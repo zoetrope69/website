@@ -284,20 +284,6 @@ header li{
 	color: rgba(0,0,0,0.85);
 }
 
-.textarea hr{
-	height: 1em;
-}
-
-.textarea hr::after{
-	content: '-~-~-~-~-~-';
-	display: inline-block;
-	position: absolute;
-	margin-top: -.25em;
-}
-
-.textarea hr:first-of-type::after{ content: '-----------'; }
-.textarea hr:last-of-type::after{  content: '==========='; }
-
 .textarea::-webkit-scrollbar{
     width: 16px;
 }
@@ -338,12 +324,16 @@ header li{
 	background: url('../img/endbuttonscroll.png') center no-repeat #cfd0c8;
 }
 
-@media (max-width: 1200px){
-	article #title{ font-size: 5em; }
-}
+/* title gets smaller when you resize the window */
 
-@media (max-width: 500px){
+@media (max-width: 1200px){ article #title{ font-size: 4.5em; } }
+@media (max-width: 1000px){ article #title{ font-size: 3.5em; } }
+@media (max-width: 800px){ article #title{ font-size: 2.5em; } }
+
+/* title changes but also some other adjustments to the notepad */
+ 
+@media (max-width: 600px){
 	article{ width: 70%; }
-	article #title{ font-size: 4em; }
+	article #title{ font-size: 1.5em; }
 	header h1{ font-size: 0.85em; }
 }
