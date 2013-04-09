@@ -4,7 +4,7 @@
     $('.notepad').draggable({ handle: 'header', containment: 'document', revert: true});
 	$('.textarea').find('section').hide();
 	$('#homecontent').fadeIn(500);
-	updateData();
+	updateData(); // from last.fm and github etc
 })();
 
 /* nav links */
@@ -75,13 +75,14 @@ function displayGithubData(json){
 
 function updateLastfmText(){
 	var user = 'zaccolley';
+
+	// recent tracks
 	var recentTracks = 2;
 	var apiKey = 'fa5687767b9d45951f19973b88ff46d9';
 	var url = 'http://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&limit=' + recentTracks + '&user=' + user + '&api_key=' + apiKey + '&format=json';
 	$.getJSON(url, function(json){
-
 		var output = "";
-		if(typeof json.recenttracks.track !== 'undefined'){ // if the json doesn't exist (last.fm is borked)
+		if(typeof json.recenttracks.track !== 'undefined'){ // if the json does exist (last.fm isn't borked)
 			var name = json.recenttracks.track[0].name;
 			var artist = json.recenttracks.track[0].artist["#text"];
 			var url = json.recenttracks.track[0].url;
@@ -94,7 +95,19 @@ function updateLastfmText(){
 			}
 		}
 		$('#mostrecenttrack').html(output);
+	});
 
+	// who I'm into link at the moment
+	var period = ['overall', '7day', '1month', '3month', '6month', '12month']; // different periods
+	var url = 'http://ws.audioscrobbler.com/2.0/?method=user.gettopartists&limit=1&period=' + period[1] + '&user=' + user + '&api_key=' + apiKey + '&format=json';
+	$.getJSON(url, function(json){
+		console.log(json)
+		if(json.topartists.artist.name){ // if it has found a name for the artist
+			var artist = json.topartists.artist.name;
+			var url = json.topartists.artist.url;
+			$('#mostlistenedartist').text(artist);
+			$('#mostlistenedartist').attr("href", url);
+		} // the default link is to Daft Punk 'cause I think they're future proof cool
 	});
 }
 
