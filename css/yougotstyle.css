@@ -36,13 +36,34 @@ article{
 	margin: 0 auto;
 }
 
-article #title{
+article .head{
 	margin: 2.5% auto;
+}
+
+article .head #face{
+	display: none;
+	margin: 0 .05em -.1em 0;
+	height: .88em;
+	border-bottom: .1em solid;
+	border-color: hsl(50, 10%, 95%);
+
+	-webkit-border-radius: .3em;
+	   -moz-border-radius: .3em;
+			border-radius: .3em;
+
+	-webkit-transition: border-color .75s ease-in;
+	   -moz-transition: border-color .75s ease-in;
+	    -ms-transition: border-color .75s ease-in;
+	     -o-transition: border-color .75s ease-in;
+			transition: border-color .75s ease-in;
+}
+
+article .head #title{
 	text-align: center;
 	text-transform: uppercase;
 	text-shadow: 0 0.1em hsl(25, 10%, 90%);
 	line-height: 1em;
-	letter-spacing: 0em;
+	letter-spacing: .05em;
 	color: hsl(50, 10%, 95%);
 	font-size: 6.5em;
 	font-family: 'Alfa Slab One', Helvetica, Arial, sans-serif;
@@ -284,6 +305,12 @@ header li{
 	color: rgba(0,0,0,0.85);
 }
 
+.textarea span.inactive{ /* inactive links */
+	color: gray;
+	cursor: help;
+	text-decoration: underline;
+}
+
 .textarea::-webkit-scrollbar{
     width: 16px;
 }
@@ -326,14 +353,14 @@ header li{
 
 /* title gets smaller when you resize the window */
 
-@media (max-width: 1200px){ article #title{ font-size: 4.5em; } }
-@media (max-width: 1000px){ article #title{ font-size: 3.5em; } }
-@media (max-width: 800px){ article #title{ font-size: 2.5em; } }
+@media (max-width: 1200px){ article .head #title{ font-size: 4.5em; } }
+@media (max-width: 1000px){ article .head #title{ font-size: 3.5em; } }
+@media (max-width: 800px){ article .head #title{ font-size: 2.5em; } }
 
 /* title changes but also some other adjustments to the notepad */
  
 @media (max-width: 600px){
 	article{ width: 70%; }
-	article #title{ font-size: 1.5em; }
+	article .head #title{ font-size: 1.5em; }
 	header h1{ font-size: 0.85em; }
 }

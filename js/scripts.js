@@ -3,6 +3,8 @@
 	$('.notepad').addClass('notepad-transitions'); // Adding in after loading to try and combat transitions on load?..
     $('.notepad').draggable({ handle: 'header', containment: 'document', revert: true});
 	$('.textarea').find('section').hide();
+	faceReplace();
+	$('#face').show();
 	$('#homecontent').fadeIn(500);
 	updateData(); // from last.fm and github etc
 })();
@@ -26,6 +28,7 @@ $('nav').find('li').mouseup(function(){
 	$('body').css('background-color', randBackColour);
 	$('#title').css('color', randTitleFrontColour);
 	$('#title').css('text-shadow', 	'0 0.1em ' + randTitleShadowColour);
+	$('#face').css('border-color',  randTitleShadowColour);	
 });
 
 /* top right buttons */
@@ -38,6 +41,14 @@ $('header').find('li').mouseup(function(){
 		$('.notepad').fadeIn(500);
 	}
 });
+
+/* replace 'O' in heading with my face */
+
+function faceReplace(){
+	var url = $('#face').attr('src');
+	$('#face').remove();
+	$('#title').replaceWith('<h1 id="title">Zac C<img id="face" src="' + url + '" alt="My gravatar image">lley</h1>');
+}
 
 /* data getting */
 /* ------------ */
@@ -88,7 +99,7 @@ function updateLastfmText(){
 			var url = json.recenttracks.track[0].url;
 
 			if(typeof json.recenttracks.track[0]["@attr"] !== 'undefined'){ // if the track is now playing
-				output += "I'm listening to <a href='" + url + "' target='_blank' contenteditable='false'>'" + name + "' by " + artist + "</a>. ";
+				output += "Oh golly! I'm listening to <a href='" + url + "' target='_blank' contenteditable='false'>'" + name + "' by " + artist + "</a> right now! ";
 			}else{
 				var time = +new Date()/1000 - json.recenttracks.track[0].date["uts"]; // get the time in seconds of when it was scrobbled
 				output += "I listened to <a href='" + url + "' target='_blank' contenteditable='false'>'" + name + "' by " + artist + "</a> " + timeConvert(time);
@@ -101,7 +112,6 @@ function updateLastfmText(){
 	var period = ['overall', '7day', '1month', '3month', '6month', '12month']; // different periods
 	var url = 'http://ws.audioscrobbler.com/2.0/?method=user.gettopartists&limit=1&period=' + period[1] + '&user=' + user + '&api_key=' + apiKey + '&format=json';
 	$.getJSON(url, function(json){
-		console.log(json)
 		if(json.topartists.artist.name){ // if it has found a name for the artist
 			var artist = json.topartists.artist.name;
 			var url = json.topartists.artist.url;
