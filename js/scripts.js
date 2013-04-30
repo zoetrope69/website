@@ -47,7 +47,7 @@ function replaceFace(){
 	var url = $('#face').attr('src');
 	$('#face').remove();
 	$('#title').delay(250).fadeOut(500, function(){
-		$('#title').replaceWith('<h1 id="title" style="display:none">Zac C<img style="display: inline-block;" id="face" src="' + url + '" alt="My gravatar image">lley</h1>')
+		$('#title').replaceWith('<h1 id="title" style="display:none">Zac C<img style="display: inline-block;" id="face" src="' + url + '" alt="My gravatar image">lley</h1>');
 		$('#title').fadeIn(500);
 	});
 }

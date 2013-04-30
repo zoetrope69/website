@@ -51,7 +51,7 @@
 				<p>=========</p>
 
 				<p>Web developer and designer but also a pretty cool guy*. I am studying at the University of Portsmouth for Web Technologies, a Computer Science course for web fanboys.</p>
-				<p>In my spare time I'm apart of <a href="http://www.upracing.co.uk"  target="_blank" contenteditable="false">UPRacing</a> and I am Vice President at the <a href="http://www.uopcs.com"  target="_blank" contenteditable="false">University of Portsmouth Computing Society</a>.</p>
+				<p>In my spare time I'm apart of <a href="http://www.upracing.co.uk"  target="_blank" contenteditable="false">UPRacing</a> and I am Vice President at our <a href="http://www.uopcs.com"  target="_blank" contenteditable="false">Computing Society</a>.</p>
 				<p>I spend any other time hacking about on code or jamming with music.</p>
 
 				<p>-~-</p>
@@ -104,23 +104,28 @@
 
 				<h2>Code</h2>
 				
-				<p><span class="inactive" title="Coming soon&hellip; ;¬)">UPRacing Website</span> &bull; Design <em>Dan Gordon &amp; Matt Jackson</em>.</p>
+				<ul>
+					<li><span class="inactive" title="Coming soon&hellip; ;¬)">UPRacing Website</span> &bull; Design <em>Dan Gordon &amp; Matt Jackson</em>.</li>
+				</ul>
 
 				<p>-~-</p>
 
 				<h2>Visuals</h2>
-
-				<p><span class="inactive" title="Coming soon&hellip; ;¬)">UPRacing Engine Stats App</span> &bull; Intial branding and style <em>Dan Gordon</em>.</p>
 				
-				<p><a href="http://minecraftexplore.tumblr.com" target="_blank" contenteditable="false">Minecraft Explore</a> &bull; <em>No longer updated :¬(</em>.</p>
+				<ul>
+					<li><span class="inactive" title="Coming soon&hellip; ;¬)">UPRacing Engine Stats App</span> &bull; Intial branding and style <em>Dan Gordon</em>.</li>
+					<li><a href="http://minecraftexplore.tumblr.com" target="_blank" contenteditable="false">Minecraft Explore</a> &bull; <em>No longer updated. :¬(</em></li>
+				</ul>
 
 				<p>-~-</p>
 
 				<h2>Both!</h2>
 
-				<p><span class="inactive" title="Coming soon&hellip; ;¬)">University of Portmouth Computing Society's Website</span> &bull; Lead back-end <em>Rich Solomou</em></p>
-
-				<p><a href="http://www.zaccolley.com/uni/webf1" contenteditable="false">WEBF1 C/W</a> &bull; Web Foundations Uni Coursework</p>
+				<p><span class="inactive" title="Coming soon&hellip; ;¬)">University of Portmouth Computing Society's Website</span> &bull; Lead back-end <em>Rich Solomou</em>.</p>
+				
+				<ul>
+					<li><a href="http://www.zaccolley.com/uni/webf1" contenteditable="false">WEBF1 C/W</a> &bull; Web Foundations University Coursework</li>
+				</ul>
 
 				<p>---------</p>
 
@@ -132,14 +137,21 @@
 
 				<p>=========</p>
 
-				<p><a href="http://www.zaccolley.com/stuff/sexycsstalk/" target="_blank" contenteditable="false">SEXYCSSTALK</a> &bull; Slides for a small <em>UoPCS</em> talk I done did.</p>
+				<h2>Talks</h2>
+				
+				<ul>
+					<li><a href="http://www.zaccolley.com/stuff/sexycsstalk/" target="_blank" contenteditable="false">SEXY CSS</a> &bull; Slides for a small <em>UoPCS</em> talk I done did.</li>
+				</ul>
+				
+				<p>-~-</p>
 
-				<p><a href="http://www.zaccolley.com/stuff/foraaron/" target="_blank" contenteditable="false">CSS Gameboy</a> &bull; Birthday present for a friend. Only tested in Chrome. <em>Doesn't work elsewhere - Sorry!</em></p>
+				<h2>CSS Experiments</h2>
 
-				<p><a href="http://www.zaccolley.com/uni/forrich" target="_blank" contenteditable="false">CSS Birthday Cake</a> &bull; Another present. <em>Check dem flickering candles.</em></p>
-
-				<p><a href="http://zaccolley.com/christmas2012/" target="_blank" contenteditable="false">CSS Christmas Card Maker</a> &bull; Made with my festive bro.</p>
-
+				<ul>
+					<li><a href="http://www.zaccolley.com/stuff/foraaron/" target="_blank" contenteditable="false">Gameboy</a> &bull; Birthday present for a friend. <em>Only works in Chrome - Sorry! :¬$</em></li>
+					<li><a href="http://www.zaccolley.com/uni/forrich" target="_blank" contenteditable="false">Birthday Cake</a> &bull; Another present. <em>Check dem flickering candles.</em></li>
+					<li><a href="http://zaccolley.com/christmas2012/" target="_blank" contenteditable="false">Christmas Card Maker</a> &bull; Made with my festive bro.</li>
+				</ul>
 				
 			</section>
 
