@@ -32,7 +32,7 @@ body{
 }
 
 article{
-	width: 60vw;
+	width: 70%;
 	margin: 0 auto;
 }
 
@@ -47,9 +47,9 @@ article .head #face{
 	border-bottom: .1em solid;
 	border-color: hsl(50, 10%, 95%);
 
-	-webkit-border-radius: .3em;
-	   -moz-border-radius: .3em;
-			border-radius: .3em;
+	-webkit-border-radius: .25em / .3em;
+	   -moz-border-radius: .25em / .3em;
+			border-radius: .25em / .3em;
 
 	-webkit-transition: border-color .75s ease-in;
 	   -moz-transition: border-color .75s ease-in;
