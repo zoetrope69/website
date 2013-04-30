@@ -1,12 +1,11 @@
 /* on load */
 (function(){
+	replaceFace();
+	updateData(); // from last.fm and github etc
 	$('.notepad').addClass('notepad-transitions'); // Adding in after loading to try and combat transitions on load?..
     $('.notepad').draggable({ handle: 'header', containment: 'document', revert: true});
 	$('.textarea').find('section').hide();
-	faceReplace();
-	$('#face').show();
 	$('#homecontent').fadeIn(500);
-	updateData(); // from last.fm and github etc
 })();
 
 /* nav links */
@@ -44,10 +43,13 @@ $('header').find('li').mouseup(function(){
 
 /* replace 'O' in heading with my face */
 
-function faceReplace(){
+function replaceFace(){
 	var url = $('#face').attr('src');
 	$('#face').remove();
-	$('#title').replaceWith('<h1 id="title">Zac C<img id="face" src="' + url + '" alt="My gravatar image">lley</h1>');
+	$('#title').fadeOut(1000, function(){
+		$('#title').replaceWith('<h1 id="title" style="display:none">Zac C<img style="display: inline-block;" id="face" src="' + url + '" alt="My gravatar image">lley</h1>')
+		$('#title').fadeIn(500);
+	});
 }
 
 /* data getting */

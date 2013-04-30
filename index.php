@@ -136,7 +136,7 @@
 
 				<p><a href="http://www.zaccolley.com/stuff/sexycsstalk/" target="_blank" contenteditable="false">SEXYCSSTALK</a> &bull; Slides for a small <em>UoPCS</em> talk I done did.</p>
 
-				<p><a href="http://www.zaccolley.com/stuff/foraaron/" target="_blank" contenteditable="false">CSS Gameboy SP Advance</a> &bull; Birthday present for a friend. Only tested in Chrome. <em>Doesn't work elsewhere - Sorry!</em></p>
+				<p><a href="http://www.zaccolley.com/stuff/foraaron/" target="_blank" contenteditable="false">CSS Gameboy</a> &bull; Birthday present for a friend. Only tested in Chrome. <em>Doesn't work elsewhere - Sorry!</em></p>
 
 				<p><a href="http://www.zaccolley.com/uni/forrich" target="_blank" contenteditable="false">CSS Birthday Cake</a> &bull; Another present. <em>Check dem flickering candles.</em></p>
 
