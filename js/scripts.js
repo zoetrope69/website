@@ -5,7 +5,7 @@
 	$('.notepad').addClass('notepad-transitions'); // Adding in after loading to try and combat transitions on load?..
     $('.notepad').draggable({ handle: 'header', containment: 'document', revert: true});
 	$('.textarea').find('section').hide();
-	$('#homecontent').fadeIn(500);
+	$('#homecontent').fadeIn(750);
 })();
 
 /* nav links */

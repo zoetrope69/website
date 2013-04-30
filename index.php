@@ -51,12 +51,10 @@
 				<p>=========</p>
 
 				<p>Web developer and designer but also a pretty cool guy*. I am studying at the University of Portsmouth for Web Technologies, a Computer Science course for web fanboys.</p>
-
 				<p>In my spare time I'm apart of <a href="http://www.upracing.co.uk"  target="_blank" contenteditable="false">UPRacing</a> and I am Vice President at the <a href="http://www.uopcs.com"  target="_blank" contenteditable="false">University of Portsmouth Computing Society</a>.</p>
+				<p>I spend any other time hacking about on code or jamming with music.</p>
 
-				<p>I spend any other time hacking about or jamming on music.</p>
-
-				<p>-~-~-~-~-</p>
+				<p>-~-</p>
 
 				<p><em>*Arguably. This text is editable by the way. :¬{0</em></p>
 
@@ -73,23 +71,23 @@
 				<h2>Email</h2>
 				<p>I like emails. Send me a nice one. <a href="mailto:z@colley.com"  target="_blank" contenteditable="false">z@ccolley.com</a></p>
 
-				<p>-~-~-~-~-</p>
+				<p>-~-</p>
 
 				<h2>GitHub</h2>
 				<p>A lot of my time is spent coding and <a href="http://www.github.com/zaccolley" target="_blank" contenteditable="false">push a lot online </a>. This site <a href="http://www.github.com/zaccolley/sight" target="_blank" contenteditable="false">is there</a> too!</p>
 				<p id="githubrepos">I have a number of repos using different languages at the moment. :¬)</p>
 
-				<p>-~-~-~-~-</p>
+				<p>-~-</p>
 
 				<h2>Twitter</h2>
 				<p>A stream of consciousness in the form of <a href="http://www.twitter.com/zaccolley" target="_blank" contenteditable="false">tweets</a>.</p>
 
-				<p>-~-~-~-~-</p>
+				<p>-~-</p>
 
 				<h2>Last.fm</h2>
 				<p><span id="mostrecenttrack"></span>I'm sort of into <a id="mostlistenedartist" href='http://www.last.fm/music/Daft+Punk' target='_blank' contenteditable='false'>Daft Punk</a> at the moment but I <a href="http://www.last.fm/user/ZacColley" target="_blank" contenteditable="false">listen to</a> a lot more too!</p>
 
-				<p>-~-~-~-~-</p>
+				<p>-~-</p>
 
 				<h2>LinkedIn</h2>
 				<p>I'm also <a href="http://uk.linkedin.com/in/zaccolley" target="_blank" contenteditable="false">here apparently</a>&hellip;</p>
@@ -108,7 +106,7 @@
 				
 				<p><span class="inactive" title="Coming soon&hellip; ;¬)">UPRacing Website</span> &bull; Design <em>Dan Gordon &amp; Matt Jackson</em>.</p>
 
-				<p>-~-~-~-~-</p>
+				<p>-~-</p>
 
 				<h2>Visuals</h2>
 
@@ -116,7 +114,7 @@
 				
 				<p><a href="http://minecraftexplore.tumblr.com" target="_blank" contenteditable="false">Minecraft Explore</a> &bull; <em>No longer updated :¬(</em>.</p>
 
-				<p>-~-~-~-~-</p>
+				<p>-~-</p>
 
 				<h2>Both!</h2>
 

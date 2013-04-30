@@ -23,7 +23,7 @@ html{
 }
 
 body{
-	background-color: hsl(230, 10%, 5%);
+	background-color: hsl(230, 10%, 25%);
 	-webkit-transition: background .75s ease-in;
 	   -moz-transition: background .75s ease-in;
 	    -ms-transition: background .75s ease-in;
@@ -32,7 +32,7 @@ body{
 }
 
 article{
-	width: 70%;
+	width: 60%;
 	margin: 0 auto;
 }
 
@@ -45,7 +45,7 @@ article .head #face{
 	margin: 0 .05em -.1em 0;
 	height: .88em;
 	border-bottom: .1em solid;
-	border-color: hsl(50, 10%, 95%);
+	border-color: hsl(0, 0%, 55%);
 
 	-webkit-border-radius: .25em / .3em;
 	   -moz-border-radius: .25em / .3em;
@@ -61,18 +61,25 @@ article .head #face{
 article .head #title{
 	text-align: center;
 	text-transform: uppercase;
-	text-shadow: 0 0.1em hsl(25, 10%, 90%);
+	text-shadow: 0 0.1em hsl(0, 0%, 55%);
 	line-height: 1em;
 	letter-spacing: .05em;
 	color: hsl(50, 10%, 95%);
 	font-size: 6.5em;
 	font-family: 'Alfa Slab One', Helvetica, Arial, sans-serif;
+	cursor: default;
 	
 	-webkit-transition: color .75s ease-in, text-shadow .75s ease-in;
 	   -moz-transition: color .75s ease-in, text-shadow .75s ease-in;
 	    -ms-transition: color .75s ease-in, text-shadow .75s ease-in;
 	     -o-transition: color .75s ease-in, text-shadow .75s ease-in;
 			transition: color .75s ease-in, text-shadow .75s ease-in;
+
+
+	-webkit-user-select: none;
+	   -moz-user-select: none;
+		-ms-user-select: none;
+			user-select: none;
 }
 
 .notepad, header li{
