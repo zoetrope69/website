@@ -60,7 +60,7 @@
 				<p>You can find me around a few places.</p>
 
 				<h2>Email</h2>
-				<p>I like emails. Send me a nice one. <a href="mailto:z@colley.com"  target="_blank" contenteditable="false">z@ccolley.com</a></p>
+				<p>I like emails. Send me a nice one: <a href="mailto:z@colley.com"  target="_blank" contenteditable="false">z@ccolley.com</a>. CV available on request.</p>
 
 				<h2>GitHub</h2>
 				<p>A lot of my time is spent coding and <a href="http://www.github.com/zaccolley" target="_blank" contenteditable="false">push a lot online </a>. This site <a href="http://www.github.com/zaccolley/sight" target="_blank" contenteditable="false">is there</a> too!
@@ -74,7 +74,7 @@
 
 				<h2>LinkedIn</h2>
 				<p>I'm also <a href="http://uk.linkedin.com/in/zaccolley" target="_blank" contenteditable="false">here apparently</a>&hellip;</p>
-				
+
 			</section>
 
 			<section id="workcontent">
