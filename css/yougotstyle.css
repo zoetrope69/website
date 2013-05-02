@@ -59,6 +59,7 @@ article .head #face{
 }
 
 article .head #title{
+	min-width: 200px;
 	text-align: center;
 	text-transform: uppercase;
 	text-shadow: 0 0.1em hsl(0, 0%, 55%);
@@ -97,6 +98,7 @@ article .head #title{
 
 .notepad{
 	width: 100%;
+	min-width: 200px;
 	overflow-y: hidden;
 	height: 400px;
 	font-family: monospace;
@@ -366,14 +368,17 @@ header li{
 
 /* title gets smaller when you resize the window */
 
-@media (max-width: 1200px){ article .head #title{ font-size: 4.5em; } }
-@media (max-width: 1000px){ article .head #title{ font-size: 3.5em; } }
-@media (max-width: 800px){ article .head #title{ font-size: 2.5em; } }
+@media (max-width: 1300px){ article .head #title{ font-size: 5em; } }
+@media (max-width: 1000px){ article .head #title{ font-size: 4em; } }
+@media (max-width: 800px){ article .head #title{ font-size: 3em; } }
 
 /* title changes but also some other adjustments to the notepad */
  
 @media (max-width: 600px){
 	article{ width: 70%; }
-	article .head #title{ font-size: 1.5em; }
+	article .head #title{ font-size: 2.5em; }
 	header h1{ font-size: 0.85em; }
 }
+
+@media (max-width: 450px){ article .head #title{ font-size: 2em; } article{ width: 80%; } }
+@media (max-width: 350px){ article .head #title{ font-size: 1.5em; } article{ width: 90%; } }
