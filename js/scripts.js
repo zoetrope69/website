@@ -24,10 +24,14 @@ $('nav').find('li').mouseup(function(){
 	var randTitleFrontColour = randTitleColour + ', 50%, 40%)';
 	var randTitleShadowColour = randTitleColour + ', 50%, 20%)';
 
+	// change the colours!
+
 	$('body').css('background-color', randBackColour);
 	$('#title').css('color', randTitleFrontColour);
 	$('#title').css('text-shadow', 	'0 0.1em ' + randTitleShadowColour);
-	$('#face').css('border-color',  randTitleShadowColour);	
+	$('#face').css('border-color',  randTitleShadowColour);
+
+	$('.textarea').find('a').css('color', randTitleShadowColour); // changes the link colours too
 });
 
 /* top right buttons */
