@@ -305,12 +305,18 @@ header li{
 }
 
 .textarea h2{
-	font-size: 13px;
+	font-size: 1em;
 }
 
 .textarea p{
 	color: rgba(0,0,0,0.85);
 }
+
+/* markdown-esque styling */
+.textarea p, h2, .textarea section ul{ margin-bottom: 1em; }
+.textarea h2::before{ content: '## '; }
+.textarea em::before, .textarea em::after{ content: '_'; }
+.textarea li::before{ content: '+ '; }
 
 .textarea span.inactive{ /* inactive links */
 	color: gray;

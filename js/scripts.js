@@ -107,7 +107,7 @@ function updateLastfmText(){
 				output += "I listened to <a href='" + url + "' target='_blank' contenteditable='false'>'" + name + "' by " + artist + "</a> " + timeConvert(time);
 			}
 		}
-		$('#mostrecenttrack').html(output);
+		$('#mostrecenttrack').html(output + $('#mostrecenttrack').html());
 	});
 
 	// who I'm into link at the moment
