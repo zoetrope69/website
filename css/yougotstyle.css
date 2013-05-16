@@ -1,5 +1,9 @@
-/* these are the styles yo */
-
+@font-face {
+  font-family: 'Source Code Pro';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Source Code Pro'), local('SourceCodePro-Regular'), url(http://themes.googleusercontent.com/static/fonts/sourcecodepro/v3/mrl8jkM18OlOQN8JLgasDxM0YzuT7MdOe03otPbuUS0.woff) format('woff');
+}
 @font-face {
   font-family: 'Alfa Slab One';
   font-weight: 400;
@@ -23,7 +27,7 @@ html{
 }
 
 body{
-	background-color: hsl(230, 10%, 25%);
+	background-color: hsl(230, 10%, 35%);
 	-webkit-transition: background .75s ease-in;
 	   -moz-transition: background .75s ease-in;
 	    -ms-transition: background .75s ease-in;
@@ -101,7 +105,8 @@ article .head #title{
 	min-width: 200px;
 	overflow-y: hidden;
 	height: 400px;
-	font-family: monospace;
+	font-family: 'Source Code Pro', monospace;
+	font-size: .8em;
 }
 
 .notepad-transitions{
@@ -385,4 +390,9 @@ header li{
 
 /* blog */
 
-.audioimg{ width: 30%; }
+.postwrap .audioimg{ width: 30%; }
+.postwrap em{ background-color: rgba(45, 120, 160, .2); }
+.postwrap code{
+	font-size: 1rem;
+	background-color: rgba(95, 120, 160, .2);
+}
