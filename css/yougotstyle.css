@@ -389,10 +389,11 @@ header li{
 @media (max-width: 350px){ article .head #title{ font-size: 1.5em; } article{ width: 90%; } }
 
 /* blog */
+/* ---- */
 
-.postwrap .audioimg{ width: 30%; }
-.postwrap em{ background-color: rgba(45, 120, 160, .2); }
-.postwrap code{
+.post .audioimg{ width: 30%; }
+.post em{ background-color: rgba(45, 120, 160, .2); }
+.post code{
 	font-size: 1rem;
 	background-color: rgba(95, 120, 160, .2);
 }
@@ -400,6 +401,7 @@ header li{
 /* css triangles post */
 
 .csstriangle .box{
+	margin: 1em 0;
 	width: 100px;
 	height: 100px;
 	display: inline-block;
@@ -415,4 +417,46 @@ header li{
 	width: 0px;
 	border: 50px solid transparent;
 	border-bottom: 50px solid #000;
+}
+
+/* css recreated ui post*/
+
+.esch{
+	cursor: default;
+	margin: 0 .5em .5em;
+	width: 20px;
+	height: 20px;
+	font-size: 30px;
+	text-align: center;
+	background: rgb(33, 51, 60);
+
+	-webkit-border-radius: 2px;
+	   -moz-border-radius: 2px;
+			border-radius: 2px;
+}
+
+.esch::after{
+	color: #fff;
+	display: block;
+	content: '+';
+}
+
+.esch:hover::after{
+	-webkit-transition: all 1s;
+	   -moz-transition: all 1s;
+		-ms-transition: all 1s;
+		 -o-transition: all 1s;
+			transition: all 1s;
+
+	-webkit-transform: rotate(45deg);
+	   -moz-transform: rotate(45deg);
+		-ms-transform: rotate(45deg);
+		 -o-transform: rotate(45deg);
+			transform: rotate(45deg);
+
+	-webkit-transform-origin: 50%;
+	   -moz-transform-origin: 50%;
+		-ms-transform-origin: 50%;
+		 -o-transform-origin: 50%;
+			transform-origin: 50%;
 }
