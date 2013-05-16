@@ -382,3 +382,7 @@ header li{
 
 @media (max-width: 450px){ article .head #title{ font-size: 2em; } article{ width: 80%; } }
 @media (max-width: 350px){ article .head #title{ font-size: 1.5em; } article{ width: 90%; } }
+
+/* blog */
+
+.audioimg{ width: 30%; }
