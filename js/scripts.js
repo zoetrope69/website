@@ -9,7 +9,8 @@
 	var hash = window.location.hash.substring(1); // we dont want the # at the start of the hash e.g /#home
 	if(hash.length > 1){ sectionChange(hash); } // if there is a hash (more than one so no dead # links)
 	else{ $('#homecontent').fadeIn(750); }
-	replaceFace();
+
+	replaceFace(); // replaces the 'o' in 'colley' with my face
 })();
 
 /* nav links */
@@ -64,12 +65,20 @@ function replaceFace(){
 	});
 }
 
+
+
+
 /* data getting */
 /* ------------ */
 
 function updateData(){
 	updateLastfmText();
 	updateGitHubText();
+	
+	// clickable link creation
+	$('a').each(function(){
+		$(this).attr('contenteditable', false);
+	});
 }
 
 /* github */
