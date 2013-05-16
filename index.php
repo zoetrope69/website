@@ -35,10 +35,10 @@
 
 		<nav>
 			<ul>
-				<li id="home"><a href="#">Home</a></li>
-				<li id="me"><a href="#">Me</a></li>
-				<li id="work"><a href="#">Work</a></li>
-				<li id="stuff"><a href="#">Stuff</a></li>
+				<li id="home"><a href="#home">Home</a></li>
+				<li id="me"><a href="#me">Me</a></li>
+				<li id="work"><a href="#work">Work</a></li>
+				<li id="stuff"><a href="#stuff">Stuff</a></li>
 				<li id="blog"><a href="http://blog.zaccolley.com">Blog</a></li>
 			</ul>
 		</nav>
@@ -122,6 +122,11 @@
 				</ul>
 				
 			</section>
+
+			<section id="blogcontent">
+				<p>Loading blog&hellip;</p>
+			</section>
+
 
 		</section>
 	</section>

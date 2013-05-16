@@ -1,22 +1,21 @@
 /* on load */
 (function(){
-	replaceFace();
 	updateData(); // from last.fm and github etc
 	$('.notepad').addClass('notepad-transitions'); // Adding in after loading to try and combat transitions on load?..
     $('.notepad').draggable({ handle: 'header', containment: 'document', revert: true});
+	
 	$('.textarea').find('section').hide();
-	$('#homecontent').fadeIn(750);
+	// if the URL has a hash in we want to load that section
+	var hash = window.location.hash.substring(1); // we dont want the # at the start of the hash e.g /#home
+	if(hash.length > 1){ sectionChange(hash); } // if there is a hash (more than one so no dead # links)
+	else{ $('#homecontent').fadeIn(750); }
+	replaceFace();
 })();
 
 /* nav links */
 
 $('nav').find('li').mouseup(function(){
-	$('.textarea').find('section').hide();
-	$('#' + this.id + 'content').fadeIn(500);
-
-	var pageName = this.id.charAt(0).toUpperCase() + this.id.slice(1);
-	document.title = pageName  + ' - Zac Colley';
-	$('header').find('h1').text(this.id + ' - Notepad');
+	sectionChange(this.id);
 	
 	var randNo = Math.floor(Math.random() * 360); 
 	var randBackColour = 'hsl(' + randNo + ', 20%, 40%)';
@@ -33,6 +32,15 @@ $('nav').find('li').mouseup(function(){
 
 	$('.textarea').find('a').css('color', randTitleShadowColour); // changes the link colours too
 });
+
+function sectionChange(id){
+	$('.textarea').find('section').hide();
+	$('#' + id + 'content').fadeIn(500);
+
+	var pageName = id.charAt(0).toUpperCase() + id.slice(1);
+	document.title = pageName  + ' - Zac Colley';
+	$('header').find('h1').text(id + ' - Notepad');
+}
 
 /* top right buttons */
 
