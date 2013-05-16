@@ -396,3 +396,23 @@ header li{
 	font-size: 1rem;
 	background-color: rgba(95, 120, 160, .2);
 }
+
+/* css triangles post */
+
+.csstriangle .box{
+	width: 100px;
+	height: 100px;
+	display: inline-block;
+	border-style: solid;
+	border-color: #505050 #FFA300 #8BFF8B #418AE6;
+}
+
+.csstriangle .box:nth-child(1){ width: 100px; height: 100px; border-width: 1px; }
+.csstriangle .box:nth-child(2), .csstriangle .box:nth-child(3){ width: 0px; height: 0px; border-width: 50px; }
+.csstriangle .box:nth-child(3){ border-color: transparent transparent #505050 transparent; }
+
+.csstriangle .singlebox{
+	width: 0px;
+	border: 50px solid transparent;
+	border-bottom: 50px solid #000;
+}
