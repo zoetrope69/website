@@ -23,7 +23,7 @@ html{
 }
 
 body{
-	background-color: hsl(230, 10%, 5%);
+	background-color: hsl(230, 10%, 25%);
 	-webkit-transition: background .75s ease-in;
 	   -moz-transition: background .75s ease-in;
 	    -ms-transition: background .75s ease-in;
@@ -32,26 +32,55 @@ body{
 }
 
 article{
-	width: 60vw;
+	width: 60%;
 	margin: 0 auto;
 }
 
-article #title{
+article .head{
 	margin: 2.5% auto;
+}
+
+article .head #face{
+	display: none;
+	margin: 0 .05em -.1em 0;
+	height: .88em;
+	border-bottom: .1em solid;
+	border-color: hsl(0, 0%, 55%);
+
+	-webkit-border-radius: .25em / .3em;
+	   -moz-border-radius: .25em / .3em;
+			border-radius: .25em / .3em;
+
+	-webkit-transition: border-color .75s ease-in;
+	   -moz-transition: border-color .75s ease-in;
+	    -ms-transition: border-color .75s ease-in;
+	     -o-transition: border-color .75s ease-in;
+			transition: border-color .75s ease-in;
+}
+
+article .head #title{
+	min-width: 200px;
 	text-align: center;
 	text-transform: uppercase;
-	text-shadow: 0 0.1em hsl(25, 10%, 90%);
+	text-shadow: 0 0.1em hsl(0, 0%, 55%);
 	line-height: 1em;
-	letter-spacing: 0em;
+	letter-spacing: .05em;
 	color: hsl(50, 10%, 95%);
 	font-size: 6.5em;
 	font-family: 'Alfa Slab One', Helvetica, Arial, sans-serif;
+	cursor: default;
 	
 	-webkit-transition: color .75s ease-in, text-shadow .75s ease-in;
 	   -moz-transition: color .75s ease-in, text-shadow .75s ease-in;
 	    -ms-transition: color .75s ease-in, text-shadow .75s ease-in;
 	     -o-transition: color .75s ease-in, text-shadow .75s ease-in;
 			transition: color .75s ease-in, text-shadow .75s ease-in;
+
+
+	-webkit-user-select: none;
+	   -moz-user-select: none;
+		-ms-user-select: none;
+			user-select: none;
 }
 
 .notepad, header li{
@@ -69,6 +98,7 @@ article #title{
 
 .notepad{
 	width: 100%;
+	min-width: 200px;
 	overflow-y: hidden;
 	height: 400px;
 	font-family: monospace;
@@ -277,11 +307,23 @@ header li{
 }
 
 .textarea h2{
-	font-size: 13px;
+	font-size: 1em;
 }
 
 .textarea p{
 	color: rgba(0,0,0,0.85);
+}
+
+/* markdown-esque styling */
+.textarea p, h2, .textarea section ul{ margin-bottom: 1em; }
+.textarea h2::before{ content: '## '; }
+.textarea em::before, .textarea em::after{ content: '_'; }
+.textarea li::before{ content: '+ '; }
+
+.textarea span.inactive{ /* inactive links */
+	color: gray;
+	cursor: help;
+	text-decoration: underline;
 }
 
 .textarea::-webkit-scrollbar{
@@ -326,14 +368,17 @@ header li{
 
 /* title gets smaller when you resize the window */
 
-@media (max-width: 1200px){ article #title{ font-size: 4.5em; } }
-@media (max-width: 1000px){ article #title{ font-size: 3.5em; } }
-@media (max-width: 800px){ article #title{ font-size: 2.5em; } }
+@media (max-width: 1300px){ article .head #title{ font-size: 5em; } }
+@media (max-width: 1000px){ article .head #title{ font-size: 4em; } }
+@media (max-width: 800px){ article .head #title{ font-size: 3em; } }
 
 /* title changes but also some other adjustments to the notepad */
  
 @media (max-width: 600px){
 	article{ width: 70%; }
-	article #title{ font-size: 1.5em; }
+	article .head #title{ font-size: 2.5em; }
 	header h1{ font-size: 0.85em; }
 }
+
+@media (max-width: 450px){ article .head #title{ font-size: 2em; } article{ width: 80%; } }
+@media (max-width: 350px){ article .head #title{ font-size: 1.5em; } article{ width: 90%; } }

@@ -1,10 +1,11 @@
 /* on load */
 (function(){
+	replaceFace();
+	updateData(); // from last.fm and github etc
 	$('.notepad').addClass('notepad-transitions'); // Adding in after loading to try and combat transitions on load?..
     $('.notepad').draggable({ handle: 'header', containment: 'document', revert: true});
 	$('.textarea').find('section').hide();
-	$('#homecontent').fadeIn(500);
-	updateData(); // from last.fm and github etc
+	$('#homecontent').fadeIn(750);
 })();
 
 /* nav links */
@@ -23,9 +24,14 @@ $('nav').find('li').mouseup(function(){
 	var randTitleFrontColour = randTitleColour + ', 50%, 40%)';
 	var randTitleShadowColour = randTitleColour + ', 50%, 20%)';
 
+	// change the colours!
+
 	$('body').css('background-color', randBackColour);
 	$('#title').css('color', randTitleFrontColour);
 	$('#title').css('text-shadow', 	'0 0.1em ' + randTitleShadowColour);
+	$('#face').css('border-color',  randTitleShadowColour);
+
+	$('.textarea').find('a').css('color', randTitleShadowColour); // changes the link colours too
 });
 
 /* top right buttons */
@@ -38,6 +44,17 @@ $('header').find('li').mouseup(function(){
 		$('.notepad').fadeIn(500);
 	}
 });
+
+/* replace 'O' in heading with my face */
+
+function replaceFace(){
+	var url = $('#face').attr('src');
+	$('#face').remove();
+	$('#title').delay(250).fadeOut(500, function(){
+		$('#title').replaceWith('<h1 id="title" style="display:none">Zac C<img style="display: inline-block;" id="face" src="' + url + '" alt="My gravatar image">lley</h1>');
+		$('#title').fadeIn(500);
+	});
+}
 
 /* data getting */
 /* ------------ */
@@ -88,20 +105,19 @@ function updateLastfmText(){
 			var url = json.recenttracks.track[0].url;
 
 			if(typeof json.recenttracks.track[0]["@attr"] !== 'undefined'){ // if the track is now playing
-				output += "I'm listening to <a href='" + url + "' target='_blank' contenteditable='false'>'" + name + "' by " + artist + "</a>. ";
+				output += "Oh golly! I'm listening to <a href='" + url + "' target='_blank' contenteditable='false'>'" + name + "' by " + artist + "</a> right now! ";
 			}else{
 				var time = +new Date()/1000 - json.recenttracks.track[0].date["uts"]; // get the time in seconds of when it was scrobbled
 				output += "I listened to <a href='" + url + "' target='_blank' contenteditable='false'>'" + name + "' by " + artist + "</a> " + timeConvert(time);
 			}
 		}
-		$('#mostrecenttrack').html(output);
+		$('#mostrecenttrack').html(output + $('#mostrecenttrack').html());
 	});
 
 	// who I'm into link at the moment
 	var period = ['overall', '7day', '1month', '3month', '6month', '12month']; // different periods
 	var url = 'http://ws.audioscrobbler.com/2.0/?method=user.gettopartists&limit=1&period=' + period[1] + '&user=' + user + '&api_key=' + apiKey + '&format=json';
 	$.getJSON(url, function(json){
-		console.log(json)
 		if(json.topartists.artist.name){ // if it has found a name for the artist
 			var artist = json.topartists.artist.name;
 			var url = json.topartists.artist.url;
