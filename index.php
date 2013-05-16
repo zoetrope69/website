@@ -6,6 +6,11 @@
 	<title>Zac Colley</title>
 	<link rel="shortcut icon" href="img/notepad.png" />
 	<link rel="stylesheet" href="css/yougotstyle.css">
+
+	<meta property="og:title" content="Zac Colley" />
+	<meta property="og:url" content="http://zaccolley.com/" />
+	<meta property="og:description" content="Zac Colley &bull; Web Developer and Designer" />
+	<meta property="og:image" content="<?php echo $gravatar; ?>" />
 </head>
 <body>
 <article>
