@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0;">
 	<title>Zac Colley</title>
 	<link rel="shortcut icon" href="img/notepad.png" />
-	<link rel="stylesheet" href="css/yougotstyle.css">
+	<link rel="stylesheet" href="css/style.css">
 
 	<meta property="og:title" content="Zac Colley" />
 	<meta property="og:url" content="http://zaccolley.com/" />
@@ -140,5 +140,6 @@
 <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
 <script src="http://code.jquery.com/ui/1.10.2/jquery-ui.js"></script>
 <script type="text/javascript" src="js/scripts.js"></script>
+<script type="text/javascript" src="js/prefixfree.js"></script>
 </body>
 </html>

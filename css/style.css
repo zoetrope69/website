@@ -14,10 +14,7 @@
 	padding: 0;
 	outline: none;
 	border: none;
-
-	-webkit-box-sizing: border-box;
-	   -moz-box-sizing: border-box;
-			box-sizing: border-box;
+	box-sizing: border-box;
 }
 
 h1, h2, h3{ font-weight: normal; }
@@ -28,11 +25,7 @@ html{
 
 body{
 	background-color: hsl(230, 10%, 35%);
-	-webkit-transition: background .75s ease-in;
-	   -moz-transition: background .75s ease-in;
-	    -ms-transition: background .75s ease-in;
-	     -o-transition: background .75s ease-in;
-			transition: background .75s ease-in;
+	transition: background .75s ease-in;
 }
 
 article{
@@ -50,16 +43,8 @@ article .head #face{
 	height: .88em;
 	border-bottom: .1em solid;
 	border-color: hsl(0, 0%, 55%);
-
-	-webkit-border-radius: .25em / .3em;
-	   -moz-border-radius: .25em / .3em;
-			border-radius: .25em / .3em;
-
-	-webkit-transition: border-color .75s ease-in;
-	   -moz-transition: border-color .75s ease-in;
-	    -ms-transition: border-color .75s ease-in;
-	     -o-transition: border-color .75s ease-in;
-			transition: border-color .75s ease-in;
+	border-radius: .25em / .3em;	
+	transition: border-color .75s ease-in;
 }
 
 article .head #title{
@@ -73,18 +58,8 @@ article .head #title{
 	font-size: 6.5em;
 	font-family: 'Alfa Slab One', Helvetica, Arial, sans-serif;
 	cursor: default;
-	
-	-webkit-transition: color .75s ease-in, text-shadow .75s ease-in;
-	   -moz-transition: color .75s ease-in, text-shadow .75s ease-in;
-	    -ms-transition: color .75s ease-in, text-shadow .75s ease-in;
-	     -o-transition: color .75s ease-in, text-shadow .75s ease-in;
-			transition: color .75s ease-in, text-shadow .75s ease-in;
-
-
-	-webkit-user-select: none;
-	   -moz-user-select: none;
-		-ms-user-select: none;
-			user-select: none;
+	transition: color .75s ease-in, text-shadow .75s ease-in;
+	user-select: none;
 }
 
 .notepad, header li{
@@ -94,10 +69,7 @@ article .head #title{
 	border-bottom-color: #404040;
 	border-right-color: #404040;
 	background-color: #CfD0C8;
-
-	-webkit-box-shadow: inset 1px 1px 0 #FFF, inset -1px -1px 0 #808080;
-	   -moz-box-shadow: inset 1px 1px 0 #FFF, inset -1px -1px 0 #808080;
-			box-shadow: inset 1px 1px 0 #FFF, inset -1px -1px 0 #808080;
+	box-shadow: inset 1px 1px 0 #FFF, inset -1px -1px 0 #808080;
 }
 
 .notepad{
@@ -110,11 +82,7 @@ article .head #title{
 }
 
 .notepad-transitions{
-	-webkit-transition: height 0.5s, width 0.5s;
-	   -moz-transition: height 0.5s, width 0.5s;
-	    -ms-transition: height 0.5s, width 0.5s;
-	     -o-transition: height 0.5s, width 0.5s;
-			transition: height 0.5s, width 0.5s;
+	transition: height 0.5s, width 0.5s;
 }
 
 .notepad-max{
@@ -132,17 +100,9 @@ header{
 	padding: 1px;
 
 	background: #122A70;
-	background: -webkit-gradient(linear, left top, right top, from(#122A70), to(#9fC6ED));
-	background: -webkit-linear-gradient(left, #122A70, #9fC6ED);
-	background:    -moz-linear-gradient(left, #122A70, #9fC6ED);
-	background:     -ms-linear-gradient(left, #122A70, #9fC6ED);
-	background:      -o-linear-gradient(left, #122A70, #9fC6ED);
+	background: linear-gradient(left, #122A70, #9fC6ED);
 
-	-webkit-touch-callout: none;
-	  -webkit-user-select: none;
-	   -khtml-user-select: none;
-		 -moz-user-select: none;
-		  -ms-user-select: none;
+	user-select: none;
 }
 
 header h1{
@@ -168,15 +128,9 @@ header li{
 }
 
 #min{
-	-webkit-box-shadow: inset 1px 1px 0 #FFF, inset -1px -1px 0 #808080,
-						inset 0 0 0 2px #CFD0C8,inset 2px 0 0 2px #CFD0C8,
-						inset -3px 0 0 2px #CFD0C8, inset 0 -2px 0 2px #000;
-	   -moz-box-shadow: inset 1px 1px 0 #FFF, inset -1px -1px 0 #808080,
-						inset 0 0 0 2px #CFD0C8,inset 2px 0 0 2px #CFD0C8,
-						inset -3px 0 0 2px #CFD0C8, inset 0 -2px 0 2px #000;
-			box-shadow: inset 1px 1px 0 #FFF, inset -1px -1px 0 #808080,
-						inset 0 0 0 2px #CFD0C8,inset 2px 0 0 2px #CFD0C8,
-						inset -3px 0 0 2px #CFD0C8, inset 0 -2px 0 2px #000;
+	box-shadow: inset 1px 1px 0 #FFF, inset -1px -1px 0 #808080,
+				inset 0 0 0 2px #CFD0C8,inset 2px 0 0 2px #CFD0C8,
+				inset -3px 0 0 2px #CFD0C8, inset 0 -2px 0 2px #000;
 }
 
 #min:active{
@@ -184,27 +138,15 @@ header li{
 	border-bottom-color: #CFD0C8;
 	border-right-color: #CFD0C8;
 
-	-webkit-box-shadow:inset 1px 1px 0 #808080, inset -1px -1px 0 #FFF,
-						inset 0 0 0 2px #CFD0C8, inset 2px 0 0 2px #cfd0c8,
-						inset -3px 0 0 2px #CFD0C8, inset 0 -2px 0 2px #000;
-	   -moz-box-shadow:inset 1px 1px 0 #808080, inset -1px -1px 0 #FFF,
-						inset 0 0 0 2px #CFD0C8, inset 2px 0 0 2px #cfd0c8,
-						inset -3px 0 0 2px #CFD0C8, inset 0 -2px 0 2px #000;
-			box-shadow: inset 1px 1px 0 #808080, inset -1px -1px 0 #FFF,
-						inset 0 0 0 2px #CFD0C8, inset 2px 0 0 2px #cfd0c8,
-						inset -3px 0 0 2px #CFD0C8, inset 0 -2px 0 2px #000;	
+	box-shadow: inset 1px 1px 0 #808080, inset -1px -1px 0 #FFF,
+				inset 0 0 0 2px #CFD0C8, inset 2px 0 0 2px #cfd0c8,
+				inset -3px 0 0 2px #CFD0C8, inset 0 -2px 0 2px #000;	
 }
 
 #max{
-	-webkit-box-shadow: inset 1px 1px 0 #FFF, inset -1px -1px 0 #808080,
-						inset 0 0 0 2px #CFD0C8, inset 1px 0 0 2px #CFD0C8,
-						inset -1px 0 0 2px #CFD0C8, inset 0px 1px 0 2px #CFD0C8, inset 0 1px 0 4px #000;
-	   -moz-box-shadow: inset 1px 1px 0 #FFF, inset -1px -1px 0 #808080,
-						inset 0 0 0 2px #CFD0C8, inset 1px 0 0 2px #CFD0C8,
-						inset -1px 0 0 2px #CFD0C8, inset 0px 1px 0 2px #CFD0C8, inset 0 1px 0 4px #000;
-			box-shadow: inset 1px 1px 0 #FFF, inset -1px -1px 0 #808080,
-						inset 0 0 0 2px #CFD0C8, inset 1px 0 0 2px #CFD0C8,
-						inset -1px 0 0 2px #CFD0C8, inset 0px 1px 0 2px #CFD0C8, inset 0 1px 0 4px #000;
+	box-shadow: inset 1px 1px 0 #FFF, inset -1px -1px 0 #808080,
+				inset 0 0 0 2px #CFD0C8, inset 1px 0 0 2px #CFD0C8,
+				inset -1px 0 0 2px #CFD0C8, inset 0px 1px 0 2px #CFD0C8, inset 0 1px 0 4px #000;
 }
 
 #max:active{
@@ -212,15 +154,9 @@ header li{
 	border-bottom-color: #CFD0C8;
 	border-right-color: #CFD0C8;
 
-	-webkit-box-shadow: inset 1px 1px 0 #808080, inset -1px -1px 0 #FFF,
-						inset 0 0 0 2px #CFD0C8, inset 1px 0 0 2px #CFD0C8,
-						inset -1px 0 0 2px #CFD0C8, inset 0px 1px 0 2px #CFD0C8, inset 0 1px 0 4px #000;
-	   -moz-box-shadow: inset 1px 1px 0 #808080, inset -1px -1px 0 #FFF,
-						inset 0 0 0 2px #CFD0C8, inset 1px 0 0 2px #CFD0C8,
-						inset -1px 0 0 2px #CFD0C8, inset 0px 1px 0 2px #CFD0C8, inset 0 1px 0 4px #000;
-			box-shadow: inset 1px 1px 0 #808080, inset -1px -1px 0 #FFF,
-						inset 0 0 0 2px #CFD0C8, inset 1px 0 0 2px #CFD0C8,
-						inset -1px 0 0 2px #CFD0C8, inset 0px 1px 0 2px #CFD0C8, inset 0 1px 0 4px #000;
+	box-shadow: inset 1px 1px 0 #808080, inset -1px -1px 0 #FFF,
+				inset 0 0 0 2px #CFD0C8, inset 1px 0 0 2px #CFD0C8,
+				inset -1px 0 0 2px #CFD0C8, inset 0px 1px 0 2px #CFD0C8, inset 0 1px 0 4px #000;
 }
 
 #close{
@@ -236,9 +172,7 @@ header li{
 	border-bottom-color: #cfd0c8;
 	border-right-color: #cfd0c8;
 
-	-webkit-box-shadow: inset 1px 1px 0 #808080, inset -1px -1px 0 #FFF;
-	   -moz-box-shadow: inset 1px 1px 0 #808080, inset -1px -1px 0 #FFF;
-			box-shadow: inset 1px 1px 0 #808080, inset -1px -1px 0 #FFF;
+	box-shadow: inset 1px 1px 0 #808080, inset -1px -1px 0 #FFF;
 }
 
 #close a{
@@ -259,12 +193,7 @@ header li{
 	border-color: transparent;
 	float: left;
 	list-style: none;
-
-	-webkit-touch-callout: none;
-	  -webkit-user-select: none;
-	   -khtml-user-select: none;
-		 -moz-user-select: none;
-		  -ms-user-select: none;
+	user-select: none;
 }
 
 .notepad nav ul li:hover{
@@ -301,10 +230,7 @@ header li{
 	border-right-color: #FFF;
 	background-color: #FFF;
 	line-height: 1.5em;
-
-	-webkit-box-shadow: inset -1px -1px 0 #CFD0C8, inset 1px 1px 0 #404040;
-	   -moz-box-shadow: inset -1px -1px 0 #CFD0C8, inset 1px 1px 0 #404040;
-			box-shadow: inset -1px -1px 0 #CFD0C8, inset 1px 1px 0 #404040;
+	box-shadow: inset -1px -1px 0 #CFD0C8, inset 1px 1px 0 #404040;
 }
 
 .textarea h1, .textarea h2{
@@ -345,10 +271,7 @@ header li{
 	border-bottom-color: #404040;
 	border-right-color: #404040;
 	background-color: #CFD0C8;
-
-	-webkit-box-shadow: inset 1px 1px 0 #FFF, inset -1px -1px 0 #808080;
-	   -moz-box-shadow: inset 1px 1px 0 #FFF, inset -1px -1px 0 #808080;
-			box-shadow: inset 1px 1px 0 #FFF, inset -1px -1px 0 #808080;
+	box-shadow: inset 1px 1px 0 #FFF, inset -1px -1px 0 #808080;
 }
 
 .textarea::-webkit-scrollbar-button:active{
@@ -357,10 +280,7 @@ header li{
 	border-bottom-color: #CFD0C8;
 	border-right-color: #CFD0C8;
 	background-color: #CFD0C8;
-
-	-webkit-box-shadow: inset 1px 1px 0 #808080, inset -1px -1px 0 #FFF;
-	   -moz-box-shadow: inset 1px 1px 0 #808080, inset -1px -1px 0 #FFF;
-			box-shadow: inset 1px 1px 0 #808080, inset -1px -1px 0 #FFF;
+	box-shadow: inset 1px 1px 0 #808080, inset -1px -1px 0 #FFF;
 }
 
 .textarea::-webkit-scrollbar-button:start{
@@ -429,10 +349,7 @@ header li{
 	font-size: 30px;
 	text-align: center;
 	background: rgb(33, 51, 60);
-
-	-webkit-border-radius: 2px;
-	   -moz-border-radius: 2px;
-			border-radius: 2px;
+	border-radius: 2px;
 }
 
 .esch::after{
@@ -442,21 +359,7 @@ header li{
 }
 
 .esch:hover::after{
-	-webkit-transition: all 1s;
-	   -moz-transition: all 1s;
-		-ms-transition: all 1s;
-		 -o-transition: all 1s;
-			transition: all 1s;
-
-	-webkit-transform: rotate(45deg);
-	   -moz-transform: rotate(45deg);
-		-ms-transform: rotate(45deg);
-		 -o-transform: rotate(45deg);
-			transform: rotate(45deg);
-
-	-webkit-transform-origin: 50%;
-	   -moz-transform-origin: 50%;
-		-ms-transform-origin: 50%;
-		 -o-transform-origin: 50%;
-			transform-origin: 50%;
+	transition: all 1s;
+	transform: rotate(45deg);
+	transform-origin: 50%;
 }
