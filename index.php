@@ -90,7 +90,7 @@
 				<h2>Code</h2>
 				
 				<ul>
-					<li><span class="inactive" title="Coming soon&hellip; ;¬)">UPRacing Website</span> &bull; Design <em>Dan Gordon &amp; Matt Jackson.</em></li>
+					<li><a href="http://upracing.co.uk" title="UPRacing">UPRacing Website</a> &bull; Design <em>Dan Gordon &amp; Matt Jackson.</em></li>
 				</ul>
 
 				<h2>Visuals</h2>
