@@ -257,6 +257,12 @@ header li{
 	text-decoration: underline;
 }
 
+.textarea time{
+	color: #444;
+	font-size: .85em;
+}
+
+
 .textarea::-webkit-scrollbar{
     width: 16px;
 }

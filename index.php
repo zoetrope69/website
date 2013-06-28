@@ -90,21 +90,21 @@
 				<h2>Code</h2>
 				
 				<ul>
-					<li><a href="http://upracing.co.uk" title="UPRacing">UPRacing Website</a> &bull; Design <em>Dan Gordon &amp; Matt Jackson.</em></li>
+					<li><time datetime="2013-07-01">01-07-2013</time> - <a href="http://upracing.co.uk" title="UPRacing">UPRacing Website</a> &bull; Design <em>Dan Gordon &amp; Matt Jackson.</em></li>
 				</ul>
 
 				<h2>Visuals</h2>
 				
 				<ul>
 					<li><span class="inactive" title="Coming soon&hellip; ;¬)">UPRacing Engine Stats App</span> &bull; Intial branding and style <em>Dan Gordon.</em></li>
-					<li><a href="http://minecraftexplore.tumblr.com" target="_blank">Minecraft Explore</a> &bull; <em>No longer updated.</em> :¬(</li>
+					<li><time datetime="2011-02-14">14-02-2011</time> - <a href="http://minecraftexplore.tumblr.com" target="_blank">Minecraft Explore</a> &bull; <em>No longer updated.</em> :¬(</li>
 				</ul>
 
 				<h2>Both!</h2>
 				
 				<ul>
 					<li><span class="inactive" title="Coming soon&hellip; ;¬)">University of Portmouth Computing Society's Website</span> &bull; Lead back-end <em>Rich Solomou.</em></li>
-					<li><a href="http://www.zaccolley.com/uni/webf1">WEBF1 C/W</a> &bull; Web Foundations University Coursework</li>
+					<li><time datetime="2013-03-15">15-03-2013</time> - <a href="http://www.zaccolley.com/uni/webf1">WEBF1 C/W</a> &bull; Web Foundations University Coursework</li>
 				</ul>
 
 			</section>
@@ -116,15 +116,15 @@
 				<h2>Talks</h2>
 				
 				<ul>
-					<li><a href="http://www.zaccolley.com/stuff/sexycsstalk/" target="_blank">SEXY CSS</a> &bull; Slides for a small <em>UoPCS</em> talk I done did.</li>
+					<li><time datetime="2013-03-12">12-03-2013</time> - <a href="http://www.zaccolley.com/stuff/sexycsstalk/" target="_blank">SEXY CSS</a> &bull; Slides for a small <em>UoPCS</em> talk.</li>
 				</ul>
 
 				<h2>CSS Experiments</h2>
 
 				<ul>
-					<li><a href="http://www.zaccolley.com/stuff/foraaron/" target="_blank">Gameboy</a> &bull; Birthday present for a friend. <em>Only works in Chrome - Sorry!</em> :¬$</li>
-					<li><a href="http://www.zaccolley.com/uni/forrich" target="_blank">Birthday Cake</a> &bull; Another present. <em>Check dem flickering candles.</em></li>
-					<li><a href="http://zaccolley.com/christmas2012/" target="_blank">Christmas Card Maker</a> &bull; Made with my festive bro.</li>
+					<li><time datetime="2013-03-23">23-03-2013</time> - <a href="http://www.zaccolley.com/stuff/foraaron/" target="_blank">Gameboy</a> &bull; Birthday present for a friend. <em>Only works in Chrome - Sorry!</em> :¬$</li>
+					<li><time datetime="2012-11-27">27-11-2012</time> - <a href="http://www.zaccolley.com/uni/forrich" target="_blank">Birthday Cake</a> &bull; Another present. <em>Check out the flickering candles. WOW.</em></li>
+					<li><time datetime="2012-12-25">25-12-2012</time> - <a href="http://zaccolley.com/christmas2012/" target="_blank">Christmas Card Maker</a> &bull; Made with my festive bro.</li>
 				</ul>
 				
 			</section>
