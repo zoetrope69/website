@@ -100,7 +100,7 @@ header{
 	padding: 1px;
 
 	background: #122A70;
-	background: linear-gradient(left, #122A70, #9fC6ED);
+	background: linear-gradient(to right, #122A70, #9fC6ED);
 
 	user-select: none;
 }

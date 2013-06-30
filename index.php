@@ -54,10 +54,10 @@
 
 				<h2>I'm Zac Colley. :¬)</h2>
 
-				<p>Web developer and designer but also a pretty cool guy*. I am studying at the University of Portsmouth for Web Technologies, a Computer Science course for web fanboys.</p>
+				<p>Web developer and designer but also a pretty cool guy*. I am studying at the University of Portsmouth for Web Technologies, a Computer Science course for web fanatics.</p>
 				<p>In my spare time I'm apart of <a href="http://www.upracing.co.uk"  target="_blank">UPRacing</a> and I am Vice President at our <a href="http://www.uopcs.com"  target="_blank">Computing Society</a>. I spend any other time hacking about on code or jamming with music.</p>
 
-				<p>*Arguably. <em>This text is editable by the way.</em> :¬{0</p>
+				<p>*Arguably. :¬{0</p>
 
 			</section>
 
