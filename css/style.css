@@ -365,7 +365,21 @@ header li{
 }
 
 .esch:hover::after{
-	transition: all 1s;
-	transform: rotate(45deg);
-	transform-origin: 50%;
+	-webkit-transition: all 1s;
+	   -moz-transition: all 1s;
+		-ms-transition: all 1s;
+		 -o-transition: all 1s;
+			transition: all 1s;
+	
+	-webkit-transform: rotate(45deg);
+	   -moz-transform: rotate(45deg);
+		-ms-transform: rotate(45deg);
+		 -o-transform: rotate(45deg);
+			transform: rotate(45deg);
+
+	-webkit-transform-origin: 50%;
+	   -moz-transform-origin: 50%;
+		-ms-transform-origin: 50%;
+		 -o-transform-origin: 50%;
+			transform-origin: 50%;
 }
