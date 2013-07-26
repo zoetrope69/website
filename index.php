@@ -117,6 +117,10 @@
 
 				<p>Some experiments, stuff and other junk. c|:¬P</p>
 
+				<ul>
+					<li><time datetime="2013-07-26">26-07-2013</time> - <a href="http://www.zaccolley.com/dandydomains/" target="_blank">dandydomains</a> &bull; App for finding interesting domains.</li>
+				</ul>
+
 				<h2>Talks</h2>
 				
 				<ul>
