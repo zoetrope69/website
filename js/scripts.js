@@ -92,7 +92,7 @@ function updateGitHubText(){
 }
 
 function displayGithubData(json){
-	var ownedRepos = new Array();
+	var ownedRepos = [];
 	for(var repo = 0; repo < json.data.length; repo++){ 
 		var forked = json.data[repo].fork; // add to array only repos that are from original account, no forks
 		if(!forked){ ownedRepos.push(json.data[repo]); }

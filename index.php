@@ -58,10 +58,10 @@
 
 				<h2>I'm Zac Colley. :¬)</h2>
 
-				<p>Web developer and designer but also a pretty cool guy*. I am studying at the University of Portsmouth for Web Technologies, a Computer Science course for web fanatics.</p>
+				<p>Web developer and designer. I am studying at the University of Portsmouth for Web Technologies, a Computer Science course for web fanatics.</p>
 				<p>In my spare time I'm apart of <a href="http://www.upracing.co.uk"  target="_blank">UPRacing</a> and I am Vice President at our <a href="http://www.uopcs.com"  target="_blank">Computing Society</a>. I spend any other time hacking about on code or jamming with music.</p>
 
-				<p>*Arguably. :¬{0</p>
+				<p>:¬{0</p>
 
 			</section>
 
@@ -73,7 +73,7 @@
 				<p>I like emails. Send me a nice one: <a href="mailto:z@colley.com"  target="_blank">z@ccolley.com</a>. CV available on request.</p>
 
 				<h2>GitHub</h2>
-				<p>A lot of my time is spent coding and <a href="http://www.github.com/zaccolley" target="_blank">push a lot online </a>. This site <a href="http://www.github.com/zaccolley/sight" target="_blank">is there</a> too!
+				<p>A lot of my time is spent coding and <a href="http://www.github.com/zaccolley" target="_blank">push a lot online</a>. This site <a href="http://www.github.com/zaccolley/sight" target="_blank">is there</a> too!
 				<span id="githubrepos">I have a number of repos using different languages at the moment. :¬)</span></p>
 
 				<h2>Twitter</h2>
