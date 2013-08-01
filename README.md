@@ -1,3 +1,3 @@
 # sight
 
-my [current](http://www.zaccolley.com) website
+my [current](http://www.zaccolley.com) website!
