@@ -18,18 +18,9 @@
 </head>
 <body>
 <article>
-
-	<?php
-		/* This grabs my gravatar or reverts to a default image if it can't get it. */	
-		$email = "zaccolley@gmail.com";
-		$defaultImg = "img/defaultface.png";
-		$dimensions = 100;
-
-		$gravatar = "http://www.gravatar.com/avatar/" . md5($email)  . "?d=" . urlencode($defaultImg) . "&amp;s=" . $dimensions;
-	?>
 	
 	<section class="head">
-		<img id="face" src="<?php echo $gravatar; ?>" alt="My gravatar image">
+		<img id="face" src="http://www.gravatar.com/avatar/26ab7600fc89f94711ec3b7db40d039b?d=img%2Fdefaultface.png&s=100" alt="My gravatar image">
 		<h1 id="title">Zac Colley</h1>		
 	</section>
 
@@ -149,15 +140,21 @@
 <script src="http://code.jquery.com/ui/1.10.2/jquery-ui.js"></script>
 <script type="text/javascript" src="js/scripts.js"></script>
 <script type="text/javascript" src="js/prefixfree.js"></script>
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-40429145-1', 'zaccolley.com');
-  ga('send', 'pageview');
+<!-- Piwik -->
+<script type="text/javascript"> 
+  var _paq = _paq || [];
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u=(("https:" == document.location.protocol) ? "https" : "http") + "://198.211.122.13/piwik//";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', 1]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0]; g.type='text/javascript';
+    g.defer=true; g.async=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
 
 </script>
+<noscript><p><img src="http://198.211.122.13/piwik/piwik.php?idsite=1" style="border:0" alt="" /></p></noscript>
+<!-- End Piwik Code -->
 </body>
 </html>
