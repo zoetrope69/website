@@ -6,8 +6,12 @@
 	
 	$('.textarea').find('section').hide();
 	// if the URL has a hash in we want to load that section
-	var hash = window.location.hash.substring(1); // we dont want the # at the start of the hash e.g /#home
-	if(hash.length > 1){ sectionChange(hash); } // if there is a hash (more than one so no dead # links)
+	var hash = window.location.hash.substring(1).toLowerCase(); // we dont want the # at the start of the hash e.g /#home
+	var validHash = false;
+	$('nav').find('li').each(function(){
+		if(this.id == hash){ validHash = true; }
+	});
+	if(validHash){ sectionChange(hash); } // if there is a hash (more than one so no dead # links)
 	else{ $('#homecontent').fadeIn(750); }
 
 	replaceFace(); // replaces the 'o' in 'colley' with my face
@@ -17,7 +21,7 @@
 
 $('nav').find('li').mouseup(function(){
 	sectionChange(this.id);
-	
+
 	var randNo = Math.floor(Math.random() * 360); 
 	var randBackColour = 'hsl(' + randNo + ', 20%, 40%)';
 	var randTitleColour = 'hsl(' + (randNo - 180);
@@ -64,8 +68,6 @@ function replaceFace(){
 		$('#title').fadeIn(500);
 	});
 }
-
-
 
 
 /* data getting */
@@ -122,7 +124,7 @@ function updateLastfmText(){
 			var url = json.recenttracks.track[0].url;
 
 			if(typeof json.recenttracks.track[0]["@attr"] !== 'undefined'){ // if the track is now playing
-				output += "Oh golly! I'm listening to <a href='" + url + "' target='_blank' contenteditable='false'>'" + name + "' by " + artist + "</a> right now! ";
+				output += "I'm listening to <a href='" + url + "' target='_blank' contenteditable='false'>'" + name + "' by " + artist + "</a> right now! ";
 			}else{
 				var time = +new Date()/1000 - json.recenttracks.track[0].date["uts"]; // get the time in seconds of when it was scrobbled
 				output += "I listened to <a href='" + url + "' target='_blank' contenteditable='false'>'" + name + "' by " + artist + "</a> " + timeConvert(time);
