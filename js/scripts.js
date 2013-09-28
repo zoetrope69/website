@@ -5,9 +5,11 @@
     $('.notepad').draggable({ handle: 'header', containment: 'document', revert: true});
 	
 	$('.textarea').find('section').hide();
+
 	// if the URL has a hash in we want to load that section
 	var hash = window.location.hash.substring(1).toLowerCase(); // we dont want the # at the start of the hash e.g /#home
 	var validHash = false;
+
 	$('nav').find('li').each(function(){
 		if(this.id == hash){ validHash = true; }
 	});
@@ -21,7 +23,10 @@
 
 $('nav').find('li').mouseup(function(){
 	sectionChange(this.id);
+	colourChange();	// change the header and backgorund colours yo
+});
 
+function colourChange(){
 	var randNo = Math.floor(Math.random() * 360); 
 	var randBackColour = 'hsl(' + randNo + ', 20%, 40%)';
 	var randTitleColour = 'hsl(' + (randNo - 180);
@@ -36,9 +41,10 @@ $('nav').find('li').mouseup(function(){
 	$('#face').css('border-color',  randTitleShadowColour);
 
 	$('.textarea').find('a').css('color', randTitleShadowColour); // changes the link colours too
-});
+}
 
 function sectionChange(id){
+
 	$('.textarea').find('section').hide();
 	$('#' + id + 'content').fadeIn(500);
 
