@@ -3,6 +3,7 @@
 	updateData(); // from last.fm and github etc
 	$('.notepad').addClass('notepad-transitions'); // Adding in after loading to try and combat transitions on load?..
     $('.notepad').draggable({ handle: 'header', containment: 'document', revert: true});
+    $('.notepad').draggable({ cancel: 'ul' });
 	
 	$('.textarea').find('section').hide();
 
