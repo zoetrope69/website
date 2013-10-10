@@ -29,7 +29,7 @@ body{
 }
 
 article{
-	width: 60%;
+	width: 70%;
 	margin: 0 auto;
 }
 
@@ -73,7 +73,8 @@ article .head #title{
 }
 
 .notepad{
-	width: 100%;
+	width: 90%;
+	margin: 0 auto;
 	min-width: 200px;
 	overflow-y: hidden;
 	height: 400px;
@@ -86,7 +87,7 @@ article .head #title{
 }
 
 .notepad-max{
-	width: 120%;
+	width: 100%;
 }
 
 .notepad-min{
@@ -125,6 +126,11 @@ header li{
 	height: 16px;
 	color: #000;
 	list-style-type: none;
+}
+
+#min, #max{
+	overflow: hidden;
+	text-indent: -1337px;
 }
 
 #min{
@@ -306,13 +312,13 @@ header li{
 /* title changes but also some other adjustments to the notepad */
  
 @media (max-width: 600px){
-	article{ width: 70%; }
+	article{ width: 80%; }
 	article .head #title{ font-size: 2.5em; }
 	header h1{ font-size: 0.85em; }
 }
 
-@media (max-width: 450px){ article .head #title{ font-size: 2em; } article{ width: 80%; } }
-@media (max-width: 350px){ article .head #title{ font-size: 1.5em; } article{ width: 90%; } }
+@media (max-width: 450px){ article .head #title{ font-size: 2em; } article{ width: 90%; } }
+@media (max-width: 350px){ article .head #title{ font-size: 1.5em; } article{ width: 100%; } }
 
 /* blog */
 /* ---- */
