@@ -23,8 +23,10 @@
 /* nav links */
 
 $('nav').find('li').mouseup(function(){
-	sectionChange(this.id);
-	colourChange();	// change the header and backgorund colours yo
+	if(!$('#' + this.id + 'content').is(":visible")){
+		sectionChange(this.id);
+		colourChange();	// change the header and backgorund colours yo
+	}
 });
 
 function colourChange(){
