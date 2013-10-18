@@ -53,7 +53,7 @@ function sectionChange(id){
 
 	var pageName = id.charAt(0).toUpperCase() + id.slice(1);
 	document.title = pageName  + ' - Zac Colley';
-	$('header').find('h1').text(id + ' - Notepad');
+	$('header').find('h1').text(id);
 }
 
 /* top right buttons */

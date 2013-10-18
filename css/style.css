@@ -114,6 +114,10 @@ header h1{
 	background: url('../img/notepad.png') no-repeat 1px center;
 }
 
+header h1:after{
+	content: ' - Notepad';
+}
+
 header ul{
 	margin-right: 1px;
 	float:right;
