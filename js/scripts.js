@@ -10,6 +10,10 @@
 	// if the URL has a hash in we want to load that section
 	var hash = window.location.hash.substring(1).toLowerCase(); // we dont want the # at the start of the hash e.g /#home
 	var validHash = false;
+	console.log(hash); 
+
+	// nice to meat you
+	if(hash == "meat"){ $('body').css('background', 'url("img/bg/meat.jpg")'); }
 
 	$('nav').find('li').each(function(){
 		if(this.id == hash){ validHash = true; }

@@ -27,7 +27,6 @@ html{
 }
 
 body{
-	background-image: url('../img/bg/spooky.jpg');
 	background-color: hsl(230, 10%, 35%);
 	-webkit-transition: background-color .75s ease-in;
 			transition: background-color .75s ease-in;
