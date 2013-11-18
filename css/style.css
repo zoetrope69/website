@@ -254,23 +254,62 @@ header li{
 	box-shadow: inset -1px -1px 0 #CFD0C8, inset 1px 1px 0 #404040;
 }
 
-.textarea h1, .textarea h2{
+.textarea h1, .textarea h2,
+.textarea h3, .textarea h4{
+	font-weight: normal;
 	font-size: 1em;
 }
 
-.textarea h2{
-	font-size: 1em;
+.textarea h1{
+	border-bottom: 1px solid #D3D3D3;
+	padding-bottom: .25em;
 }
 
 .textarea p{
+	padding-left: 2em;
 	color: rgba(0,0,0,0.85);
 }
 
 /* markdown-esque styling */
-.textarea p, h2, .textarea section ul{ margin-bottom: 1em; }
-.textarea h2::before{ content: '## '; }
+
+.textarea p, .textarea h1, .textarea h2,
+.textarea h3, .textarea h4, .textarea section ul{
+	margin-bottom: 1em;
+}
+
+.textarea h1::before, .textarea h2::before,
+.textarea h3::before, .textarea h4::before{
+	display: inline-block;
+}
+
+.textarea h1::before{
+	content: '# ';
+	width: 2em;
+}
+
+.textarea h2::before{
+	content: '## ';
+	width: 2em;
+}
+
+.textarea h3::before{
+	content: '### ';
+	width: 3em;
+}
+
+.textarea h4::before{
+	content: '#### ';
+	width: 4em;
+}
+
 .textarea em::before, .textarea em::after{ content: '_'; }
-.textarea li::before{ content: '+ '; }
+
+.textarea li::before{
+	content: '+ ';
+	width: 2em;
+	padding-left: 2em;
+}
+
 
 .textarea span.inactive{ /* inactive links */
 	color: gray;

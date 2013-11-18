@@ -1,37 +1,77 @@
 /* on load */
 (function(){
 	updateData(); // from last.fm and github etc
+
 	$('.notepad').addClass('notepad-transitions'); // Adding in after loading to try and combat transitions on load?..
     $('.notepad').draggable({ handle: 'header', containment: 'document', revert: true});
     $('.notepad').draggable({ cancel: 'ul' });
 	
 	$('.textarea').find('section').hide();
 
-	// if the URL has a hash in we want to load that section
-	var hash = window.location.hash.substring(1).toLowerCase(); // we dont want the # at the start of the hash e.g /#home
-	var validHash = false;
-	console.log(hash); 
+	// handle popstate on load
 
-	// nice to meat you
-	if(hash == "meat"){ $('body').css('background', 'url("img/bg/meat.jpg")'); }
+	pushed = false;
+	var initialUrl = location.href;
+	initPopState(initialUrl);
 
-	$('nav').find('li').each(function(){
-		if(this.id == hash){ validHash = true; }
-	});
-	if(validHash){ sectionChange(hash); } // if there is a hash (more than one so no dead # links)
-	else{ $('#homecontent').fadeIn(750); }
+	urlNavigate(); // navigate!
 
 	replaceFace(); // replaces the 'o' in 'colley' with my face
 })();
 
 /* nav links */
 
-$('nav').find('li').mouseup(function(){
-	if(!$('#' + this.id + 'content').is(":visible")){
-		sectionChange(this.id);
+$('nav').find('a').mouseup(function(){
+	navigate($(this).attr('href').substring(1));
+});
+
+$('.copy-nav').click(function(e){
+	navigate($(this).attr('href').substring(1));
+	// contenteditable removes the functionality of the a tag
+	window.history.pushState(null, null, $(this).attr('href'));
+	pushed = true;
+});
+
+function initPopState(initialUrl){
+
+	// for back and forward
+	window.onpopstate = function(e){
+		var initialUrl = location.href;
+
+		var onloadPop = !pushed && location.href == initialUrl;
+		pushed = true;
+
+		if(!onloadPop){
+			urlNavigate();
+		}
+	};
+
+}
+
+function urlNavigate(){
+	// if the URL has a hash in we want to load that section
+	var hash = window.location.hash.substring(1).toLowerCase(); // we dont want the # at the start of the hash e.g /#home
+	var validHash = false;
+
+	// nice to meat you
+	if(hash == "meat"){ $('body').css('background', 'url("img/bg/meat.jpg")'); }
+
+	$('nav').find('a').each(function(){
+		var href = $(this).attr('href');
+		if(href.substring(1) == hash){ validHash = true; }
+	});
+
+	if(validHash){ navigate(hash); } // if there is a hash (more than one so no dead # links)
+	else{ sectionChange('home'); }
+}
+
+function navigate(id){
+	// if the current link isn't already 
+	if(!$('#' + id + 'content').is(":visible")){
+		sectionChange(id);
 		colourChange();	// change the header and backgorund colours yo
 	}
-});
+}
 
 function colourChange(){
 	var randNo = Math.floor(Math.random() * 360); 
@@ -51,7 +91,6 @@ function colourChange(){
 }
 
 function sectionChange(id){
-
 	$('.textarea').find('section').hide();
 	$('#' + id + 'content').fadeIn(500);
 
@@ -66,7 +105,6 @@ $('header').find('li').mouseup(function(){
 	$('.notepad').toggleClass('notepad-' + this.id);
 	if(this.id == 'close'){
 		$('.notepad').fadeOut(500);
-		$('body').toggleClass("trip");
 		$('.notepad').fadeIn(500);
 	}
 });
