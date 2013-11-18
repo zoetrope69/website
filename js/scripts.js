@@ -8,6 +8,8 @@
 	
 	$('.textarea').find('section').hide();
 
+	if($(window).width() < 450){ $('.textarea').attr('contenteditable', false); }
+
 	// handle popstate on load
 
 	pushed = false;

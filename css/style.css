@@ -78,7 +78,7 @@ article .head #title{
 }
 
 .notepad{
-	width: 90%;
+	width: 95%;
 	margin: 0 auto;
 	min-width: 200px;
 	overflow-y: hidden;
@@ -105,7 +105,8 @@ header{
 	cursor: default;
 	overflow: auto;
 	padding: 1px;
-	background: linear-gradient(to right, #122A70, #9fC6ED) #122A70;
+	background-color: #122A70;
+	background-image: linear-gradient(to right, #122A70, #9fC6ED);
 
 	-webkit-user-select: none;
 	   -moz-user-select: none;
@@ -210,6 +211,8 @@ header li{
 	border-color: transparent;
 	float: left;
 	list-style: none;
+	
+	-webkit-tap-highlight-color: transparent;
 
 	-webkit-user-select: none;
 	   -moz-user-select: none;
@@ -322,6 +325,9 @@ header li{
 	font-size: .85em;
 }
 
+.textarea time::after{
+	content: ' - ';
+}
 
 .textarea::-webkit-scrollbar{
     width: 16px;
@@ -366,13 +372,22 @@ header li{
 /* title changes but also some other adjustments to the notepad */
  
 @media (max-width: 600px){
-	article{ width: 80%; }
+	article{ width: 90%; }
 	article .head #title{ font-size: 2.5em; }
 	header h1{ font-size: 0.85em; }
 }
 
-@media (max-width: 450px){ article .head #title{ font-size: 2em; } article{ width: 90%; } }
-@media (max-width: 350px){ article .head #title{ font-size: 1.5em; } article{ width: 100%; } }
+@media (max-width: 450px){
+	article{ width: 100%; }
+	article .head #title{ font-size: 2em; }
+
+	.textarea{ font-size: .9em; }
+	.textarea time{ display: none; }
+	.textarea li::before{ padding-left: 1em; }
+}
+@media (max-width: 350px){
+	article .head #title{ font-size: 1.5em; }
+}
 
 /* blog */
 /* ---- */
