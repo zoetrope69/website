@@ -104,6 +104,8 @@ function sectionChange(id){
 /* top right buttons */
 
 $('header').find('li').mouseup(function(){
+	$('.notepad').removeClass('notepad-max');
+	$('.notepad').removeClass('notepad-min');
 	$('.notepad').toggleClass('notepad-' + this.id);
 	if(this.id == 'close'){
 		$('.notepad').fadeOut(500);
