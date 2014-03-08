@@ -400,14 +400,45 @@ header li{
 /* blog */
 /* ---- */
 
-.post .audioimg{ width: 30%; }
-.post em{ background-color: rgba(45, 120, 160, .2); }
-.post code{
+.blog .notepad{
+	margin-bottom: 1.5em;
+	height: auto;
+}
+
+.blog .notepad .textarea{ height: auto; }
+
+.blog .pagination {
+	margin-left: 2em;
+}
+
+.blog .post-wrap{
+	padding-bottom: 2.5em;
+}
+
+.blog .post .date{
+	border-top: 1px solid #D3D3D3;
+	padding-top: .25em;
+}
+
+.blog .post .audioimg{ width: 30%; }
+
+.blog .post em{ background-color: rgba(45, 120, 160, .2); }
+
+
+.blog .post .code-box{
+	margin: .5em 2em;
+}
+
+.blog .post code{
 	font-size: 1rem;
 	background-color: rgba(95, 120, 160, .2);
 }
 
 /* css triangles post */
+
+.csstriangle{
+	margin: .5em 2em;
+}
 
 .csstriangle .box{
 	margin: 1em 0;
@@ -432,13 +463,16 @@ header li{
 
 .esch{
 	cursor: default;
-	margin: 0 .5em .5em;
-	width: 20px;
-	height: 20px;
-	font-size: 30px;
+	margin: .25em 1em;
+	width: 50px;
+	height: 50px;
+	line-height: 50px;
+	font-size: 50px;
 	text-align: center;
-	background: rgb(33, 51, 60);
-	border-radius: 2px;
+	background: #21333C;
+
+	-webkit-transform-origin: 50%;
+			transform-origin: 50%;
 }
 
 .esch::after{
@@ -448,12 +482,6 @@ header li{
 }
 
 .esch:hover::after{
-	-webkit-transition: all 1s;
-			transition: all 1s;
-	
 	-webkit-transform: rotate(45deg);
 			transform: rotate(45deg);
-
-	-webkit-transform-origin: 50%;
-			transform-origin: 50%;
 }
