@@ -57,6 +57,7 @@ function urlNavigate(){
 
 	// nice to meat you
 	if(hash == "meat"){ $('body').css('background', 'url("img/bg/meat.jpg")'); }
+	if(hash == "spookz"){ $('body').css('background', 'url("img/bg/spooky.jpg")'); }
 
 	$('nav').find('a').each(function(){
 		var href = $(this).attr('href');
@@ -136,35 +137,6 @@ function updateData(){
 	$('a').each(function(){
 		$(this).attr('contenteditable', false);
 	});
-}
-
-/* github */
-
-function updateGitHubText(){
-	var user = 'zaccolley';
-	var callback = 'displayGithubData'; // the callback calls the function below which handles the json
-	var url = 'https://api.github.com/users/' + user + '/repos?callback=' + callback; 
-	var output = "";	
-	$.getScript(url); // get and run displayGithubData() from url
-}
-
-function displayGithubData(json){
-	var ownedRepos = [];
-	for(var repo = 0; repo < json.data.length; repo++){ 
-		var forked = json.data[repo].fork; // add to array only repos that are from original account, no forks
-		if(!forked){ ownedRepos.push(json.data[repo]); }
-	}
-	// get a psuedo-randomly selected repo
-	var repo = ownedRepos[Math.floor(Math.random() * ownedRepos.length)];
-	// process all that data into a nice lil' link
-	var linkedRepo = "<a href='" +  repo.svn_url + "' title='" +  repo.description + "' target='_blank' contenteditable='false'>" + repo.name + "</a>";
-	output = "I started " + linkedRepo;
-	// if the repo has code
-	if(repo.language){
-		output += ", which was mostly wrote in " + repo.language ;
-	}
-	output += ".";
-	$('#githubrepos').html(output);
 }
 
 /* last.fm */
