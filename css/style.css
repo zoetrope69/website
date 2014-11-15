@@ -70,7 +70,7 @@ article .head #title{
 	margin: 0 auto;
 	min-width: 200px;
 	overflow-y: hidden;
-	height: 350px;
+	height: 400px;
 	font-family: 'Source Code Pro', monospace;
 	font-size: .8em;
 }
@@ -233,7 +233,7 @@ header li{
 }
 
 .textarea{
-	height: 295px;
+	height: 345px;
 	overflow-y: scroll;
 	padding: 0.5em;
 	border: 1px solid;

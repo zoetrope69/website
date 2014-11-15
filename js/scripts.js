@@ -184,13 +184,13 @@ function updateLastfmText(){
 			var url = json.recenttracks.track[0].url;
 
 			if(typeof json.recenttracks.track[0]["@attr"] !== 'undefined'){ // if the track is now playing
-				output += "I'm listening to <a href='" + url + "' target='_blank' contenteditable='false'>'" + name + "' by " + artist + "</a> right now! ";
+				output += "I'm listening to <a href='" + url + "' target='_blank' contenteditable='false'>'" + name + "' by " + artist + "</a> right now.";
 			}else{
 				var time = +new Date()/1000 - json.recenttracks.track[0].date["uts"]; // get the time in seconds of when it was scrobbled
 				output += "I listened to <a href='" + url + "' target='_blank' contenteditable='false'>'" + name + "' by " + artist + "</a> " + timeConvert(time);
 			}
 		}
-		$('#mostrecenttrack').html(output + $('#mostrecenttrack').html());
+		$('.lastfm--recent').html(output);
 	});
 
 	// who I'm into link at the moment
