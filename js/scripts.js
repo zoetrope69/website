@@ -69,7 +69,7 @@ function urlNavigate(){
 
 function navigate(id){
 	// if the current link isn't already 
-	if(!$('#' + id + 'content').is(":visible")){
+	if(!$('#' + id).is(":visible")){
 		sectionChange(id);
 		colourChange();	// change the header and backgorund colours yo
 	}
@@ -94,7 +94,7 @@ function colourChange(){
 
 function sectionChange(id){
 	$('.textarea').find('section').hide();
-	$('#' + id + 'content').fadeIn(500);
+	$('#' + id).fadeIn(500);
 
 	var pageName = id.charAt(0).toUpperCase() + id.slice(1);
 	document.title = pageName  + ' - Zac Colley';
