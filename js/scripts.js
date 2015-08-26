@@ -2,13 +2,35 @@
 (function(){
 	updateData(); // from last.fm and github etc
 
-	$('.notepad').addClass('notepad-transitions'); // Adding in after loading to try and combat transitions on load?..
-    $('.notepad').draggable({ handle: 'header', containment: 'document', revert: true});
-    $('.notepad').draggable({ cancel: 'ul' });
-	
-	$('.textarea').find('section').hide();
+	if($(window).width() > 600){
 
-	if($(window).width() < 450){ $('.textarea').attr('contenteditable', false); }
+		$('.window').addClass('window-transitions'); // Adding in after loading to try and combat transitions on load?..
+	    $('.window').draggable({ handle: 'header', containment: 'document'});
+	    $('.window').draggable({ cancel: 'ul' });
+
+	    $('.music').draggable({ containment: 'document'});
+	    $('.music').draggable({ cancel: '.music-inner' });
+
+		$('.window').on('click', function(){
+			$('.window--about').css('z-index', 50);
+			$('.window--pictures').css('z-index', 30);
+			$('.music').css('z-index', 20);
+			$(this).css('z-index', 80);
+		});
+
+		$('.window').draggable({
+			start: function(){
+				$('.window--about').css('z-index', 50);
+				$('.window--pictures').css('z-index', 30);
+				$('.music').css('z-index', 20);
+				$(this).css('z-index', 80);
+			}
+		});
+	}
+
+	if($(window).width() < 600){ $('.window--about .textarea').attr('contenteditable', false); }
+
+	$('.window--about .textarea').find('section').hide();
 
 	// handle popstate on load
 
@@ -18,12 +40,19 @@
 
 	urlNavigate(); // navigate!
 
-	replaceFace(); // replaces the 'o' in 'colley' with my face
+	clock();
+
 })();
+
+function clock(){
+	window.setInterval(function(){
+		$('.clock__time').text(moment().format('hh:mm A'));
+	}, 1000);
+}
 
 /* nav links */
 
-$('nav').find('a').mouseup(function(){
+$('.window--about nav').find('a').mouseup(function(e){
 	navigate($(this).attr('href').substring(1));
 });
 
@@ -59,7 +88,7 @@ function urlNavigate(){
 	if(hash == "meat"){ $('body').css('background', 'url("img/bg/meat.jpg")'); }
 	if(hash == "spookz"){ $('body').css('background', 'url("img/bg/spooky.jpg")'); }
 
-	$('nav').find('a').each(function(){
+	$('.window--about nav').find('a').each(function(){
 		var href = $(this).attr('href');
 		if(href.substring(1) == hash){ validHash = true; }
 	});
@@ -69,60 +98,18 @@ function urlNavigate(){
 }
 
 function navigate(id){
-	// if the current link isn't already 
+	// if the current link isn't already
 	if(!$('#' + id).is(":visible")){
 		sectionChange(id);
-		colourChange();	// change the header and backgorund colours yo
 	}
 }
 
-function colourChange(){
-	var randNo = Math.floor(Math.random() * 360); 
-	var randBackColour = 'hsl(' + randNo + ', 20%, 40%)';
-	var randTitleColour = 'hsl(' + (randNo - 180);
-	var randTitleFrontColour = randTitleColour + ', 50%, 40%)';
-	var randTitleShadowColour = randTitleColour + ', 50%, 20%)';
-
-	// change the colours!
-
-	$('body').css('background-color', randBackColour);
-	$('#title').css('color', randTitleFrontColour);
-	$('#title').css('text-shadow', 	'0 0.1em ' + randTitleShadowColour);
-	$('#face').css('border-color',  randTitleShadowColour);
-
-	$('.textarea').find('a').css('color', randTitleShadowColour); // changes the link colours too
-}
-
 function sectionChange(id){
-	$('.textarea').find('section').hide();
+	$('.window--about .textarea').find('section').hide();
 	$('#' + id).fadeIn(500);
 
 	var pageName = id.charAt(0).toUpperCase() + id.slice(1);
 	document.title = pageName  + ' - Zac Colley';
-	$('header').find('h1').text(id);
-}
-
-/* top right buttons */
-
-$('header').find('li').mouseup(function(){
-	$('.notepad').removeClass('notepad-max');
-	$('.notepad').removeClass('notepad-min');
-	$('.notepad').toggleClass('notepad-' + this.id);
-	if(this.id == 'close'){
-		$('.notepad').fadeOut(500);
-		$('.notepad').fadeIn(500);
-	}
-});
-
-/* replace 'O' in heading with my face */
-
-function replaceFace(){
-	var url = $('#face').attr('src');
-	$('#face').remove();
-	$('#title').delay(250).fadeOut(500, function(){
-		$('#title').replaceWith('<h1 id="title" style="display:none">Zac C<img style="display: inline-block;" id="face" src="' + url + '" alt="O">lley</h1>');
-		$('#title').fadeIn(500);
-	});
 }
 
 
@@ -130,18 +117,102 @@ function replaceFace(){
 /* ------------ */
 
 function updateData(){
-	updateLastfmText();
-	updateGitHubText();
-	
-	// clickable link creation
-	$('a').each(function(){
-		$(this).attr('contenteditable', false);
+
+	updateLastfm();
+	window.setInterval(function(){
+		updateLastfm();
+	}, 90000);
+
+	updateSongkick();
+	updateInstagram();
+}
+
+/* instagram */
+
+function updateInstagram(){
+	var feed = new Instafeed({
+		get: 'user',
+		userId: 361667513,
+		accessToken: '361667513.467ede5.107744925303438ab0cee5f71e3a8602',
+		template: '<li class="instagram-photo"><a href="{{link}}">' +
+						'<img src="{{image}}" />' +
+						'<span class="instagram-photo__caption">{{caption}}</span>' +
+				   '</a>',
+		resolution: 'thumbnail'
 	});
+	feed.run();
+}
+
+/* songkick */
+
+function updateSongkick(){
+
+	var user = 'zaccolley';
+	var apiKey = 'sqcuaFOxKzXLxuc7';
+	var order = 'desc';
+	var url = 'http://api.songkick.com/api/3.0/users/' +
+				user + '/gigography.json?apikey=' +
+				apiKey + '&order=' +
+				order + '&jsoncallback=?';
+
+	$.getJSON(url, function(data){
+		var events = data.resultsPage.results.event,
+			event = events[0],
+			name = event.displayName,
+			url = event.uri,
+
+			date = event.end.date.split('-'),
+			year = date[0],
+			month = date[1]-1, // 0 - 11 for months
+			day = date[2],
+			utcDate = +new Date(Date.UTC(year, month, day)),
+			time = (+new Date() - utcDate)/1000;
+
+		$('.info-songkick').append("went to <a href='" + url + "'>" + name.toLowerCase() + "</a> " + timeConvert(time) + " ago. ");
+		clickableLinks();
+	});
+
+	order = 'asc';
+	url = 'http://api.songkick.com/api/3.0/users/' +
+			user + '/calendar.json?reason=attendance&apikey=' +
+			apiKey + '&order=' +
+			order + '&jsoncallback=?';
+
+	$.getJSON(url, function(data){
+		var events = data.resultsPage.results.calendarEntry,
+			event = events[0],
+			name = event.event.displayName,
+			url = event.event.uri,
+			attendance = event.reason.attendance,
+			attendanceMessage = '',
+
+			date = event.event.start.date.split('-'),
+			year = date[0],
+			month = date[1]-1, // 0 - 11 for months
+			day = date[2],
+			utcDate = +new Date(Date.UTC(year, month, day)),
+			time = (utcDate - +new Date())/1000;
+
+		if(attendance == "im_going"){
+			attendanceMessage = "i'll be at ";
+		}
+
+		if(attendance == "i_might_go"){
+			attendanceMessage = "thinking of ";
+		}
+
+		$('.info-songkick').append('in ' + timeConvert(time) + ' ' + attendanceMessage + "<a href='" + url + "'>" + name.toLowerCase() + "</a> too. ");
+		clickableLinks();
+
+		$('#home').append("<a class='songkick-credit' href='https://www.songkick.com/users/zaccolley'><img src='img/songkick.png' alt='Concerts by Songkick' /></a>");
+	});
+
 }
 
 /* last.fm */
 
-function updateLastfmText(){
+function updateLastfm(){
+
 	var user = 'zaccolley';
 
 	// recent tracks
@@ -149,33 +220,55 @@ function updateLastfmText(){
 	var apiKey = 'fa5687767b9d45951f19973b88ff46d9';
 	var url = 'http://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&limit=' + recentTracks + '&user=' + user + '&api_key=' + apiKey + '&format=json';
 	$.getJSON(url, function(json){
-		var output = "";
-		if(typeof json.recenttracks.track !== 'undefined'){ // if the json does exist (last.fm isn't borked)
-			var name = json.recenttracks.track[0].name;
-			var artist = json.recenttracks.track[0].artist["#text"];
-			var url = json.recenttracks.track[0].url;
 
-			if(typeof json.recenttracks.track[0]["@attr"] !== 'undefined'){ // if the track is now playing
-				output += "I'm listening to <a href='" + url + "' target='_blank' contenteditable='false'>'" + name + "' by " + artist + "</a> right now.";
-			}else{
-				var time = +new Date()/1000 - json.recenttracks.track[0].date["uts"]; // get the time in seconds of when it was scrobbled
-				output += "I listened to <a href='" + url + "' target='_blank' contenteditable='false'>'" + name + "' by " + artist + "</a> " + timeConvert(time);
+		var output = "";
+
+		if(typeof json.recenttracks.track !== 'undefined'){ // if the json does exist (last.fm isn't borked)
+			var track = json.recenttracks.track[0];
+
+
+			var name = track.name;
+			var artist = track.artist["#text"];
+			var url = track.url;
+
+			var image = 'img/albumart.png';
+			if( track.hasOwnProperty('image') && track.image[3]['#text'] !== '' ){
+				image = track.image[3]['#text'];
 			}
+
+			if(typeof track["@attr"] !== 'undefined'){ // if the track is now playing
+				output += "bet ya didn't know i'm jigging and jamming to <a href='" + url + "' target='_blank' contenteditable='false'>'" + name.toLowerCase() + "' by " + artist.toLowerCase() + "</a> right now. ";
+			}else{
+				var time = +new Date()/1000 - track.date["uts"]; // get the time in seconds of when it was scrobbled
+				output += timeConvert(time) + " ago I listened to <a href='" + url + "' target='_blank' contenteditable='false'>'" + name.toLowerCase() + "' by " + artist.toLowerCase() + "</a>. ";
+			}
+
+			$('.music__artist').html(artist);
+			$('.music__song').html(name);
+			$('.music__art').attr('src', image);
+
+			$('.music').removeClass('music--hidden');
+
 		}
-		$('.lastfm--recent').html(output);
+
+		$('.info-lastfm--latest').html(output);
+		clickableLinks();
+
 	});
 
 	// who I'm into link at the moment
 	var period = ['overall', '7day', '1month', '3month', '6month', '12month']; // different periods
-	var url = 'http://ws.audioscrobbler.com/2.0/?method=user.gettopartists&limit=1&period=' + period[1] + '&user=' + user + '&api_key=' + apiKey + '&format=json';
+	url = 'http://ws.audioscrobbler.com/2.0/?method=user.gettopartists&limit=1&period=' + period[1] + '&user=' + user + '&api_key=' + apiKey + '&format=json';
 	$.getJSON(url, function(json){
 		if(json.topartists.artist.name){ // if it has found a name for the artist
 			var artist = json.topartists.artist.name;
 			var url = json.topartists.artist.url;
-			$('#mostlistenedartist').text(artist);
-			$('#mostlistenedartist').attr("href", url);
-		} // the default link is to Daft Punk 'cause I think they're future proof cool
+
+			$('.info-lastfm--fav').html("find myself listening to a lot of <a href='" + url + "'>" + artist.toLowerCase() + "</a> at the mo ");
+			clickableLinks();
+		}
 	});
+
 }
 
 function timeConvert(time){
@@ -183,13 +276,27 @@ function timeConvert(time){
 
 		 if(time < 10){ time = ""; timeMeasure = "a few seconds"; }
 	else if(time < 60){ timeMeasure = "seconds"; }
-	else if(time < 3600){ time = time / 60; timeMeasure = "minute"; } 
+	else if(time < 3600){ time = time / 60; timeMeasure = "minute"; }
 	else if(time < 86400){ time = time / 3600; timeMeasure = "hour"; }
-	else if(time < 604800){ time = time / 86400; timeMeasure = "day"; } 
-	else if(time >= 604800){ time = time / 604800; timeMeasure = "week"; } 
+	else if(time < 604800){ time = time / 86400; timeMeasure = "day"; }
+	else if(time >= 604800){ time = time / 604800; timeMeasure = "week"; }
 
 	var plural = "";
-	if(time != ""){ time = Math.round(time); }
+	if(time !== ""){ time = Math.round(time); }
 	if(time > 1){ plural = "s"; } // if theres more than one of a time measure it becomes plural
-	return time + " " + timeMeasure + plural + " ago. ";
+
+	var timeWords = [ 'zero', 'one', 'two', 'three', 'four', 'five',
+					  'six', 'seven', 'eight', 'nine', 'ten' ];
+	if(time < 10){
+		time = timeWords[time];
+	}
+
+	return time + " " + timeMeasure + plural;
+}
+
+// clickable link creation
+function clickableLinks(){
+	$('a').each(function(){
+		$(this).attr('contenteditable', false);
+	});
 }
