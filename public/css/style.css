@@ -378,13 +378,6 @@ body{
 	position: relative;
 }
 
-.songkick-credit{
-	position: absolute;
-    right: 0; top: 0;
-    padding: 1em;
-    height: 1em;
-}
-
 .bar{
 	z-index: 100;
 	position: fixed;
