@@ -108,16 +108,13 @@
 
     <section class="panel">
         <ul class="instagram-photos">
-
             {{# each instagram }}
-
-                <li class="instagram-photo">
-                    <a href="{{ url }}">
-                        <img src="{{ image }}" />
-                        <span class="instagram-photo__caption">{{ caption }}</span>
-                    </a>
-                </li>
-
+            <li class="instagram-photo">
+                <a href="{{ url }}">
+                    <img src="{{ image }}" />
+                    <span class="instagram-photo__caption">{{ caption }}</span>
+                </a>
+            </li>
             {{/ each }}
         </ul>
     </section>
