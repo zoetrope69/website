@@ -205,7 +205,7 @@ function latestTrack(callback){
     if( trackStream.isStreaming() ){
 
         trackStream.on('nowPlaying', function(data){
-            console.log("nowPlaying data:\n", data);
+            console.log("nowPlaying");
 
             var image = 'img/albumart.png';
             if( data.hasOwnProperty('image') && data.image[3]['#text'] !== '' ){
@@ -237,13 +237,11 @@ function latestTrack(callback){
 
         recentTracks.on('success', function(data){
 
-            console.log('recentTracks success data:\n', data);
+            console.log('recentTracks success');
 
             // if the json does exist (last.fm isn't borked)
             if(typeof data.recenttracks.track !== 'undefined'){
                 data = data.recenttracks.track[0];
-
-                console.log(data);
 
                 var image = 'img/albumart.png';
                 if( data.hasOwnProperty('image') && data.image[3]['#text'] !== '' ){
@@ -252,11 +250,16 @@ function latestTrack(callback){
 
                 var time = +new Date()/1000;
 
-                var nowPlaying = data['@attr'].nowplaying;
+                var nowPlaying = false;
+
+                if( typeof data['@attr'] !== 'undefined' ){
+                    nowPlaying = data['@attr'].nowplaying;
+                }
+
                 console.log('nowPlaying', nowPlaying);
 
                 if( !nowPlaying ){
-                    var time = +new Date()/1000 - data.date.uts;
+                    time = +new Date()/1000 - data.date.uts;
                 }
 
                 // simplify response
