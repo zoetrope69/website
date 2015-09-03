@@ -90,6 +90,8 @@
 	    $('.music').draggable({ containment: 'document'});
 	    $('.music').draggable({ cancel: '.music-inner' });
 
+        $('.merlin').draggable({ containment: 'document'});
+
 		$('.window').on('click', function(){
 			$('.window--about').css('z-index', 50);
 			$('.window--pictures').css('z-index', 30);
