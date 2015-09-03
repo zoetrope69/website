@@ -2,8 +2,6 @@
 var dotenv = require('dotenv');
 dotenv.load();
 
-console.log(process.env.NODE_ENV);
-
 var express = require('express'),
     exphbs  = require('express-handlebars'),
     app = express(),
@@ -154,7 +152,7 @@ function latestTrack(callback){
     if( trackStream.isStreaming() ){
 
         trackStream.on('nowPlaying', function(data){
-            console.log(data);
+            console.log("nowPlaying data:\n", data);
 
             var image = 'img/albumart.png';
             if( data.hasOwnProperty('image') && data.image[3]['#text'] !== '' ){
@@ -185,20 +183,33 @@ function latestTrack(callback){
         });
 
         recentTracks.on('success', function(data){
+
+            console.log('recentTracks success data:\n', data);
+
             // if the json does exist (last.fm isn't borked)
             if(typeof data.recenttracks.track !== 'undefined'){
                 data = data.recenttracks.track[0];
-                console.log();
+
+                console.log(data);
 
                 var image = 'img/albumart.png';
                 if( data.hasOwnProperty('image') && data.image[3]['#text'] !== '' ){
                     image = data.image[3]['#text'];
                 }
 
+                var time = +new Date()/1000;
+
+                var nowPlaying = data['@attr'].nowplaying;
+                console.log('nowPlaying', nowPlaying);
+
+                if( !nowPlaying ){
+                    var time = +new Date()/1000 - data.date.uts;
+                }
+
                 // simplify response
                 var track = {
-                    time: +new Date()/1000 - data.date.uts,
-                    playing: false,
+                    time: time,
+                    playing: nowPlaying,
 
                     name: data.name,
                     image: image,
@@ -208,6 +219,7 @@ function latestTrack(callback){
 
                 callback(track);
             }
+            
         });
 
     }
