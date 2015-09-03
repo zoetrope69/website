@@ -21,9 +21,70 @@ body{
 
 	font-family: 'Tahoma', 'Geneva', 'Verdana', sans-serif;
 
+	background-color: #0B6FFB;
 	background-image: url('../img/bg/xp.jpg');
 	background-attachment:fixed;
 	background-size: 100% 100%;
+}
+
+.merlin{
+	z-index: 80;
+	position: fixed;
+	bottom: 40px;
+	right: 10px;
+	max-width: 20em;
+	margin: 0 auto;
+}
+
+.merlin__speech-bubble{
+	position: relative;
+    display: block;
+    padding: 12px 10px;
+
+    font-size: 13px;
+
+    background: #ffffe1;
+    border: 1px solid #000;
+    border-radius: 10px;
+}
+
+.merlin a{
+	color: black;
+}
+
+.merlin__speech-bubble .user{
+	display: block;
+	margin-bottom: 5px;
+
+	font-size: .85em;
+}
+
+.merlin__speech-bubble time{
+	display: block;
+	margin-top: 5px;
+
+	font-size: .75em;
+}
+
+.merlin__speech-bubble::after{
+	position: absolute;
+	content: '';
+	display: block;
+	width: 11px;
+	height: 18px;
+	bottom: -18px;
+	left: 50%; /* fallback for calc() */
+    left: calc(50% - 5.5px);
+
+	background: url('../img/bubble-arrow.png') no-repeat center;
+}
+
+.merlin__the-man-himself{
+	margin: 20px auto 0;
+	width: 76px;
+	height: 119px;
+
+	background: url('../img/merlin.png') no-repeat center;
 }
 
 .window{
@@ -518,7 +579,8 @@ body{
 @media (max-width: 600px){
 
 	.window,
-	.music{
+	.music,
+	.merlin{
 		position: initial;
 	}
 

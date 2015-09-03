@@ -20,6 +20,15 @@ var express = require('express'),
 
     ig = require('instagram-node').instagram(),
 
+    Twitter = require('twitter'),
+    twitterClient = new Twitter({
+        consumer_key: process.env.TWITTER_API,
+        consumer_secret: process.env.TWITTER_SECRET,
+        access_token_key: process.env.TWITTER_ACCESSTOKEN,
+        access_token_secret: process.env.TWITTER_TOKENSECRET
+    }),
+    twitterText = require('twitter-text'),
+
     moment = require('moment');
 
 app.engine('handlebars', exphbs({ defaultLayout: 'main' }));
@@ -67,17 +76,61 @@ io.on('connection', function(socket){
 
 app.get('/', function(req, res){
 
-    latestTrack(function(track){
-        instagramPosts(function(posts){
-            res.render('home', {
-                time: moment().format('hh:mm A'),
-                track: track,
-                instagram: posts
+    latestTweets(function(tweets){
+        var tweet = tweets[0];
+
+        tweet = {
+            text: twitterText.autoLink(twitterText.htmlEscape(tweet.text)),
+            date: moment(new Date(tweet.created_at)).format('h:mm A - MM MMM YYYY')
+        };
+
+        latestTrack(function(track){
+            instagramPosts(function(posts){
+                res.render('home', {
+                    time: moment().format('hh:mm A'),
+                    track: track,
+                    tweet: tweet,
+                    instagram: posts
+                });
             });
         });
     });
 
 });
+
+
+
+// twitter
+
+function latestTweets(callback){
+
+    var options = { screen_name: 'zaccolley' };
+
+    twitterClient.get('statuses/user_timeline', options, function(error, tweets, response){
+        if(!error){
+            callback(tweets);
+        }
+    });
+
+}
+
+function tweetStream(callback){
+
+    var options = { screen_name: 'zaccolley' };
+
+    twitterClient.stream('statuses/user_timeline', options, function(stream){
+
+        stream.on('data', function(tweet) {
+            console.log(tweet.text);
+            callback(tweet);
+        });
+
+        stream.on('error', function(error) {
+            console.log(error);
+        });
+
+    });
+}
 
 // instagram
 
@@ -219,7 +272,7 @@ function latestTrack(callback){
 
                 callback(track);
             }
-            
+
         });
 
     }
