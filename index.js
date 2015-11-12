@@ -302,7 +302,7 @@ function songkickPrevious(callback){
                 events = data.resultsPage.results.event,
     			event = events[0],
 
-                date = event.end.date.split('-'),
+                date = event.start.date.split('-'),
     			year = date[0],
     			month = date[1]-1, // 0 - 11 for months
     			day = date[2],
