@@ -287,34 +287,32 @@ function latestTrack(callback){
 function songkickPrevious(callback){
 
 	var user = 'zaccolley',
-        apiKey = 'sqcuaFOxKzXLxuc7',
-        order = 'desc',
-        url = 'http://api.songkick.com/api/3.0/users/' +
-                user + '/gigography.json' +
-                '?apikey=' + apiKey +
-                '&order=' + order;
+      apiKey = 'sqcuaFOxKzXLxuc7',
+      order = 'desc',
+      url = 'http://api.songkick.com/api/3.0/users/' +
+            user + '/gigography.json' +
+            '?apikey=' + apiKey +
+            '&order=' + order;
 
     request(url, function (error, response, body){
-        if(!error && response.statusCode == 200){
+      if(!error && response.statusCode == 200){
 
-            var data = JSON.parse(body),
+          var data = JSON.parse(body),
 
-                events = data.resultsPage.results.event,
-    			event = events[0],
+              events = data.resultsPage.results.event,
+              event = events[0],
 
-                date = event.start.date.split('-'),
-    			year = date[0],
-    			month = date[1]-1, // 0 - 11 for months
-    			day = date[2],
-    			utcDate = +new Date(Date.UTC(year, month, day)),
-    			time = (+new Date() - utcDate)/1000;
+              date = event.start.date.split('-'),
+              year = date[0],
+              month = date[1]-1, // 0 - 11 for months
+              day = date[2],
+              utcDate = +new Date(Date.UTC(year, month, day)),
+              time = (+new Date() - utcDate)/1000;
 
-            var previousEvent = {
-
-    			name: event.displayName,
-    			url: event.uri,
-                time: time
-
+          var previousEvent = {
+              name: event.displayName,
+    			    url: event.uri,
+              time: time
             };
 
             callback(previousEvent);
@@ -338,25 +336,23 @@ function songkickUpcoming(callback){
     request(url, function (error, response, body) {
         if(!error && response.statusCode == 200){
 
-            var data = JSON.parse(body),
+          var data = JSON.parse(body),
 
-                events = data.resultsPage.results.calendarEntry,
-    			event = events[0],
+              events = data.resultsPage.results.calendarEntry,
+              event = events[0],
 
-    			date = event.event.start.date.split('-'),
-    			year = date[0],
-    			month = date[1]-1, // 0 - 11 for months
-    			day = date[2],
-    			utcDate = +new Date(Date.UTC(year, month, day)),
-    			time = (utcDate - +new Date())/1000;
+              date = event.event.start.date.split('-'),
+              year = date[0],
+              month = date[1]-1, // 0 - 11 for months
+              day = date[2],
+              utcDate = +new Date(Date.UTC(year, month, day)),
+              time = (utcDate - +new Date())/1000;
 
             var upcomingEvent = {
-
-    			name: event.event.displayName,
-    			url: event.event.uri,
-    			attendance: event.reason.attendance,
+          			name: event.event.displayName,
+          			url: event.event.uri,
+          			attendance: event.reason.attendance,
                 time: time
-
             };
 
             callback(upcomingEvent);
