@@ -27,7 +27,6 @@
   socket.on('lastfm fav', function(artist){
 
     $('.info-lastfm--fav').html("find myself listening to a lot of <a href='" + artist.url + "'>" + artist.name.toLowerCase() + "</a> at the mo ");
-    clickableLinks();
 
   });
 
@@ -50,29 +49,26 @@
 
 
       $('.info-lastfm--latest').html(output);
-      clickableLinks();
     }
 
   });
 
   socket.on('songkick previous', function(data){
-      $('.info-songkick--previous').html("went to <a href='" + data.url + "'>" + data.name.toLowerCase() + "</a> " + timeConvert(data.time) + " ago. ");
-      clickableLinks();
+    $('.info-songkick--previous').html("went to <a href='" + data.url + "'>" + data.name.toLowerCase() + "</a> " + timeConvert(data.time) + " ago. ");
   });
 
   socket.on('songkick upcoming', function(data){
-      var attendanceMessage = '';
+    var attendanceMessage = '';
 
-      if(data.attendance == "im_going"){
-          attendanceMessage = "i'll be at ";
-      }
+    if(data.attendance == "im_going"){
+      attendanceMessage = "i'll be at ";
+    }
 
-      if(data.attendance == "i_might_go"){
-          attendanceMessage = "thinking of ";
-      }
+    if(data.attendance == "i_might_go"){
+      attendanceMessage = "thinking of ";
+    }
 
-      $('.info-songkick--upcoming').html('in ' + timeConvert(data.time) + ' ' + attendanceMessage + "<a href='" + data.url + "'>" + data.name.toLowerCase() + "</a> too. ");
-      clickableLinks();
+    $('.info-songkick--upcoming').html('in ' + timeConvert(data.time) + ' ' + attendanceMessage + "<a href='" + data.url + "'>" + data.name.toLowerCase() + "</a> too. ");
   });
 
 	if ($(window).width() > 600) {
@@ -214,11 +210,4 @@ function timeConvert(time){
 	}
 
 	return time + " " + timeMeasure + plural;
-}
-
-// clickable link creation
-function clickableLinks() {
-	$('a').each(() => {
-		$(this).attr('contenteditable', false);
-	});
 }
