@@ -1,87 +1,81 @@
 /* on load */
 (function(){
 
-    var socket = io();
+  var socket = io();
 
-    socket.on('instagram', function(posts){
+  socket.on('instagram', function(posts){
 
-        $('.instagram-photos').html('');
+    $('.instagram-photos').html('');
 
-        console.log(posts);
+    for(var i = 0; i < posts.length; i++){
+      var post = posts[i];
 
-        for(var i = 0; i < posts.length; i++){
-            var post = posts[i];
+      var template = `
+        <li class="instagram-photo">
+          <a href="${post.url}">
+            <img src="${post.image}" />
+            <span class="instagram-photo__caption">${post.caption}</span>
+          </a>
+        </li>
+      `.trim();
 
-            var template =  '<li class="instagram-photo"><a href="' + post.url + '">' +
-                                '<img src="' + post.image + '" />' +
-                                '<span class="instagram-photo__caption">' + post.caption + '</span>' +
-    	                    '</a></li>';
+      $('.instagram-photos').append(template);
+    }
 
-            $('.instagram-photos').append(template);
+  });
 
-        }
+  socket.on('lastfm fav', function(artist){
 
-    });
+    $('.info-lastfm--fav').html("find myself listening to a lot of <a href='" + artist.url + "'>" + artist.name.toLowerCase() + "</a> at the mo ");
+    clickableLinks();
 
-    socket.on('lastfm fav', function(artist){
+  });
 
-        console.log(artist);
+  socket.on('lastfm latest', function(track) {
 
-        $('.info-lastfm--fav').html("find myself listening to a lot of <a href='" + artist.url + "'>" + artist.name.toLowerCase() + "</a> at the mo ");
-        clickableLinks();
+    if (track) {
+      var output = '';
 
-    });
+      if (track.playing) { // if the track is now playing
+        output += "bet ya didn't know i'm jigging and jamming to <a href='" + track.url + "' target='_blank' contenteditable='false'>'" + track.name.toLowerCase() + "' by " + track.artist.toLowerCase() + "</a> right now. ";
+      } else {
+        output += timeConvert(track.time) + " ago I listened to <a href='" + track.url + "' target='_blank' contenteditable='false'>'" + track.name.toLowerCase() + "' by " + track.artist.toLowerCase() + "</a>. ";
+      }
 
-    socket.on('lastfm latest', function(track){
+      $('.music__artist').html(track.artist);
+      $('.music__song').html(track.name);
+      $('.music__art').attr('src', track.image);
 
-        console.log(track);
-
-        var output = '';
-
-        if( track.playing ){ // if the track is now playing
-            output += "bet ya didn't know i'm jigging and jamming to <a href='" + track.url + "' target='_blank' contenteditable='false'>'" + track.name.toLowerCase() + "' by " + track.artist.toLowerCase() + "</a> right now. ";
-        }else{
-            output += timeConvert(track.time) + " ago I listened to <a href='" + track.url + "' target='_blank' contenteditable='false'>'" + track.name.toLowerCase() + "' by " + track.artist.toLowerCase() + "</a>. ";
-        }
-
-        $('.music__artist').html(track.artist);
-        $('.music__song').html(track.name);
-        $('.music__art').attr('src', track.image);
-
-        $('.music').removeClass('music--hidden');
+      $('.music').removeClass('music--hidden');
 
 
-        $('.info-lastfm--latest').html(output);
-        clickableLinks();
+      $('.info-lastfm--latest').html(output);
+      clickableLinks();
+    }
 
-    });
+  });
 
-    socket.on('songkick previous', function(data){
-        console.log('prev', data);
+  socket.on('songkick previous', function(data){
+      $('.info-songkick--previous').html("went to <a href='" + data.url + "'>" + data.name.toLowerCase() + "</a> " + timeConvert(data.time) + " ago. ");
+      clickableLinks();
+  });
 
-        $('.info-songkick--previous').html("went to <a href='" + data.url + "'>" + data.name.toLowerCase() + "</a> " + timeConvert(data.time) + " ago. ");
-        clickableLinks();
+  socket.on('songkick upcoming', function(data){
+      var attendanceMessage = '';
 
-    });
+      if(data.attendance == "im_going"){
+          attendanceMessage = "i'll be at ";
+      }
 
-    socket.on('songkick upcoming', function(data){
-        console.log('upc', data);
-        var attendanceMessage = '';
+      if(data.attendance == "i_might_go"){
+          attendanceMessage = "thinking of ";
+      }
 
-        if(data.attendance == "im_going"){
-            attendanceMessage = "i'll be at ";
-        }
+      $('.info-songkick--upcoming').html('in ' + timeConvert(data.time) + ' ' + attendanceMessage + "<a href='" + data.url + "'>" + data.name.toLowerCase() + "</a> too. ");
+      clickableLinks();
+  });
 
-        if(data.attendance == "i_might_go"){
-            attendanceMessage = "thinking of ";
-        }
-
-        $('.info-songkick--upcoming').html('in ' + timeConvert(data.time) + ' ' + attendanceMessage + "<a href='" + data.url + "'>" + data.name.toLowerCase() + "</a> too. ");
-        clickableLinks();
-
-    });
-
-	if($(window).width() > 600){
+	if ($(window).width() > 600) {
 
 		$('.window').addClass('window-transitions'); // Adding in after loading to try and combat transitions on load?..
 	    $('.window').draggable({ handle: 'header', containment: 'document'});
@@ -203,12 +197,18 @@ function timeConvert(time){
 	else if(time < 604800){ time = time / 86400; timeMeasure = "day"; }
 	else if(time >= 604800){ time = time / 604800; timeMeasure = "week"; }
 
-	var plural = "";
-	if(time !== ""){ time = Math.round(time); }
-	if(time > 1){ plural = "s"; } // if theres more than one of a time measure it becomes plural
+	var plural = '';
 
-	var timeWords = [ 'zero', 'one', 'two', 'three', 'four', 'five',
-					  'six', 'seven', 'eight', 'nine', 'ten' ];
+	if (time !== ''){
+    time = Math.round(time);
+  }
+
+  if (time > 1) { // if theres more than one of a time measure it becomes plural
+    plural = 's';
+  }
+
+	var timeWords = ['zero', 'one', 'two', 'three', 'four', 'five',
+                   'six', 'seven', 'eight', 'nine', 'ten'];
 	if(time < 10){
 		time = timeWords[time];
 	}
@@ -217,8 +217,8 @@ function timeConvert(time){
 }
 
 // clickable link creation
-function clickableLinks(){
-	$('a').each(function(){
+function clickableLinks() {
+	$('a').each(() => {
 		$(this).attr('contenteditable', false);
 	});
 }

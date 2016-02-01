@@ -1,100 +1,101 @@
-// bring in enviroment vars
-var dotenv = require('dotenv');
-dotenv.load();
+'use strict';
+require('dotenv').load(); // bring in enviroment vars
 
-var express = require('express'),
-    exphbs  = require('express-handlebars'),
-    app = express(),
-    http = require('http').Server(app),
+var express = require('express');
+var exphbs  = require('express-handlebars');
+var app = express();
+var http = require('http').Server(app);
 
-    io = require('socket.io')(http),
+var io = require('socket.io')(http);
 
-    request = require('request'),
+var request = require('request');
 
-    LastFmNode = require('lastfm').LastFmNode,
-    lastfm = new LastFmNode({
-        api_key: process.env.LASTFM_API,    // sign-up for a key at http://www.last.fm/api
-        secret:  process.env.LASTFM_SECRET,
-        useragent: process.env.LASTFM_USERAGENT
-    }),
+var LastFmNode = require('lastfm').LastFmNode;
+var lastfm = new LastFmNode({
+      api_key: process.env.LASTFM_API, // sign-up for a key at http://www.last.fm/api
+      secret:  process.env.LASTFM_SECRET,
+      useragent: process.env.LASTFM_USERAGENT
+    });
 
-    ig = require('instagram-node').instagram(),
+var ig = require('instagram-node').instagram();
 
-    Twitter = require('twitter'),
-    twitterClient = new Twitter({
-        consumer_key: process.env.TWITTER_API,
-        consumer_secret: process.env.TWITTER_SECRET,
-        access_token_key: process.env.TWITTER_ACCESSTOKEN,
-        access_token_secret: process.env.TWITTER_TOKENSECRET
-    }),
-    twitterText = require('twitter-text'),
+var Twitter = require('twitter');
+var twitterClient = new Twitter({
+      consumer_key: process.env.TWITTER_API,
+      consumer_secret: process.env.TWITTER_SECRET,
+      access_token_key: process.env.TWITTER_ACCESSTOKEN,
+      access_token_secret: process.env.TWITTER_TOKENSECRET
+    });
+var twitterText = require('twitter-text');
 
-    moment = require('moment');
+var moment = require('moment');
 
 app.engine('handlebars', exphbs({ defaultLayout: 'main' }));
 app.set('view engine', 'handlebars');
 app.use(express.static(__dirname + '/public'));
 
-http.listen(3000, function(){
-    console.log('listening on *:3000');
+http.listen(3000, () => {
+  console.log('listening on *:3000');
 });
 
-io.on('connection', function(socket){
+io.on('connection', (socket) => {
 
-    songkickPrevious(function(data){
-        console.log('songkick previous');
-        io.emit('songkick previous', data);
-    });
+  songkickPrevious((data) => {
+    console.log('songkick previous');
+    io.emit('songkick previous', data);
+  });
 
-    songkickUpcoming(function(data){
-        console.log('songkick upcoming');
-        io.emit('songkick upcoming', data);
-    });
+  songkickUpcoming((data) => {
+    console.log('songkick upcoming');
+    io.emit('songkick upcoming', data);
+  });
 
-    latestTrack(function(data){
-        console.log('lastfm latest');
-        io.emit('lastfm latest', data);
-    });
+  latestTrack((data) => {
+    console.log('lastfm latest');
+    io.emit('lastfm latest', data);
+  });
 
-    favArtist(function(data){
-        console.log('lastfm fav');
-        io.emit('lastfm fav', data);
-    });
+  favArtist((data) => {
+    console.log('lastfm fav');
+    io.emit('lastfm fav', data);
+  });
 
-    instagramPosts(function(posts){
-        console.log('instagram');
-        io.emit('instagram', posts);
-    });
+  instagramPosts((posts) => {
+    console.log('instagram');
+    io.emit('instagram', posts);
+  });
 
-    console.log('a user connected');
+  console.log('a user connected');
 
-    socket.on('disconnect', function(){
-        console.log('user disconnected');
-    });
+  socket.on('disconnect', () => {
+    console.log('user disconnected');
+  });
 
 });
 
-app.get('/', function(req, res){
+app.get('/', (req, res) => {
 
-    latestTweets(function(tweets){
-        var tweet = tweets[0];
+  latestTweets((tweets) => {
+    var tweet = tweets[0];
 
-        tweet = {
-            text: twitterText.autoLink(twitterText.htmlEscape(tweet.text)),
-            date: moment(new Date(tweet.created_at)).format('h:mm A - MM MMM YYYY')
-        };
+    tweet = {
+      text: twitterText.autoLink(twitterText.htmlEscape(tweet.text)),
+      date: moment(new Date(tweet.created_at)).format('h:mm A - MM MMM YYYY')
+    };
 
-        latestTrack(function(track){
-            instagramPosts(function(posts){
-                res.render('home', {
-                    time: moment().format('hh:mm A'),
-                    track: track,
-                    tweet: tweet,
-                    instagram: posts
-                });
-            });
+    latestTrack(function(track){
+      track = track || 'images/albumart.png';
+      instagramPosts(function(posts){
+        res.render('home', {
+          time: moment().format('hh:mm A'),
+          track: track,
+          tweet: tweet,
+          instagram: posts
         });
+      });
     });
+
+  });
 
 });
 
@@ -102,262 +103,264 @@ app.get('/', function(req, res){
 
 // twitter
 
-function latestTweets(callback){
+function latestTweets (callback) {
 
-    var options = { screen_name: 'zaccolley' };
+  var options = { screen_name: 'zaccolley' };
 
-    twitterClient.get('statuses/user_timeline', options, function(error, tweets, response){
-        if(!error){
-            callback(tweets);
-        }
-    });
+  twitterClient.get('statuses/user_timeline', options, (error, tweets) => {
+    if(!error){
+      callback(tweets);
+    }
+  });
 
 }
 
-function tweetStream(callback){
+function tweetStream (callback) {
 
-    var options = { screen_name: 'zaccolley' };
+  var options = { screen_name: 'zaccolley' };
 
-    twitterClient.stream('statuses/user_timeline', options, function(stream){
+  twitterClient.stream('statuses/user_timeline', options, (stream) => {
 
-        stream.on('data', function(tweet) {
-            console.log(tweet.text);
-            callback(tweet);
-        });
-
-        stream.on('error', function(error) {
-            console.log(error);
-        });
-
+    stream.on('data', (tweet) => {
+      console.log(tweet.text);
+      callback(tweet);
     });
+
+    stream.on('error', (error) => {
+      console.log(error);
+    });
+
+  });
+
 }
 
 // instagram
 
-function instagramPosts(callback){
+function instagramPosts (callback) {
 
-    var userId = '361667513';
+  var userId = '361667513';
 
-    ig.use({ access_token: process.env.INSTAGRAM_ACCESSTOKEN });
-    ig.use({ client_id: process.env.INSTAGRAM_CLIENTID,
-             client_secret: process.env.INSTAGRAM_SECRET });
+  ig.use({ access_token: process.env.INSTAGRAM_ACCESSTOKEN });
+  ig.use({ client_id: process.env.INSTAGRAM_CLIENTID,
+           client_secret: process.env.INSTAGRAM_SECRET });
 
-     ig.user_media_recent(userId, {}, function(err, medias, pagination, remaining, limit){
+  ig.user_media_recent(userId, {}, (err, medias, pagination, remaining, limit) => {
 
-         var posts = [];
+    var posts = [];
 
-         for(var i = 0; i < medias.length; i++){
-             var media = medias[i];
+    for (var i = 0; i < medias.length; i++) {
+      var media = medias[i];
 
-             var post = {
-                 time: media.created_time,
-                 url: media.link,
-                 image: media.images.standard_resolution.url,
-                 caption: media.caption.text
-             };
+     var post = {
+       time: media.created_time,
+       url: media.link,
+       image: media.images.standard_resolution.url,
+       caption: media.caption.text
+     };
 
-             posts.push(post);
-         }
+     posts.push(post);
+   }
 
-         callback(posts);
+   callback(posts);
 
-     });
-
- }
-
-// last.fm
-
-function favArtist(callback){
-
-    // who I'm into link at the moment
-	var username = 'zaccolley',
-        period = ['overall', '7day', '1month', '3month', '6month', '12month']; // different periods
-
-    var recentTracks = lastfm.request('user.gettopartists', { username: username, period: period[1], limit: 1 });
-
-    recentTracks.on('error', function(json){
-        console.log('err', json);
-    });
-
-    recentTracks.on('success', function(data){
-
-        // if it has found a name for the artist
-		if( typeof data.topartists.artist[0] !== 'undefined' ){
-
-            var artist = {
-            	name: data.topartists.artist[0].name,
-    			url: data.topartists.artist[0].url
-            };
-
-            callback(artist);
-
-		}
-
-    });
+ });
 
 }
 
-function latestTrack(callback){
+// last.fm
 
-    var username = 'zaccolley',
-        trackStream = lastfm.stream(username);
+function favArtist (callback) {
 
-    if( trackStream.isStreaming() ){
+  // who I'm into link at the moment
+  var username = 'zaccolley',
+      period = ['overall', '7day', '1month', '3month', '6month', '12month']; // different periods
 
-        trackStream.on('nowPlaying', function(data){
-            console.log("nowPlaying");
+  var recentTracks = lastfm.request('user.gettopartists', { username: username, period: period[1], limit: 1 });
 
-            var image = 'img/albumart.png';
-            if( data.hasOwnProperty('image') && data.image[3]['#text'] !== '' ){
-                image = track.image[3]['#text'];
-            }
+  recentTracks.on('error', (json) => {
+    console.log('err', json);
+  });
 
-            // simplify response
-            var track = {
-                time: +new Date()/1000 - data.date.uts,
-                playing: true,
+  recentTracks.on('success', (data) => {
 
-                name: data.name,
-                image: image,
-                artist: data.artist['#text'],
-                album: data.album['#text']
-            };
+    // if it has found a name for the artist
+  	if (typeof data.topartists.artist[0] !== 'undefined') {
 
-            callback(track);
+      var artist = {
+      	name: data.topartists.artist[0].name,
+        url: data.topartists.artist[0].url
+      };
 
-        });
+      callback(artist);
 
-    }else{
+  	}
 
-        var recentTracks = lastfm.request('user.getrecenttracks', { username: username, limit: 1 });
+  });
 
-        recentTracks.on('error', function(json){
-            console.log('err', json);
-        });
+}
 
-        recentTracks.on('success', function(data){
+function latestTrack (callback) {
 
-            console.log('recentTracks success');
+  var username = 'zaccolley',
+      trackStream = lastfm.stream(username);
 
-            // if the json does exist (last.fm isn't borked)
-            if(typeof data.recenttracks.track !== 'undefined'){
-                data = data.recenttracks.track[0];
+  if (trackStream.isStreaming()) {
 
-                var image = 'img/albumart.png';
-                if( data.hasOwnProperty('image') && data.image[3]['#text'] !== '' ){
-                    image = data.image[3]['#text'];
-                }
+    trackStream.on('nowPlaying', (data) => {
+      console.log("nowPlaying");
 
-                var time = +new Date()/1000;
+      var image = 'img/albumart.png';
+      if (data.hasOwnProperty('image') && data.image[3]['#text'] !== '') {
+        image = track.image[3]['#text'];
+      }
 
-                var nowPlaying = false;
+      // simplify response
+      var track = {
+        time: +new Date()/1000 - data.date.uts,
+        playing: true,
 
-                if( typeof data['@attr'] !== 'undefined' ){
-                    nowPlaying = data['@attr'].nowplaying;
-                }
+        name: data.name,
+        image: image,
+        artist: data.artist['#text'],
+        album: data.album['#text']
+      };
 
-                console.log('nowPlaying', nowPlaying);
+      callback(track);
 
-                if( !nowPlaying ){
-                    time = +new Date()/1000 - data.date.uts;
-                }
+    });
 
-                // simplify response
-                var track = {
-                    time: time,
-                    playing: nowPlaying,
+  } else {
 
-                    name: data.name,
-                    image: image,
-                    artist: data.artist['#text'],
-                    album: data.album['#text'],
-                };
+    var recentTracks = lastfm.request('user.getrecenttracks', { username: username, limit: 1 });
 
-                callback(track);
-            }
+    recentTracks.on('error', (json) => {
+      console.log('lastfm err', json);
+      callback();
+    });
 
-        });
+    recentTracks.on('success', (data) => {
 
-    }
+      console.log('recentTracks success');
+
+      // if the json does exist (last.fm isn't borked)
+      if (typeof data.recenttracks.track !== 'undefined') {
+        data = data.recenttracks.track[0];
+
+        var image = 'img/albumart.png';
+        if (data.hasOwnProperty('image') && data.image[3]['#text'] !== '') {
+          image = data.image[3]['#text'];
+        }
+
+        var time = +new Date()/1000;
+
+        var nowPlaying = false;
+
+        if (typeof data['@attr'] !== 'undefined') {
+          nowPlaying = data['@attr'].nowplaying;
+        }
+
+        console.log('nowPlaying', nowPlaying);
+
+        if (!nowPlaying) {
+          time = +new Date()/1000 - data.date.uts;
+        }
+
+        // simplify response
+        var track = {
+          time: time,
+          playing: nowPlaying,
+
+          name: data.name,
+          image: image,
+          artist: data.artist['#text'],
+          album: data.album['#text'],
+        };
+
+        callback(track);
+      }
+
+    });
+
+  }
 
 }
 
 // songkick
 
-function songkickPrevious(callback){
+function songkickPrevious (callback) {
 
-	var user = 'zaccolley',
-      apiKey = 'sqcuaFOxKzXLxuc7',
-      order = 'desc',
-      url = 'http://api.songkick.com/api/3.0/users/' +
+	var user = 'zaccolley';
+  var apiKey = 'sqcuaFOxKzXLxuc7';
+  var order = 'desc';
+  var url = 'http://api.songkick.com/api/3.0/users/' +
             user + '/gigography.json' +
             '?apikey=' + apiKey +
             '&order=' + order;
 
-    request(url, function (error, response, body){
-      if(!error && response.statusCode == 200){
+  request(url, (error, response, body) => {
+    if (!error && response.statusCode == 200) {
 
-          var data = JSON.parse(body),
+      var data = JSON.parse(body),
 
-              events = data.resultsPage.results.event,
-              event = events[0],
+          events = data.resultsPage.results.event,
+          event = events[0],
 
-              date = event.start.date.split('-'),
-              year = date[0],
-              month = date[1]-1, // 0 - 11 for months
-              day = date[2],
-              utcDate = +new Date(Date.UTC(year, month, day)),
-              time = (+new Date() - utcDate)/1000;
+          date = event.start.date.split('-'),
+          year = date[0],
+          month = date[1]-1, // 0 - 11 for months
+          day = date[2],
+          utcDate = +new Date(Date.UTC(year, month, day)),
+          time = (+new Date() - utcDate)/1000;
 
-          var previousEvent = {
-              name: event.displayName,
-    			    url: event.uri,
-              time: time
-            };
+      var previousEvent = {
+        name: event.displayName,
+		    url: event.uri,
+        time: time
+      };
 
-            callback(previousEvent);
+      callback(previousEvent);
 
-        }
+    }
 
-    });
+  });
 
 }
 
-function songkickUpcoming(callback){
+function songkickUpcoming (callback) {
 
-    var user = 'zaccolley',
-        apiKey = 'sqcuaFOxKzXLxuc7',
+  var user = 'zaccolley',
+      apiKey = 'sqcuaFOxKzXLxuc7',
     	order = 'asc',
-        url = 'http://api.songkick.com/api/3.0/users/' +
-              user + '/calendar.json?reason=attendance' +
-              '&apikey=' + apiKey +
-              '&order=' + order;
+      url = 'http://api.songkick.com/api/3.0/users/' +
+            user + '/calendar.json?reason=attendance' +
+            '&apikey=' + apiKey +
+            '&order=' + order;
 
-    request(url, function (error, response, body) {
-        if(!error && response.statusCode == 200){
+  request(url, (error, response, body) => {
+    if (!error && response.statusCode == 200) {
 
-          var data = JSON.parse(body),
+      var data = JSON.parse(body),
 
-              events = data.resultsPage.results.calendarEntry,
-              event = events[0],
+          events = data.resultsPage.results.calendarEntry,
+          event = events[0],
 
-              date = event.event.start.date.split('-'),
-              year = date[0],
-              month = date[1]-1, // 0 - 11 for months
-              day = date[2],
-              utcDate = +new Date(Date.UTC(year, month, day)),
-              time = (utcDate - +new Date())/1000;
+          date = event.event.start.date.split('-'),
+          year = date[0],
+          month = date[1]-1, // 0 - 11 for months
+          day = date[2],
+          utcDate = +new Date(Date.UTC(year, month, day)),
+          time = (utcDate - +new Date())/1000;
 
-            var upcomingEvent = {
-          			name: event.event.displayName,
-          			url: event.event.uri,
-          			attendance: event.reason.attendance,
-                time: time
-            };
+      var upcomingEvent = {
+  			name: event.event.displayName,
+  			url: event.event.uri,
+  			attendance: event.reason.attendance,
+        time: time
+      };
 
-            callback(upcomingEvent);
+      callback(upcomingEvent);
 
-        }
+    }
 	});
 
 }
