@@ -155,7 +155,7 @@ function instagramPosts (callback) {
        time: media.created_time,
        url: media.link,
        image: media.images.standard_resolution.url,
-       caption: media.caption.text
+       caption: (media.caption ? media.caption.text : 'untitled')
      };
 
      posts.push(post);
