@@ -106,16 +106,9 @@ body{
 
 .window--about{
 	z-index: 50;
-	right: 5%;
-	bottom: 15%;
+	right: 20%;
+	bottom: 25%;
 	width: 45%;
-}
-
-.window--pictures{
-	z-index: 20;
-	top: 5%;
-	left: 25%;
-	width: 35%;
 }
 
 .window-transitions{
@@ -165,9 +158,6 @@ body{
 
 .window--about header h1{
 	background-image: url('../img/notepad.png');
-}
-.window--pictures header h1{
-	background-image: url('../img/foldersearchicon.png');
 }
 
 .window--about header h1:after{
@@ -298,61 +288,6 @@ body{
 	background-color: #FFF;
 	padding: 0.5em;
 	resize: none;
-}
-
-.window--pictures .panel{
-	padding: 5px 15px;
-	background: #FFF url('../img/picturesbg.png') bottom right no-repeat;
-}
-
-.instagram-photos{
-	overflow: hidden; /* clearfix */
-}
-
-.instagram-photo{
-	width: 96px;
-	height: 96px;
-	float: left;
-    margin: 3px;
-    margin-right: 30px;
-    margin-bottom: 40px;
-
-	list-style: none;
-	border: 1px solid #ece9d8;
-}
-
-.instagram-photo:active{
-	border-color: #316ac5;
-	outline: 2px solid #316ac5;
-}
-
-.instagram-photo a,
-.instagram-photo img{
-	display: block;
-	width: 100%;
-}
-
-.instagram-photo a{
-	color: black;
-	text-decoration: none;
-}
-
-.instagram-photo__caption{
-	display: block;
-	padding: 3px;
-	width: 90%;
-	margin: 5px auto;
-
-	font-size: 10px;
-	text-align: center;
-	white-space: nowrap;
-	overflow: hidden;
-	text-overflow: ellipsis;
-}
-
-.instagram-photo:active .instagram-photo__caption{
-	background: #316ac5;
-	color: white;
 }
 
 .textarea{

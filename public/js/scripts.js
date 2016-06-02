@@ -3,27 +3,6 @@
 
   var socket = io();
 
-  socket.on('instagram', function(posts){
-
-    $('.instagram-photos').html('');
-
-    for(var i = 0; i < posts.length; i++){
-      var post = posts[i];
-
-      var template = `
-        <li class="instagram-photo">
-          <a href="${post.url}">
-            <img src="${post.image}" />
-            <span class="instagram-photo__caption">${post.caption}</span>
-          </a>
-        </li>
-      `.trim();
-
-      $('.instagram-photos').append(template);
-    }
-
-  });
-
   socket.on('lastfm fav', function(artist){
 
     $('.info-lastfm--fav').html("find myself listening to a lot of <a href='" + artist.url + "'>" + artist.name.toLowerCase() + "</a> at the mo ");

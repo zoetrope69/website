@@ -17,8 +17,6 @@ var lastfm = new LastFmNode({
       useragent: process.env.LASTFM_USERAGENT
     });
 
-var ig = require('instagram-node').instagram();
-
 var Twitter = require('twitter');
 var twitterClient = new Twitter({
       consumer_key: process.env.TWITTER_API,
@@ -60,11 +58,6 @@ io.on('connection', (socket) => {
     io.emit('lastfm fav', data);
   });
 
-  instagramPosts((posts) => {
-    console.log('instagram');
-    io.emit('instagram', posts);
-  });
-
   console.log('a user connected');
 
   socket.on('disconnect', () => {
@@ -85,13 +78,10 @@ app.get('/', (req, res) => {
 
     latestTrack(function(track){
       track = track || 'images/albumart.png';
-      instagramPosts(function(posts){
-        res.render('home', {
-          time: moment().format('hh:mm A'),
-          track: track,
-          tweet: tweet,
-          instagram: posts
-        });
+      res.render('home', {
+        time: moment().format('hh:mm A'),
+        track: track,
+        tweet: tweet
       });
     });
 
@@ -131,39 +121,6 @@ function tweetStream (callback) {
     });
 
   });
-
-}
-
-// instagram
-
-function instagramPosts (callback) {
-
-  var userId = '361667513';
-
-  ig.use({ access_token: process.env.INSTAGRAM_ACCESSTOKEN });
-  ig.use({ client_id: process.env.INSTAGRAM_CLIENTID,
-           client_secret: process.env.INSTAGRAM_SECRET });
-
-  ig.user_media_recent(userId, {}, (err, medias, pagination, remaining, limit) => {
-
-    var posts = [];
-
-    for (var i = 0; i < medias.length; i++) {
-      var media = medias[i];
-
-     var post = {
-       time: media.created_time,
-       url: media.link,
-       image: media.images.standard_resolution.url,
-       caption: (media.caption ? media.caption.text : 'untitled')
-     };
-
-     posts.push(post);
-   }
-
-   callback(posts);
-
- });
 
 }
 
