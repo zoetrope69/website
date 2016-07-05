@@ -11,7 +11,7 @@ function checkRequest(error, response) {
     return `Error: ${error}`;
   }
 
-  if (response.statusCode != 200) {
+  if (response.statusCode !== 200) {
     return `Error: Response was not OK`;
   }
 

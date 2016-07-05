@@ -102,15 +102,4 @@ const getRecentTracks = (limit) => new Promise ((resolve, reject) => {
   });
 });
 
-const getMusic = new Promise ((resolve, reject) => {
-  Promise.all([getRecentTracks(10), favArtist]).then((result) => {
-    return resolve({
-      tracks: result[0],
-      favArtist: result[1]
-    });
-  }, reject);
-});
-
-// getMusic.then(music => console.log('music', music));
-
-module.exports = getMusic;
+module.exports = getRecentTracks(10);
