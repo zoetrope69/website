@@ -24,13 +24,17 @@ http.listen(3000, () => {
 
 const getData = new Promise((resolve, reject) => {
   Promise.all([tracks, tweets, gigs, films, books]).then((results) => {
+    var date = new Date();
     return resolve({
-      time: + new Date(), // get current timestamp
+      time: {
+        human: date.toDateString(),
+        iso: date.toISOString()
+      },
       tracks: results[0],
       tweets: results[1],
       gigs: results[2],
       films: results[3],
-      books: results[4]
+      books: results[4].filter(book => book.shelf === 'read')
     });
   }, reject);
 });

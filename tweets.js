@@ -26,8 +26,12 @@ const getTweets = new Promise((resolve, reject) => {
     };
 
     tweets = tweets.map(tweet => {
+      const date = new Date(tweet.created_at);
       const processedTweet = {
-        createdAt: tweet.created_at,
+        time: {
+          human: date.toDateString(),
+          iso: date.toISOString()
+        },
         text: {
           raw: tweet.text,
           html: twitterText.autoLink(twitterText.htmlEscape(tweet.text))

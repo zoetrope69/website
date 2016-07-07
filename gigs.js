@@ -26,19 +26,16 @@ function processGig(gig, timeframe) {
     gig = gig.event;
   }
 
-  const date = gig.start.date.split('-');
-  const year = date[0];
-  const month = date[1] - 1; // 0 - 11 for months
-  const day = date[2];
-  const utcDate = +new Date(Date.UTC(year, month, day));
-  const time = (+new Date() - utcDate) / 1000;
-
+  const date = new Date(gig.start.date);
   gig = {
-    name: gig.displayName,
-    url: gig.uri,
-    time,
+    time: {
+      human: date.toDateString(),
+      iso: date.toISOString()
+    },
     timeframe,
-    type: gig.type.toLowerCase()
+    name: gig.displayName,
+    type: gig.type.toLowerCase(),
+    url: gig.uri
   };
 
   // add attendance if relevant

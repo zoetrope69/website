@@ -46,7 +46,7 @@ function processTrack(data) {
   // if there's an image grab it here
   let image = false;
   if (data.hasOwnProperty('image') && data.image[3]['#text'] !== '') {
-    image = data.image[3]['#text'];
+    image = data.image[0]['#text'];
   }
 
   // is the data being played?
@@ -56,19 +56,22 @@ function processTrack(data) {
   }
 
   // handle the time this track was played
-  let time = +new Date() / 1000;
+  let date = new Date();
   if (!playing) {
-    time = time - data.date.uts;
+    date = new Date(data.date.uts * 1000);
   }
 
   // simplify response
   const track = {
-    time,
+    time: {
+      human: date.toDateString(),
+      iso: date.toISOString()
+    },
     playing,
-
     name: data.name,
     artist: data.artist['#text'],
     album: data.album['#text'],
+    uri: data.url
   };
 
   // if there's an image add it here

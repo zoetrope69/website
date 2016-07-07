@@ -34,13 +34,25 @@ const getBooks = new Promise((resolve, reject) => {
     let books = reviews.map(review => {
       const book = review.book;
 
-      return {
+      const date = new Date(review.date_updated);
+      const output = {
+        time: {
+          human: date.toDateString(),
+          iso: date.toISOString()
+        },
         id: book.id.$t,
         shelf: handleShelf(review.shelves.shelf),
         title: book.title,
-        image: book.image_url,
-        link: book.link
+        uri: book.link
       };
+
+      // check if there's an image and add if there is
+      // no photo is in the url if there is no image
+      if (book.small_image_url.indexOf('/nophoto/') <= -1) {
+        output.image = book.small_image_url;
+      }
+
+      return output;
     });
 
     resolve(books);
