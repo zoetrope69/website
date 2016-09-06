@@ -1,18 +1,18 @@
 'use strict';
 require('dotenv').load(); // bring in enviroment vars
 
-var express = require('express');
-var exphbs  = require('express-handlebars');
-var app = express();
-var http = require('http').Server(app);
+const express = require('express');
+const exphbs  = require('express-handlebars');
+const app = express();
+const http = require('http').Server(app);
 
-var tracks = require('./tracks');
-var tweets = require('./tweets');
-var gigs = require('./gigs');
-var films = require('./films');
-var books = require('./books');
+const tracks = require('./tracks');
+const tweets = require('./tweets');
+const gigs = require('./gigs');
+const films = require('./films');
+const books = require('./books');
 
-var moment = require('moment');
+const moment = require('moment');
 
 app.engine('handlebars', exphbs({ defaultLayout: 'main' }));
 app.set('view engine', 'handlebars');
