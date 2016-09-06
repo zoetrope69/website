@@ -1,115 +1,59 @@
-<section class="window window--about">
-    <header>
-        <h1>home</h1>
-        <ul>
-            <li id="min" title="Minimize">Min</li>
-            <li id="max" title="Maximize">Max</li>
-            <li id="close" title="Close">×</li>
-        </ul>
-    </header>
+<header>
+  <h1>Zac Colley</h1>
+</header>
 
-    <nav>
-        <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#stuff">Stuff</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
+<main>
+  <ul>
+    <li>Front-end developer and designer. Performance, accessibility and UX.</li>
+    <li>Also interested in: e-textiles, fashion in tech, education in computing and striving for inclusivity in tech.</li>
+    <li>Email me at: <a href="mailto:hi@zaccolley.com">hi@zaccolley.com</a>. Tweeting at: <a href="https://twitter.com/zaccolley">@zaccolley</a>.</li>
+    <li>Now I'm: working at <a href="https://songkick.com">Songkick</a> and starting up a <a href="offlinefirst.org/">Offline First</a> meetup called <a href="http://crapconnection.club">Crap Connection Club</a>.</li>
+    <li>I used to: work at <a href="https://rosedigital.co.uk">ROSE</a> and run <a href="http://hackpompey.co.uk">hackpompey</a>.</p>
+    <li>
+      <small>The last song I listened to was&hellip;</small>
+      <a href="{{tracks.0.uri}}">{{tracks.0.name}} by {{tracks.0.artist}}</a>
+    </li>
+    <li>
+      <small>The last gig I went to was&hellip;</small>
+      <a href="{{gigs.0.uri}}">{{gigs.0.name}}</a>
+    </li>
+    <li>
+      <small>The last film I watched was&hellip;</small>
+      <a href="{{films.0.uri}}">{{films.0.film.title}} <small>({{films.0.film.year}})</small></a>
+    </li>
+    <li>
+      <small>The last tweet I tweeted was&hellip;</small>
+      {{{tweets.0.text.html}}}
+    </li>
+    <li>
+      <small>The last book I read was&hellip;</small>
+      <a href="{{books.0.uri}}">{{books.0.title}}</a>
+    </li>
+  </ul>
+  <time timestamp="{{time.raw}}">Data updated at {{time.human}}</time>
+</main>
 
-    <section class="panel textarea">
-        <section id="home">
-
-            <h1>welcome to zac's internet site :¬)</h1>
-
-            <p>i design and build <a href="https://vine.co/v/eJ29ExWwU6J">sharp and crisp</a> web experiences.</p>
-
-            <p>i also run computing workshops with schools/colleges. sometimes (~quarterly) we put on <a href="http://hackpompey.co.uk">a portsmouth based social hackday called hackpompey</a>.</p>
-
-            <p>i listen to music. <span class="info-lastfm--latest"></span><span class="info-lastfm--fav"></span><span class="info-songkick--previous"></span><span class="info-songkick--upcoming"></span>
-             <a href='https://www.songkick.com/users/zaccolley'>gig data from <em>songkick</em>!</a>
-&lt;3</p>
-
-            <p><a href="#contact" class="copy-nav">click here for ways to contact me</a> or <a href="#stuff" class="copy-nav">please click here for some work and other junk stuff</a>.</p>
-
-        </section>
-
-        <section id="stuff">
-
-            <h1>some of my stuff/work/junk :¬{0</h1>
-
-            <p>my huge OSS contribs are <a href="http://www.github.com/zaccolley">over on GitHub</a>. some things i've worked on are below.</p>
-
-            <ul>
-                <li><time datetime="2016">circa 2016</time><a href="https://rosedigital.co.uk">ROSE Digital</a> &bull; closed shop at ROSE digital</li>
-                <li><time datetime="2015-08-09">09-08-2015</time><a href="http://nickcolley.github.io/itsyourbirthdaytoday/#lol">itsyourbirthdaytoday</a> &bull; w/ my bro</li>
-                <li><time datetime="2015-07-30">30-07-2015</time><a href="http://teamlocals.co.uk">Team Locals</a> &bull; design and built from ALL THE WAY UP</li>
-                <li><time datetime="2015-05-16">16-05-2015</time><a href="https://www.eventbrite.co.uk/e/hackpompey-3-tickets-16615062098">hackpompey 3</a> &bull; the third hackpompey</li>
-                <li><time datetime="2015-02-07">07-02-2015</time><a href="https://www.eventbrite.co.uk/e/hackpompey-open-data-tickets-15325330476">hackpompey Open Data</a> &bull; 2nd hackpompey</li>
-                <li><time datetime="2015-11-22">22-11-2014</time><a href="https://www.eventbrite.co.uk/e/hackpompey-tickets-13526984575">hackpompey</a> &bull; a social hack day in pompey</li>
-                <li><time datetime="2014-08-04">04-08-2014</time><a href="http://rosedigital.co.uk/work/2014/08/04/upgs.html">UPGS</a> &bull; design and initial front-end for the Gaming soc</li>
-                <li><time datetime="2014-04-02">02-04-2014</time><a href="http://www.phphants.co.uk/">PHP Hants</a> &bull; front-end revamp and improvements</li>
-                <li><time datetime="2013-09-11">11-09-2013</time><a href="/stuff/efji/">efji</a> &bull; A small (shit) canvas game</li>
-                <li><time datetime="2013-09-09">09-09-2013</time><a href="http://uopcs.com">The Computing Society's Website</a></li>
-                <li><time datetime="2013-09-09">09-09-2013</time><a href="/stuff/unipcs/">UoP PC Availability App</a> &bull; app for PC availability at Portsmouth Uni</li>
-                <li><time datetime="2013-07-26">26-07-2013</time><a href="http://domains.zaccolley.com">dandydomains</a> &bull; App for finding interesting domains</li>
-                <li><time datetime="2013-07-01">01-07-2013</time><a href="http://rosedigital.co.uk/work/2014/04/16/upracing.html" title="UPRacing">UPRacing's Website</a> &bull; d-sign: <a href="http://dangordondesign.com/">Dan</a> &amp; <a href="http://magicalizard.co.uk/">Matt</a></li>
-                <li><time datetime="2013-03-23">23-03-2013</time><a href="/stuff/foraaron/">Gameboy</a> &bull; Birthday present for my boy aaron</li>
-                <li><time datetime="2013-03-12">12-03-2013</time><a href="/stuff/csstalk/">Intro to CSS</a> &bull; Slides for a Small <em>UoPCS</em> talk</li>
-                <li><time datetime="2011-02-14">14-02-2011</time><a href="http://minecraftexplore.tumblr.com">Minecraft Explore</a> &bull; <em>no updates now</em> :¬(</li>
-                <li><time datetime="2012-12-25">25-12-2012</time><a href="/stuff/christmas2012/">Christmas Card Maker</a> &bull; Made with my festive bro</li>
-                <li><time datetime="2012-11-27">27-11-2012</time><a href="/stuff/forrich">Birthday Cake</a> &bull; a cake yo.</li>
-                <li><time>circa 2003?</time>If they hadn't taken down my piczo that'd be here too.</li>
-            </ul>
-
-        </section>
-
-        <section id="contact">
-
-            <h1>ch@ with me <|B¬)</h1>
-
-            <p>you can e-mail me at <a href="mailto:z@ccolley.com">z@ccolley.com</a>, probably best way of getting hold of me.</p>
-
-            <p>see what I'm listening to on <a href="http://www.last.fm/user/ZacColley">last.fm</a> and gigs on <a href="https://www.songkick.com/users/zaccolley">songkick</a></p>
-
-            <p>tweet at me <a href="http://www.twitter.com/zaccolley">@zaccolley</a> and never on <a rel="author" href="https://plus.google.com/+ZacColley?rel=author">googz plus</a>&hellip;</p>
-
-        </section>
-
-    </section>
-</section><!-- ./windows--about -->
-
-<section class="merlin">
-    <div class="merlin__speech-bubble">
-        <a href="http://twitter.com/zaccolley" class="user">@zaccolley:</a>
-        {{{ tweet.text }}}
-        <time>{{ tweet.date }}</time>
-    </div>
-    <div class="merlin__the-man-himself"></div>
-</section><!-- ./windows--tweets -->
-
-<div class="music">
-<div class="music-inner">
-
-    <div class="music__artist">{{ track.artist }}</div>
-    <div class="music__song">{{ track.name }}</div>
-    <img class="music__art" src="{{ track.image }}" />
-
-    <div class="music__bar">
-        <div class="music__bar__handle"></div>
-    </div>
-
-</div>
-</div><!-- ./music -->
-
-<div class="bar" title="Click here to begin">
-    <div class="start-button"></div>
-    <div class="clock">
-        <div class="clock__time">{{ time }}</div>
-    </div>
-</div>
-
-<script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
-<script src="https://code.jquery.com/ui/1.10.2/jquery-ui.min.js"></script>
-<script src="https://cdn.socket.io/socket.io-1.3.5.js"></script>
-<script src="js/moment.min.js"></script>
-<script src="js/scripts.js"></script>
+<aside>
+  <ul>
+    <li><time datetime="2016-08-30">2014 - 2016</time> <a href="http://happybirthdaynan.surge.sh/">Animal Crossing Birhtday Card for me Nan</a> &bull; fun lil card</li>
+    <li><time datetime="2016">2014 - 2016</time> <a href="https://rosedigital.co.uk">ROSE Digital</a> &bull; front-end and design at ROSE digital</li>
+    <li><time datetime="2015-08-09">09-08-2015</time> <a href="http://nickcolley.github.io/itsyourbirthdaytoday/#lol">itsyourbirthdaytoday</a> &bull; w/ my bro</li>
+    <li><time datetime="2015-07-30">30-07-2015</time> <a href="http://teamlocals.co.uk">Team Locals</a> &bull; design and built from ALL THE WAY UP</li>
+    <li><time datetime="2015-05-16">16-05-2015</time> <a href="https://www.eventbrite.co.uk/e/hackpompey-3-tickets-16615062098">hackpompey 3</a> &bull; the third hackpompey</li>
+    <li><time datetime="2015-02-07">07-02-2015</time> <a href="https://www.eventbrite.co.uk/e/hackpompey-open-data-tickets-15325330476">hackpompey Open Data</a> &bull; 2nd hackpompey</li>
+    <li><time datetime="2015-11-22">22-11-2014</time> <a href="https://www.eventbrite.co.uk/e/hackpompey-tickets-13526984575">hackpompey</a> &bull; a social hack day in pompey</li>
+    <li><time datetime="2014-08-04">04-08-2014</time> <a href="http://rosedigital.co.uk/work/2014/08/04/upgs.html">UPGS</a> &bull; design and initial front-end for the Gaming soc</li>
+    <li><time datetime="2014-04-02">02-04-2014</time> <a href="http://www.phphants.co.uk/">PHP Hants</a> &bull; front-end revamp and improvements</li>
+    <li><time datetime="2013-09-11">11-09-2013</time> <a href="/stuff/efji/">efji</a> &bull; A small (shit) canvas game</li>
+    <li><time datetime="2013-09-09">09-09-2013</time> <a href="http://uopcs.com">The Computing Society's Website</a></li>
+    <li><time datetime="2013-09-09">09-09-2013</time> <a href="/stuff/unipcs/">UoP PC Availability App</a> &bull; app for PC availability at Portsmouth Uni</li>
+    <li><time datetime="2013-07-26">26-07-2013</time> <a href="http://domains.zaccolley.com">dandydomains</a> &bull; App for finding interesting domains</li>
+    <li><time datetime="2013-07-01">01-07-2013</time> <a href="http://rosedigital.co.uk/work/2014/04/16/upracing.html" title="UPRacing">UPRacing's Website</a> &bull; d-sign: <a href="http://dangordondesign.com/">Dan</a> &amp; <a href="http://magicalizard.co.uk/">Matt</a></li>
+    <li><time datetime="2013-03-23">23-03-2013</time> <a href="/stuff/foraaron/">Gameboy</a> &bull; Birthday present for my boy aaron</li>
+    <li><time datetime="2013-03-12">12-03-2013</time> <a href="/stuff/csstalk/">Intro to CSS</a> &bull; Slides for a Small <em>UoPCS</em> talk</li>
+    <li><time datetime="2012-12-25">25-12-2012</time> <a href="/stuff/christmas2012/">Christmas Card Maker</a> &bull; Made with my festive bro</li>
+    <li><time datetime="2012-11-27">27-11-2012</time> <a href="/stuff/forrich">Birthday Cake</a> &bull; a cake yo.</li>
+    <li><time datetime="2011-02-14">14-02-2011</time> <a href="http://minecraftexplore.tumblr.com">Minecraft Explore</a> &bull; <em>no updates now</em> :¬(</li>
+    <li><time>circa 2003?</time> If they hadn't taken down my piczo that'd be here too.</li>
+  </ul>
+</aside>
