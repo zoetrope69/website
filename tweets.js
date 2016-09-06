@@ -11,7 +11,13 @@ var twitter = new Twitter({
 var twitterText = require('twitter-text');
 
 const getTweets = new Promise((resolve, reject) => {
-  twitter.get('statuses/user_timeline', { screen_name: process.env.TWITTER_USERNAME }, (error, tweets) => {
+  const options = {
+    trim_user: true,
+    exclude_replies: true,
+    include_rts: false,
+    screen_name: process.env.TWITTER_USERNAME
+  };
+  twitter.get('statuses/user_timeline', options, (error, tweets) => {
     if (error) {
       return reject(`Error: ${error}`);
     }

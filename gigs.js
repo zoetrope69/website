@@ -100,4 +100,4 @@ const getGigs = new Promise((resolve, reject) => {
     .then(results => resolve(results[0].concat(results[1])), reject);
 });
 
-module.exports = getGigs;
+module.exports = getPastGigs;
