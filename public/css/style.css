@@ -34,9 +34,6 @@ header h1 {
                0 13em #DDD, 0 14em #EEE;
 }
 
-main {
-}
-
 li {
   display: block;
   list-style: none;
@@ -50,7 +47,7 @@ li > small {
   display: block;
   margin-bottom: .25em;
 
-  color: #444;
+  color: #585858;
 }
 
 li > a {
@@ -58,7 +55,7 @@ li > a {
 }
 
 time {
-  color: #AFAFAF;
+  color: #585858;
   font-size: .8em;
 }
 
