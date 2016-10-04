@@ -43,7 +43,8 @@ const getBooks = new Promise((resolve, reject) => {
         id: book.id.$t,
         shelf: handleShelf(review.shelves.shelf),
         title: book.title,
-        uri: book.link
+        uri: book.link,
+        image: book.small_image_url
       };
 
       // check if there's an image and add if there is

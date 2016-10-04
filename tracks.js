@@ -71,7 +71,8 @@ function processTrack(data) {
     name: data.name,
     artist: data.artist['#text'],
     album: data.album['#text'],
-    uri: data.url
+    uri: data.url,
+    image
   };
 
   // if there's an image add it here

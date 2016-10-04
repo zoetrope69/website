@@ -3,14 +3,15 @@
 </header>
 
 <main>
+  <p>Front-end developer and designer. Performance, accessibility and UX.</p>
+  <p>Also interested in: e-textiles, fashion in tech, education in computing and striving for inclusivity in tech.</p>
+  <p>Email me at: <a href="mailto:hi@zaccolley.com">hi@zaccolley.com</a>. Tweeting at: <a href="https://twitter.com/zaccolley">@zaccolley</a>.</p>
+  <p>Now I'm: a software boy working at <a href="https://songkick.com">Songkick</a>.</p>
+  <p>I used to: work at <a href="https://rosedigital.co.uk">ROSE</a> and run <a href="http://hackpompey.co.uk">hackpompey</a>.</p>
   <ul>
-    <li>Front-end developer and designer. Performance, accessibility and UX.</li>
-    <li>Also interested in: e-textiles, fashion in tech, education in computing and striving for inclusivity in tech.</li>
-    <li>Email me at: <a href="mailto:hi@zaccolley.com">hi@zaccolley.com</a>. Tweeting at: <a href="https://twitter.com/zaccolley">@zaccolley</a>.</li>
-    <li>Now I'm: a software boy working at <a href="https://songkick.com">Songkick</a>.</li>
-    <li>I used to: work at <a href="https://rosedigital.co.uk">ROSE</a> and run <a href="http://hackpompey.co.uk">hackpompey</a>.</li>
     <li>
       <small>The last song I listened to was&hellip;</small>
+      <img src="{{tracks.0.image}}" alt="Album art for {{tracks.0.name}} by {{tracks.0.artist}}" />
       <a href="{{tracks.0.uri}}">{{tracks.0.name}} by {{tracks.0.artist}}</a>
     </li>
     <li>
@@ -19,7 +20,16 @@
     </li>
     <li>
       <small>The last film I watched was&hellip;</small>
+      <img src="{{films.0.film.image.tiny}}" alt="{{films.0.film.title}}'s film poster" />
       <a href="{{films.0.uri}}">{{films.0.film.title}} <small>({{films.0.film.year}})</small></a>
+      {{#if films.0.rating}}
+        <span class="rating" title="{{films.0.rating.score}}">{{films.0.rating.text}}</span>
+      {{/if}}
+      {{#unless films.0.spoilers}}
+      {{#if films.0.review}}
+        <blockquote>{{films.0.review}}</blockquote>
+      {{/if}}
+      {{/unless}}
     </li>
     <li>
       <small>The last tweet I tweeted was&hellip;</small>
@@ -27,9 +37,11 @@
     </li>
     <li>
       <small>The last book I read was&hellip;</small>
+      <img src="{{books.0.image}}" alt="{{books.0.title}}'s cover" />
       <a href="{{books.0.uri}}">{{books.0.title}}</a>
     </li>
   </ul>
+  
   <time datetime="{{time.iso}}">Data updated at {{time.human}}</time>
 </main>
 

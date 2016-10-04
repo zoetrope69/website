@@ -34,18 +34,29 @@ header h1 {
                0 13em #DDD, 0 14em #EEE;
 }
 
+p,
 li {
   display: block;
-  list-style: none;
   max-width: 40em;
-  margin-bottom: 1.5em;
+  line-height: 1.5em;
+  margin-bottom: 0.75em;
 
   color: #111;
 }
 
+li {
+  overflow: hidden; /* clearfix */
+  position: relative;
+  list-style: none;
+}
+
+main li {
+  margin-top: 1.75em;
+}
+
 li > small {
   display: block;
-  margin-bottom: .25em;
+  margin-bottom: 0.25em;
 
   color: #585858;
 }
@@ -54,9 +65,32 @@ li > a {
   display: inline-block;
 }
 
+li > img {
+  float: left;
+  max-width: 35px;
+  margin-right: 0.5em;
+
+  opacity: 0.5;
+
+  transition: opacity .5s ease-in-out;
+}
+
+li:hover > img {
+  opacity: 1;
+}
+
 time {
   color: #585858;
   font-size: .8em;
+}
+
+.rating,
+blockquote {
+  color: #634a26;
+}
+
+blockquote {
+  font-size: 0.85em;
 }
 
 aside {
