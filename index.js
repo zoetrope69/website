@@ -22,7 +22,7 @@ http.listen(3000, () => {
   console.log('Listening on *:3000');
 });
 
-const getData = () => new Promise((resolve, reject) => {
+const getData = new Promise((resolve, reject) => {
   Promise.all([tracks, tweets, gigs, films, books]).then((results) => {
     var date = new Date();
     return resolve({
@@ -40,11 +40,11 @@ const getData = () => new Promise((resolve, reject) => {
 });
 
 app.get('/self.json', (req, res) => {
-  return getData().then((data) => res.json(data),
+  return getData.then((data) => res.json(data),
                       (reason) => res.json({ error: reason }));
 });
 
 app.get('/', (req, res) => {
-  return getData().then((data) => res.render('home', data),
+  return getData.then((data) => res.render('home', data),
                       (reason) => res.render('home', { error: reason }));
 });
