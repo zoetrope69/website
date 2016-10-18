@@ -19,7 +19,7 @@ const getTweets = new Promise((resolve, reject) => {
   };
   twitter.get('statuses/user_timeline', options, (error, tweets) => {
     if (error) {
-      return reject(`Error: ${error}`);
+      return reject(error);
     }
 
     let user = tweets[0].user;

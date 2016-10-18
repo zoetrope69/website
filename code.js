@@ -13,7 +13,7 @@ const getCode = new Promise((resolve, reject) => {
     }
   }, function (error, response, body) {
     if (error) {
-      return reject(`Error: ${error}`);
+      return reject(error);
     }
 
     if (response.statusCode !== 200) {

@@ -21,7 +21,7 @@ function handleShelf(shelf) {
 const getBooks = new Promise((resolve, reject) => {
   request(uri, (error, response, body) => {
     if (error) {
-      return reject(`Error: ${error}`);
+      return reject(error);
     }
 
     if (response.statusCode !== 200) {

@@ -8,7 +8,7 @@ var songkickUrl = 'http://api.songkick.com/api/3.0/users/'+ process.env.SONGKICK
 
 function checkRequest(error, response) {
   if (error) {
-    return `Error: ${error}`;
+    return error;
   }
 
   if (response.statusCode !== 200) {
