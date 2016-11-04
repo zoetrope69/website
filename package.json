@@ -26,7 +26,7 @@
     "node-songkick": "^0.2.1",
     "request": "^2.61.0",
     "twitter": "^1.2.5",
-    "twitter-text": "^1.13.2",
+    "twitter-text": "^1.14.1",
     "xml2json": "^0.10.0"
   }
 }
