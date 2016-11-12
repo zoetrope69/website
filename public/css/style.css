@@ -65,9 +65,9 @@ li > a {
   display: inline-block;
 }
 
-li > img {
+li > .image {
   float: left;
-  max-width: 35px;
+  width: 35px;
   margin-right: 0.5em;
 
   opacity: 0.5;
@@ -75,8 +75,12 @@ li > img {
   transition: opacity .5s ease-in-out;
 }
 
-li:hover > img {
+li:hover > .image {
   opacity: 1;
+}
+
+li > .image img {
+  max-width: 100%;
 }
 
 time {
