@@ -5,6 +5,7 @@ const express = require('express');
 const exphbs  = require('express-handlebars');
 const app = express();
 const http = require('http').Server(app);
+const mcache = require('memory-cache');
 
 const tracks = require('./tracks');
 const tweets = require('./tweets');
@@ -22,29 +23,49 @@ http.listen(3000, () => {
   console.log('Listening on *:3000');
 });
 
-const getData = new Promise((resolve, reject) => {
-  Promise.all([tracks, tweets, gigs, films, books]).then((results) => {
-    var date = new Date();
-    return resolve({
-      time: {
-        human: date.toDateString(),
-        iso: date.toISOString()
-      },
-      tracks: results[0],
-      tweets: results[1],
-      gigs: results[2],
-      films: results[3],
-      books: results[4].filter(book => book.shelf === 'read')
+const cache = (duration) => {
+  return (req, res, next) => {
+    let key = '__express__' + req.originalUrl || req.url;
+    let cachedBody = mcache.get(key);
+    if (cachedBody) {
+      res.send(cachedBody);
+      return
+    } else {
+      res.sendResponse = res.send
+      res.send = (body) => {
+        mcache.put(key, body, duration * 1000);
+        res.sendResponse(body);
+      }
+      next();
+    }
+  }
+}
+
+function getData() {
+  return new Promise((resolve, reject) => {
+    return Promise.all([tracks(10), tweets(), gigs(), films(), books()]).then((results) => {
+      var date = new Date();
+      return resolve({
+        time: {
+          human: date.toDateString(),
+          iso: date.toISOString()
+        },
+        tracks: results[0],
+        tweets: results[1],
+        gigs: results[2],
+        films: results[3],
+        books: results[4].filter(book => book.shelf === 'read')
+      });
     });
-  }, reject);
+  });
+}
+
+app.get('/self.json', cache(process.env.CACHE_TIME), (req, res) => {
+  return getData().then((data) => res.json(data))
+                  .catch((reason) => res.json({ error: reason }));
 });
 
-app.get('/self.json', (req, res) => {
-  return getData.then((data) => res.json(data),
-                      (reason) => res.json({ error: reason }));
-});
-
-app.get('/', (req, res) => {
-  return getData.then((data) => res.render('home', data),
-                      (reason) => res.render('home', { error: reason }));
+app.get('/', cache(process.env.CACHE_TIME), (req, res) => {
+  return getData().then((data) => res.render('home', data))
+                  .catch((reason) => res.render('home', { error: reason }));
 });

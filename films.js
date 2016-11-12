@@ -3,34 +3,36 @@ require('dotenv').load(); // bring in enviroment vars
 
 var letterboxd = require('letterboxd');
 
-const getFilms = new Promise((resolve, reject) => {
-  letterboxd(process.env.LETTERBOXD_USERNAME)
-    .then(films => films.filter(film => film.type === 'diary'))
-    .then(films => {
-      if (films.length <= 0) {
-        return resolve(`Error: No films`);
-      }
+function getFilms() {
+  return new Promise((resolve, reject) => {
+    letterboxd(process.env.LETTERBOXD_USERNAME)
+      .then(films => films.filter(film => film.type === 'diary'))
+      .then(films => {
+        if (films.length <= 0) {
+          return resolve(`Error: No films`);
+        }
 
-      // convert times to stuff we can work with
-      films = films.map(item => {
-        const dateWatched = new Date(item.date.watched);
-        item.date.watched = {
-          human: dateWatched.toDateString(),
-          iso: dateWatched.toISOString()
-        };
+        // convert times to stuff we can work with
+        films = films.map(item => {
+          const dateWatched = new Date(item.date.watched);
+          item.date.watched = {
+            human: dateWatched.toDateString(),
+            iso: dateWatched.toISOString()
+          };
 
-        const datePublished = new Date(item.date.published);
-        item.date.published = {
-          human: datePublished.toDateString(),
-          iso: datePublished.toISOString()
-        };
+          const datePublished = new Date(item.date.published);
+          item.date.published = {
+            human: datePublished.toDateString(),
+            iso: datePublished.toISOString()
+          };
 
-        return item;
-      });
+          return item;
+        });
 
-      resolve(films);
-    })
-    .catch(error => resolve(error));
-});
+        resolve(films);
+      })
+      .catch(error => resolve(error));
+  });
+}
 
 module.exports = getFilms;

@@ -83,27 +83,29 @@ function processTrack(data) {
   return track;
 }
 
-const getRecentTracks = (limit) => new Promise ((resolve, reject) => {
-  const recentTracks = lastfm.request('user.getrecenttracks', {
-    username,
-    limit
+function getRecentTracks(limit) {
+  return new Promise ((resolve, reject) => {
+    const recentTracks = lastfm.request('user.getrecenttracks', {
+      username,
+      limit
+    });
+
+    recentTracks.on('error', (error) =>
+      reject(`Error (${error.error}): ${error.message}`));
+
+    recentTracks.on('success', (data) => {
+
+      // if there are no tracks then reject
+      if (data.recenttracks.track.length > 0
+          && typeof data.recenttracks.track === 'undefined') {
+        return reject(`Error: Couldn't find any tracks`);
+      }
+
+      const tracks = data.recenttracks.track.map(processTrack);
+
+      resolve(tracks);
+    });
   });
+}
 
-  recentTracks.on('error', (error) =>
-    reject(`Error (${error.error}): ${error.message}`));
-
-  recentTracks.on('success', (data) => {
-
-    // if there are no tracks then reject
-    if (data.recenttracks.track.length > 0
-        && typeof data.recenttracks.track === 'undefined') {
-      return reject(`Error: Couldn't find any tracks`);
-    }
-
-    const tracks = data.recenttracks.track.map(processTrack);
-
-    resolve(tracks);
-  });
-});
-
-module.exports = getRecentTracks(10);
+module.exports = getRecentTracks;

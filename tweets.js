@@ -10,52 +10,54 @@ var twitter = new Twitter({
     });
 var twitterText = require('twitter-text');
 
-const getTweets = new Promise((resolve, reject) => {
-  const options = {
-    trim_user: true,
-    exclude_replies: true,
-    include_rts: false,
-    screen_name: process.env.TWITTER_USERNAME
-  };
-  twitter.get('statuses/user_timeline', options, (error, tweets) => {
-    if (error) {
-      return reject(error);
-    }
-
-    let user = tweets[0].user;
-    user = {
-      username: user.screen_name,
-      followers: user.followers_count,
-      following: user.friends_count,
-      tweets: user.statuses_count,
-      image: user.profile_image_url_https
+function getTweets() {
+  return new Promise((resolve, reject) => {
+    const options = {
+      trim_user: true,
+      exclude_replies: true,
+      include_rts: false,
+      screen_name: process.env.TWITTER_USERNAME
     };
-
-    tweets = tweets.map(tweet => {
-      const date = new Date(tweet.created_at);
-      const processedTweet = {
-        time: {
-          human: date.toDateString(),
-          iso: date.toISOString()
-        },
-        text: {
-          raw: tweet.text,
-          html: twitterText.autoLink(twitterText.htmlEscape(tweet.text))
-        },
-        retweets: tweet.retweet_count,
-        favourites: tweet.favorite_count
-      };
-
-      // if the tweet replies to someone add that too
-      if (tweet.in_reply_to_screen_name) {
-        processedTweet.replyingTo = tweet.in_reply_to_screen_name;
+    twitter.get('statuses/user_timeline', options, (error, tweets) => {
+      if (error) {
+        return reject(error);
       }
 
-      return processedTweet;
-    });
+      let user = tweets[0].user;
+      user = {
+        username: user.screen_name,
+        followers: user.followers_count,
+        following: user.friends_count,
+        tweets: user.statuses_count,
+        image: user.profile_image_url_https
+      };
 
-    resolve(tweets);
+      tweets = tweets.map(tweet => {
+        const date = new Date(tweet.created_at);
+        const processedTweet = {
+          time: {
+            human: date.toDateString(),
+            iso: date.toISOString()
+          },
+          text: {
+            raw: tweet.text,
+            html: twitterText.autoLink(twitterText.htmlEscape(tweet.text))
+          },
+          retweets: tweet.retweet_count,
+          favourites: tweet.favorite_count
+        };
+
+        // if the tweet replies to someone add that too
+        if (tweet.in_reply_to_screen_name) {
+          processedTweet.replyingTo = tweet.in_reply_to_screen_name;
+        }
+
+        return processedTweet;
+      });
+
+      resolve(tweets);
+    });
   });
-});
+}
 
 module.exports = getTweets;

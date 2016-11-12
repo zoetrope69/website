@@ -46,58 +46,64 @@ function processGig(gig, timeframe) {
   return gig;
 }
 
-const getPastGigs = new Promise((resolve, reject) => {
-  const order = 'desc';
-  const url = songkickUrl + '/gigography.json' +
-              '?apikey=' + process.env.SONGKICK_API +
-              '&order=' + order
+function getPastGigs() {
+  return new Promise((resolve, reject) => {
+    const order = 'desc';
+    const url = songkickUrl + '/gigography.json' +
+                '?apikey=' + process.env.SONGKICK_API +
+                '&order=' + order
 
-  request(url, (error, response, body) => {
-    // check if the result is good to process
-    const requestCheck = checkRequest(error, response);
-    if (requestCheck) {
-      return reject(requestCheck);
-    }
+    request(url, (error, response, body) => {
+      // check if the result is good to process
+      const requestCheck = checkRequest(error, response);
+      if (requestCheck) {
+        return reject(requestCheck);
+      }
 
-    const data = JSON.parse(body);
+      const data = JSON.parse(body);
 
-    let gigs = data.resultsPage.results.event;
+      let gigs = data.resultsPage.results.event;
 
-    // process and strip out what we need from gig
-    gigs = gigs.map(gig => processGig(gig, 'past'));
+      // process and strip out what we need from gig
+      gigs = gigs.map(gig => processGig(gig, 'past'));
 
-    resolve(gigs);
+      resolve(gigs);
+    });
   });
-});
+}
 
-const getUpcomingGigs = new Promise((resolve, reject) => {
-	const order = 'asc';
-  const url = songkickUrl + '/calendar.json?reason=attendance' +
-              '&apikey=' + process.env.SONGKICK_API +
-              '&order=' + order;
+function getUpcomingGigs() {
+  return new Promise((resolve, reject) => {
+  	const order = 'asc';
+    const url = songkickUrl + '/calendar.json?reason=attendance' +
+                '&apikey=' + process.env.SONGKICK_API +
+                '&order=' + order;
 
-  request(url, (error, response, body) => {
-    // check if the result is good to process
-    const requestCheck = checkRequest(error, response);
-    if (requestCheck) {
-      return reject(requestCheck);
-    }
+    request(url, (error, response, body) => {
+      // check if the result is good to process
+      const requestCheck = checkRequest(error, response);
+      if (requestCheck) {
+        return reject(requestCheck);
+      }
 
-    const data = JSON.parse(body);
+      const data = JSON.parse(body);
 
-    let gigs = data.resultsPage.results.calendarEntry;
+      let gigs = data.resultsPage.results.calendarEntry;
 
-    // process and strip out what we need from gig
-    gigs = gigs.map(gig => processGig(gig, 'upcoming'));
+      // process and strip out what we need from gig
+      gigs = gigs.map(gig => processGig(gig, 'upcoming'));
 
-    resolve(gigs);
+      resolve(gigs);
+    });
   });
-});
+}
 
-const getGigs = new Promise((resolve, reject) => {
-  // merge the gigs together into one array
-  Promise.all([getUpcomingGigs, getPastGigs])
-    .then(results => resolve(results[0].concat(results[1])), reject);
-});
+function getGigs() {
+  return new Promise((resolve, reject) => {
+    // merge the gigs together into one array
+    Promise.all([getUpcomingGigs, getPastGigs])
+      .then(results => resolve(results[0].concat(results[1])), reject);
+  });
+}
 
 module.exports = getPastGigs;
