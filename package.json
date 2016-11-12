@@ -25,7 +25,7 @@
     "memory-cache": "^0.1.6",
     "moment": "^2.10.6",
     "node-songkick": "^0.2.1",
-    "request": "^2.61.0",
+    "request": "^2.76.0",
     "twitter": "^1.2.5",
     "twitter-text": "^1.13.2",
     "xml2json": "^0.10.0"
