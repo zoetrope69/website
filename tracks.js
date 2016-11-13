@@ -1,46 +1,7 @@
 'use strict';
 require('dotenv').load(); // bring in enviroment vars
 
-var LastFmNode = require('lastfm').LastFmNode;
-var lastfm = new LastFmNode({
-  api_key: process.env.LASTFM_API, // sign-up for a key at http://www.last.fm/api
-  secret:  process.env.LASTFM_SECRET,
-  useragent: process.env.LASTFM_USERAGENT
-});
-var username = process.env.LASTFM_USERNAME;
-
-const favArtist = new Promise ((resolve, reject) => {
-  var periods = ['overall', '7day', '1month', '3month', '6month', '12month']; // different periods
-
-  var recentTracks = lastfm.request('user.gettopartists', {
-    username,
-    period: periods[1],
-    limit: 1
-  });
-
-  // if there's any errors reject right away
-  recentTracks.on('error', (error) =>
-    reject(`Error (${error.error}): ${error.message}`));
-
-  recentTracks.on('success', (data) => {
-    // if there is no artist found reject
-  	if (data.topartists.artist.length > 0
-        && typeof data.topartists.artist[0] === 'undefined') {
-      return reject("Error: Couldn't find a artist");
-    }
-
-    let artist = data.topartists.artist[0];
-
-    // strip out the data we need
-    artist = {
-    	name: artist.name,
-      url: artist.url,
-      plays: artist.playcount
-    };
-
-    return resolve(artist);
-  });
-});
+var request = require('request');
 
 function processTrack(data) {
   // if there's an image grab it here
@@ -83,22 +44,39 @@ function processTrack(data) {
   return track;
 }
 
-function getRecentTracks(limit) {
+function checkRequest(error, response) {
+  if (error) {
+    return error;
+  }
+
+  if (response.statusCode !== 200) {
+    return `Error: Response was not OK`;
+  }
+
+  return false;
+}
+
+function getRecentTracks(limit = 1) {
   return new Promise ((resolve, reject) => {
-    const recentTracks = lastfm.request('user.getrecenttracks', {
-      username,
-      limit
-    });
+    const url = 'https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks' +
+                '&user=' + process.env.LASTFM_USERNAME +
+                '&api_key=' + process.env.LASTFM_API +
+                '&limit=' + limit +
+                '&format=json';
 
-    recentTracks.on('error', (error) =>
-      reject(`Error (${error.error}): ${error.message}`));
+    return request(url, (error, response, body) => {
+      // check if the result is good to process
+      const requestCheck = checkRequest(error, response);
+      if (requestCheck) {
+        return reject(requestCheck);
+      }
 
-    recentTracks.on('success', (data) => {
+      const data = JSON.parse(body);
 
       // if there are no tracks then reject
       if (data.recenttracks.track.length > 0
           && typeof data.recenttracks.track === 'undefined') {
-        return reject(`Error: Couldn't find any tracks`);
+        return reject("Couldn't find any tracks");
       }
 
       const tracks = data.recenttracks.track.map(processTrack);
