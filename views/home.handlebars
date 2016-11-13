@@ -36,7 +36,7 @@
       {{/unless}}
     </li>
     <li>
-      <small>The last tweet I tweeted was&hellip;</small>
+      <small>My last tweet was&hellip;</small>
       {{{tweets.0.text.html}}}
     </li>
     <li>
@@ -46,8 +46,17 @@
       </span>
       <a href="{{books.0.uri}}">{{books.0.title}}</a>
     </li>
+    <li>
+      <small>The last code I pushed publically was to&hellip;</small>
+      <a href="{{code.0.repo.uri}}">{{code.0.repo.name}}</a>
+      <ol class="commits">
+        {{#each code.0.commits as |commit|}}
+        <li><a href="{{commit.uri}}">{{commit.message}}</a></li>
+        {{/each}}
+      </ol>
+    </li>
   </ul>
-  
+
   <time datetime="{{time.iso}}">Data updated at {{time.human}}</time>
 </main>
 

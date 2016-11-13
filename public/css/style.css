@@ -51,7 +51,7 @@ li {
 }
 
 main li {
-  margin-top: 1.75em;
+  margin-top: 2.75em;
 }
 
 li > small {
@@ -69,18 +69,24 @@ li > .image {
   float: left;
   width: 35px;
   margin-right: 0.5em;
-
-  opacity: 0.5;
-
-  transition: opacity .5s ease-in-out;
-}
-
-li:hover > .image {
-  opacity: 1;
 }
 
 li > .image img {
   max-width: 100%;
+}
+
+li > strong {
+  display: block;
+  margin-top: 1em;
+
+  font-size: 0.85em;
+  font-weight: 500;
+}
+
+.commits li {
+  display: inline-block;
+  font-size: 0.8em;
+  margin: 0;
 }
 
 time {
@@ -100,6 +106,10 @@ blockquote {
 aside {
   padding-top: 3em;
   font-size: .75em;
+}
+
+aside li {
+  margin-bottom: 1em;
 }
 
 @media (max-width: 80em) and (min-width: 40em) {

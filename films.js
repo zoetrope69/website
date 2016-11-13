@@ -5,7 +5,7 @@ var letterboxd = require('letterboxd');
 
 function getFilms() {
   return new Promise((resolve, reject) => {
-    letterboxd(process.env.LETTERBOXD_USERNAME)
+    return letterboxd(process.env.LETTERBOXD_USERNAME)
       .then(films => films.filter(film => film.type === 'diary'))
       .then(films => {
         if (films.length <= 0) {
@@ -31,7 +31,7 @@ function getFilms() {
 
         resolve(films);
       })
-      .catch(error => resolve(error));
+      .catch(error => console.log(error));
   });
 }
 

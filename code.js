@@ -5,7 +5,7 @@ var request = require("request");
 
 function getCode() {
   return new Promise((resolve, reject) => {
-    request({
+    return request({
       method: 'GET',
       url: `https://api.github.com/users/${process.env.GITHUB_USERNAME}/events/public`,
       headers: {
@@ -49,9 +49,16 @@ function getCode() {
       events = events.filter(event => eventTypes.indexOf(event.type) !== -1);
 
       events = events.map((event, i) => {
+        const timeCreated = new Date(event.created_at);
         const output = {
-          time: event.created_at,
-          repo: event.repo
+          time: {
+            human: timeCreated.toDateString(),
+            iso: timeCreated.toISOString()
+          },
+          repo: {
+            name: event.repo.name,
+            uri: `https://github.com/${event.repo.name}`
+          }
         };
 
         switch (event.type) {
@@ -79,7 +86,10 @@ function getCode() {
             break;
           case 'PushEvent':
             output.type = 'push';
-            output.commits = event.payload.commits.map(commit => ({ message: commit.message, uri: commit.url }));
+            output.commits = event.payload.commits.map(commit => ({
+              message: commit.message,
+              uri: `https://github.com/${output.repo.name}/commit/${commit.sha}`
+            }));
             break;
         }
 

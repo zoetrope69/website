@@ -53,7 +53,7 @@ function getPastGigs() {
                 '?apikey=' + process.env.SONGKICK_API +
                 '&order=' + order
 
-    request(url, (error, response, body) => {
+    return request(url, (error, response, body) => {
       // check if the result is good to process
       const requestCheck = checkRequest(error, response);
       if (requestCheck) {
@@ -79,7 +79,7 @@ function getUpcomingGigs() {
                 '&apikey=' + process.env.SONGKICK_API +
                 '&order=' + order;
 
-    request(url, (error, response, body) => {
+    return request(url, (error, response, body) => {
       // check if the result is good to process
       const requestCheck = checkRequest(error, response);
       if (requestCheck) {

@@ -20,7 +20,7 @@ function handleShelf(shelf) {
 
 function getBooks() {
   return new Promise((resolve, reject) => {
-    request(uri, (error, response, body) => {
+    return request(uri, (error, response, body) => {
       if (error) {
         return reject(error);
       }

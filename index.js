@@ -12,6 +12,7 @@ const tweets = require('./tweets');
 const gigs = require('./gigs');
 const films = require('./films');
 const books = require('./books');
+const code = require('./code');
 
 const moment = require('moment');
 
@@ -43,18 +44,29 @@ const cache = (duration) => {
 
 function getData() {
   return new Promise((resolve, reject) => {
-    return Promise.all([tracks(10), tweets(), gigs(), films(), books()]).then((results) => {
+
+    var data = [
+      books(),
+      code(),
+      films(),
+      gigs(),
+      tracks(),
+      tweets(),
+    ];
+
+    return Promise.all(data).then((results) => {
       var date = new Date();
       return resolve({
         time: {
           human: date.toDateString(),
           iso: date.toISOString()
         },
-        tracks: results[0],
-        tweets: results[1],
-        gigs: results[2],
-        films: results[3],
-        books: results[4].filter(book => book.shelf === 'read')
+        books: results[0].filter(book => book.shelf === 'read'),
+        code: results[1].filter(item => item.type == 'push'),
+        films: results[2],
+        gigs: results[3],
+        tracks: results[4],
+        tweets: results[5],
       });
     });
   });
@@ -62,10 +74,16 @@ function getData() {
 
 app.get('/self.json', cache(process.env.CACHE_TIME), (req, res) => {
   return getData().then((data) => res.json(data))
-                  .catch((reason) => res.json({ error: reason }));
+                  .catch((error) => {
+                    console.log(error);
+                    res.json({ error: 'Something went wrong' });
+                  });
 });
 
 app.get('/', cache(process.env.CACHE_TIME), (req, res) => {
   return getData().then((data) => res.render('home', data))
-                  .catch((reason) => res.render('home', { error: reason }));
+                  .catch((error) => {
+                    console.log(error);
+                    res.render('home', {});
+                  });
 });
