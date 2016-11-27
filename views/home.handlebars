@@ -10,11 +10,17 @@
   <p>I used to: work at <a href="https://rosedigital.co.uk">ROSE</a> and run <a href="http://hackpompey.co.uk">hackpompey</a>.</p>
   <ul>
     <li>
-      <small>The last song I listened to was&hellip;</small>
+      <small>
+        The last song I listened to was&hellip;
+        <time datetime="{{tracks.0.time.iso}}" style="float:right">{{tracks.0.time.human}}</time>
+      </small>
       <span class="image">
         <img src="{{tracks.0.image}}" alt="Album art for {{tracks.0.name}} by {{tracks.0.artist}}" />
       </span>
-      <a href="{{tracks.0.uri}}">{{tracks.0.name}} by {{tracks.0.artist}}</a>
+      <a href="http://www.last.fm/user/zaccolley">
+        <div>{{tracks.0.name}}</div>
+        <small>{{tracks.0.artist}}</small>
+      </a>
     </li>
     <li>
       <small>

@@ -6,8 +6,8 @@ var request = require('request');
 function processTrack(data) {
   // if there's an image grab it here
   let image = false;
-  if (data.hasOwnProperty('image') && data.image[3]['#text'] !== '') {
-    image = data.image[0]['#text'];
+  if (data.hasOwnProperty('image') && data.image[1]['#text'] !== '') {
+    image = data.image[1]['#text'];
   }
 
   // is the data being played?
@@ -25,7 +25,7 @@ function processTrack(data) {
   // simplify response
   const track = {
     time: {
-      human: date.toDateString(),
+      human: `${date.toDateString()} ${date.toLocaleTimeString('en-GB')}`,
       iso: date.toISOString()
     },
     playing,
