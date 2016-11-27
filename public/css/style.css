@@ -67,12 +67,18 @@ li > a {
 
 li > .image {
   float: left;
-  width: 35px;
+  width: 50px;
   margin-right: 0.5em;
 }
 
 li > .image img {
   max-width: 100%;
+}
+
+li > .image .code-image {
+  float: left;
+  height: 50px;
+  background: #585858;
 }
 
 li > strong {
