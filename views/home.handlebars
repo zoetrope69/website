@@ -17,8 +17,19 @@
       <a href="{{tracks.0.uri}}">{{tracks.0.name}} by {{tracks.0.artist}}</a>
     </li>
     <li>
-      <small>The last gig I went to was&hellip;</small>
-      <a href="{{gigs.0.uri}}">{{gigs.0.name}}</a>
+      <small>
+        The last gig I went to was&hellip;
+        <time datetime="{{gigs.0.time.iso}}" style="float:right">{{gigs.0.time.human}}</time>
+      </small>
+      {{#if tweets.0.images.length}}
+      <span class="image">
+        <img src="{{gigs.0.image}}" alt="{{gigs.0.artists}} at {{gigs.0.venue}}" />
+      </span>
+      {{/if}}
+      <a href="{{gigs.0.uri}}">
+        <div>{{gigs.0.artists}}</div>
+        <small>{{gigs.0.venue}}</small>
+      </a>
     </li>
     <li>
       <small>

@@ -18,6 +18,14 @@ function checkRequest(error, response) {
   return false;
 }
 
+function processPerformances(performances) {
+  const p = performances.map(p => p.displayName);
+  return [
+    p.slice(0, -1).join(', '),
+    p.slice(-1)[0]
+  ].join(p.length < 2 ? '' : ' and ');
+}
+
 function processGig(gig, timeframe) {
   // determine any attendance to gig
   let attendance = false;
@@ -26,16 +34,20 @@ function processGig(gig, timeframe) {
     gig = gig.event;
   }
 
-  const date = new Date(gig.start.date);
+  const image = `https://images.sk-static.com/images/media/profile_images/artists/${gig.performance[0].artist.id}/avatar`;
+
+  const date = new Date(`${gig.start.date} ${gig.start.time ? gig.start.time : ''}`.trim());
   gig = {
     time: {
-      human: date.toDateString(),
+      tense: timeframe,
+      human: `${date.toDateString()} ${date.toLocaleTimeString('en-GB')}`,
       iso: date.toISOString()
     },
-    timeframe,
-    name: gig.displayName,
+    artists: processPerformances(gig.performance),
+    venue: gig.venue.displayName,
     type: gig.type.toLowerCase(),
-    url: gig.uri
+    image,
+    uri: gig.uri
   };
 
   // add attendance if relevant
