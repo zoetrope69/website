@@ -58,7 +58,7 @@ function getData() {
       var date = new Date();
       return resolve({
         time: {
-          human: date.toDateString(),
+          human: `${date.toDateString()} ${date.toLocaleTimeString('en-GB')}`,
           iso: date.toISOString()
         },
         books: results[0].filter(book => book.shelf === 'read'),
