@@ -15,15 +15,19 @@ function getFilms() {
         // convert times to stuff we can work with
         films = films.map(item => {
           const dateWatched = new Date(item.date.watched);
-          item.date.watched = {
-            human: dateWatched.toDateString(),
-            iso: dateWatched.toISOString()
-          };
-
           const datePublished = new Date(item.date.published);
-          item.date.published = {
-            human: datePublished.toDateString(),
-            iso: datePublished.toISOString()
+
+          delete item.date;
+
+          item.time = {
+            watched: {
+              human: dateWatched.toDateString(),
+              iso: dateWatched.toISOString()
+            },
+            published: {
+              human: `${datePublished.toDateString()} ${datePublished.toLocaleTimeString('en-GB')}`,
+              iso: datePublished.toISOString()
+            }
           };
 
           return item;

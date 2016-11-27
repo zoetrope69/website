@@ -21,9 +21,12 @@
       <a href="{{gigs.0.uri}}">{{gigs.0.name}}</a>
     </li>
     <li>
-      <small>The last film I watched was&hellip;</small>
+      <small>
+        The last film I watched was&hellip;
+        <time datetime="{{films.0.time.watched.iso}}" style="float:right">{{films.0.time.watched.human}}</time>
+      </small>
       <span class="image">
-        <img src="{{films.0.film.image.tiny}}" alt="{{films.0.film.title}}'s film poster" />
+        <img src="{{films.0.film.image.small}}" alt="{{films.0.film.title}}'s film poster" />
       </span>
       <a href="{{films.0.uri}}">{{films.0.film.title}} <small>({{films.0.film.year}})</small></a>
       {{#if films.0.rating}}
