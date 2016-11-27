@@ -58,7 +58,15 @@
       {{/unless}}
     </li>
     <li>
-      <small>The last code I pushed publically was to&hellip;</small>
+      <small>
+        The last code I pushed publically was to&hellip;
+        <time datetime="{{code.0.time.iso}}" style="float:right">{{code.0.time.human}}</time>
+      </small>
+      <div class="image">
+        {{#each code.0.languages as |language|}}
+          <div class="code-image" title="{{language.name}}" style="width:{{language.percentage}}%;background:{{language.color}};"></div>
+        {{/each}}
+      </div>
       <a href="{{code.0.repo.uri}}">{{code.0.repo.name}}</a>
       <ol class="commits">
         {{#each code.0.commits as |commit|}}
