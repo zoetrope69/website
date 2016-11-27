@@ -100,6 +100,11 @@ time {
   font-size: .8em;
 }
 
+main > time {
+  display: block;
+  margin-top: 5em;
+}
+
 .rating,
 blockquote {
   color: #634a26;
