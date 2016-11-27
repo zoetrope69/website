@@ -32,21 +32,52 @@ function getBooks() {
       const result = parser.toJson(body, { object: true });
       const reviews = result.GoodreadsResponse.reviews.review;
 
+      const score2Text = ['', '★', '★★', '★★★', '★★★★', '★★★★★'];
+
       let books = reviews.map(review => {
         const book = review.book;
 
         const date = new Date(review.date_updated);
         const output = {
           time: {
-            human: date.toDateString(),
-            iso: date.toISOString()
+            published: {
+              human: `${date.toDateString()} ${date.toLocaleTimeString('en-GB')}`,
+              iso: date.toISOString()
+            }
           },
-          id: book.id.$t,
+          book: {
+            id: book.id.$t,
+            title: book.title,
+            image: book.small_image_url,
+            uri: book.link
+          },
           shelf: handleShelf(review.shelves.shelf),
-          title: book.title,
-          uri: book.link,
-          image: book.small_image_url
+          uri: review.url,
         };
+
+        if (review.rating) {
+          output.rating = {
+            text: score2Text[+review.rating],
+            score: review.rating
+          };
+        }
+
+        if (review.body.length > 0) {
+          output.review = review.body;
+        }
+
+        if (!!review.spoilers_flag) {
+          output.spoilers = true;
+        }
+
+        if (typeof review.read_at !== 'object') {
+          const date = new Date(review.read_at);
+
+          output.time.read = {
+            human: `${date.toDateString()} ${date.toLocaleTimeString('en-GB')}`,
+            iso: date.toISOString()
+          }
+        }
 
         // check if there's an image and add if there is
         // no photo is in the url if there is no image
