@@ -1,5 +1,5 @@
-'use strict';
 require('dotenv').load(); // bring in enviroment vars
+'use strict';
 
 var Twitter = require('twitter');
 var twitter = new Twitter({
@@ -8,7 +8,23 @@ var twitter = new Twitter({
       access_token_key: process.env.TWITTER_ACCESSTOKEN,
       access_token_secret: process.env.TWITTER_TOKENSECRET
     });
-var twitterText = require('twitter-text');
+
+function processText(tweet) {
+  let text = tweet.text;
+
+  // replace urls with non t.co urls
+  if (tweet.entities.urls.length > 0) {
+    const urls = tweet.entities.urls;
+    urls.forEach(url => {
+      text = `${text.substring(0, url.indices[0])}${url.display_url}${text.substring(url.indices[1])}`;
+    });
+  }
+
+  // remove any t.co urls
+  text = text.replace(/https?:\/\/t\.co\/[\n\S]+/g, '');
+
+  return text.trim();
+}
 
 function getTweets() {
   return new Promise((resolve, reject) => {
@@ -36,16 +52,22 @@ function getTweets() {
         const date = new Date(tweet.created_at);
         const processedTweet = {
           time: {
-            human: date.toDateString(),
+            human: `${date.toDateString()} ${date.toLocaleTimeString('en-GB')}`,
             iso: date.toISOString()
           },
-          text: {
-            raw: tweet.text,
-            html: twitterText.autoLink(twitterText.htmlEscape(tweet.text))
-          },
+          text: processText(tweet),
           retweets: tweet.retweet_count,
-          favourites: tweet.favorite_count
+          favourites: tweet.favorite_count,
+          uri: `https://twitter.com/zaccolley/status/${tweet.id}`
         };
+
+        if (tweet.extended_entities) {
+          if (tweet.extended_entities.media[0].type = 'photo') {
+            processedTweet.images = tweet.extended_entities.media.map(image => {
+              return { uri: `${image.media_url_https}:thumb` };
+            });
+          }
+        }
 
         // if the tweet replies to someone add that too
         if (tweet.in_reply_to_screen_name) {

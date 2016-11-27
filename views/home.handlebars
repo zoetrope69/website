@@ -56,8 +56,18 @@
       {{/unless}}
     </li>
     <li>
-      <small>My last tweet was&hellip;</small>
-      {{{tweets.0.text.html}}}
+      <small>
+        My last tweet was&hellip;
+        <time datetime="{{tweets.0.time.iso}}" style="float:right">{{tweets.0.time.human}}</time>
+      </small>
+      {{#if tweets.0.images.length}}
+      <span class="image">
+        <img src="{{tweets.0.images.0.uri}}" alt="{{tweets.0.text}}" />
+      </span>
+      {{/if}}
+      <a href="{{tweets.0.uri}}">
+        {{tweets.0.text}}
+      </a>
     </li>
     <li>
       <small>
