@@ -22,7 +22,7 @@
     "express-handlebars": "^3.0.0",
     "letterboxd": "1.0.1",
     "memory-cache": "^0.1.6",
-    "moment": "^2.16.0",
+    "moment": "^2.17.1",
     "request": "^2.78.0",
     "twitter": "^1.2.5",
     "xml2json": "^0.10.0"
