@@ -1,23 +1,23 @@
-'use strict';
-require('dotenv').load(); // bring in enviroment vars
+'use strict'
+require('dotenv').load() // bring in enviroment vars
 
-var letterboxd = require('letterboxd');
+const letterboxd = require('letterboxd')
 
-function getFilms() {
+function getFilms () {
   return new Promise(resolve => {
     return letterboxd(process.env.LETTERBOXD_USERNAME)
       .then(films => films.filter(film => film.type === 'diary'))
       .then(films => {
         if (films.length <= 0) {
-          return resolve({ error: 'No films' });
+          return resolve({ error: 'No films' })
         }
 
         // convert times to stuff we can work with
         films = films.map(item => {
-          const dateWatched = new Date(item.date.watched);
-          const datePublished = new Date(item.date.published);
+          const dateWatched = new Date(item.date.watched)
+          const datePublished = new Date(item.date.published)
 
-          delete item.date;
+          delete item.date
 
           item.time = {
             watched: {
@@ -28,15 +28,15 @@ function getFilms() {
               human: `${datePublished.toDateString()} ${datePublished.toLocaleTimeString('en-GB')}`,
               iso: datePublished.toISOString()
             }
-          };
+          }
 
-          return item;
-        });
+          return item
+        })
 
-        resolve(films);
+        resolve(films)
       })
-      .catch(error => resolve({ error }));
-  });
+      .catch(error => resolve({ error }))
+  })
 }
 
-module.exports = getFilms;
+module.exports = getFilms

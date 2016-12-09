@@ -1,25 +1,25 @@
-'use strict';
-require('dotenv').load(); // bring in enviroment vars
+'use strict'
+require('dotenv').load() // bring in enviroment vars
 
-var request = require('request');
+var request = require('request')
 
-function processTrack(data) {
+function processTrack (data) {
   // if there's an image grab it here
-  let image = false;
+  let image = false
   if (data.hasOwnProperty('image') && data.image[1]['#text'] !== '') {
-    image = data.image[1]['#text'];
+    image = data.image[1]['#text']
   }
 
   // is the data being played?
-  let playing = false;
+  let playing = false
   if (typeof data['@attr'] !== 'undefined') {
-    playing = data['@attr'].nowplaying;
+    playing = data['@attr'].nowplaying
   }
 
   // handle the time this track was played
-  let date = new Date();
+  let date = new Date()
   if (!playing) {
-    date = new Date(data.date.uts * 1000);
+    date = new Date(data.date.uts * 1000)
   }
 
   // simplify response
@@ -34,56 +34,55 @@ function processTrack(data) {
     album: data.album['#text'],
     uri: data.url,
     image
-  };
+  }
 
   // if there's an image add it here
   if (image) {
-    track.image = image;
+    track.image = image
   }
 
-  return track;
+  return track
 }
 
-function checkRequest(error, response) {
+function checkRequest (error, response) {
   if (error) {
-    return error;
+    return error
   }
 
   if (response.statusCode !== 200) {
-    return `Error: Response was not OK`;
+    return `Error: Response was not OK`
   }
 
-  return false;
+  return false
 }
 
-function getRecentTracks(limit = 1) {
-  return new Promise (resolve => {
+function getRecentTracks (limit = 1) {
+  return new Promise(resolve => {
     const url = 'https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks' +
                 '&user=' + process.env.LASTFM_USERNAME +
                 '&api_key=' + process.env.LASTFM_API +
                 '&limit=' + limit +
-                '&format=json';
+                '&format=json'
 
     return request(url, (error, response, body) => {
       // check if the result is good to process
-      const requestCheck = checkRequest(error, response);
+      const requestCheck = checkRequest(error, response)
       if (requestCheck) {
-        return resolve({ error });
+        return resolve({ error })
       }
 
-      const data = JSON.parse(body);
+      const data = JSON.parse(body)
 
       // if there are no tracks then reject
-      if (data.recenttracks.track.length > 0
-          && typeof data.recenttracks.track === 'undefined') {
-        return resolve({ error: 'Couldn\'t find any tracks' });
+      if (data.recenttracks.track.length > 0 && typeof data.recenttracks.track === 'undefined') {
+        return resolve({ error: 'Couldn\'t find any tracks' })
       }
 
-      const tracks = data.recenttracks.track.map(processTrack);
+      const tracks = data.recenttracks.track.map(processTrack)
 
-      resolve(tracks);
-    });
-  });
+      resolve(tracks)
+    })
+  })
 }
 
-module.exports = getRecentTracks;
+module.exports = getRecentTracks
