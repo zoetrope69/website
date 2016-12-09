@@ -4,12 +4,12 @@ require('dotenv').load(); // bring in enviroment vars
 var letterboxd = require('letterboxd');
 
 function getFilms() {
-  return new Promise((resolve, reject) => {
+  return new Promise(resolve => {
     return letterboxd(process.env.LETTERBOXD_USERNAME)
       .then(films => films.filter(film => film.type === 'diary'))
       .then(films => {
         if (films.length <= 0) {
-          return resolve(`Error: No films`);
+          return resolve({ error: 'No films' });
         }
 
         // convert times to stuff we can work with
@@ -35,7 +35,7 @@ function getFilms() {
 
         resolve(films);
       })
-      .catch(error => console.log(error));
+      .catch(error => resolve({ error }));
   });
 }
 

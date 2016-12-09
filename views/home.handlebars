@@ -9,6 +9,7 @@
   <p>Now I'm: a software boy working at <a href="https://songkick.com">Songkick</a>.</p>
   <p>I used to: work at <a href="https://rosedigital.co.uk">ROSE</a> and run <a href="http://hackpompey.co.uk">hackpompey</a>.</p>
   <ul>
+    {{#if tracks}}
     <li>
       <small>
         The last song I listened to was&hellip;
@@ -22,6 +23,8 @@
         <small>{{tracks.0.artist}}</small>
       </a>
     </li>
+    {{/if}}
+    {{#if gigs}}
     <li>
       <small>
         The last gig I went to was&hellip;
@@ -37,6 +40,8 @@
         <small>{{gigs.0.venue}}</small>
       </a>
     </li>
+    {{/if}}
+    {{#if films}}
     <li>
       <small>
         The last film I watched was&hellip;
@@ -55,6 +60,8 @@
       {{/if}}
       {{/unless}}
     </li>
+    {{/if}}
+    {{#if tweets}}
     <li>
       <small>
         My last tweet was&hellip;
@@ -69,6 +76,8 @@
         {{tweets.0.text}}
       </a>
     </li>
+    {{/if}}
+    {{#if books}}
     <li>
       <small>
         The last book I read was&hellip;
@@ -87,6 +96,8 @@
       {{/if}}
       {{/unless}}
     </li>
+    {{/if}}
+    {{#if code}}
     <li>
       <small>
         The last code I pushed publically was to&hellip;
@@ -104,6 +115,7 @@
         {{/each}}
       </ol>
     </li>
+    {{/if}}
   </ul>
 
   <time datetime="{{time.iso}}">Data updated at {{time.human}}</time>

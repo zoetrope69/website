@@ -19,14 +19,14 @@ function handleShelf(shelf) {
 }
 
 function getBooks() {
-  return new Promise((resolve, reject) => {
+  return new Promise(resolve => {
     return request(uri, (error, response, body) => {
       if (error) {
-        return reject(error);
+        return resolve({ error });
       }
 
       if (response.statusCode !== 200) {
-        return reject(`Error: Response was not OK`);
+        return resolve({ error: `Response was not OK: ${response.statusCode}` });
       }
 
       const result = parser.toJson(body, { object: true });

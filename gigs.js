@@ -59,7 +59,7 @@ function processGig(gig, timeframe) {
 }
 
 function getPastGigs() {
-  return new Promise((resolve, reject) => {
+  return new Promise(resolve => {
     const order = 'desc';
     const url = songkickUrl + '/gigography.json' +
                 '?apikey=' + process.env.SONGKICK_API +
@@ -69,7 +69,7 @@ function getPastGigs() {
       // check if the result is good to process
       const requestCheck = checkRequest(error, response);
       if (requestCheck) {
-        return reject(requestCheck);
+        return resolve({ error });
       }
 
       const data = JSON.parse(body);
@@ -85,7 +85,7 @@ function getPastGigs() {
 }
 
 function getUpcomingGigs() {
-  return new Promise((resolve, reject) => {
+  return new Promise(resolve => {
   	const order = 'asc';
     const url = songkickUrl + '/calendar.json?reason=attendance' +
                 '&apikey=' + process.env.SONGKICK_API +
@@ -95,7 +95,7 @@ function getUpcomingGigs() {
       // check if the result is good to process
       const requestCheck = checkRequest(error, response);
       if (requestCheck) {
-        return reject(requestCheck);
+        return resolve({ error });
       }
 
       const data = JSON.parse(body);
@@ -107,14 +107,6 @@ function getUpcomingGigs() {
 
       resolve(gigs);
     });
-  });
-}
-
-function getGigs() {
-  return new Promise((resolve, reject) => {
-    // merge the gigs together into one array
-    Promise.all([getUpcomingGigs, getPastGigs])
-      .then(results => resolve(results[0].concat(results[1])), reject);
   });
 }
 

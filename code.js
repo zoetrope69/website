@@ -228,7 +228,7 @@ function processLanguages(languages) {
 }
 
 function getCode() {
-  return new Promise((resolve, reject) => {
+  return new Promise(resolve => {
     return request({
       method: 'GET',
       url: `https://api.github.com/users/${process.env.GITHUB_USERNAME}/events/public`,
@@ -238,11 +238,11 @@ function getCode() {
       }
     }, function (error, response, body) {
       if (error) {
-        return reject(error);
+        return resolve({ error });
       }
 
       if (response.statusCode !== 200) {
-        return reject(`Error: Response not OK`);
+        return resolve({ error: `Response not OK: ${response.statusCode}` });
       }
 
       const rate = {
@@ -252,7 +252,7 @@ function getCode() {
       };
 
       if (rate.remaining <= 0) {
-        return reject(`Error: Ran out of requests`);
+        return resolve({ error: 'Ran out of requests' });
       }
 
       let events = JSON.parse(body);
@@ -325,11 +325,11 @@ function getCode() {
               }
             }, function (error, response, body) {
               if (error) {
-                return reject(error);
+                return resolve({ error });
               }
 
               if (response.statusCode !== 200) {
-                return reject(`Error: Response not OK`);
+                return resole({ error: `Response not OK ${response.statusCode}` });
               }
 
               const languages = JSON.parse(body);

@@ -57,7 +57,7 @@ function checkRequest(error, response) {
 }
 
 function getRecentTracks(limit = 1) {
-  return new Promise ((resolve, reject) => {
+  return new Promise (resolve => {
     const url = 'https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks' +
                 '&user=' + process.env.LASTFM_USERNAME +
                 '&api_key=' + process.env.LASTFM_API +
@@ -68,7 +68,7 @@ function getRecentTracks(limit = 1) {
       // check if the result is good to process
       const requestCheck = checkRequest(error, response);
       if (requestCheck) {
-        return reject(requestCheck);
+        return resolve({ error });
       }
 
       const data = JSON.parse(body);
@@ -76,7 +76,7 @@ function getRecentTracks(limit = 1) {
       // if there are no tracks then reject
       if (data.recenttracks.track.length > 0
           && typeof data.recenttracks.track === 'undefined') {
-        return reject("Couldn't find any tracks");
+        return resolve({ error: 'Couldn\'t find any tracks' });
       }
 
       const tracks = data.recenttracks.track.map(processTrack);

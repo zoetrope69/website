@@ -27,7 +27,7 @@ function processText(tweet) {
 }
 
 function getTweets() {
-  return new Promise((resolve, reject) => {
+  return new Promise(resolve => {
     const options = {
       trim_user: true,
       exclude_replies: true,
@@ -36,7 +36,7 @@ function getTweets() {
     };
     twitter.get('statuses/user_timeline', options, (error, tweets) => {
       if (error) {
-        return reject(error);
+        return resolve({ error });
       }
 
       let user = tweets[0].user;

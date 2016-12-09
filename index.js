@@ -56,18 +56,39 @@ function getData() {
 
     return Promise.all(data).then((results) => {
       var date = new Date();
-      return resolve({
+
+      const output = {
         time: {
           human: `${date.toDateString()} ${date.toLocaleTimeString('en-GB')}`,
           iso: date.toISOString()
-        },
-        books: results[0].filter(book => book.shelf === 'read'),
-        code: results[1].filter(item => item.type == 'push'),
-        films: results[2],
-        gigs: results[3],
-        tracks: results[4],
-        tweets: results[5],
-      });
+        }
+      };
+
+      if (!results[0].error) {
+        output.books = results[0].filter(book => book.shelf === 'read');
+      }
+
+      if (!results[1].error) {
+        output.code = results[1].filter(item => item.type == 'push');
+      }
+
+      if (!results[2].error) {
+        output.films = results[2];
+      }
+
+      if (!results[3].error) {
+        output.gigs = results[3];
+      }
+
+      if (!results[4].error) {
+        output.tracks = results[4];
+      }
+
+      if (!results[5].error) {
+        output.tweets = results[5];
+      }
+
+      return resolve(output);
     });
   });
 }
