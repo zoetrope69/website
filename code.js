@@ -313,7 +313,7 @@ function getCode () {
             output.commits = event.payload.commits.map(commit => ({
               message: commit.message,
               uri: `https://github.com/${output.repo.name}/commit/${commit.sha}`
-            }))
+            })).filter(commit => !commit.message.includes('Merge branch'))
 
             // get languages
             request({
