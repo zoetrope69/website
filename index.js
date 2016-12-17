@@ -7,12 +7,13 @@ const app = express()
 const http = require('http').Server(app)
 const mcache = require('memory-cache')
 
-const tracks = require('./tracks')
-const tweets = require('./tweets')
-const gigs = require('./gigs')
-const films = require('./films')
 const books = require('./books')
 const code = require('./code')
+const films = require('./films')
+const gigs = require('./gigs')
+const tracks = require('./tracks')
+const tweets = require('./tweets')
+const vids = require('./vids')
 
 app.engine('handlebars', exphbs({ defaultLayout: 'main' }))
 app.set('view engine', 'handlebars')
@@ -48,7 +49,8 @@ function getData () {
       films(),
       gigs(),
       tracks(),
-      tweets()
+      tweets(),
+      vids()
     ]
 
     return Promise.all(data).then((results) => {
@@ -83,6 +85,10 @@ function getData () {
 
       if (!results[5].error) {
         output.tweets = results[5]
+      }
+
+      if (!results[6].error) {
+        output.vids = results[6]
       }
 
       return resolve(output)

@@ -116,6 +116,18 @@
       </ol>
     </li>
     {{/if}}
+    {{#if code}}
+    <li>
+      <small>
+        The last vid I liked was&hellip;
+        <time datetime="{{vids.0.time.iso}}" style="float:right">{{vids.0.time.human}}</time>
+      </small>
+      <div class="image">
+        <img src="{{vids.0.image}}" alt="{{vids.0.title}}'s thumbnail" />
+      </div>
+      <a href="{{vids.0.uri}}">{{vids.0.title}}</a>
+    </li>
+    {{/if}}
   </ul>
 
   <time datetime="{{time.iso}}">Data updated at {{time.human}}</time>
