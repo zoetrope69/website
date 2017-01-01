@@ -61,6 +61,11 @@ li > small {
   color: #585858;
 }
 
+li > small > time {
+  display: block;
+  float: right;
+}
+
 li > a {
   display: inline-block;
 }
@@ -132,6 +137,10 @@ aside li {
     transform: rotate(90deg);
     transform-origin: right;
   }
+
+  li > small > time {
+    float: none;
+  }
 }
 
 @media (max-width: 40em) {
@@ -141,5 +150,9 @@ aside li {
 
   header h1 {
     text-shadow: none;
+  }
+
+  li > small > time {
+    float: none;
   }
 }

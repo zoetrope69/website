@@ -12,8 +12,8 @@
     {{#if tracks}}
     <li>
       <small>
+        <time datetime="{{tracks.0.time.iso}}">{{tracks.0.time.human}}</time>
         The last song I listened to was&hellip;
-        <time datetime="{{tracks.0.time.iso}}" style="float:right">{{tracks.0.time.human}}</time>
       </small>
       <span class="image">
         <img src="{{tracks.0.image}}" alt="Album art for {{tracks.0.name}} by {{tracks.0.artist}}" />
@@ -27,8 +27,8 @@
     {{#if gigs}}
     <li>
       <small>
+        <time datetime="{{gigs.0.time.iso}}">{{gigs.0.time.human}}</time>
         The last gig I went to was&hellip;
-        <time datetime="{{gigs.0.time.iso}}" style="float:right">{{gigs.0.time.human}}</time>
       </small>
       {{#if gigs.0.image.length}}
       <span class="image">
@@ -44,8 +44,8 @@
     {{#if films}}
     <li>
       <small>
+        <time datetime="{{films.0.time.watched.iso}}">{{films.0.time.watched.human}}</time>
         The last film I watched was&hellip;
-        <time datetime="{{films.0.time.watched.iso}}" style="float:right">{{films.0.time.watched.human}}</time>
       </small>
       <span class="image">
         <img src="{{films.0.film.image.small}}" alt="{{films.0.film.title}}'s film poster" />
@@ -64,8 +64,8 @@
     {{#if tweets}}
     <li>
       <small>
+        <time datetime="{{tweets.0.time.iso}}">{{tweets.0.time.human}}</time>
         My last tweet was&hellip;
-        <time datetime="{{tweets.0.time.iso}}" style="float:right">{{tweets.0.time.human}}</time>
       </small>
       {{#if tweets.0.images.length}}
       <span class="image">
@@ -80,8 +80,8 @@
     {{#if books}}
     <li>
       <small>
+        <time datetime="{{books.0.time.read.iso}}">{{books.0.time.read.human}}</time>
         The last book I read was&hellip;
-        <time datetime="{{books.0.time.read.iso}}" style="float:right">{{books.0.time.read.human}}</time>
       </small>
       <span class="image">
         <img src="{{books.0.book.image}}" alt="{{books.0.book.title}}'s cover" />
@@ -100,8 +100,8 @@
     {{#if code}}
     <li>
       <small>
+        <time datetime="{{code.0.time.iso}}">{{code.0.time.human}}</time>
         The last code I pushed publically was to&hellip;
-        <time datetime="{{code.0.time.iso}}" style="float:right">{{code.0.time.human}}</time>
       </small>
       <div class="image">
         {{#each code.0.languages as |language|}}
@@ -119,8 +119,8 @@
     {{#if code}}
     <li>
       <small>
+        <time datetime="{{vids.0.time.iso}}">{{vids.0.time.human}}</time>
         The last vid I liked was&hellip;
-        <time datetime="{{vids.0.time.iso}}" style="float:right">{{vids.0.time.human}}</time>
       </small>
       <div class="image">
         <img src="{{vids.0.image}}" alt="{{vids.0.title}}'s thumbnail" />
