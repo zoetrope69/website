@@ -13,7 +13,7 @@ function processTrack (data) {
   // is the data being played?
   let playing = false
   if (typeof data['@attr'] !== 'undefined') {
-    playing = data['@attr'].nowplaying
+    playing = !!data['@attr'].nowplaying
   }
 
   // handle the time this track was played

@@ -12,7 +12,13 @@
     {{#if tracks}}
     <li>
       <small>
-        <time datetime="{{tracks.0.time.iso}}">{{tracks.0.time.human}}</time>
+        <time datetime="{{tracks.0.time.iso}}">
+          {{#if tracks.0.playing}}
+            Playing now
+          {{else}}
+            {{tracks.0.time.human}}
+          {{/if}}
+        </time>
         The last song I listened to was&hellip;
       </small>
       <span class="image">
