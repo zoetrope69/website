@@ -4,12 +4,6 @@ require('dotenv').load() // bring in enviroment vars
 var request = require('request')
 
 function processTrack (data) {
-  // if there's an image grab it here
-  let image = false
-  if (data.hasOwnProperty('image') && data.image[1]['#text'] !== '') {
-    image = data.image[1]['#text']
-  }
-
   // is the data being played?
   let playing = false
   if (typeof data['@attr'] !== 'undefined') {
@@ -32,13 +26,12 @@ function processTrack (data) {
     name: data.name,
     artist: data.artist['#text'],
     album: data.album['#text'],
-    uri: data.url,
-    image
+    uri: data.url
   }
 
-  // if there's an image add it here
-  if (image) {
-    track.image = image
+  // if there's an image grab it here
+  if (data.hasOwnProperty('image') && data.image[1]['#text'] !== '') {
+    track.image = data.image[1]['#text']
   }
 
   return track

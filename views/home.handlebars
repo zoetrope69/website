@@ -21,9 +21,11 @@
         </time>
         The last song I listened to was&hellip;
       </small>
+      {{#if tracks.0.image}}
       <span class="image">
         <img src="{{tracks.0.image}}" alt="Album art for {{tracks.0.name}} by {{tracks.0.artist}}" />
       </span>
+      {{/if}}
       <a href="http://www.last.fm/user/zaccolley">
         <div>{{tracks.0.name}}</div>
         <small>{{tracks.0.artist}}</small>
