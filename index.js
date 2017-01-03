@@ -14,6 +14,7 @@ const getGigs = require('./gigs')
 const getTracks = require('./tracks')
 const getTweets = require('./tweets')
 const getVids = require('./vids')
+const getProductivity = require('./productivity')
 
 app.engine('handlebars', exphbs({ defaultLayout: 'main' }))
 app.set('view engine', 'handlebars')
@@ -50,7 +51,8 @@ function getData () {
       getGigs(),
       getTracks(),
       getTweets(),
-      getVids()
+      getVids(),
+      getProductivity()
     ]
 
     const dataNames = [
@@ -60,7 +62,8 @@ function getData () {
       'gigs',
       'tracks',
       'tweets',
-      'vids'
+      'vids',
+      'productivity'
     ]
 
     Promise.all(data).then((results) => {

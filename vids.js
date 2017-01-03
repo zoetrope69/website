@@ -23,7 +23,7 @@ function processVids (vids) {
     const date = new Date(data.publishedAt)
     return {
       time: {
-        human: `${date.toDateString()} ${date.toLocaleTimeString('en-GB')}`,
+        human: date.toDateString(),
         iso: date.toISOString()
       },
       title: data.title,
