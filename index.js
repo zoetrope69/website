@@ -7,13 +7,13 @@ const app = express()
 const http = require('http').Server(app)
 const mcache = require('memory-cache')
 
-const books = require('./books')
-const code = require('./code')
-const films = require('./films')
-const gigs = require('./gigs')
-const tracks = require('./tracks')
-const tweets = require('./tweets')
-const vids = require('./vids')
+const getBooks = require('./books')
+const getCode = require('./code')
+const getFilms = require('./films')
+const getGigs = require('./gigs')
+const getTracks = require('./tracks')
+const getTweets = require('./tweets')
+const getVids = require('./vids')
 
 app.engine('handlebars', exphbs({ defaultLayout: 'main' }))
 app.set('view engine', 'handlebars')
@@ -43,17 +43,27 @@ const cache = (duration) => {
 
 function getData () {
   return new Promise((resolve, reject) => {
-    var data = [
-      books(),
-      code(),
-      films(),
-      gigs(),
-      tracks(),
-      tweets(),
-      vids()
+    const data = [
+      getBooks(),
+      getCode(),
+      getFilms(),
+      getGigs(),
+      getTracks(),
+      getTweets(),
+      getVids()
     ]
 
-    return Promise.all(data).then((results) => {
+    const dataNames = [
+      'books',
+      'code',
+      'films',
+      'gigs',
+      'tracks',
+      'tweets',
+      'vids'
+    ]
+
+    Promise.all(data).then((results) => {
       var date = new Date()
 
       const output = {
@@ -63,36 +73,16 @@ function getData () {
         }
       }
 
-      if (!results[0].error) {
-        output.books = results[0].filter(book => book.shelf === 'read')
-      }
+      for (let i = 0; i < results.length; i++) {
+        const result = results[i]
 
-      if (!results[1].error) {
-        output.code = results[1].filter(item => item.type === 'push')
-      }
-
-      if (!results[2].error) {
-        output.films = results[2]
-      }
-
-      if (!results[3].error) {
-        output.gigs = results[3]
-      }
-
-      if (!results[4].error) {
-        output.tracks = results[4]
-      }
-
-      if (!results[5].error) {
-        output.tweets = results[5]
-      }
-
-      if (!results[6].error) {
-        output.vids = results[6]
+        if (result && result.length > 0 && !result.error) {
+          output[dataNames[i]] = result
+        }
       }
 
       return resolve(output)
-    })
+    }).catch(reject)
   })
 }
 

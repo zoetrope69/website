@@ -238,7 +238,7 @@ function getCode () {
       }
     }, function (error, response, body) {
       if (error) {
-        return resolve({ error })
+        return resolve({ error: 'Something went wrong' })
       }
 
       if (response.statusCode !== 200) {
@@ -322,10 +322,11 @@ function getCode () {
               headers: {
                 'User-Agent': 'zaccolley.com',
                 'Authorization': `Basic ${process.env.GITHUB_BASIC_AUTH}`
-              }
+              },
+              timeout: +process.env.REQUEST_TIMEOUT
             }, function (error, response, body) {
               if (error) {
-                return resolve({ error })
+                return resolve({ error: 'Something went wrong' })
               }
 
               if (response.statusCode !== 200) {
@@ -343,7 +344,7 @@ function getCode () {
         return output
       })
 
-      resolve(events)
+      resolve(events.filter(item => item.type === 'push'))
     })
   })
 }

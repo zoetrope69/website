@@ -36,7 +36,7 @@ function getTweets () {
     }
     twitter.get('statuses/user_timeline', options, (error, tweets) => {
       if (error) {
-        return resolve({ error })
+        return resolve({ error: 'Something went wrong' })
       }
 
       tweets = tweets.map(tweet => {

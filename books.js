@@ -20,9 +20,9 @@ function handleShelf (shelf) {
 
 function getBooks () {
   return new Promise(resolve => {
-    return request(uri, (error, response, body) => {
+    return request({ uri, timeout: +process.env.REQUEST_TIMEOUT }, (error, response, body) => {
       if (error) {
-        return resolve({ error })
+        return resolve({ error: 'Something went wrong' })
       }
 
       if (response.statusCode !== 200) {
@@ -88,7 +88,7 @@ function getBooks () {
         return output
       })
 
-      resolve(books)
+      resolve(books.filter(book => book.shelf === 'read'))
     })
   })
 }

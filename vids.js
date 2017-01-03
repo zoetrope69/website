@@ -41,11 +41,11 @@ function getLikedVids () {
                 '&part=snippet' +
                 '&maxResults=' + maxResults
 
-    return request(url, (error, response, body) => {
+    return request({ url, timeout: +process.env.REQUEST_TIMEOUT }, (error, response, body) => {
       // check if the result is good to process
       const requestCheck = checkRequest(error, response)
       if (requestCheck) {
-        return resolve({ error })
+        return resolve({ error: 'Something went wrong' })
       }
 
       const data = JSON.parse(body)
