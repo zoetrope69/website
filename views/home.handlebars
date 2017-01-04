@@ -9,6 +9,23 @@
   <p>Now I'm: a software boy working at <a href="https://songkick.com">Songkick</a>.</p>
   <p>I used to: work at <a href="https://rosedigital.co.uk">ROSE</a> and run <a href="http://hackpompey.co.uk">hackpompey</a>.</p>
   <ul>
+    {{#if locations}}
+    <li>
+      <small>
+        <time datetime="{{locations.0.time.iso}}">{{locations.0.time.human}}</time>
+        The last place I was seen was&hellip;
+      </small>
+      {{#if locations.0.category}}
+      <span class="image">
+        <img src="{{locations.0.category.image}}" alt="Icon for {{locations.0.category.name}}" style="background-color: {{locations.0.category.colour}};" />
+      </span>
+      {{/if}}
+      <a href="{{locations.0.uri}}">
+        <div>{{locations.0.name}}</div>
+        <small>{{locations.0.city}}, {{locations.0.state}}, {{locations.0.country}}</small>
+      </a>
+    </li>
+    {{/if}}
     {{#if tracks}}
     <li>
       <small>

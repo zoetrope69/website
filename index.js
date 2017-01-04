@@ -11,10 +11,11 @@ const getBooks = require('./books')
 const getCode = require('./code')
 const getFilms = require('./films')
 const getGigs = require('./gigs')
+const getLocations = require('./locations')
+const getProductivity = require('./productivity')
 const getTracks = require('./tracks')
 const getTweets = require('./tweets')
 const getVids = require('./vids')
-const getProductivity = require('./productivity')
 
 app.engine('handlebars', exphbs({ defaultLayout: 'main' }))
 app.set('view engine', 'handlebars')
@@ -49,10 +50,11 @@ function getData () {
       getCode(),
       getFilms(),
       getGigs(),
+      getLocations(),
+      getProductivity(),
       getTracks(),
       getTweets(),
-      getVids(),
-      getProductivity()
+      getVids()
     ]
 
     const dataNames = [
@@ -60,10 +62,11 @@ function getData () {
       'code',
       'films',
       'gigs',
+      'locations',
+      'productivity',
       'tracks',
       'tweets',
-      'vids',
-      'productivity'
+      'vids'
     ]
 
     Promise.all(data).then((results) => {
