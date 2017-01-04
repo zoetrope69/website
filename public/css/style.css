@@ -5,9 +5,45 @@
 }
 
 body {
+  padding: 30px;
+
+  background-color: #020100;
+  background-image: linear-gradient(#f3f1ee 1px, transparent 1px),
+                    linear-gradient(90deg, #f3f1ee 1px, transparent 1px);
+  background-size: 50px 50px, 50px 50px, 10px 10px, 10px 10px;
+  background-position: -2px -2px, -2px -2px, -1px -1px, -1px -1px;
+}
+
+a {
+  text-decoration: none;
+  font-weight: bolder;
+  border-bottom: 1px solid;
+}
+
+.wrapper {
+  position: relative;
   display: flex;
 
   font-family: sans-serif;
+  background: white;
+}
+
+.wrapper::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  height: 5px;
+  width: 100%;
+  background: linear-gradient(to right, #0018ff, #ef3911, #f1d400, #008414);
+}
+
+.wrapper::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  height: 5px;
+  width: 100%;
+  background: linear-gradient(to right, #0018ff, #ef3911, #f1d400, #008414);
 }
 
 header,
@@ -17,14 +53,23 @@ aside {
   padding: 2em;
 }
 
+header {
+  order: 1;
+}
+
+aside {
+  order: 2;
+}
+
 header h1 {
   white-space: nowrap;
 
   color: #000;
   line-height: 1em;
   letter-spacing: .125em;
-  font-weight: 500;
-  font-size: 2em;
+  font-family: 'Times New Roman', serif;
+  font-weight: 700;
+  font-size: 2.5em;
 
   text-transform: lowercase;
   text-shadow: 0  1em #111, 0  2em #222, 0  3em #333,
@@ -32,6 +77,8 @@ header h1 {
                0  7em #777, 0  8em #888, 0  9em #999,
                0 10em #AAA, 0 11em #BBB, 0 12em #CCC,
                0 13em #DDD, 0 14em #EEE;
+
+   transform: rotate(-5deg) translateX(-1em);
 }
 
 p,
@@ -120,15 +167,24 @@ blockquote {
 }
 
 aside {
-  padding-top: 3em;
+  padding-top: 2.5em;
   font-size: .75em;
 }
 
 aside li {
+  list-style: none;
   margin-bottom: 1em;
 }
 
+aside li > * {
+  display: block;
+}
+
 @media (max-width: 80em) and (min-width: 40em) {
+  body {
+    padding: 15px;
+  }
+
   header h1 {
     width: 10px;
 
@@ -145,11 +201,21 @@ aside li {
 
 @media (max-width: 40em) {
   body {
+    padding: 5px;
+  }
+
+  .wrapper {
     flex-direction: column;
+  }
+
+  header,
+  aside {
+    order: 0;
   }
 
   header h1 {
     text-shadow: none;
+    transform: rotate(180deg);
   }
 
   li > small > time {
