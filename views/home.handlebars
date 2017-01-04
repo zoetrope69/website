@@ -17,7 +17,7 @@
       </small>
       {{#if locations.0.category}}
       <span class="image">
-        <img src="{{locations.0.category.image}}" alt="Icon for {{locations.0.category.name}}" style="background-color: {{locations.0.category.colour}};" />
+        <img width="50" src="{{locations.0.category.image}}" alt="Icon for {{locations.0.category.name}}" style="background-color: {{locations.0.category.colour}};" />
       </span>
       {{/if}}
       <a href="{{locations.0.uri}}">
@@ -40,7 +40,7 @@
       </small>
       {{#if tracks.0.image}}
       <span class="image">
-        <img src="{{tracks.0.image}}" alt="Album art for {{tracks.0.name}} by {{tracks.0.artist}}" />
+        <img width="50" src="{{tracks.0.image}}" alt="Album art for {{tracks.0.name}} by {{tracks.0.artist}}" />
       </span>
       {{/if}}
       <a href="http://www.last.fm/user/zaccolley">
@@ -57,7 +57,7 @@
       </small>
       {{#if gigs.0.image.length}}
       <span class="image">
-        <img src="{{gigs.0.image}}" alt="{{gigs.0.artists}} at {{gigs.0.venue}}" />
+        <img width="50" src="{{gigs.0.image}}" alt="{{gigs.0.artists}} at {{gigs.0.venue}}" />
       </span>
       {{/if}}
       <a href="{{gigs.0.uri}}">
@@ -73,7 +73,7 @@
         The last film I watched was&hellip;
       </small>
       <span class="image">
-        <img src="{{films.0.film.image.small}}" alt="{{films.0.film.title}}'s film poster" />
+        <img width="50" src="{{films.0.film.image.small}}" alt="{{films.0.film.title}}'s film poster" />
       </span>
       <a href="{{films.0.uri}}">{{films.0.film.title}} <small>({{films.0.film.year}})</small></a>
       {{#if films.0.rating}}
@@ -94,7 +94,7 @@
       </small>
       {{#if tweets.0.images.length}}
       <span class="image">
-        <img src="{{tweets.0.images.0.uri}}" alt="{{tweets.0.text}}" />
+        <img width="50" src="{{tweets.0.images.0.uri}}" alt="{{tweets.0.text}}" />
       </span>
       {{/if}}
       <a href="{{tweets.0.uri}}">
@@ -128,7 +128,7 @@
         The last book I read was&hellip;
       </small>
       <span class="image">
-        <img src="{{books.0.book.image}}" alt="{{books.0.book.title}}'s cover" />
+        <img width="50" src="{{books.0.book.image}}" alt="{{books.0.book.title}}'s cover" />
       </span>
       <a href="{{books.0.uri}}">{{books.0.book.title}}</a>
       {{#if books.0.rating}}
@@ -148,7 +148,7 @@
         The last vid I liked was&hellip;
       </small>
       <div class="image">
-        <img src="{{vids.0.image}}" alt="{{vids.0.title}}'s thumbnail" />
+        <img width="50" src="{{vids.0.image}}" alt="{{vids.0.title}}'s thumbnail" />
       </div>
       <a href="{{vids.0.uri}}">{{vids.0.title}}</a>
     </li>
