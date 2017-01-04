@@ -4,7 +4,8 @@
   "description": "zacs website",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "csso public/css/style.css --output public/css/style.min.css",
+    "start": "nodemon index.js"
   },
   "repository": {
     "type": "git",
@@ -29,6 +30,7 @@
     "xml2json": "^0.10.0"
   },
   "devDependencies": {
+    "csso": "^2.3.0",
     "standard": "^8.6.0"
   }
 }
