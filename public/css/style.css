@@ -67,7 +67,7 @@ header h1 {
   color: #000;
   line-height: 1em;
   letter-spacing: .125em;
-  font-family: 'Times New Roman', serif;
+  font-family: serif;
   font-weight: 700;
   font-size: 2.5em;
 
@@ -124,6 +124,7 @@ li > small > time {
 
 li > a {
   display: inline-block;
+  margin-right: 0.5em;
 }
 
 li > .image {
@@ -220,7 +221,11 @@ aside li > * {
 
   header h1 {
     text-shadow: none;
-    transform: rotate(180deg);
+    transform: rotate(180deg) translateY(-1em);
+  }
+
+  header h1::before {
+    opacity: 0.35;
   }
 
   li > small > time {
