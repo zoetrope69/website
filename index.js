@@ -27,8 +27,7 @@ app.use(minifyHTML({
     collapseWhitespace: true,
     collapseBooleanAttributes: true,
     removeAttributeQuotes: true,
-    removeEmptyAttributes: true,
-    minifyJS: true
+    removeEmptyAttributes: true
   }
 }))
 
