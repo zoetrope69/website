@@ -17,6 +17,21 @@ const getTracks = require('./tracks')
 const getTweets = require('./tweets')
 const getVids = require('./vids')
 
+const minifyHTML = require('express-minify-html')
+
+app.use(minifyHTML({
+  override: true,
+  exception_url: false,
+  htmlMinifier: {
+    removeComments: true,
+    collapseWhitespace: true,
+    collapseBooleanAttributes: true,
+    removeAttributeQuotes: true,
+    removeEmptyAttributes: true,
+    minifyJS: true
+  }
+}))
+
 app.engine('handlebars', exphbs({ defaultLayout: 'main' }))
 app.set('view engine', 'handlebars')
 app.use(express.static(`${__dirname}/public`))
