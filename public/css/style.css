@@ -81,6 +81,15 @@ header h1 {
    transform: rotate(-5deg) translateX(-1em);
 }
 
+header h1::before {
+  content: '';
+  position: absolute;
+  width: 1.85em;
+  height: 4em;
+  opacity: 0.65;
+  background-image: url(http://www.gravatar.com/avatar/26ab7600fc89f94711ec3b7db40d039b?d=img%2Fdefaultface.png&s=48);
+}
+
 p,
 li {
   display: block;
@@ -121,10 +130,6 @@ li > .image {
   float: left;
   width: 50px;
   margin-right: 0.5em;
-}
-
-li > .image img {
-  max-width: 100%;
 }
 
 li > .image .code-image {
