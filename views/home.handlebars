@@ -169,6 +169,22 @@
       <em>{{productivity.0.score}}%</em> productive over a tracked period of <em>{{productivity.0.total_duration}}</em>&hellip;
     </li>
     {{/if}}
+    {{#if podcasts}}
+    <li>
+      <small>
+        The podcast I'm {{podcasts.0.percentage}}% through is&hellip;
+      </small>
+      {{#if podcasts.0.image}}
+      <div class="image">
+        <img width="50" src="{{podcasts.0.image}}" alt="{{podcasts.0.title}}'s thumbnail" />
+      </div>
+      {{/if}}
+      <a href="{{podcast.0.uri}}">
+        <div>{{podcasts.0.episode}}</div>
+        <small>{{podcasts.0.title}}</small>
+      </a>
+    </li>
+    {{/if}}
   </ul>
 
   <time datetime="{{time.iso}}">Data updated at {{time.human}}</time>
