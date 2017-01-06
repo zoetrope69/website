@@ -21,7 +21,38 @@ function processFormattedDuration (duration) {
   return duration.replace('h', ' hours and').replace('m', ' minutes')
 }
 
+// rescuetime sometimes comes back with percentages totalling 100.1%
+// temporary fix while rescue time fix their api
+function fixPercentages (day) {
+  let percentages = [
+    day.very_productive_percentage,
+    day.productive_percentage,
+    day.neutral_percentage,
+    day.distracting_percentage,
+    day.very_distracting_percentage
+  ]
+
+  percentages = percentages.filter(percentage => percentage > 0)
+
+  const total = percentages.reduce((a, b) => a + b, 0)
+
+  if (total > 100) {
+    const remainder = total - 100
+    const part = remainder / percentages.length
+    percentages = percentages.map(percentage => percentage - part)
+  }
+
+  day.very_productive_percentage = percentages[0]
+  day.productive_percentage = percentages[1]
+  day.neutral_percentage = percentages[2]
+  day.distracting_percentage = percentages[3]
+  day.very_distracting_percentage = percentages[4]
+
+  return day
+}
+
 function processDay (day) {
+  day = fixPercentages(day)
   const date = new Date(day.date)
   day = {
     time: {
