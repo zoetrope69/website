@@ -123,22 +123,24 @@
     {{#if books}}
     <section>
       <h2>📚 The last book I read was…</h2>
-      <span class="image">
-        <img width="50" src="{{books.0.book.image}}" alt="{{books.0.book.title}}'s cover" />
-      </span>
-      <a href="{{books.0.uri}}">
-        <span>{{books.0.book.title}}</span>
-        <span class="row review">
-          {{#unless books.0.spoilers}}
-          {{#if books.0.review}}
-            <blockquote>{{books.0.review}}</blockquote>
-          {{/if}}
-          {{/unless}}
-          {{#if books.0.rating}}
-            <span class="rating" title="{{books.0.rating.score}}">{{books.0.rating.text}}</span>
-          {{/if}}
-        </div>
-      </a>
+      <div class="row">
+        <span class="image">
+          <img width="50" src="{{books.0.book.image}}" alt="{{books.0.book.title}}'s cover" />
+        </span>
+        <a href="{{books.0.uri}}">
+          <span>{{books.0.book.title}}</span>
+          <span class="row review">
+            {{#unless books.0.spoilers}}
+            {{#if books.0.review}}
+              <blockquote>{{books.0.review}}</blockquote>
+            {{/if}}
+            {{/unless}}
+            {{#if books.0.rating}}
+              <span class="rating" title="{{books.0.rating.score}}">{{books.0.rating.text}}</span>
+            {{/if}}
+          </span>
+        </a>
+      </div>
       <time datetime="{{books.0.time.read.iso}}">{{books.0.time.read.human}}</time>
     </section>
     {{/if}}
