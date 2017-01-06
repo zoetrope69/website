@@ -13,7 +13,7 @@
     <li>
       <small>
         <time datetime="{{locations.0.time.iso}}">{{locations.0.time.human}}</time>
-        The last place I was seen was&hellip;
+        📍 The last place I was seen was&hellip;
       </small>
       {{#if locations.0.category}}
       <span class="image">
@@ -36,7 +36,7 @@
             {{tracks.0.time.human}}
           {{/if}}
         </time>
-        The last song I listened to was&hellip;
+        🎧 The last song I listened to was&hellip;
       </small>
       {{#if tracks.0.image}}
       <span class="image">
@@ -53,7 +53,7 @@
     <li>
       <small>
         <time datetime="{{gigs.0.time.iso}}">{{gigs.0.time.human}}</time>
-        The last gig I went to was&hellip;
+        🎶 The last gig I went to was&hellip;
       </small>
       {{#if gigs.0.image.length}}
       <span class="image">
@@ -70,7 +70,7 @@
     <li>
       <small>
         <time datetime="{{films.0.time.watched.iso}}">{{films.0.time.watched.human}}</time>
-        The last film I watched was&hellip;
+        🎬 The last film I watched was&hellip;
       </small>
       <span class="image">
         <img width="50" src="{{films.0.film.image.small}}" alt="{{films.0.film.title}}'s film poster" />
@@ -90,7 +90,7 @@
     <li>
       <small>
         <time datetime="{{tweets.0.time.iso}}">{{tweets.0.time.human}}</time>
-        My last tweet was&hellip;
+        🐦 My last tweet was&hellip;
       </small>
       {{#if tweets.0.images.length}}
       <span class="image">
@@ -106,7 +106,7 @@
     <li>
       <small>
         <time datetime="{{code.0.time.iso}}">{{code.0.time.human}}</time>
-        The last code I pushed publically was to&hellip;
+        💻 The last code I pushed publically was to&hellip;
       </small>
       <div class="image">
         {{#each code.0.languages as |language|}}
@@ -125,7 +125,7 @@
     <li>
       <small>
         <time datetime="{{books.0.time.read.iso}}">{{books.0.time.read.human}}</time>
-        The last book I read was&hellip;
+        📚 The last book I read was&hellip;
       </small>
       <span class="image">
         <img width="50" src="{{books.0.book.image}}" alt="{{books.0.book.title}}'s cover" />
@@ -145,7 +145,7 @@
     <li>
       <small>
         <time datetime="{{vids.0.time.iso}}">{{vids.0.time.human}}</time>
-        The last vid I liked was&hellip;
+        📹 The last vid I liked was&hellip;
       </small>
       <div class="image">
         <img width="50" src="{{vids.0.image}}" alt="{{vids.0.title}}'s thumbnail" />
@@ -157,7 +157,7 @@
     <li>
       <small>
         <time datetime="{{productivity.0.time.iso}}">{{productivity.0.time.human}}</time>
-        The apps/sites I used yesterday showed I was&hellip;
+        👔 The apps/sites I used yesterday showed I was&hellip;
       </small>
       <div class="image">
         <div class="code-image" title="Very productive: {{productivity.0.very_productive.duration}}" style="width:{{productivity.0.very_productive.percentage}}%;background:#2f78bd;"></div>
@@ -172,7 +172,7 @@
     {{#if podcasts}}
     <li>
       <small>
-        The podcast I'm {{podcasts.0.percentage}}% through is&hellip;
+        🎙The last podcast I've been listening to is&hellip; <small>({{podcasts.0.percentage}}% through)</small>
       </small>
       {{#if podcasts.0.image}}
       <div class="image">
