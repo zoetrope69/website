@@ -103,7 +103,7 @@ function processEpisodes (data) {
       percentage: episode.played_up_to > 0 ? Math.floor((episode.played_up_to / episode.duration) * 100) : 0,
       status: EPISODE_PLAYING_STATUS[episode.playing_status],
       image: podcast.thumbnail_url,
-      uri: podcast.url
+      uri: podcast.url.replace('http://', 'https://')
     }
   })
 }
