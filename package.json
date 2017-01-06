@@ -30,7 +30,7 @@
     "xml2json": "^0.10.0"
   },
   "devDependencies": {
-    "csso": "^2.3.0",
+    "csso": "^2.3.1",
     "standard": "^8.6.0"
   }
 }
