@@ -1,11 +1,18 @@
-*::before, *, *::after {
+*::before, body *, *::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+
+body * + * {
+  margin-top: 1em;
 }
 
 body {
-  padding: 30px;
+  padding: 0.5rem;
+  flex-direction: column;
 
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 
@@ -17,14 +24,19 @@ body {
 }
 
 a {
+  display: inline;
+  color: blue;
   text-decoration: none;
   font-weight: bolder;
-  border-bottom: 1px solid;
 }
 
 .wrapper {
+  overflow: hidden;
+  padding-top: 5px;
   position: relative;
   display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 
   background: white;
 }
@@ -38,28 +50,21 @@ a {
   background: linear-gradient(to right, #0018ff, #ef3911, #f1d400, #008414);
 }
 
-.wrapper::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  height: 5px;
-  width: 100%;
-  background: linear-gradient(to right, #0018ff, #ef3911, #f1d400, #008414);
+.row {
+  flex-direction: row;
+}
+
+.row > * + * {
+  margin-top: 0;
+  margin-left: 0.5em;
 }
 
 header,
 main,
 aside {
+  margin: 0;
   flex-shrink: 1;
-  padding: 2em;
-}
-
-header {
-  order: 1;
-}
-
-aside {
-  order: 2;
+  padding: 1rem;
 }
 
 header h1 {
@@ -71,101 +76,57 @@ header h1 {
   font-family: serif;
   font-weight: 700;
   font-size: 2.5em;
-
   text-transform: lowercase;
-  text-shadow: 0  1em #111, 0  2em #222, 0  3em #333,
-               0  4em #444, 0  5em #555, 0  6em #666,
-               0  7em #777, 0  8em #888, 0  9em #999,
-               0 10em #AAA, 0 11em #BBB, 0 12em #CCC,
-               0 13em #DDD, 0 14em #EEE;
-
-   transform: rotate(-5deg) translateX(-1em);
-}
-
-header h1::before {
-  content: '';
-  position: absolute;
-  width: 1.85em;
-  height: 4em;
-  opacity: 0.65;
-  background-image: url(/img/zac.jpg);
 }
 
 p,
 li {
-  display: block;
+  display: inline-block;
   max-width: 40em;
   line-height: 1.5em;
-  margin-bottom: 0.75em;
 
   color: #111;
 }
 
-li {
-  overflow: hidden; /* clearfix */
-  position: relative;
-  list-style: none;
+section {
+  margin: 1.5em 0;
 }
 
-main li {
-  margin-top: 2.75em;
+section h2 {
+  display: flex;
+  flex-direction: column;
+
+  font-weight: 500;
+  font-size: 1em;
+  color: #292929;
 }
 
-li > small {
-  display: block;
-  margin-bottom: 0.25em;
-
-  color: #585858;
+section .row a {
+  justify-content: space-between;
 }
 
-li > small > time {
-  display: block;
-  float: right;
+section .row em {
+  display: inline;
 }
 
-li > a {
-  display: inline-block;
-  margin-right: 0.5em;
-}
-
-li > .image {
-  float: left;
+.image {
   width: 50px;
-  margin-right: 0.5em;
 }
 
-li > .image .code-image {
-  float: left;
+.code-image {
+  margin: 0;
   height: 50px;
   background: #585858;
 }
 
-li > strong {
-  display: block;
-  margin-top: 1em;
-
-  font-size: 0.85em;
-  font-weight: 500;
-}
-
-.commits li {
-  display: inline-block;
-  font-size: 0.8em;
-  margin: 0;
-}
-
 time {
   color: #585858;
-  font-size: .8em;
+  font-size: 0.75em;
 }
 
-main > time {
-  display: block;
-  margin-top: 5em;
-}
-
-.rating,
-blockquote {
+.review {
+  max-width: 40em;
+  font-weight: 500;
   color: #634a26;
 }
 
@@ -174,62 +135,83 @@ blockquote {
 }
 
 aside {
-  padding-top: 2.5em;
-  font-size: .75em;
+  font-size: 0.85em;
 }
 
-aside li {
-  list-style: none;
-  margin-bottom: 1em;
+aside li * + * {
+  margin-top: 0;
 }
 
-aside li > * {
-  display: block;
-}
-
-@media (max-width: 80em) and (min-width: 40em) {
+@media (min-width: 45em) {
   body {
-    padding: 15px;
-  }
-
-  header h1 {
-    width: 10px;
-
-    text-shadow: none;
-
-    transform: rotate(90deg);
-    transform-origin: right;
-  }
-
-  li > small > time {
-    float: none;
-  }
-}
-
-@media (max-width: 40em) {
-  body {
-    padding: 5px;
+    padding: 1rem;
   }
 
   .wrapper {
-    flex-direction: column;
+    flex-direction: row;
   }
 
   header,
+  main,
   aside {
-    order: 0;
+    padding: 1.5rem;
+  }
+
+  header {
+    order: 1;
+  }
+
+  aside {
+    order: 2;
   }
 
   header h1 {
-    text-shadow: none;
-    transform: rotate(180deg) translateY(-1em);
+    width: 100px;
+    transform: rotate(90deg) translate(-1em, -1em);
+    transform-origin: bottom left;
   }
 
   header h1::before {
+    content: '';
+    position: absolute;
+    width: 1.85em;
+    height: 2em;
     opacity: 0.35;
+    background-image: url(/img/zac.jpg);
+  }
+}
+
+@media (min-width: 75em) {
+  body {
+    padding: 1.5rem;
   }
 
-  li > small > time {
-    float: none;
+  header,
+  main,
+  aside {
+    padding: 2rem;
+  }
+
+  header {
+    order: 1;
+  }
+
+  aside {
+    order: 2;
+  }
+
+  header h1 {
+    width: auto;
+    text-shadow: 0  1em #111, 0  2em #222, 0  3em #333,
+                 0  4em #444, 0  5em #555, 0  6em #666,
+                 0  7em #777, 0  8em #888, 0  9em #999,
+                 0 10em #AAA, 0 11em #BBB, 0 12em #CCC,
+                 0 13em #DDD, 0 14em #EEE;
+     transform: rotate(-5deg) translateX(-1em);
+  }
+
+  header h1::before {
+    height: 4em;
+    opacity: 0.65;
   }
 }
