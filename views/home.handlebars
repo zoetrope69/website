@@ -70,6 +70,23 @@
     <time datetime="{{gigs.0.time.iso}}">{{gigs.0.time.human}}</time>
   </section>
   {{/if}}
+  {{#if shows}}
+  <section>
+    <h2>📺 The last TV show I watched was…</h2>
+    <div class="row">
+      {{#if shows.0.image}}
+      <div class="image">
+        <img width="50" src="{{shows.0.image}}" alt="Icon for {{shows.0.title}}" />
+      </div>
+      {{/if}}
+      <a href="https://trakt.tv/users/zaccolley/history">
+        <span>{{shows.0.show}} <small>({{shows.0.year}})</small></span>
+        <small>“{{shows.0.title}}” (Episode {{shows.0.number}} / Season {{shows.0.season}})</small>
+      </a>
+    </div>
+    <time datetime="{{shows.0.time.iso}}">{{shows.0.time.human}}</time>
+  </section>
+  {{/if}}
   {{#if films}}
   <section>
     <h2>🎬 The last film I watched was…</h2>
