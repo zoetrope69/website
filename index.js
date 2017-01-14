@@ -11,6 +11,7 @@ const getBooks = require('./books')
 const getCode = require('./code')
 const getFilms = require('./films')
 const getGigs = require('./gigs')
+const { getSleep, getRestingHeartrate } = require('./health')
 const getLocations = require('./locations')
 const getPodcasts = require('./podcasts')
 const getProductivity = require('./productivity')
@@ -65,9 +66,11 @@ function getData () {
       getCode(),
       getFilms(),
       getGigs(),
+      getRestingHeartrate(),
       getLocations(),
       getPodcasts(),
       getProductivity(),
+      getSleep(),
       getTracks(),
       getTweets(),
       getVids()
@@ -78,9 +81,11 @@ function getData () {
       'code',
       'films',
       'gigs',
+      'heartrate',
       'locations',
       'podcasts',
       'productivity',
+      'sleep',
       'tracks',
       'tweets',
       'vids'
