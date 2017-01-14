@@ -16,8 +16,8 @@
   {{#if locations}}
   <section>
     <h2>📍 The last place I was seen was…</h2>
-    {{#if locations.0.category}}
     <div class="row">
+      {{#if locations.0.category}}
       <div class="image">
         <img width="50" src="{{locations.0.category.image}}" alt="Icon for {{locations.0.category.name}}" style="background-color: {{locations.0.category.colour}};" />
       </div>
