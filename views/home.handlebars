@@ -213,6 +213,29 @@
     </div>
   </section>
   {{/if}}
+  {{#if games}}
+  <section>
+    <h2>🕹 {{#if games.0.playing}}The game I'm playing on Steam to is{{else}}The last game I played on Steam was{{/if}}…</h2>
+    <div class="row">
+      {{#if games.0.image}}
+      <div class="image">
+        <img width="32" style="margin: 9px;" src="{{games.0.image}}" alt="{{games.0.name}}'s thumbnail" />
+      </div>
+      {{/if}}
+      <a href="https://steamcommunity.com/id/zaccolley/">
+        <div>{{games.0.name}}</div>
+        <small>{{games.0.playtime.twoWeeks}} hours in the last 2 weeks ({{games.0.playtime.allTime}} hours in total)</small>
+      </a>
+      <time datetime="{{games.0.time.iso}}">
+        {{#if games.0.playing}}
+          Playing now
+        {{else}}
+          {{games.0.time.human}}
+        {{/if}}
+      </time>
+    </div>
+  </section>
+  {{/if}}
 
   {{#if time}}
   <time datetime="{{time.iso}}">Data updated at {{time.human}}</time>

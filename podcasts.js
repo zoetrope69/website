@@ -87,7 +87,7 @@ function getNewReleases () {
 
 function processEpisodes (data) {
   if (!data.episodes) {
-    return console.log('No episodes to process')
+    return console.error('No episodes to process')
   }
 
   const EPISODE_PLAYING_STATUS = {
