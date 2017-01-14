@@ -14,6 +14,7 @@ const getGigs = require('./gigs')
 const getLocations = require('./locations')
 const getPodcasts = require('./podcasts')
 const getProductivity = require('./productivity')
+const getShows = require('./shows')
 const getTracks = require('./tracks')
 const getTweets = require('./tweets')
 const getVids = require('./vids')
@@ -68,6 +69,7 @@ function getData () {
       getLocations(),
       getPodcasts(),
       getProductivity(),
+      getShows(),
       getTracks(),
       getTweets(),
       getVids()
@@ -81,6 +83,7 @@ function getData () {
       'locations',
       'podcasts',
       'productivity',
+      'shows',
       'tracks',
       'tweets',
       'vids'

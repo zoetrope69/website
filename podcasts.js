@@ -86,6 +86,10 @@ function getNewReleases () {
 }
 
 function processEpisodes (data) {
+  if (!data.episodes) {
+    return console.log('No episodes to process')
+  }
+
   const EPISODE_PLAYING_STATUS = {
     1: 'Not played',
     2: 'In progress',
