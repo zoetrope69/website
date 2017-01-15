@@ -10,11 +10,13 @@ const mcache = require('memory-cache')
 const getBooks = require('./books')
 const getCode = require('./code')
 const getFilms = require('./films')
+const getGames = require('./games')
 const getGigs = require('./gigs')
 const { getSleep, getRestingHeartrate } = require('./health')
 const getLocations = require('./locations')
 const getPodcasts = require('./podcasts')
 const getProductivity = require('./productivity')
+const getShows = require('./shows')
 const getTracks = require('./tracks')
 const getTweets = require('./tweets')
 const getVids = require('./vids')
@@ -65,11 +67,13 @@ function getData () {
       getBooks(),
       getCode(),
       getFilms(),
+      getGames(),
       getGigs(),
-      getRestingHeartrate(),
       getLocations(),
       getPodcasts(),
       getProductivity(),
+      getRestingHeartrate(),
+      getShows(),
       getSleep(),
       getTracks(),
       getTweets(),
@@ -80,11 +84,13 @@ function getData () {
       'books',
       'code',
       'films',
+      'games',
       'gigs',
       'heartrate',
       'locations',
       'podcasts',
       'productivity',
+      'shows',
       'sleep',
       'tracks',
       'tweets',
@@ -117,7 +123,7 @@ function getData () {
 app.get('/self.json', cache(process.env.CACHE_TIME), (req, res) => {
   return getData().then((data) => res.json(data))
                   .catch((error) => {
-                    console.log(error)
+                    console.error(error)
                     res.json({ error: 'Something went wrong' })
                   })
 })
@@ -125,7 +131,7 @@ app.get('/self.json', cache(process.env.CACHE_TIME), (req, res) => {
 app.get('/', cache(process.env.CACHE_TIME), (req, res) => {
   return getData().then((data) => res.render('home', data))
                   .catch((error) => {
-                    console.log(error)
+                    console.error(error)
                     res.render('home', {})
                   })
 })

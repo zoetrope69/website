@@ -18,7 +18,7 @@ function checkRequest (error, response) {
 }
 
 function processVids (vids) {
-  vids = vids.map(vid => {
+  return vids.map(vid => {
     const data = vid.snippet
     const date = new Date(data.publishedAt)
     return {
@@ -31,7 +31,6 @@ function processVids (vids) {
       uri: `https://www.youtube.com/watch?v=${data.resourceId.videoId}`
     }
   })
-  return vids
 }
 
 function getLikedVids () {
@@ -60,7 +59,5 @@ function getLikedVids () {
     })
   })
 }
-
-getLikedVids()
 
 module.exports = getLikedVids

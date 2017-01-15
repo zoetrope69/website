@@ -16,8 +16,8 @@
   {{#if locations}}
   <section>
     <h2>📍 The last place I was seen was…</h2>
-    {{#if locations.0.category}}
     <div class="row">
+      {{#if locations.0.category}}
       <div class="image">
         <img width="50" src="{{locations.0.category.image}}" alt="Icon for {{locations.0.category.name}}" style="background-color: {{locations.0.category.colour}};" />
       </div>
@@ -68,6 +68,23 @@
       </a>
     </div>
     <time datetime="{{gigs.0.time.iso}}">{{gigs.0.time.human}}</time>
+  </section>
+  {{/if}}
+  {{#if shows}}
+  <section>
+    <h2>📺 The last TV show I watched was…</h2>
+    <div class="row">
+      {{#if shows.0.image}}
+      <div class="image">
+        <img width="50" src="{{shows.0.image}}" alt="Icon for {{shows.0.title}}" />
+      </div>
+      {{/if}}
+      <a href="https://trakt.tv/users/zaccolley/history">
+        <span>{{shows.0.show}} <small>({{shows.0.year}})</small></span>
+        <small>“{{shows.0.title}}” (Episode {{shows.0.number}} / Season {{shows.0.season}})</small>
+      </a>
+    </div>
+    <time datetime="{{shows.0.time.iso}}">{{shows.0.time.human}}</time>
   </section>
   {{/if}}
   {{#if films}}
@@ -180,6 +197,7 @@
   </section>
   {{/if}}
   {{#if podcasts}}
+  {{#if podcasts.0.percentage }}
   <section>
     <h2>🎙The last podcast I've been listening to is…</h2>
     <div class="row">
@@ -193,6 +211,30 @@
         <small>{{podcasts.0.title}}</small>
       </a>
       <small>({{podcasts.0.percentage}}% listened)</small>
+    </div>
+  </section>
+  {{/if}}
+  {{/if}}
+  {{#if games}}
+  <section>
+    <h2>🕹 {{#if games.0.playing}}The game I'm playing on Steam to is{{else}}The last game I played on Steam was{{/if}}…</h2>
+    <div class="row">
+      {{#if games.0.image}}
+      <div class="image">
+        <img width="32" style="margin: 9px;" src="{{games.0.image}}" alt="{{games.0.name}}'s thumbnail" />
+      </div>
+      {{/if}}
+      <a href="https://steamcommunity.com/id/zaccolley/">
+        <div>{{games.0.name}}</div>
+        <small>{{games.0.playtime.twoWeeks}} hours in the last 2 weeks ({{games.0.playtime.allTime}} hours in total)</small>
+      </a>
+      <time datetime="{{games.0.time.iso}}">
+        {{#if games.0.playing}}
+          Playing now
+        {{else}}
+          {{games.0.time.human}}
+        {{/if}}
+      </time>
     </div>
   </section>
   {{/if}}
