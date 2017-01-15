@@ -34,7 +34,10 @@ function processHeartrate (heartrate) {
         human: date.toDateString(),
         iso: date.toISOString()
       },
-      restingHeartrate: item.resting_heartrate
+      beats: {
+        perMinute: item.resting_heartrate,
+        perSecond: item.resting_heartrate / 60
+      }
     }
   })
 }
@@ -67,7 +70,6 @@ function getRestingHeartrate () {
 function processSleeps (sleeps) {
   return sleeps.map(item => {
     const date = getDate(item.date)
-
     const formattedDuration = item.title.replace('for ', '').replace('h', ' hours and').replace('m', ' minutes')
 
     return {
@@ -78,7 +80,11 @@ function processSleeps (sleeps) {
       duration: {
         formatted: formattedDuration,
         raw: item.details.duration
-      }
+      },
+      light: Math.round((item.details.light / 3600) * 10) / 10,
+      deep: item.details.deep ? Math.round((item.details.deep / 3600) * 10) / 10 : 0,
+      rem: Math.round((item.details.rem / 3600) * 10) / 10,
+      image: `https://jawbone.com${item.snapshot_image}`
     }
   })
 }
@@ -108,7 +114,59 @@ function getSleep () {
   })
 }
 
+function processSteps (steps) {
+  return steps.map(item => {
+    const date = getDate(item.date)
+
+    const DONUT_CALORIES = 195
+
+    return {
+      time: {
+        human: date.toDateString(),
+        iso: date.toISOString()
+      },
+      distance: {
+        formatted: Math.round((item.details.distance / 1000) * 10) / 10,
+        raw: item.details.distance
+      },
+      calories: {
+        amount: Math.round(item.details.calories),
+        donuts: Math.floor((item.details.calories / DONUT_CALORIES) * 10) / 10
+      },
+      activeTime: Math.round((item.details.active_time / 3600) * 10) / 10,
+      steps: item.details.steps,
+      image: `https://jawbone.com${item.snapshot_image}`
+    }
+  })
+}
+
+function getSteps () {
+  return new Promise(resolve => {
+    const url = jawboneUrl + 'moves'
+    const headers = { 'Authorization': `Bearer ${process.env.JAWBONE_TOKEN}` }
+
+    return request({ url, headers, timeout: +process.env.REQUEST_TIMEOUT }, (error, response, body) => {
+      // check if the result is good to process
+      const requestCheck = checkRequest(error, response)
+      if (requestCheck) {
+        return resolve({ error: 'Something went wrong' })
+      }
+
+      const json = JSON.parse(body)
+
+      if (json.data && json.data.items.length <= 0) {
+        return resolve({ error: 'No sleep data' })
+      }
+
+      const steps = processSteps(json.data.items)
+
+      resolve(steps)
+    })
+  })
+}
+
 module.exports = {
   getRestingHeartrate,
-  getSleep
+  getSleep,
+  getSteps
 }

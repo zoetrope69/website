@@ -111,12 +111,42 @@ section .row em {
 
 .image {
   width: 50px;
+  border-radius: 2px;
 }
 
-.code-image {
+.image-parts > div {
   margin: 0;
   height: 50px;
   background: #585858;
+}
+
+.image-graph {
+  height: 120px;
+}
+
+.image-graph img {
+  width: 120px;
+  height: 50px;
+  transform: rotate(90deg) translate(-50px);
+  transform-origin: bottom left;
+  filter: saturate(0.25);
+}
+
+@keyframes beat {
+  to { opacity: 0.8; }
+}
+
+.image-beat > div {
+  width: 50px;
+  height: 50px;
+  background: #620000;
+  animation: beat infinite alternate;
+}
+
+.donuts {
+  margin: 0.25em 1em;
+  overflow: hidden;
+  white-space: nowrap;
 }
 
 time {

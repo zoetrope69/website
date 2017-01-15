@@ -7,12 +7,12 @@ const app = express()
 const http = require('http').Server(app)
 const mcache = require('memory-cache')
 
+const { getRestingHeartrate, getSleep, getSteps } = require('./health')
 const getBooks = require('./books')
 const getCode = require('./code')
 const getFilms = require('./films')
 const getGames = require('./games')
 const getGigs = require('./gigs')
-const { getSleep, getRestingHeartrate } = require('./health')
 const getLocations = require('./locations')
 const getPodcasts = require('./podcasts')
 const getProductivity = require('./productivity')
@@ -75,6 +75,7 @@ function getData () {
       getRestingHeartrate(),
       getShows(),
       getSleep(),
+      getSteps(),
       getTracks(),
       getTweets(),
       getVids()
@@ -86,12 +87,13 @@ function getData () {
       'films',
       'games',
       'gigs',
-      'heartrate',
       'locations',
       'podcasts',
       'productivity',
+      'restingHeartrate',
       'shows',
       'sleep',
+      'steps',
       'tracks',
       'tweets',
       'vids'

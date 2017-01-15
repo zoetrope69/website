@@ -131,9 +131,9 @@
   <section>
     <h2>💻 The last code I pushed publically was to…</h2>
     <div class="row">
-      <div class="row image">
+      <div class="row image image-parts">
         {{#each code.0.languages as |language|}}
-          <div class="code-image" title="{{language.name}}" style="width:{{language.percentage}}%;background:{{language.color}};"></div>
+          <div title="{{language.name}}" style="width:{{language.percentage}}%;background:{{language.color}};"></div>
         {{/each}}
       </div>
       <a href="{{code.0.repo.uri}}">{{code.0.repo.name}}</a>
@@ -181,23 +181,69 @@
   <section>
     <h2>👔 The apps/sites I used yesterday showed I was…</h2>
     <div class="row">
-      <div class="row image">
-        <div class="code-image" title="Very productive: {{productivity.0.very_productive.duration}}" style="width:{{productivity.0.very_productive.percentage}}%;background:#2f78bd;"></div>
-        <div class="code-image" title="Productive: {{productivity.0.productive.duration}}" style="width:{{productivity.0.productive.percentage}}%;background:#395b96;"></div>
-        <div class="code-image" title="Neutral: {{productivity.0.neutral.duration}}" style="width:{{productivity.0.neutral.percentage}}%;background:#655568;"></div>
-        <div class="code-image" title="Distracting: {{productivity.0.distracting.duration}}" style="width:{{productivity.0.distracting.percentage}}%;background:#92343b;"></div>
-        <div class="code-image" title="Very distracting: {{productivity.0.very_distracting.duration}}" style="width:{{productivity.0.very_distracting.percentage}}%;background:#c5392f;"></div>
+      <div class="row image image-parts">
+        <div title="Very productive: {{productivity.0.very_productive.duration}}" style="width:{{productivity.0.very_productive.percentage}}%;background:#2f78bd;"></div>
+        <div title="Productive: {{productivity.0.productive.duration}}" style="width:{{productivity.0.productive.percentage}}%;background:#395b96;"></div>
+        <div title="Neutral: {{productivity.0.neutral.duration}}" style="width:{{productivity.0.neutral.percentage}}%;background:#655568;"></div>
+        <div title="Distracting: {{productivity.0.distracting.duration}}" style="width:{{productivity.0.distracting.percentage}}%;background:#92343b;"></div>
+        <div title="Very distracting: {{productivity.0.very_distracting.duration}}" style="width:{{productivity.0.very_distracting.percentage}}%;background:#c5392f;"></div>
       </div>
       <div>
         <strong>{{productivity.0.score}}% productive</strong>
-        <small>over a tracked period of {{productivity.0.total_duration}}…</small>
+        <small>…over a tracked period of {{productivity.0.total_duration}}</small>
       </div>
     </div>
     <time datetime="{{productivity.0.time.iso}}">{{productivity.0.time.human}}</time>
   </section>
   {{/if}}
+  {{#if sleep}}
+  <section>
+    <h2>💤 Yesterday I got this much sleep…</h2>
+    <div class="row">
+      <div class="image image-graph">
+        <img src="{{sleep.0.image}}" alt="Graph of sleep" width="120" style="background:#96b1be;" />
+      </div>
+      <div>
+        <strong>{{sleep.0.duration.formatted}}</strong>
+        <small>…light {{sleep.0.light}} hours</small>
+        <small>…deep {{sleep.0.deep}} hours </small>
+        <small>…REM {{sleep.0.rem}} hours</small>
+      </div>
+    </div>
+    <time datetime="{{sleep.0.time.iso}}">{{sleep.0.time.human}}</time>
+  </section>
+  {{/if}}
+  {{#if steps}}
+  <section>
+    <h2>👣 Yesterday I took this many steps…</h2>
+    <div class="row">
+      <div class="image image-graph">
+        <img src="{{steps.1.image}}" alt="Graph of steps" width="120" style="background:#7e5858;" />
+      </div>
+      <div>
+        <strong>{{steps.1.steps}} steps</strong>
+        <small>…covering {{steps.1.distance.formatted}} kilometers</small>
+        <small>…burning off {{steps.1.calories.donuts}} donuts <span class="donuts" style="width:{{steps.1.calories.donuts}}em;">🍩🍩🍩🍩🍩🍩🍩🍩🍩🍩🍩🍩🍩🍩🍩🍩🍩🍩🍩🍩🍩🍩🍩🍩</span></small>
+      </div>
+    </div>
+    <time datetime="{{steps.1.time.iso}}">{{steps.1.time.human}}</time>
+  </section>
+  {{/if}}
+  {{#if restingHeartrate}}
+  <section>
+    <h2>💓 Yesterday my resting heartrate was…</h2>
+    <div class="row">
+      <div class="image image-beat">
+        <div style="animation-duration:{{restingHeartrate.0.beats.perSecond}}s;"></div>
+      </div>
+      <div>
+        <strong>{{restingHeartrate.0.beats.perMinute}} BPM</strong>
+      </div>
+    </div>
+    <time datetime="{{restingHeartrate.0.time.iso}}">{{restingHeartrate.0.time.human}}</time>
+  </section>
+  {{/if}}
   {{#if podcasts}}
-  {{#if podcasts.0.percentage }}
   <section>
     <h2>🎙The last podcast I've been listening to is…</h2>
     <div class="row">
@@ -210,10 +256,9 @@
         <div>{{podcasts.0.episode}}</div>
         <small>{{podcasts.0.title}}</small>
       </a>
-      <small>({{podcasts.0.percentage}}% listened)</small>
+      {{#if podcasts.0.percentage }}<small>({{podcasts.0.percentage}}% listened)</small>{{/if}}
     </div>
   </section>
-  {{/if}}
   {{/if}}
   {{#if games}}
   <section>
