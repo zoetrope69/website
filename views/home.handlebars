@@ -197,6 +197,7 @@
   </section>
   {{/if}}
   {{#if podcasts}}
+  {{#if podcasts.0.percentage }}
   <section>
     <h2>🎙The last podcast I've been listening to is…</h2>
     <div class="row">
@@ -212,6 +213,7 @@
       <small>({{podcasts.0.percentage}}% listened)</small>
     </div>
   </section>
+  {{/if}}
   {{/if}}
   {{#if games}}
   <section>
