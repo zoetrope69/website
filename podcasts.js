@@ -61,12 +61,10 @@ function requestJSON (path) {
       timeout: +process.env.REQUEST_TIMEOUT
     }, (error, response, body) => {
       if (error) {
-        getData()
         return resolve({ error })
       }
 
       if (response.statusCode !== 200) {
-        getData()
         return resolve({ error: `Expected status code to be 200. (${response.statusCode})` })
       }
 
