@@ -116,7 +116,7 @@ function getRecentlyPlayedGames () {
 
       const data = JSON.parse(body)
 
-      if (data.response.games.length <= 0) {
+      if (!data || data.response.total_count <= 0 || data.response.games.length <= 0) {
         return resolve({ error: 'No games' })
       }
 
