@@ -38,12 +38,14 @@ function processLocation (location) {
 
   if (location.venue.categories) {
     const category = location.venue.categories[0]
-    const icon = category.icon
-    const iconSize = 88
-    output.category = {
-      name: category.name,
-      colour: `hsl(${Math.floor(Math.random() * 360)}, 61%, 48%)`,
-      image: `${icon.prefix}${iconSize}${icon.suffix}`
+    if (category) {
+      const icon = category.icon
+      const iconSize = 88
+      output.category = {
+        name: category.name,
+        colour: `hsl(${Math.floor(Math.random() * 360)}, 61%, 48%)`,
+        image: `${icon.prefix}${iconSize}${icon.suffix}`
+      }
     }
   }
 
