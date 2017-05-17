@@ -13,6 +13,22 @@
 
   <p>I used to: work at <a href="https://rosedigital.co.uk">ROSE</a> and run <a href="http://hackpompey.co.uk">hackpompey</a>.</p>
 
+  {{#if tweets}}
+  <section>
+    <h2>🐦 My last tweet was…</h2>
+    <div class="row">
+      {{#if tweets.0.images.length}}
+      <span class="image">
+        <img width="50" src="{{tweets.0.images.0.uri}}" alt="{{tweets.0.text}}" />
+      </span>
+      {{/if}}
+      <a href="{{tweets.0.uri}}">
+        {{tweets.0.text}}
+      </a>
+    </div>
+    <time datetime="{{tweets.0.time.iso}}">{{tweets.0.time.human}}</time>
+  </section>
+  {{/if}}
   {{#if locations}}
   <section>
     <h2>📍 The last place I was seen was…</h2>
@@ -30,44 +46,30 @@
     <time datetime="{{locations.0.time.iso}}">{{locations.0.time.human}}</time>
   </section>
   {{/if}}
-  {{#if tracks}}
+  {{#if code}}
   <section>
-    <h2>🎧 {{#if tracks.0.playing}}The song I'm listening to is{{else}}The last song I listened to was{{/if}}…</h2>
+    <h2>💻 The last code I pushed publically was to…</h2>
     <div class="row">
-    {{#if tracks.0.image}}
-      <span class="image">
-        <img width="50" src="{{tracks.0.image}}" alt="Album art for {{tracks.0.name}} by {{tracks.0.artist}}" />
-      </span>
-      {{/if}}
-      <a href="http://www.last.fm/user/zaccolley">
-        <span>{{tracks.0.name}}</span>
-        <small>{{tracks.0.artist}}</small>
-      </a>
+      <div class="row image image-parts">
+        {{#each code.0.languages as |language|}}
+          <div title="{{language.name}}" style="width:{{language.percentage}}%;background:{{language.color}};"></div>
+        {{/each}}
+      </div>
+      <a href="{{code.0.repo.uri}}">{{code.0.repo.name}}</a>
     </div>
-    <time datetime="{{tracks.0.time.iso}}">
-      {{#if tracks.0.playing}}
-        Playing now
-      {{else}}
-        {{tracks.0.time.human}}
-      {{/if}}
-    </time>
+    <time datetime="{{code.0.time.iso}}">{{code.0.time.human}}</time>
   </section>
   {{/if}}
-  {{#if gigs}}
+  {{#if vids}}
   <section>
-    <h2>🎶 The last gig I went to was…</h2>
+    <h2>📹 The last vid I liked was…</h2>
     <div class="row">
-      {{#if gigs.0.image.length}}
-      <span class="image">
-        <img width="50" src="{{gigs.0.image}}" alt="{{gigs.0.artists}} at {{gigs.0.venue}}" />
-      </span>
-      {{/if}}
-      <a href="{{gigs.0.uri}}">
-        <span>{{gigs.0.artists}}</span>
-        <small>{{gigs.0.venue}}</small>
-      </a>
+      <div class="image">
+        <img width="50" src="{{vids.0.image}}" alt="{{vids.0.title}}'s thumbnail" />
+      </div>
+      <a href="{{vids.0.uri}}">{{vids.0.title}}</a>
     </div>
-    <time datetime="{{gigs.0.time.iso}}">{{gigs.0.time.human}}</time>
+    <time datetime="{{vids.0.time.iso}}">{{vids.0.time.human}}</time>
   </section>
   {{/if}}
   {{#if shows}}
@@ -111,34 +113,84 @@
     <time datetime="{{films.0.time.watched.iso}}">{{films.0.time.watched.human}}</time>
   </section>
   {{/if}}
-  {{#if tweets}}
+  {{#if tracks}}
   <section>
-    <h2>🐦 My last tweet was…</h2>
+    <h2>🎧 {{#if tracks.0.playing}}The song I'm listening to is{{else}}The last song I listened to was{{/if}}…</h2>
     <div class="row">
-      {{#if tweets.0.images.length}}
+    {{#if tracks.0.image}}
       <span class="image">
-        <img width="50" src="{{tweets.0.images.0.uri}}" alt="{{tweets.0.text}}" />
+        <img width="50" src="{{tracks.0.image}}" alt="Album art for {{tracks.0.name}} by {{tracks.0.artist}}" />
       </span>
       {{/if}}
-      <a href="{{tweets.0.uri}}">
-        {{tweets.0.text}}
+      <a href="http://www.last.fm/user/zaccolley">
+        <span>{{tracks.0.name}}</span>
+        <small>{{tracks.0.artist}}</small>
       </a>
     </div>
-    <time datetime="{{tweets.0.time.iso}}">{{tweets.0.time.human}}</time>
+    <time datetime="{{tracks.0.time.iso}}">
+      {{#if tracks.0.playing}}
+        Playing now
+      {{else}}
+        {{tracks.0.time.human}}
+      {{/if}}
+    </time>
   </section>
   {{/if}}
-  {{#if code}}
+  {{#if podcasts}}
   <section>
-    <h2>💻 The last code I pushed publically was to…</h2>
+    <h2>🎙The last podcast I've been listening to is…</h2>
     <div class="row">
-      <div class="row image">
-        {{#each code.0.languages as |language|}}
-          <div class="code-image" title="{{language.name}}" style="width:{{language.percentage}}%;background:{{language.color}};"></div>
-        {{/each}}
+      {{#if podcasts.0.image}}
+      <div class="image">
+        <img width="50" src="{{podcasts.0.image}}" alt="{{podcasts.0.title}}'s thumbnail" />
       </div>
-      <a href="{{code.0.repo.uri}}">{{code.0.repo.name}}</a>
+      {{/if}}
+      <a href="{{podcasts.0.uri}}">
+        <div>{{podcasts.0.episode}}</div>
+        <small>{{podcasts.0.title}}</small>
+      </a>
+      {{#if podcasts.0.percentage }}<small>({{podcasts.0.percentage}}% listened)</small>{{/if}}
     </div>
-    <time datetime="{{code.0.time.iso}}">{{code.0.time.human}}</time>
+  </section>
+  {{/if}}
+  {{#if gigs}}
+  <section>
+    <h2>🎶 The last gig I went to was…</h2>
+    <div class="row">
+      {{#if gigs.0.image.length}}
+      <span class="image">
+        <img width="50" src="{{gigs.0.image}}" alt="{{gigs.0.artists}} at {{gigs.0.venue}}" />
+      </span>
+      {{/if}}
+      <a href="{{gigs.0.uri}}">
+        <span>{{gigs.0.artists}}</span>
+        <small>{{gigs.0.venue}}</small>
+      </a>
+    </div>
+    <time datetime="{{gigs.0.time.iso}}">{{gigs.0.time.human}}</time>
+  </section>
+  {{/if}}
+  {{#if games}}
+  <section>
+    <h2>🕹 {{#if games.0.playing}}The game I'm playing on Steam to is{{else}}The last game I played on Steam was{{/if}}…</h2>
+    <div class="row">
+      {{#if games.0.image}}
+      <div class="image">
+        <img width="32" style="margin: 9px;" src="{{games.0.image}}" alt="{{games.0.name}}'s thumbnail" />
+      </div>
+      {{/if}}
+      <a href="https://steamcommunity.com/id/zaccolley/">
+        <div>{{games.0.name}}</div>
+        <small>{{games.0.playtime.twoWeeks}} hours in the last 2 weeks ({{games.0.playtime.allTime}} hours in total)</small>
+      </a>
+      <time datetime="{{games.0.time.iso}}">
+        {{#if games.0.playing}}
+          Playing now
+        {{else}}
+          {{games.0.time.human}}
+        {{/if}}
+      </time>
+    </div>
   </section>
   {{/if}}
   {{#if books}}
@@ -165,77 +217,70 @@
     <time datetime="{{books.0.time.read.iso}}">{{books.0.time.read.human}}</time>
   </section>
   {{/if}}
-  {{#if code}}
-  <section>
-    <h2>📹 The last vid I liked was…</h2>
-    <div class="row">
-      <div class="image">
-        <img width="50" src="{{vids.0.image}}" alt="{{vids.0.title}}'s thumbnail" />
-      </div>
-      <a href="{{vids.0.uri}}">{{vids.0.title}}</a>
-    </div>
-    <time datetime="{{vids.0.time.iso}}">{{vids.0.time.human}}</time>
-  </section>
-  {{/if}}
   {{#if productivity}}
   <section>
     <h2>👔 The apps/sites I used yesterday showed I was…</h2>
     <div class="row">
-      <div class="row image">
-        <div class="code-image" title="Very productive: {{productivity.0.very_productive.duration}}" style="width:{{productivity.0.very_productive.percentage}}%;background:#2f78bd;"></div>
-        <div class="code-image" title="Productive: {{productivity.0.productive.duration}}" style="width:{{productivity.0.productive.percentage}}%;background:#395b96;"></div>
-        <div class="code-image" title="Neutral: {{productivity.0.neutral.duration}}" style="width:{{productivity.0.neutral.percentage}}%;background:#655568;"></div>
-        <div class="code-image" title="Distracting: {{productivity.0.distracting.duration}}" style="width:{{productivity.0.distracting.percentage}}%;background:#92343b;"></div>
-        <div class="code-image" title="Very distracting: {{productivity.0.very_distracting.duration}}" style="width:{{productivity.0.very_distracting.percentage}}%;background:#c5392f;"></div>
+      <div class="row image image-parts">
+        <div title="Very productive: {{productivity.0.very_productive.duration}}" style="width:{{productivity.0.very_productive.percentage}}%;background:#2f78bd;"></div>
+        <div title="Productive: {{productivity.0.productive.duration}}" style="width:{{productivity.0.productive.percentage}}%;background:#395b96;"></div>
+        <div title="Neutral: {{productivity.0.neutral.duration}}" style="width:{{productivity.0.neutral.percentage}}%;background:#655568;"></div>
+        <div title="Distracting: {{productivity.0.distracting.duration}}" style="width:{{productivity.0.distracting.percentage}}%;background:#92343b;"></div>
+        <div title="Very distracting: {{productivity.0.very_distracting.duration}}" style="width:{{productivity.0.very_distracting.percentage}}%;background:#c5392f;"></div>
       </div>
       <div>
         <strong>{{productivity.0.score}}% productive</strong>
-        <small>over a tracked period of {{productivity.0.total_duration}}…</small>
+        <small>…over a tracked period of {{productivity.0.total_duration}}</small>
       </div>
     </div>
     <time datetime="{{productivity.0.time.iso}}">{{productivity.0.time.human}}</time>
   </section>
   {{/if}}
-  {{#if podcasts}}
-  {{#if podcasts.0.percentage }}
+  {{#if sleep}}
   <section>
-    <h2>🎙The last podcast I've been listening to is…</h2>
+    <h2>💤 Yesterday I got this much sleep…</h2>
     <div class="row">
-      {{#if podcasts.0.image}}
-      <div class="image">
-        <img width="50" src="{{podcasts.0.image}}" alt="{{podcasts.0.title}}'s thumbnail" />
+      <div class="image image-graph">
+        <img src="{{sleep.0.image}}" alt="Graph of sleep" width="120" style="background:#96b1be;" />
       </div>
-      {{/if}}
-      <a href="{{podcasts.0.uri}}">
-        <div>{{podcasts.0.episode}}</div>
-        <small>{{podcasts.0.title}}</small>
-      </a>
-      <small>({{podcasts.0.percentage}}% listened)</small>
+      <div>
+        <strong>{{sleep.0.duration.formatted}}</strong>
+        <small>…light {{sleep.0.light}} hours</small>
+        <small>…deep {{sleep.0.deep}} hours </small>
+        <small>…REM {{sleep.0.rem}} hours</small>
+      </div>
     </div>
+    <time datetime="{{sleep.0.time.iso}}">{{sleep.0.time.human}}</time>
   </section>
   {{/if}}
-  {{/if}}
-  {{#if games}}
+  {{#if steps}}
   <section>
-    <h2>🕹 {{#if games.0.playing}}The game I'm playing on Steam to is{{else}}The last game I played on Steam was{{/if}}…</h2>
+    <h2>👣 Yesterday I took this many steps…</h2>
     <div class="row">
-      {{#if games.0.image}}
-      <div class="image">
-        <img width="32" style="margin: 9px;" src="{{games.0.image}}" alt="{{games.0.name}}'s thumbnail" />
+      <div class="image image-graph">
+        <img src="{{steps.1.image}}" alt="Graph of steps" width="120" style="background:#7e5858;" />
       </div>
-      {{/if}}
-      <a href="https://steamcommunity.com/id/zaccolley/">
-        <div>{{games.0.name}}</div>
-        <small>{{games.0.playtime.twoWeeks}} hours in the last 2 weeks ({{games.0.playtime.allTime}} hours in total)</small>
-      </a>
-      <time datetime="{{games.0.time.iso}}">
-        {{#if games.0.playing}}
-          Playing now
-        {{else}}
-          {{games.0.time.human}}
-        {{/if}}
-      </time>
+      <div>
+        <strong>{{steps.1.steps}} steps</strong>
+        <small>…covering {{steps.1.distance.formatted}} kilometers</small>
+        <small>…burning off {{steps.1.calories.donuts}} donuts <span class="donuts" style="width:{{steps.1.calories.donuts}}em;">🍩🍩🍩🍩🍩🍩🍩🍩🍩🍩🍩🍩🍩🍩🍩🍩🍩🍩🍩🍩🍩🍩🍩🍩</span></small>
+      </div>
     </div>
+    <time datetime="{{steps.1.time.iso}}">{{steps.1.time.human}}</time>
+  </section>
+  {{/if}}
+  {{#if restingHeartrate}}
+  <section>
+    <h2>💓 Yesterday my resting heartrate was…</h2>
+    <div class="row">
+      <div class="image image-beat">
+        <div style="animation-duration:{{restingHeartrate.0.beats.perSecond}}s;"></div>
+      </div>
+      <div>
+        <strong>{{restingHeartrate.0.beats.perMinute}} BPM</strong>
+      </div>
+    </div>
+    <time datetime="{{restingHeartrate.0.time.iso}}">{{restingHeartrate.0.time.human}}</time>
   </section>
   {{/if}}
 

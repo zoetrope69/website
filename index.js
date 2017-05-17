@@ -7,6 +7,7 @@ const app = express()
 const http = require('http').Server(app)
 const mcache = require('memory-cache')
 
+const { getRestingHeartrate, getSleep, getSteps } = require('./health')
 const getBooks = require('./books')
 const getCode = require('./code')
 const getFilms = require('./films')
@@ -44,8 +45,8 @@ app.engine('handlebars', exphbs({ defaultLayout: 'main' }))
 app.set('view engine', 'handlebars')
 app.use(express.static(`${__dirname}/public`))
 
-http.listen(3000, () => {
-  console.log('Listening on *:3000')
+http.listen(process.env.PORT || 3000, () => {
+  console.info(`Listening on *:${process.env.PORT || 3000}`)
 })
 
 const cache = (duration) => {
@@ -77,7 +78,10 @@ function getData () {
       getLocations(),
       getPodcasts(),
       getProductivity(),
+      getRestingHeartrate(),
       getShows(),
+      getSleep(),
+      getSteps(),
       getTracks(),
       getTweets(),
       getVids()
@@ -92,7 +96,10 @@ function getData () {
       'locations',
       'podcasts',
       'productivity',
+      'restingHeartrate',
       'shows',
+      'sleep',
+      'steps',
       'tracks',
       'tweets',
       'vids'
