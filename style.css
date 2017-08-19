@@ -71,6 +71,12 @@ h2 {
   margin: 1em 0 0.75em;
 }
 
+p {
+  max-width: 40em;
+  margin-top: 1em;
+  line-height: 1.5em;
+}
+
 .items {
   display: grid;
   grid-gap: 0.5em;
@@ -78,10 +84,8 @@ h2 {
   grid-auto-rows: minmax(6em, auto);
 }
 
-p {
-  max-width: 40em;
-  margin-top: 1em;
-  line-height: 1.5em;
+.items--written {
+  grid-template-columns: repeat(auto-fill, minmax(24em, 1fr));
 }
 
 .item {
@@ -109,11 +113,13 @@ p {
 }
 
 .item__title {
-  margin: 0.25em 0 0.5em;
+  margin-top: 0.25em;
 }
 
 .item__summary {
+  margin-top: 0.5em;
   line-height: 1.33em;
+
   color: #2e2e2a;
   font-size: 0.8em;
   font-weight: 500;
@@ -147,7 +153,7 @@ p {
   header h1 {
     float: right;
     width: 2em;
-    
+
     transform: rotate(90deg) translate(-1em, -1em);
     transform-origin: bottom left;
   }
