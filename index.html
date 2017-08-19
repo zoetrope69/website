@@ -13,7 +13,7 @@
 	<link rel="icon" sizes="192x192" href="notepad.png">
   <link rel="icon" href="notepad.png" />
 
-	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="style.min.css">
 </head>
 <body>
 <div class="wrapper">
@@ -24,89 +24,244 @@
 	<main>
 		<h2>About me</h2>
 
-		<p>I'm Zac and I do stuff on the web.</p>
+		<p>
+			I'm Zac and I do stuff on the web
+			<span role="img" aria-label="A juggler, electronics and paint">🤹‍♂️🔌🎨</span>.
+		</p>
 		
-		<p>Passionate about removing barriers for people (education, accessibility, diversity and inclusivity).</p>
+		<p>
+			Passionate about removing barriers for people (education, accessibility, diversity and inclusivity)
+			<span role="img" aria-label="No barriers">🚧🚫</span>.
+		</p>
 
-		<p>Email me at <a href="mailto:hi@zaccolley.com">hi@zaccolley.com</a>. I tweet a lot at <a href="https://twitter.com/zaccolley">@zaccolley</a>.</p>
+		<p>
+			Email me at <a href="mailto:hi@zaccolley.com">hi@zaccolley.com</a>
+			<span role="img" aria-label="Email icon">📧</span>.
+		</p>
+		
+		<p>
+			I tweet a lot at <a href="https://twitter.com/zaccolley">@zaccolley</a>
+			<span role="img" aria-label="Bird">🐦</span>.
+		</p>
 
-		<p>Now I'm a software developer working at <a href="https://songkick.com">Songkick</a>.</p>
+		<p>
+			I'm currently a co-organiser of <a href="https://codebar.io">codebar Monthlies</a>
+			<span role="img" aria-label="Sparkley codebar speakers">✨🗣️</span>.
+		</p>
 
-		<p>I used to work at <a href="https://rosedigital.co.uk">ROSE</a> and run <a href="http://hackpompey.co.uk">hackpompey</a>.</p>
+		<p>
+			I used to work at <a href="https://songkick.com">Songkick</a> <span role="img" aria-label="Concert tickets">🎤🎫</span>, <a href="https://rosedigital.co.uk">ROSE</a> <span role="img" aria-label="Rose and a computer">🌹💻</span> and run <a href="http://hackpompey.co.uk">hackpompey</a> <span role="img" aria-label="People hacking">👨‍💻👩‍💻🛠️</span>.
+		</p>
 
-		<p>I have some projects on <a href="https://github.com/zaccolley">GitHub</a>. I like <a href="https://www.last.fm/user/zaccolley">listening to music</a> and <a href="https://www.songkick.com/users/zaccolley">going to gigs</a>. I sometimes <a href="https://letterboxd.com/zaccolley/">watch films</a> and even more rarely (sadly) <a href="https://www.goodreads.com/user/show/36814974-zac-colley">read books</a>.<p>
+		<p>
+			I have some projects on <a href="https://github.com/zaccolley">GitHub</a> <span role="img" aria-label="Octopus and a cat">🐙🐈</span>. I like <a href="https://www.last.fm/user/zaccolley">listening to music</a> <span role="img" aria-label="Headphones and music notes">🎧🎶</span> and <a href="https://www.songkick.com/users/zaccolley">going to gigs</a> <span role="img" aria-label="Musician and instruments">👩‍🎤🎸🥁</span>. I sometimes <a href="https://letterboxd.com/zaccolley/">watch films</a> <span role="img" aria-label="Filmstrip">🎞</span>️ and even more rarely <a href="https://www.goodreads.com/user/show/36814974-zac-colley">read books</a> <span role="img" aria-label="Stack of books">📚</span>.
+		<p>
 
 		<h2>Some things I've made</h2>
 
-		<ol>
-			<li>
-				<a href="https://songkick.pink/">songkick.pink</a>
-				<span>Experimental PWA for Songkick.</span>
-				<time datetime="2017-02-25">25th Feburary 2017</time>
+		<ol class="items">
+			<li class="item">
+					<a href="https://twitter.com/soqbot"><span class="item__details">
+						<time class="item__time" datetime="2017-08-12">12th August 2017</time>
+						<span class="item__emoji" role="img" aria-label="Robot and socks">🤖🧦</span>
+					</span>
+					<span class="item__title">sockbot</span>
+					<span class="item__summary">Bot to spit spit out socks once every hour.</span>
+				</a>
 			</li>
-			<li>
-				<a href="https://chrome.google.com/webstore/detail/songkick-spotify-previews/dhiagiejffhdgpipbmcpcncepoicbhkb">Songkick Spotify Previews</a>
-				<span>Add 30 second Spotify previews to Songkick.</span>
-				<time datetime="2016-12-12">12th December 2016</time>
+			<li class="item">
+				<a href="https://clicky-line-drawer.glitch.me/">
+					<span class="item__details">
+						<time class="item__time" datetime="2017-07-28">28th July 2017</time>
+						<span class="item__emoji" role="img" aria-label="People making pictures">👩‍🎨🎨🖼️👨‍🎨</span>
+					</span>
+					<span class="item__title">clicky-line-drawer</span>
+					<span class="item__summary">Wiggly line drawing art tool.</span>
+				</a>
 			</li>
-			<li>
-				<a href="http://happybirthdaynan.surge.sh/">Animal Crossing Birthday Card</a>
-				<span>Fun little birthay card for my Nan.</span>
-				<time datetime="2016-08-30">30th August 2016</time>
+			<li class="item">
+				<a href="https://push-notification-twine.glitch.me/">
+					<span class="item__details">
+						<time class="item__time" datetime="2017-04-04">4th April 2017</time>
+						<span class="item__emoji" role="img" aria-label="Police car and a normal car that's been in a crash after some beers">🚓💥🚗🍻</span>
+					</span>
+					<span class="item__title">"I'm just waiting for a mate" game</span>
+					<span class="item__summary">A choose your own adventure game that (ab)uses push notifications.</span>
+				</a>
 			</li>
-			<li>
-				<a href="http://hackpompey.co.uk">hackpompey</a>
-				<span>Portsmouth based hackday, ran 5 before handing over.</span>
-				<time datetime="2015-03-02">2014 - 2016</time>
+			<li class="item">
+				<a href="https://github.com/zaccolley/microclicker">
+					<span class="item__details">
+						<time class="item__time" datetime="2017-03-08">8th March 2017</time>
+						<span class="item__emoji" role="img" aria-label="Magnifying glass and computer mouse">🔎🖱️</span>
+					</span>
+					<span class="item__title">microclicker</span>
+					<span class="item__summary">Use the bbc micro:bit as a slide clicker.</span>
+				</a>
 			</li>
-			<li>
-				<a href="https://rosedigital.co.uk">ROSE Digital</a>
-				<span>Front-end and design at ROSE Digital</span>
-				<time datetime="2016-01-01">2014 - 2016</time>
+			<li class="item">
+				<a href="https://github.com/zaccolley/now-playing-printer">
+					<span class="item__details">
+						<time class="item__time" datetime="2017-02-28">28th February 2017</time>
+						<span class="item__emoji" role="img" aria-label="Headphones, heat, printer and picture">🎧🔥🖨️🖼️</span>
+					</span>
+					<span class="item__title">now playing printer</span>
+					<span class="item__summary">Print out the album art music you're currently listening to.</span>
+				</a>
 			</li>
-			<li>
-				<a href="http://nickcolley.github.io/itsyourbirthdaytoday/#lol">itsyourbirthday.today</a>
-				<span>Made with my bro.</span>
-				<time datetime="2015-08-09">9th August 2015</time>
+			<li class="item">
+				<a href="https://songkick.pink/">
+					<span class="item__details">
+						<time class="item__time" datetime="2017-02-25">25th February 2017</time>
+						<span class="item__emoji" role="img" aria-label="Music calendar">🎵📆💅</span>
+					</span>
+					<span class="item__title">songkick.pink</span>
+					<span class="item__summary">Progressive web app for Songkick.</span>
+				</a>
 			</li>
-			<li>
-				<a href="https://efji.surge.sh">efji</a>
-				<span>A small canvas game.</span>
-				<time datetime="2013-09-11">11th September 2013</time>
+			<li class="item">
+				<a href="https://chrome.google.com/webstore/detail/songkick-spotify-previews/dhiagiejffhdgpipbmcpcncepoicbhkb">
+					<span class="item__details">
+						<time class="item__time" datetime="2016-12-12">12th December 2016</time>
+						<span class="item__emoji" role="img" aria-label="Hourglass and musical notes">💠⌛🎶</span>
+					</span>
+					<span class="item__title">Songkick Spotify Previews</span>
+					<span class="item__summary">Add 30 second Spotify previews to Songkick.</span>
+				</a>
 			</li>
-			<li>
-				<a href="http://uopcs.com">The Computing Society's Website</a>
-				<time datetime="2013-09-09">9th September 2013</time>
+			<li class="item">
+				<a href="https://github.com/zaccolley/letterboxd">
+					<span class="item__details">
+						<time class="item__time" datetime="2016-10-17">17th October 2016</time>
+						<span class="item__emoji" role="img" aria-label="Movie project and clapper board">🎥🎬</span>
+					</span>
+					<span class="item__title">letterboxd on npm</span>
+					<span class="item__summary">Get public diary data for letterboxd users.</span>
+				</a>
 			</li>
-			<li>
-				<a href="http://rosedigital.co.uk/work/2014/04/16/upracing.html" title="UPRacing">UPRacing's Website</a>
-				<span>Site for a formula student team I was part of.</span>
-				<time datetime="2013-07-01">1st July 2013</time>
+			<li class="item">
+				<a href="http://happybirthdaynan.surge.sh/">
+					<span class="item__details">
+						<time class="item__time" datetime="2016-08-30">30th August 2016</time>
+						<span class="item__emoji" role="img" aria-label="Cat and card envelope">🐈✉️</span>
+					</span>
+					<span class="item__title">Animal Crossing Birthday Card</span>
+					<span class="item__summary">Fun little birthday card for my Nan.</span>
+				</a>
 			</li>
-			<li>
-				<a href="http://minecraftexplore.tumblr.com">Minecraft Explore</a>
-				<span>No updates now. :¬(</span>
-				<time datetime="2011-02-14">14th February 2011</time>
+			<li class="item">
+				<a href="http://hackpompey.co.uk">
+					<span class="item__details">
+						<time class="item__time" datetime="2015-03-02">2014 - 2016</time>
+						<span class="item__emoji" role="img" aria-label="People hacking">👨‍💻👩‍💻🛠️</span>
+					</span>
+					<span class="item__title">hackpompey</span>
+					<span class="item__summary">Portsmouth based hackday, ran 5 before handing over.</span>
+				</a>
 			</li>
-			<li>
-				<span>If they hadn't taken down my Piczo that'd be here too.</span>
-				<time datetime="2003-01-01">Around 2003?</time>
+			<li class="item">
+				<a href="https://rosedigital.co.uk">
+					<span class="item__details">
+						<time class="item__time" datetime="2016-01-01">2014 - 2016</time>
+						<span class="item__emoji" role="img" aria-label="Rose and computer">🌹💻</span>
+					</span>
+					<span class="item__title">ROSE Digital</span>
+					<span class="item__summary">Front-end and design at ROSE Digital.</span>
+				</a>
+			</li>
+			<li class="item">
+				<a href="http://nickcolley.github.io/itsyourbirthdaytoday/#lol">
+					<span class="item__details">
+						<time class="item__time" datetime="2015-08-09">9th August 2015</time>
+						<span class="item__emoji" role="img" aria-label="Birthday cake, balloon and present">🎂🎈🎁</span>
+					</span>
+					<span class="item__title">itsyourbirthday.today</span>
+					<span class="item__summary">Online birthday card generator. Made with my bro.</span>
+				</a>
+			</li>
+			<li class="item">
+				<a href="https://efji.surge.sh">
+					<span class="item__details">
+						<time class="item__time" datetime="2013-09-11">11th September 2013</time>
+						<span class="item__emoji" role="img" aria-label="Game controller">🎮</span>
+					</span>
+					<span class="item__title">efji</span>
+					<span class="item__summary">A small canvas game.</span>
+				</a>
+			</li>
+			<li class="item">
+				<a href="http://uopcs.com">
+					<span class="item__details">
+						<time class="item__time" datetime="2013-09-09">9th September 2013</time>
+						<span class="item__emoji" role="img" aria-label="Computer and people">💻👥</span>
+					</span>
+					<span class="item__title">The Computing Society's Website</span>
+					<span class="item__summary">Site for the society while I was President.</span>
+				</a>
+			</li>
+			<li class="item">
+				<a href="http://rosedigital.co.uk/work/2014/04/16/upracing.html" title="UPRacing">
+					<span class="item__details">
+						<time class="item__time" datetime="2013-07-01">1st July 2013</time>
+						<span class="item__emoji" role="img" aria-label="Race car, checkered flag and students">🏎️🏁🎓</span>
+					</span>
+					<span class="item__title">UPRacing's Website</span>
+					<span class="item__summary">Site for a formula student team I was part of.</span>
+				</a>
+			</li>
+			<li class="item">
+				<a href=" https://zaccolley.com/stuff/christmas2012/">
+					<span class="item__details">
+						<time class="item__time" datetime="2012-12-25">25th December 2012</time>
+						<span class="item__emoji" role="img" aria-label="Santa and christmas tree">🎅🎄</span>
+					</span>
+					<span class="item__title">Christmas card generator</span>
+					<span class="item__summary">Made with my bro.</span>
+				</a>
+			</li>
+			<li class="item">
+				<a href="http://minecraftexplore.tumblr.com">
+					<span class="item__details">
+						<time class="item__time" datetime="2011-02-14">14th February 2011</time>
+						<span class="item__emoji" role="img" aria-label="Sad face">😢</span>
+					</span>
+					<span class="item__title">Minecraft Explore</span>
+					<span class="item__summary">No updates now.</span>
+				</a>
+			</li>
+			<li class="item">
+				<a href="">
+					<span class="item__details">
+						<time class="item__time" datetime="2003-01-01">Around 2003?</time>
+						<span class="item__emoji" role="img" aria-label="Fax machine">📠</span>
+					</span>
+					<span class="item__summary">If they hadn't taken down my Piczo that'd be here too.</span>
+				</a>
 			</li>
 		</ol>
 
 		<h2>Some things I've written</h2>
-		<ol>
-			<li>
+		
+		<ol class="items">
+			<li class="item">
 				<a href="https://medium.com/@zaccolley/hackdays-arent-just-for-the-tech-department-8bd411b4c19e">
-					 Hackdays aren’t just for the tech department
-					</a>
-				<time datetime="2017-07-16">2nd August 2017</time>
-			</li>
-			<li>
-				<a href="https://medium.com/@zaccolley/applying-user-testing-to-technical-documentation-f2dfb1aa1003">
-					Applying User Testing to Technical Documentation
+					<span class="item__details">
+						<time class="item__time" datetime="2017-07-16">2nd August 2017</time>
+						<span class="item__emoji" role="img" aria-label="Wrench and love hearts">️️️🔧💞</span>
+					</span>
+					<span class="item__title">Hackdays aren’t just for the tech department</span>
+					<span class="item__summary">With a little effort you can make your hackday inclusive to more people</span>
 				</a>
-				<time datetime="2017-07-16">16th July 2017</time>
+			</li>
+			<li class="item">
+				<a href="https://medium.com/@zaccolley/applying-user-testing-to-technical-documentation-f2dfb1aa1003">
+					<span class="item__details">
+						<time class="item__time" datetime="2017-07-16">16th July 2017</time>
+						<span class="item__emoji" role="img" aria-label="Clipboard and eyes">📋👀</span>
+					</span>
+					<span class="item__title">Applying User Testing to Technical Documentation</span>
+					<span class="item__summary">Can it help improve documentation?</span>
+				</a>
 			</li>
 		</ol>
 
