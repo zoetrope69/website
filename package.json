@@ -1,0 +1,32 @@
+{
+  "name": "sight",
+  "version": "1.0.0",
+  "description": "my current website",
+  "main": "index.js",
+  "watch": {
+    "minify:css": "src/style.css",
+    "minify:images": "src/images/*"
+  },
+  "scripts": {
+    "minify:css": "cleancss -o style.min.css src/style.css",
+    "minify:images": "imagemin src/images/* --out-dir=images/",
+    "build": "npm run minify:css && npm run minify:images",
+    "build:watch": "npm run build && npm-watch",
+    "start": "concurrently \"serve ./\" \"npm run build:watch\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zaccolley/sight/issues"
+  },
+  "homepage": "https://github.com/zaccolley/sight#readme",
+  "dependencies": {
+    "clean-css-cli": "^4.1.10",
+    "concurrently": "^3.5.1",
+    "imagemin": "^5.3.1",
+    "imagemin-cli": "^3.0.0",
+    "npm-watch": "^0.3.0",
+    "serve": "^6.4.9"
+  }
+}
