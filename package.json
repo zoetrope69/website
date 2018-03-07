@@ -1,16 +1,14 @@
 {
   "name": "sight",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "my current website",
   "main": "index.js",
   "watch": {
-    "minify:css": "src/style.css",
-    "minify:images": "src/images/*"
+    "minify:css": "src/style.css"
   },
   "scripts": {
-    "minify:css": "cleancss -o style.min.css src/style.css",
-    "minify:images": "imagemin src/images/* --out-dir=images/",
-    "build": "npm run minify:css && npm run minify:images",
+    "minify:css": "cleancss -o style.min.css style.css",
+    "build": "npm run minify:css",
     "build:watch": "npm run build && npm-watch",
     "start": "concurrently \"serve ./\" \"npm run build:watch\""
   },
@@ -24,8 +22,6 @@
   "dependencies": {
     "clean-css-cli": "^4.1.10",
     "concurrently": "^3.5.1",
-    "imagemin": "^5.3.1",
-    "imagemin-cli": "^3.0.0",
     "npm-watch": "^0.3.0",
     "serve": "^6.4.9"
   }
