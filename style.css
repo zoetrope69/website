@@ -22,6 +22,15 @@ a {
   color: #0000b2;
   text-decoration: none;
   font-weight: bold;
+  box-shadow: 0 0 0 2px transparent;
+}
+
+a:hover,
+a:focus {
+  outline: none;
+  background-color: #0000b2;
+  box-shadow: 0 0 0 2px #0000b2;
+  color: #fff;
 }
 
 .wrapper {
@@ -86,11 +95,10 @@ p {
   border-radius: 4px;
 
   overflow: hidden;
-  transition: transform 0.1s ease-in-out, box-shadow 0.1s ease-in-out;
+  transition: transform 0.1s ease-in, box-shadow 0.1s ease-in;
 }
 
 .item:hover {
-  background: white;
   border-color: #ebebe5;
 
   box-shadow: 0 10px 10px -5px rgba(0, 0, 0, 0.05);
@@ -98,9 +106,24 @@ p {
   transform: translateY(-1%);
 }
 
-.item > a {
+.item:active {
+  box-shadow: none;
+
+  transform: translateY(0%);
+}
+
+.item > a,
+.item > a:focus,
+.item > a:hover {
   display: block;
   height: 100%;
+}
+
+
+.item > a:focus,
+.item > a:hover {
+  background-color: white;
+  box-shadow: none;
 }
 
 .items--written .item > a {
@@ -152,7 +175,14 @@ p {
 }
 
 .item__title {
+  display: inline-block;
   margin-top: 0.25em;
+}
+
+.item > a:hover .item__title,
+.item > a:focus .item__title {
+  background-color: #0000b2;
+  box-shadow: 0 0 0 2px #0000b2;
 }
 
 .item__summary {
@@ -180,7 +210,7 @@ p {
   .items--written .item__image {
     display: block;
   }
-  
+
   /* if grid isn't supported */
   @supports (display: grid) {
     .item { margin: 0; }

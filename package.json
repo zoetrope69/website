@@ -4,7 +4,7 @@
   "description": "my current website",
   "main": "index.js",
   "watch": {
-    "minify:css": "src/style.css"
+    "minify:css": "style.css"
   },
   "scripts": {
     "minify:css": "cleancss -o style.min.css style.css",
