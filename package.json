@@ -4,11 +4,14 @@
   "description": "my current website",
   "main": "index.js",
   "watch": {
+    "minify:js": "script.js",
     "minify:css": "style.css"
   },
   "scripts": {
+    "minify:js": "babel script.js --out-file script.min.js",
     "minify:css": "cleancss -o style.min.css style.css",
-    "build": "npm run minify:css",
+    "minify": "npm run minify:css && npm run minify:js",
+    "build": "npm run minify",
     "build:watch": "npm run build && npm-watch",
     "start": "concurrently \"serve ./\" \"npm run build:watch\""
   },
@@ -23,6 +26,7 @@
     "clean-css-cli": "^4.1.10",
     "concurrently": "^3.5.1",
     "npm-watch": "^0.3.0",
-    "serve": "^6.4.9"
+    "serve": "^9.2.0",
+    "babel-cli": "^6.26.0"
   }
 }
