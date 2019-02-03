@@ -1,0 +1,68 @@
+==================================================================
+https://keybase.io/zaccolley
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://zaccolley.com
+  * I am zaccolley (https://keybase.io/zaccolley) on keybase.
+  * I have a public key with fingerprint 35DB 3451 A554 3A15 1D8E  8B72 5517 6B90 5BEC F424
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "0101a799fa98ff90f054969588463c468147ac8a4c544f80cd517365eca52dc621f10a",
+      "fingerprint": "35db3451a5543a151d8e8b7255176b905becf424",
+      "host": "keybase.io",
+      "key_id": "55176b905becf424",
+      "kid": "0101a799fa98ff90f054969588463c468147ac8a4c544f80cd517365eca52dc621f10a",
+      "uid": "c05ad630a8f2c7094d8cefc993a8ef00",
+      "username": "zaccolley"
+    },
+    "service": {
+      "hostname": "zaccolley.com",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 1
+  },
+  "ctime": 1549211800,
+  "expire_in": 157680000,
+  "prev": "ec3f50ca5d7a5dedd082d237a210e6130b1c12d90224eee3616cdd1f533a8b30",
+  "seqno": 10,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+-----BEGIN PGP MESSAGE-----
+Version: Keybase OpenPGP v2.0.80
+Comment: https://keybase.io/crypto
+
+yMIjAnicrZJ9aE1hHMfvnbdcoy1vyx/i3EKa2/Occ57ztsmK4or4Q1nZXM95nufs
+nnadc517trmYlyi1kMjbWAh/CIUUReKasjt5DTPxz8ZalqbmLRrPWfwjf/rj6fR8
+z/f76ff99bSOHRaKhGeXvG6akdrfEm6/3VwXqlpZcnijYLo0KxgbhVo29GEpyjJ+
+otamgiEACCBWdd3CumZZOrAAknVFR5omKxKRFQ3KKiYalgmSZUsDhCKoSgpiBCOR
+EkWEFgRYKBUs26lhXtqzHZ9jJURNSUYQIyRLGCJINaaZqoh4WjF1gExGLFmUeTDp
+ZoIEH87EGRazXa7xS2JovH/4//PcdUM4AhCmigSwZolEBbpMNcIsousS1pgFQGDM
+MM/Baxl3b8CEuKkUX2djqcDlepuwYLNBlb8tMeKu5em05/ouV/ivpO+nM0YQ9bPp
+wNvAzMRvSsK0Hco3yRP1zMvYriMYkDuJbwdYyEuKEGoAlApsfdr2WMIOHEhVuBao
+aY/VcyQjkoUA70pVfhilQBOpKKlYhIApUAImJFCkOhBFmTEmKVAhlEILSbywKQV9
+M2yd43I2h/q4hjMzdo2D/TqPCY25W1XDQ+FIaOSIguCJhSKji/48vJdHRw0afdXq
+hzdLdl3ZW/BA2j3Y7rUUuR27r7dO/Xq24frJhdbmxam52wvXlL+aFB3bu7UpcdP5
+8bWteWbuSPmdCVP2GNMq8/nGgej5/uqBO6urD/ys2Db57a27yxMTn9zLNZct+nax
+OO9VtOVCPyNfzrXv1EYv3aJd7Szse785W9jVPThlU213yeUzn/vPXak6/Thy0V+d
+7IvEF+zrKpn18Nnla/GmY7HuCcY8+1NbqPdSZ+Wl4oLpB7MfT92vbTkUWyVjMmeF
+K+YbepYtf258vv39xYV5UTl6vCs+fVxTaPK7staO8PzkDtB/4kaLW/bOdHpmVoTj
+Ts+BnqcrxvwQ47m3j5aML/4Fb6FDLw==
+=S9xt
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/zaccolley
+
+==================================================================
