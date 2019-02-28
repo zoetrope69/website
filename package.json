@@ -1,29 +1,17 @@
 {
-  "name": "sight",
-  "version": "2.0.0",
-  "description": "my current website",
-  "main": "index.js",
-  "watch": {
-    "minify:css": "style.css"
-  },
+  "private": true,
   "scripts": {
-    "minify:css": "cleancss -o style.min.css style.css",
-    "minify": "npm run minify:css",
-    "build": "npm run minify",
-    "build:watch": "npm run build && npm-watch",
-    "start": "concurrently \"serve ./\" \"npm run build:watch\""
+    "start": "eleventy --serve",
+    "build": "eleventy",
+    "debug": "DEBUG=* eleventy"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/zaccolley/sight/issues"
-  },
-  "homepage": "https://github.com/zaccolley/sight#readme",
   "dependencies": {
-    "clean-css-cli": "^4.2.1",
-    "concurrently": "^3.6.1",
-    "npm-watch": "^0.3.0",
-    "serve": "^10.1.1"
+    "@11ty/eleventy": "^0.7.1",
+    "@11ty/eleventy-plugin-rss": "^1.0.6",
+    "@11ty/eleventy-plugin-syntaxhighlight": "^2.0.1",
+    "html-minifier": "^3.5.21",
+    "luxon": "^1.11.0",
+    "markdown-it": "^8.4.1",
+    "markdown-it-anchor": "^5.0.2"
   }
 }
