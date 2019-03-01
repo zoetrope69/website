@@ -5,10 +5,18 @@
 [[redirects]]
   from = "https://zaccolley.com/*"
   to = "https://zac.land/:splat"
+  
+[[redirects]]
+  from = "https://zaccolley.com"
+  to = "https://zac.land"
 
 [[redirects]]
   from = "https://zaccolley.netlify.com/*"
   to = "https://zac.land/:splat"
+  
+[[redirects]]
+  from = "https://zaccolley.netlify.com"
+  to = "https://zac.land"
 
 [[redirects]]
  from = "/momanddad"
