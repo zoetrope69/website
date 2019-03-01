@@ -25,6 +25,10 @@
 [[redirects]]
   from = "/minecraftexplore/*"
   to = "https://zacs-stuff.netlify.com/minecraftexplore/:splat"
+  
+[[redirects]]
+  from = "/stuff/christmas2012"
+  to = "https://zaccolley-christmas2012.glitch.me/"
 
 [[redirects]]
   from = "/stuff/*"
