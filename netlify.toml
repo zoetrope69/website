@@ -1,22 +1,22 @@
 [build]
   publish = "_site"
   command = "npm run build"
-
-[[redirects]]
-  from = "https://zaccolley.com/*"
-  to = "https://zac.land/:splat"
   
 [[redirects]]
   from = "https://zaccolley.com"
   to = "https://zac.land"
 
 [[redirects]]
-  from = "https://zaccolley.netlify.com/*"
+  from = "https://zaccolley.com/*"
   to = "https://zac.land/:splat"
   
 [[redirects]]
   from = "https://zaccolley.netlify.com"
   to = "https://zac.land"
+
+[[redirects]]
+  from = "https://zaccolley.netlify.com/*"
+  to = "https://zac.land/:splat"
 
 [[redirects]]
  from = "/momanddad"
