@@ -8,21 +8,21 @@ navtitle: Home
 
 ## About me
 
-I'm Zac and I like making stuff, community events and the web <span aria-hidden>🤹‍♂️🔌🎨</span>.
+I'm Zac and I like making stuff, community events and the web <span aria-hidden="true">🤹‍♂️🔌🎨</span>.
 
-I'm passionate about removing barriers for people. I'm trying to do this through things like education, accessibility, diversity and inclusion <span aria-hidden>🚧🚫</span>.
+I'm passionate about removing barriers for people. I'm trying to do this through things like education, accessibility, diversity and inclusion <span aria-hidden="true">🚧🚫</span>.
 
-One place I used to do this is through co-organising <a href="https://codebar.io">codebar Monthlies</a> <span aria-hidden>✨🗣️</span>. I also started and used to run <a href="https://hackpompey.co.uk">hackpompey</a>, a Portsmouth based hack event <span aria-hidden>👨‍💻👩‍💻🛠️</span>.
+One place I used to do this is through co-organising <a href="https://codebar.io">codebar Monthlies</a> <span aria-hidden="true">✨🗣️</span>. I also started and used to run <a href="https://hackpompey.co.uk">hackpompey</a>, a Portsmouth based hack event <span aria-hidden="true">👨‍💻👩‍💻🛠️</span>.
 
-My day job is currently at <a href="https://beano.com">Beano Studios</a> <span aria-hidden>🚸💩</span> where I'm a developer. Before that I worked at <a href="https://farewill.com">Farewill</a> <span aria-hidden>📝⚰️️</span> and <a href="https://songkick.com">Songkick</a> <span aria-hidden>🎤🎫</span>. At the <a href="https://www.port.ac.uk">University of Portsmouth</a> I started a partnership called <a href="https://rosedigital.co.uk">ROSE</a> <span aria-hidden>🌹💻🎓</span>.
+My day job is currently at <a href="https://beano.com">Beano Studios</a> <span aria-hidden="true">🚸💩</span> where I'm a developer. Before that I worked at <a href="https://farewill.com">Farewill</a> <span aria-hidden="true">📝⚰️️</span> and <a href="https://songkick.com">Songkick</a> <span aria-hidden="true">🎤🎫</span>. At the <a href="https://www.port.ac.uk">University of Portsmouth</a> I started a partnership called <a href="https://rosedigital.co.uk">ROSE</a> <span aria-hidden="true">🌹💻🎓</span>.
 
-I like making things, some of my projects are on <a href="https://github.com/zaccolley">GitHub</a> <span aria-hidden>🐙🐈</span> and some are on <a href="https://glitch.com/@zaccolley">Glitch</a> <span aria-hidden>🎏</span>.
+I like making things, some of my projects are on <a href="https://github.com/zaccolley">GitHub</a> <span aria-hidden="true">🐙🐈</span> and some are on <a href="https://glitch.com/@zaccolley">Glitch</a> <span aria-hidden="true">🎏</span>.
 
-I love <a href="https://www.last.fm/user/zaccolley">listening to music</a> <span aria-hidden>🎧🎶</span> and <a href="https://www.songkick.com/users/zaccolley">going to gigs</a> <span aria-hidden>👩‍🎤🎸🥁</span>. I sometimes <a href="https://letterboxd.com/zaccolley/">watch films</a> <span aria-hidden>🎞</span>️ and own <a href="https://www.goodreads.com/user/show/36814974-zac-colley">a stack of books I rarely read</a> <span aria-hidden>📚</span>.
+I love <a href="https://www.last.fm/user/zaccolley">listening to music</a> <span aria-hidden="true">🎧🎶</span> and <a href="https://www.songkick.com/users/zaccolley">going to gigs</a> <span aria-hidden="true">👩‍🎤🎸🥁</span>. I sometimes <a href="https://letterboxd.com/zaccolley/">watch films</a> <span aria-hidden="true">🎞</span>️ and own <a href="https://www.goodreads.com/user/show/36814974-zac-colley">a stack of books I rarely read</a> <span aria-hidden="true">📚</span>.
 
-If you want to contact me, emailing works. You can email me at: <a href="mailto:hi@zaccolley.com">hi@zaccolley.com</a> <span aria-hidden>📧</span>.
+If you want to contact me, emailing works. You can email me at: <a href="mailto:hi@zaccolley.com">hi@zaccolley.com</a> <span aria-hidden="true">📧</span>.
 
-You can find me talking shit on Mastodon at <a rel="me" href="https://toot.cafe/@zac">@zac@toot.cafe</a> <span aria-hidden>🐘📯</span>. I also used to tweet a lot at <a href="https://twitter.com/zaccolley">@zaccolley</a> <span aria-hidden>🐦</span>.
+You can find me talking shit on Mastodon at <a rel="me" href="https://toot.cafe/@zac">@zac@toot.cafe</a> <span aria-hidden="true">🐘📯</span>. I also used to tweet a lot at <a href="https://twitter.com/zaccolley">@zaccolley</a> <span aria-hidden="true">🐦</span>.
 
 <h2>Some things I've made</h2>
 
@@ -37,7 +37,7 @@ You can find me talking shit on Mastodon at <a rel="me" href="https://toot.cafe/
       <span class="item__content">
         <span class="item__details">
           <time class="item__details__time" datetime="2018-09-23">23rd September 2018</time>
-          <span class="item__details__emoji" aria-hidden>🍕⏲️</span>
+          <span class="item__details__emoji" aria-hidden="true">🍕⏲️</span>
         </span>
         <span class="item__title">Pizza Timer</span>
         <span class="item__summary">
@@ -54,7 +54,7 @@ You can find me talking shit on Mastodon at <a rel="me" href="https://toot.cafe/
       <span class="item__content">
         <span class="item__details">
           <time class="item__details__time" datetime="2018-09-05">5th September 2018</time>
-          <span class="item__details__emoji" aria-hidden>🖼️🔔</span>
+          <span class="item__details__emoji" aria-hidden="true">🖼️🔔</span>
         </span>
         <span class="item__title">Please Caption Bot</span>
         <span class="item__summary">
@@ -71,7 +71,7 @@ You can find me talking shit on Mastodon at <a rel="me" href="https://toot.cafe/
       <span class="item__content">
         <span class="item__details">
           <time class="item__details__time" datetime="2018-08-21">21st August 2018</time>
-          <span class="item__details__emoji" aria-hidden>⚫🌈⚪</span>
+          <span class="item__details__emoji" aria-hidden="true">⚫🌈⚪</span>
         </span>
         <span class="item__title">accessible colour contrasts</span>
         <span class="item__summary">
@@ -88,7 +88,7 @@ You can find me talking shit on Mastodon at <a rel="me" href="https://toot.cafe/
       <span class="item__content">
         <span class="item__details">
           <time class="item__details__time" datetime="2018-08-08">9th August 2018</time>
-          <span class="item__details__emoji" aria-hidden>🎏🐙🐈</span>
+          <span class="item__details__emoji" aria-hidden="true">🎏🐙🐈</span>
         </span>
         <span class="item__title">GitHub Glitch button</span>
         <span class="item__summary">
@@ -105,7 +105,7 @@ You can find me talking shit on Mastodon at <a rel="me" href="https://toot.cafe/
       <span class="item__content">
         <span class="item__details">
           <time class="item__details__time" datetime="2018-06-15">15th July 2018</time>
-          <span class="item__details__emoji" aria-hidden>🌿🎨</span>
+          <span class="item__details__emoji" aria-hidden="true">🌿🎨</span>
         </span>
         <span class="item__title">orla kiely flowers</span>
         <span class="item__summary">
@@ -122,7 +122,7 @@ You can find me talking shit on Mastodon at <a rel="me" href="https://toot.cafe/
       <span class="item__content">
         <span class="item__details">
           <time class="item__details__time" datetime="2018-03-25">25th March 2018</time>
-          <span class="item__details__emoji" aria-hidden>📚👹🤡</span>
+          <span class="item__details__emoji" aria-hidden="true">📚👹🤡</span>
         </span>
         <span class="item__title">shitty goosebumps books bot</span>
         <span class="item__summary">
@@ -139,7 +139,7 @@ You can find me talking shit on Mastodon at <a rel="me" href="https://toot.cafe/
       <span class="item__content">
         <span class="item__details">
           <time class="item__details__time" datetime="2018-03-17">17th March 2018</time>
-          <span class="item__details__emoji" aria-hidden>📲⤵️</span>
+          <span class="item__details__emoji" aria-hidden="true">📲⤵️</span>
         </span>
         <span class="item__title">rotate</span>
         <span class="item__summary">
@@ -156,7 +156,7 @@ You can find me talking shit on Mastodon at <a rel="me" href="https://toot.cafe/
       <span class="item__content">
         <span class="item__details">
           <time class="item__details__time" datetime="2018-03-11">11th March 2018</time>
-          <span class="item__details__emoji" aria-hidden>🐈🎶</span>
+          <span class="item__details__emoji" aria-hidden="true">🐈🎶</span>
         </span>
         <span class="item__title">catmode</span>
         <span class="item__summary">
@@ -174,7 +174,7 @@ You can find me talking shit on Mastodon at <a rel="me" href="https://toot.cafe/
       <span class="item__content">
         <span class="item__details">
           <time class="item__details__time" datetime="2018-02-01">1st February 2018</time>
-          <span class="item__details__emoji" aria-hidden>🤖↪️</span>
+          <span class="item__details__emoji" aria-hidden="true">🤖↪️</span>
         </span>
         <span class="item__title">Hamiltonian paths bot</span>
         <span class="item__summary">
@@ -191,7 +191,7 @@ You can find me talking shit on Mastodon at <a rel="me" href="https://toot.cafe/
       <span class="item__content">
         <span class="item__details">
           <time class="item__details__time" datetime="2018-01-12">12th January 2018</time>
-          <span class="item__details__emoji" aria-hidden>💰🌈</span>
+          <span class="item__details__emoji" aria-hidden="true">💰🌈</span>
         </span>
         <span class="item__title">zaccoin</span>
         <span class="item__summary">
@@ -208,7 +208,7 @@ You can find me talking shit on Mastodon at <a rel="me" href="https://toot.cafe/
       <span class="item__content">
         <span class="item__details">
           <time class="item__details__time" datetime="2017-11-26">26th November 2017</time>
-          <span class="item__details__emoji" aria-hidden>🍆</span>
+          <span class="item__details__emoji" aria-hidden="true">🍆</span>
         </span>
         <span class="item__title">softdongs</span>
         <span class="item__summary">
@@ -226,7 +226,7 @@ You can find me talking shit on Mastodon at <a rel="me" href="https://toot.cafe/
       <span class="item__content">
         <span class="item__details">
           <time class="item__details__time" datetime="2017-09-10">10th September 2017</time>
-          <span class="item__details__emoji" aria-hidden>🎮</span>
+          <span class="item__details__emoji" aria-hidden="true">🎮</span>
         </span>
         <span class="item__title">food flood</span>
         <span class="item__summary">
@@ -243,7 +243,7 @@ You can find me talking shit on Mastodon at <a rel="me" href="https://toot.cafe/
       <span class="item__content">
         <span class="item__details">
           <time class="item__details__time" datetime="2017-08-25">25th August 2017</time>
-          <span class="item__details__emoji" aria-hidden>🤖🗣️</span>
+          <span class="item__details__emoji" aria-hidden="true">🤖🗣️</span>
         </span>
         <span class="item__title">Amazon Alexa #WebVR Simulator™️</span>
         <span class="item__summary">
@@ -260,7 +260,7 @@ You can find me talking shit on Mastodon at <a rel="me" href="https://toot.cafe/
       <span class="item__content">
         <span class="item__details">
           <time class="item__details__time" datetime="2017-08-12">12th August 2017</time>
-          <span class="item__details__emoji" aria-hidden>🤖🧦</span>
+          <span class="item__details__emoji" aria-hidden="true">🤖🧦</span>
         </span>
         <span class="item__title">sockbot</span>
         <span class="item__summary">
@@ -277,7 +277,7 @@ You can find me talking shit on Mastodon at <a rel="me" href="https://toot.cafe/
       <span class="item__content">
         <span class="item__details">
           <time class="item__details__time" datetime="2017-07-28">28th July 2017</time>
-          <span class="item__details__emoji" aria-hidden>👩‍🎨🎨🖼️👨‍🎨</span>
+          <span class="item__details__emoji" aria-hidden="true">👩‍🎨🎨🖼️👨‍🎨</span>
         </span>
         <span class="item__title">clicky-line-drawer</span>
         <span class="item__summary">
@@ -294,7 +294,7 @@ You can find me talking shit on Mastodon at <a rel="me" href="https://toot.cafe/
       <span class="item__content">
         <span class="item__details">
           <time class="item__details__time" datetime="2017-04-04">4th April 2017</time>
-          <span class="item__details__emoji" aria-hidden>🚓💥🚗🍻</span>
+          <span class="item__details__emoji" aria-hidden="true">🚓💥🚗🍻</span>
         </span>
         <span class="item__title">"I'm just waiting for a mate" game</span>
         <span class="item__summary">
@@ -311,7 +311,7 @@ You can find me talking shit on Mastodon at <a rel="me" href="https://toot.cafe/
       <span class="item__content">
         <span class="item__details">
           <time class="item__details__time" datetime="2017-03-08">8th March 2017</time>
-          <span class="item__details__emoji" aria-hidden>🔎🖱️</span>
+          <span class="item__details__emoji" aria-hidden="true">🔎🖱️</span>
         </span>
         <span class="item__title">micro:clicker</span>
         <span class="item__summary">
@@ -328,7 +328,7 @@ You can find me talking shit on Mastodon at <a rel="me" href="https://toot.cafe/
       <span class="item__content">
         <span class="item__details">
           <time class="item__details__time" datetime="2017-02-28">28th February 2017</time>
-          <span class="item__details__emoji" aria-hidden>🎧🔥🖨️🖼️</span>
+          <span class="item__details__emoji" aria-hidden="true">🎧🔥🖨️🖼️</span>
         </span>
         <span class="item__title">now playing printer</span>
         <span class="item__summary">
@@ -345,7 +345,7 @@ You can find me talking shit on Mastodon at <a rel="me" href="https://toot.cafe/
       <span class="item__content">
         <span class="item__details">
           <time class="item__details__time" datetime="2017-02-25">25th February 2017</time>
-          <span class="item__details__emoji" aria-hidden>🎵📆💅</span>
+          <span class="item__details__emoji" aria-hidden="true">🎵📆💅</span>
         </span>
         <span class="item__title">songkick.pink</span>
         <span class="item__summary">
@@ -362,7 +362,7 @@ You can find me talking shit on Mastodon at <a rel="me" href="https://toot.cafe/
       <span class="item__content">
         <span class="item__details">
           <time class="item__details__time" datetime="2016-12-12">12th December 2016</time>
-          <span class="item__details__emoji" aria-hidden>💠⌛🎶</span>
+          <span class="item__details__emoji" aria-hidden="true">💠⌛🎶</span>
         </span>
         <span class="item__title">Songkick Spotify Previews</span>
         <span class="item__summary">
@@ -379,7 +379,7 @@ You can find me talking shit on Mastodon at <a rel="me" href="https://toot.cafe/
       <span class="item__content">
         <span class="item__details">
           <time class="item__details__time" datetime="2016-12-30">30th December 2016</time>
-          <span class="item__details__emoji" aria-hidden>🆒🔗</span>
+          <span class="item__details__emoji" aria-hidden="true">🆒🔗</span>
         </span>
         <span class="item__title">domains</span>
         <span class="item__summary">
@@ -396,7 +396,7 @@ You can find me talking shit on Mastodon at <a rel="me" href="https://toot.cafe/
       <span class="item__content">
         <span class="item__details">
           <time class="item__details__time" datetime="2016-10-17">17th October 2016</time>
-          <span class="item__details__emoji" aria-hidden>🎥🎬</span>
+          <span class="item__details__emoji" aria-hidden="true">🎥🎬</span>
         </span>
         <span class="item__title">letterboxd on npm</span>
         <span class="item__summary">
@@ -413,7 +413,7 @@ You can find me talking shit on Mastodon at <a rel="me" href="https://toot.cafe/
       <span class="item__content">
         <span class="item__details">
           <time class="item__details__time" datetime="2016-08-30">30th August 2016</time>
-          <span class="item__details__emoji" aria-hidden>🐈✉️</span>
+          <span class="item__details__emoji" aria-hidden="true">🐈✉️</span>
         </span>
         <span class="item__title">Animal Crossing Birthday Card</span>
         <span class="item__summary">
@@ -430,7 +430,7 @@ You can find me talking shit on Mastodon at <a rel="me" href="https://toot.cafe/
       <span class="item__content">
         <span class="item__details">
           <time class="item__details__time" datetime="2015-03-02">2014 - 2016</time>
-          <span class="item__details__emoji" aria-hidden>👨‍💻👩‍💻🛠️</span>
+          <span class="item__details__emoji" aria-hidden="true">👨‍💻👩‍💻🛠️</span>
         </span>
         <span class="item__title">hackpompey</span>
         <span class="item__summary">
@@ -447,7 +447,7 @@ You can find me talking shit on Mastodon at <a rel="me" href="https://toot.cafe/
       <span class="item__content">
         <span class="item__details">
           <time class="item__details__time" datetime="2016-01-01">2014 - 2016</time>
-          <span class="item__details__emoji" aria-hidden>🌹💻</span>
+          <span class="item__details__emoji" aria-hidden="true">🌹💻</span>
         </span>
         <span class="item__title">ROSE Digital</span>
         <span class="item__summary">
@@ -464,7 +464,7 @@ You can find me talking shit on Mastodon at <a rel="me" href="https://toot.cafe/
       <span class="item__content">
         <span class="item__details">
           <time class="item__details__time" datetime="2015-08-09">9th August 2015</time>
-          <span class="item__details__emoji" aria-hidden>🎂🎈🎁</span>
+          <span class="item__details__emoji" aria-hidden="true">🎂🎈🎁</span>
         </span>
         <span class="item__title">itsyourbirthday.today</span>
         <span class="item__summary">
@@ -482,7 +482,7 @@ You can find me talking shit on Mastodon at <a rel="me" href="https://toot.cafe/
       <span class="item__content">
         <span class="item__details">
           <time class="item__details__time" datetime="2013-07-01">1st July 2013</time>
-          <span class="item__details__emoji" aria-hidden>🏎️🏁🎓</span>
+          <span class="item__details__emoji" aria-hidden="true">🏎️🏁🎓</span>
         </span>
         <span class="item__title">UPRacing's Website</span>
         <span class="item__summary">
@@ -499,7 +499,7 @@ You can find me talking shit on Mastodon at <a rel="me" href="https://toot.cafe/
       <span class="item__content">
         <span class="item__details">
           <time class="item__details__time" datetime="2012-12-25">25th December 2012</time>
-          <span class="item__details__emoji" aria-hidden>🎅🎄</span>
+          <span class="item__details__emoji" aria-hidden="true">🎅🎄</span>
         </span>
         <span class="item__title">Christmas card generator</span>
         <span class="item__summary">
@@ -517,7 +517,7 @@ You can find me talking shit on Mastodon at <a rel="me" href="https://toot.cafe/
       <span class="item__content">
         <span class="item__details">
           <time class="item__details__time" datetime="2011-02-14">14th February 2011</time>
-          <span class="item__details__emoji" aria-hidden>😢</span>
+          <span class="item__details__emoji" aria-hidden="true">😢</span>
         </span>
         <span class="item__title">Minecraft Explore</span>
         <span class="item__summary">
@@ -540,7 +540,7 @@ You can find me talking shit on Mastodon at <a rel="me" href="https://toot.cafe/
       <span class="item__content">
         <span class="item__details">
           <time class="item__details__time" datetime="2018-08-22">2nd August 2018</time>
-          <span class="item__details__emoji" aria-hidden>️️️🌸💙</span>
+          <span class="item__details__emoji" aria-hidden="true">️️️🌸💙</span>
         </span>
         <span class="item__title">
           Why we’re changing our colours
@@ -559,7 +559,7 @@ You can find me talking shit on Mastodon at <a rel="me" href="https://toot.cafe/
       <span class="item__content">
         <span class="item__details">
           <time class="item__details__time" datetime="2018-07-05">5th July 2018</time>
-          <span class="item__details__emoji" aria-hidden>️️️🕵️</span>
+          <span class="item__details__emoji" aria-hidden="true">️️️🕵️</span>
         </span>
         <span class="item__title">
           How to detect and use ‘Do Not Track’ on your website
@@ -578,7 +578,7 @@ You can find me talking shit on Mastodon at <a rel="me" href="https://toot.cafe/
       <span class="item__content">
         <span class="item__details">
           <time class="item__details__time" datetime="2017-10-24">24th October 2017</time>
-          <span class="item__details__emoji" aria-hidden>️️️💰💸</span>
+          <span class="item__details__emoji" aria-hidden="true">️️️💰💸</span>
         </span>
         <span class="item__title">It's time to get into tech debt</span>
         <span class="item__summary">
@@ -595,7 +595,7 @@ You can find me talking shit on Mastodon at <a rel="me" href="https://toot.cafe/
       <span class="item__content">
         <span class="item__details">
           <time class="item__details__time" datetime="2017-07-16">2nd August 2017</time>
-          <span class="item__details__emoji" aria-hidden>️️️🔧💞</span>
+          <span class="item__details__emoji" aria-hidden="true">️️️🔧💞</span>
         </span>
         <span class="item__title">Hackdays aren’t just for the tech department</span>
         <span class="item__summary">
@@ -612,7 +612,7 @@ You can find me talking shit on Mastodon at <a rel="me" href="https://toot.cafe/
       <span class="item__content">
         <span class="item__details">
           <time class="item__details__time" datetime="2017-07-16">16th July 2017</time>
-          <span class="item__details__emoji" aria-hidden>📋👀</span>
+          <span class="item__details__emoji" aria-hidden="true">📋👀</span>
         </span>
         <span class="item__title">Applying User Testing to Technical Documentation</span>
         <span class="item__summary">
