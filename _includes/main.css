@@ -149,11 +149,11 @@ p {
   display: none;
 }
 
-.item__image img {
+.item__image > * {
   display: block;
 }
 
-.items--written .item__image img {
+.items--written .item__image > * {
   width: 200px;
 }
 

@@ -169,7 +169,10 @@ You can find me talking shit on Mastodon at <a rel="me" href="https://toot.cafe/
   <li class="item">
     <a href="https://botsin.space/@hamiltonian">
       <span class="item__image">
-        <img src="/images/hamiltonian.gif" alt="Example of one of the GIFs" />
+        <video autoplay loop muted inline title="Example of one of the GIFs">
+          <source src="/images/hamiltonian.mp4" type="video/mp4">
+          <img src="/images/hamiltonian.gif" alt="Example of one of the GIFs" />
+        </video>
       </span>
       <span class="item__content">
         <span class="item__details">
@@ -459,7 +462,10 @@ You can find me talking shit on Mastodon at <a rel="me" href="https://toot.cafe/
   <li class="item">
     <a href="https://nickcolley.github.io/itsyourbirthdaytoday/#lol">
       <span class="item__image">
-        <img src="/images/birthdaytoday.gif" alt="GIF on the itsyourbirthday.today website" />
+        <video autoplay loop muted inline title="GIF on the itsyourbirthday.today website">
+          <source src="/images/birthdaytoday.mp4" type="video/mp4">
+          <img src="/images/birthdaytoday.gif" alt="GIF on the itsyourbirthday.today website" />
+        </video>
       </span>
       <span class="item__content">
         <span class="item__details">
