@@ -1,4 +1,6 @@
-const base = data => {
+const styles = require('../styles.js');
+
+function base(data) {
   const {
     metadata,
     page
@@ -16,10 +18,10 @@ const base = data => {
 
         <link rel="image_src" href="${metadata.author.image}">
 
-        <link rel="icon" sizes="192x192" href="/static/notepad.png">
-        <link rel="icon" href="/static/notepad.png" />
+        <link rel="icon" sizes="192x192" href="/images/notepad.png">
+        <link rel="icon" href="/images/notepad.png" />
 
-        <link rel="stylesheet" href="/static/main.css">
+        <style>${styles}</style>
 
         <meta name="title" content="${metadata.title}">
         <meta name="description" content="${metadata.description}">
