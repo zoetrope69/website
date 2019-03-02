@@ -18,8 +18,8 @@ function base(data) {
 
         <link rel="image_src" href="${metadata.author.image}">
 
-        <link rel="icon" sizes="192x192" href="/images/notepad.png">
-        <link rel="icon" href="/images/notepad.png" />
+        <link rel="icon" href="/images/icons/notepad-16x16.png" />
+        <link rel="icon" sizes="192x192" href="/images/icons/notepad-192x192.png">
 
         <style>${styles}</style>
 
@@ -39,6 +39,8 @@ function base(data) {
         <meta property="twitter:title" content="${metadata.title}">
         <meta property="twitter:description" content="${metadata.description}">
         <meta property="twitter:image" content="${metadata.author.image}">
+        
+        <link rel="manifest" href="/manifest.json">
       </head>
 
       <body>
@@ -54,6 +56,18 @@ function base(data) {
             ${data.content}
           </main>	
         </div>
+
+        <script>
+          if('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/service-worker.js', { scope: '/' })
+              .then(function(registration) {
+                    console.log('Service Worker Registered');
+              });
+            navigator.serviceWorker.ready.then(function(registration) {
+                console.log('Service Worker Ready');
+            });
+          }
+        </script>
       </body>
     </html>
   `;
