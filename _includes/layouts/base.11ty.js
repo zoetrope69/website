@@ -1,5 +1,3 @@
-const styles = require('../styles.js');
-
 function base(data) {
   const {
     metadata,
@@ -21,7 +19,7 @@ function base(data) {
         <link rel="icon" href="/images/icons/notepad-16x16.png" />
         <link rel="icon" sizes="192x192" href="/images/icons/notepad-192x192.png">
 
-        <style>${styles}</style>
+        <style>${this.getStyles()}</style>
 
         <meta name="title" content="${metadata.title}">
         <meta name="description" content="${metadata.description}">

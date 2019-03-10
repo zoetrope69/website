@@ -69,7 +69,6 @@ header h1 {
   font-weight: 700;
   font-size: 2.5em;
   text-transform: lowercase;
-  line-height: 0.8;
 }
 
 header,
@@ -220,16 +219,16 @@ p {
   }
 
   header {
+    order: 1;
     padding-top: 2em;
-    padding-left: 4em;
   }
 
   header h1 {
-    position: absolute;
-    top: -3rem;
-    left: -0.5rem;
-    font-size: 4em;
-    transform: rotate(90deg);
+    float: right;
+    width: 2em;
+
+
+    transform: rotate(90deg) translate(-1em, -1em);
     transform-origin: bottom left;
   }
 
