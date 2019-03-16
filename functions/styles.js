@@ -2,7 +2,7 @@ const CleanCSS = require("clean-css");
 const fs = require("fs");
 
 function getStyles() {
-  const fileBuffer = fs.readFileSync(__dirname + "/../main.css");
+  const fileBuffer = fs.readFileSync(__dirname + "/../_includes/main.css");
   const styles = fileBuffer.toString();
 
   const cleanCSSOptions = {};
