@@ -22,7 +22,7 @@ I love <a href="https://www.last.fm/user/zaccolley">listening to music</a> <span
 
 If you want to contact me, emailing works. You can email me at: <a href="mailto:hi@zaccolley.com">hi@zaccolley.com</a> <span aria-hidden="true">📧</span>.
 
-You can find me talking shit on Mastodon at <a rel="me" href="https://toot.cafe/@zac">@zac@toot.cafe</a> <span aria-hidden="true">🐘📯</span>. I also used to tweet a lot at <a href="https://twitter.com/zaccolley">@zaccolley</a> <span aria-hidden="true">🐦</span>.
+You can find me talking shit on Mastodon at <a rel="me" href="https://toot.cafe/@zac">@zac@toot.cafe</a> <span aria-hidden="true">🐘📯</span>. I also used to tweet a lot at <a href="https://twitter.com/zaccolley">@zaccolley</a> <span aria-hidden="true">🐦</span>. Some of my photos are on <a href="https://instagram.com/zaccolley/">Instagram</a> <span aria-hidden="true">🖼️📸</span>.
 
 <h2>Some things I've made</h2>
 
