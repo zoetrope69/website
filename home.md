@@ -341,18 +341,18 @@ You can find me talking shit on Mastodon at <a rel="me" href="https://toot.cafe/
     </a>
   </li>
   <li class="item">
-    <a href="https://songkick.pink/">
+    <a href="https://github.com/zaccolley/songkick-pwa">
       <span class="item__image">
-        <img src="/images/songkickpink.jpg" alt="Screenshot of songkick.pink" />
+        <img src="/images/songkickpink.jpg" alt="Screenshot of the Unofficial Songkick PWA" />
       </span>
       <span class="item__content">
         <span class="item__details">
           <time class="item__details__time" datetime="2017-02-25">25th February 2017</time>
           <span class="item__details__emoji" aria-hidden="true">🎵📆💅</span>
         </span>
-        <span class="item__title">songkick.pink</span>
+        <span class="item__title">Unofficial Songkick PWA</span>
         <span class="item__summary">
-          An experimental progressive web app for Songkick.
+          An experimental and unofficial progressive web app for Songkick.
         </span>
       </span>
     </a>
