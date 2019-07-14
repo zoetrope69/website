@@ -343,7 +343,7 @@ You can find me talking shit on Mastodon at <a rel="me" href="https://toot.cafe/
   <li class="item">
     <a href="https://github.com/zaccolley/songkick-pwa">
       <span class="item__image">
-        <img src="/images/songkick-pwa.jpg" alt="Screenshot of the Unofficial Songkick PWA" />
+        <img src="/images/songkickpink.jpg" alt="Screenshot of the Unofficial Songkick PWA" />
       </span>
       <span class="item__content">
         <span class="item__details">
