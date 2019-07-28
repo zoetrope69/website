@@ -203,13 +203,13 @@ p {
   font-weight: 500;
 }
 
-@media (min-width: 30em) {
+@media (min-width: 500px) {
   .items--written .item__image {
     display: block;
   }
 }
 
-@media (min-width: 50em) {
+@media (min-width: 1000px) {
   body {
     font-size: 20px;
   }
@@ -220,17 +220,29 @@ p {
   }
 
   header {
+    order: 1;
     padding-top: 2em;
-    padding-left: 4em;
+    padding-right: 6em;
+  }
+
+  header h1,
+  header p {
+    position: absolute;
+    transform: rotate(-90deg);
+    transform-origin: bottom right;
   }
 
   header h1 {
-    position: absolute;
-    top: -3rem;
-    left: -0.5rem;
-    font-size: 4em;
-    transform: rotate(90deg);
-    transform-origin: bottom left;
+    top: -1rem;
+    right: 2rem;
+    margin-top: 0;
+    font-size: 3em;
+  }
+
+  header p {
+    top: 2rem;
+    right: 7rem;
+    margin-bottom: 0;
   }
 
   .items--made {

@@ -3,3 +3,18 @@
 # website
 
 my [current](https://zac.land) website
+
+## installation
+
+1. get last fm API, add to `.env` file as `LASTFM_API_KEY=xxx`
+2. `npm install`
+
+## develoment
+
+```bash
+npm start
+```
+
+## deploy
+
+push to `master` branch on GitHub. Netlify builds from there automatically.
