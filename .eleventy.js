@@ -8,6 +8,9 @@ module.exports = (eleventyConfig) => {
   eleventyConfig.addPassthroughCopy("manifest.json");
 
   eleventyConfig.addJavaScriptFunction("getStyles", getStyles);
+  eleventyConfig.addJavaScriptFunction("getUTCDateTime", () => {
+    return new Date().toLocaleString('en-GB', { timeZone: 'UTC' })
+  });
 
   eleventyConfig.addShortcode("latestLastFmArtists", async function() {
     const artists = await getLastFMArtists();

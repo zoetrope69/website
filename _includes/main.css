@@ -73,12 +73,20 @@ header h1 {
 }
 
 header,
-main {
-  padding: 0 1em;
+main,
+footer {
+  padding: 0 1rem;
 }
 
 main {
-  padding-bottom: 1em;
+  padding-bottom: 2rem;
+}
+
+footer {
+  position: absolute;
+  bottom: 1rem;
+  font-size: 0.75em;
+  color: #525248;
 }
 
 h2 {

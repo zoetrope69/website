@@ -53,6 +53,10 @@ function base(data) {
           <main>
             ${data.content}
           </main>	
+
+          <footer>
+            Last built on ${this.getUTCDateTime()} UTC.
+          </footer>
         </div>
       </body>
     </html>
