@@ -32,7 +32,13 @@ You can find me talking shit on Mastodon at <a rel="me" href="https://toot.cafe/
   <li class="item">
     <a href="https://timer.pizza">
       <span class="item__image">
-        <img src="/images/pizza-timer.png" alt="10 minutes 0 seconds and a Pizza" />
+        <img
+          src="/images/pizza-timer.png"
+          alt="10 minutes 0 seconds and a Pizza"
+          width="400"
+          height="80"
+          loading="lazy"
+        />
       </span>
       <span class="item__content">
         <span class="item__details">
@@ -49,7 +55,13 @@ You can find me talking shit on Mastodon at <a rel="me" href="https://toot.cafe/
   <li class="item">
     <a href="https://botsin.space/@PleaseCaption">
       <span class="item__image">
-        <img src="/images/please-caption-bot.png" alt="The Please Caption bot logo" />
+        <img
+          src="/images/please-caption-bot.png"
+          alt="The Please Caption bot logo"
+          width="400"
+          height="80"
+          loading="lazy"
+        />
       </span>
       <span class="item__content">
         <span class="item__details">
@@ -66,7 +78,13 @@ You can find me talking shit on Mastodon at <a rel="me" href="https://toot.cafe/
   <li class="item">
     <a href="https://botsin.space/@accessibleColors">
       <span class="item__image">
-        <img src="/images/accessibleColors.png" alt="Two colours" />
+        <img
+          src="/images/accessibleColors.png"
+          alt="Two colours"
+          width="400"
+          height="80"
+          loading="lazy"
+        />
       </span>
       <span class="item__content">
         <span class="item__details">
@@ -83,7 +101,13 @@ You can find me talking shit on Mastodon at <a rel="me" href="https://toot.cafe/
   <li class="item">
     <a href="https://chrome.google.com/webstore/detail/github-glitch-button/ffkmmljfhjanmbgokllhenmnkgpipfek">
       <span class="item__image">
-        <img src="/images/github-glitch-button.png" alt="Screenshot of the GitHub Glitch button" />
+        <img
+          src="/images/github-glitch-button.png"
+          alt="Screenshot of the GitHub Glitch button"
+          width="400"
+          height="80"
+          loading="lazy"
+        />
       </span>
       <span class="item__content">
         <span class="item__details">
@@ -100,7 +124,13 @@ You can find me talking shit on Mastodon at <a rel="me" href="https://toot.cafe/
   <li class="item">
     <a href="https://orla.glitch.me/">
       <span class="item__image">
-        <img src="/images/orla.png" alt="Example of the Orla Kiely art" />
+        <img
+          src="/images/orla.png"
+          alt="Example of the Orla Kiely art"
+          width="400"
+          height="80"
+          loading="lazy"
+        />
       </span>
       <span class="item__content">
         <span class="item__details">
@@ -117,7 +147,13 @@ You can find me talking shit on Mastodon at <a rel="me" href="https://toot.cafe/
   <li class="item">
     <a href="https://botsin.space/@goosebumps">
       <span class="item__image">
-        <img src="/images/goosebumpbot.png" alt="Some example generated Goosebumps covers" />
+        <img
+          src="/images/goosebumpbot.png"
+          alt="Some example generated Goosebumps covers"
+          width="400"
+          height="80"
+          loading="lazy"
+        />
       </span>
       <span class="item__content">
         <span class="item__details">
@@ -134,7 +170,13 @@ You can find me talking shit on Mastodon at <a rel="me" href="https://toot.cafe/
   <li class="item">
     <a href="https://rotate.glitch.me/">
       <span class="item__image">
-        <img src="/images/rotate.png" alt="The image on the website" />
+        <img
+          src="/images/rotate.png"
+          alt="The image on the website"
+          width="400"
+          height="80"
+          loading="lazy"
+        />
       </span>
       <span class="item__content">
         <span class="item__details">
@@ -151,7 +193,13 @@ You can find me talking shit on Mastodon at <a rel="me" href="https://toot.cafe/
   <li class="item">
     <a href="https://catmode.glitch.me/">
       <span class="item__image">
-        <img src="/images/catmode.png" alt="Some of the Depeche Mode boys" />
+        <img
+          src="/images/catmode.png"
+          alt="Some of the Depeche Mode boys"
+          width="400"
+          height="80"
+          loading="lazy"
+        />
       </span>
       <span class="item__content">
         <span class="item__details">
@@ -171,7 +219,13 @@ You can find me talking shit on Mastodon at <a rel="me" href="https://toot.cafe/
       <span class="item__image">
         <video autoplay loop muted inline title="Example of one of the GIFs">
           <source src="/images/hamiltonian.mp4" type="video/mp4">
-          <img src="/images/hamiltonian.gif" alt="Example of one of the GIFs" />
+          <img
+            src="/images/hamiltonian.gif"
+            alt="Example of one of the GIFs"
+            width="400"
+            height="80"
+            loading="lazy"
+          />
         </video>
       </span>
       <span class="item__content">
@@ -189,7 +243,13 @@ You can find me talking shit on Mastodon at <a rel="me" href="https://toot.cafe/
   <li class="item">
     <a href="https://twitter.com/i/moments/951607127893860352">
       <span class="item__image">
-        <img src="/images/zaccoin.png" alt="The zaccoin logo" />
+        <img
+          src="/images/zaccoin.png"
+          alt="The zaccoin logo"
+          width="400"
+          height="80"
+          loading="lazy"
+        />
       </span>
       <span class="item__content">
         <span class="item__details">
@@ -206,7 +266,13 @@ You can find me talking shit on Mastodon at <a rel="me" href="https://toot.cafe/
   <li class="item">
     <a href="https://softdongs.glitch.me">
       <span class="item__image">
-        <img src="/images/softdongs.jpg" alt="Screenshot of the softdongs website" />
+        <img
+          src="/images/softdongs.jpg"
+          alt="Screenshot of the softdongs website"
+          width="400"
+          height="80"
+          loading="lazy"
+        />
       </span>
       <span class="item__content">
         <span class="item__details">
@@ -224,7 +290,13 @@ You can find me talking shit on Mastodon at <a rel="me" href="https://toot.cafe/
   <li class="item">
     <a href="https://foodflood.surge.sh">
       <span class="item__image">
-        <img src="/images/foodflood.png" alt="Example of one of the GIFs" />
+        <img
+          src="/images/foodflood.png"
+          alt="Example of one of the GIFs"
+          width="400"
+          height="80"
+          loading="lazy"
+        />
       </span>
       <span class="item__content">
         <span class="item__details">
@@ -241,7 +313,13 @@ You can find me talking shit on Mastodon at <a rel="me" href="https://toot.cafe/
   <li class="item">
     <a href="https://twitter.com/zaccolley/status/901121760766173185">
       <span class="item__image">
-        <img src="/images/amazoon.png" alt="Screenshot of the Amazon Alexa simulator" />
+        <img
+          src="/images/amazoon.png"
+          alt="Screenshot of the Amazon Alexa simulator"
+          width="400"
+          height="80"
+          loading="lazy"
+        />
       </span>
       <span class="item__content">
         <span class="item__details">
@@ -258,7 +336,13 @@ You can find me talking shit on Mastodon at <a rel="me" href="https://toot.cafe/
   <li class="item">
     <a href="https://botsin.space/@socks">
       <span class="item__image">
-        <img src="/images/soqbot.png" alt="Some socks that were generated" />
+        <img
+          src="/images/soqbot.png"
+          alt="Some socks that were generated"
+          width="400"
+          height="80"
+          loading="lazy"
+        />
       </span>
       <span class="item__content">
         <span class="item__details">
@@ -275,7 +359,13 @@ You can find me talking shit on Mastodon at <a rel="me" href="https://toot.cafe/
   <li class="item">
     <a href="https://clicky-line-drawer.glitch.me/">
       <span class="item__image">
-        <img src="/images/clickyline.png" alt="Some lines that were clicked" />
+        <img
+          src="/images/clickyline.png"
+          alt="Some lines that were clicked"
+          width="400"
+          height="80"
+          loading="lazy"
+        />
       </span>
       <span class="item__content">
         <span class="item__details">
@@ -292,7 +382,13 @@ You can find me talking shit on Mastodon at <a rel="me" href="https://toot.cafe/
   <li class="item">
     <a href="https://push-notification-twine.glitch.me/">
       <span class="item__image">
-        <img src="/images/waitingforamate.jpg" alt="Example of a push notification" />
+        <img
+          src="/images/waitingforamate.jpg"
+          alt="Example of a push notification"
+          width="400"
+          height="80"
+          loading="lazy"
+        />
       </span>
       <span class="item__content">
         <span class="item__details">
@@ -309,7 +405,13 @@ You can find me talking shit on Mastodon at <a rel="me" href="https://toot.cafe/
   <li class="item">
     <a href="https://github.com/zaccolley/microclicker">
       <span class="item__image">
-        <img src="/images/microclicker.jpg" alt="Me holding the microclicker in style" />
+        <img
+          src="/images/microclicker.jpg"
+          alt="Me holding the microclicker in style"
+          width="400"
+          height="80"
+          loading="lazy"
+        />
       </span>
       <span class="item__content">
         <span class="item__details">
@@ -326,7 +428,13 @@ You can find me talking shit on Mastodon at <a rel="me" href="https://toot.cafe/
   <li class="item">
     <a href="https://github.com/zaccolley/now-playing-printer">
       <span class="item__image">
-        <img src="/images/nowplayingprinter.jpg" alt="The printer printed out a Toro y Moi album artwork" />
+        <img
+          src="/images/nowplayingprinter.jpg"
+          alt="The printer printed out a Toro y Moi album artwork"
+          width="400"
+          height="80"
+          loading="lazy"
+        />
       </span>
       <span class="item__content">
         <span class="item__details">
@@ -343,7 +451,13 @@ You can find me talking shit on Mastodon at <a rel="me" href="https://toot.cafe/
   <li class="item">
     <a href="https://github.com/zaccolley/songkick-pwa">
       <span class="item__image">
-        <img src="/images/songkickpink.jpg" alt="Screenshot of the Unofficial Songkick PWA" />
+        <img
+          src="/images/songkickpink.jpg"
+          alt="Screenshot of the Unofficial Songkick PWA"
+          width="400"
+          height="80"
+          loading="lazy"
+        />
       </span>
       <span class="item__content">
         <span class="item__details">
@@ -360,7 +474,13 @@ You can find me talking shit on Mastodon at <a rel="me" href="https://toot.cafe/
   <li class="item">
     <a href="https://chrome.google.com/webstore/detail/songkick-spotify-previews/dhiagiejffhdgpipbmcpcncepoicbhkb">
       <span class="item__image">
-        <img src="/images/songkickspotify.jpg" alt="Screenshot of songkick Spotify previews" />
+        <img
+          src="/images/songkickspotify.jpg"
+          alt="Screenshot of songkick Spotify previews"
+          width="400"
+          height="80"
+          loading="lazy"
+        />
       </span>
       <span class="item__content">
         <span class="item__details">
@@ -377,7 +497,13 @@ You can find me talking shit on Mastodon at <a rel="me" href="https://toot.cafe/
   <li class="item">
     <a href="https://domains.glitch.me/">
       <span class="item__image">
-        <img src="/images/domains.png" alt="Screenshot of the domains website" />
+        <img
+          src="/images/domains.png"
+          alt="Screenshot of the domains website"
+          width="400"
+          height="80"
+          loading="lazy"
+        />
       </span>
       <span class="item__content">
         <span class="item__details">
@@ -394,7 +520,13 @@ You can find me talking shit on Mastodon at <a rel="me" href="https://toot.cafe/
   <li class="item">
     <a href="https://github.com/zaccolley/letterboxd">
       <span class="item__image">
-        <img src="/images/letterboxd.png" alt="Letterboxd" />
+        <img
+          src="/images/letterboxd.png"
+          alt="Letterboxd"
+          width="400"
+          height="80"
+          loading="lazy"
+        />
       </span>
       <span class="item__content">
         <span class="item__details">
@@ -411,7 +543,13 @@ You can find me talking shit on Mastodon at <a rel="me" href="https://toot.cafe/
   <li class="item">
     <a href="https://happybirthdaynan.surge.sh/">
       <span class="item__image">
-        <img src="/images/animalcrossing.jpg" alt="Animal Crossing birthday card screenshot" />
+        <img
+          src="/images/animalcrossing.jpg"
+          alt="Animal Crossing birthday card screenshot"
+          width="400"
+          height="80"
+          loading="lazy"
+        />
       </span>
       <span class="item__content">
         <span class="item__details">
@@ -428,7 +566,13 @@ You can find me talking shit on Mastodon at <a rel="me" href="https://toot.cafe/
   <li class="item">
     <a href="https://hackpompey.co.uk">
       <span class="item__image">
-        <img src="/images/hackpompey.jpg" alt="Hackpompey" />
+        <img
+          src="/images/hackpompey.jpg"
+          alt="Hackpompey"
+          width="400"
+          height="80"
+          loading="lazy"
+        />
       </span>
       <span class="item__content">
         <span class="item__details">
@@ -445,7 +589,13 @@ You can find me talking shit on Mastodon at <a rel="me" href="https://toot.cafe/
   <li class="item">
     <a href="https://rosedigital.co.uk">
       <span class="item__image">
-        <img src="/images/rose.png" alt="ROSE Digital" />
+        <img
+          src="/images/rose.png"
+          alt="ROSE Digital"
+          width="400"
+          height="80"
+          loading="lazy"
+        />
       </span>
       <span class="item__content">
         <span class="item__details">
@@ -464,7 +614,13 @@ You can find me talking shit on Mastodon at <a rel="me" href="https://toot.cafe/
       <span class="item__image">
         <video autoplay loop muted inline title="GIF on the itsyourbirthday.today website">
           <source src="/images/birthdaytoday.mp4" type="video/mp4">
-          <img src="/images/birthdaytoday.gif" alt="GIF on the itsyourbirthday.today website" />
+          <img
+            src="/images/birthdaytoday.gif"
+            alt="GIF on the itsyourbirthday.today website"
+            width="400"
+            height="80"
+            loading="lazy"
+          />
         </video>
       </span>
       <span class="item__content">
@@ -483,7 +639,13 @@ You can find me talking shit on Mastodon at <a rel="me" href="https://toot.cafe/
   <li class="item">
     <a href="https://rosedigital.co.uk/work/2014/04/16/upracing.html" title="UPRacing">
       <span class="item__image">
-        <img src="/images/upracing.jpg" alt="UPRacing" />
+        <img
+          src="/images/upracing.jpg"
+          alt="UPRacing"
+          width="400"
+          height="80"
+          loading="lazy"
+        />
       </span>
       <span class="item__content">
         <span class="item__details">
@@ -500,7 +662,13 @@ You can find me talking shit on Mastodon at <a rel="me" href="https://toot.cafe/
   <li class="item">
     <a href=" https://zaccolley.com/stuff/christmas2012/">
       <span class="item__image">
-        <img src="/images/christmascard.png" alt="Screenshot of Christmas card generator" />
+        <img
+          src="/images/christmascard.png"
+          alt="Screenshot of Christmas card generator"
+          width="400"
+          height="80"
+          loading="lazy"
+        />
       </span>
       <span class="item__content">
         <span class="item__details">
@@ -518,7 +686,13 @@ You can find me talking shit on Mastodon at <a rel="me" href="https://toot.cafe/
   <li class="item">
     <a href="https://minecraftexplore.tumblr.com">
       <span class="item__image">
-        <img src="/images/minecraftexplore.png" alt="Screenshot of the Minecraft Explore website" />
+        <img
+          src="/images/minecraftexplore.png"
+          alt="Screenshot of the Minecraft Explore website"
+          width="400"
+          height="80"
+          loading="lazy"
+        />
       </span>
       <span class="item__content">
         <span class="item__details">
@@ -541,7 +715,13 @@ You can find me talking shit on Mastodon at <a rel="me" href="https://toot.cafe/
   <li class="item">
     <a href="https://medium.com/farewill/why-were-changing-our-colours-4ae9a412e542">
       <span class="item__image">
-        <img src="/images/changing-colours.jpg" alt="Screenshot of before and after of the Farewill user interface" />
+        <img
+          src="/images/changing-colours.jpg"
+          alt="Screenshot of before and after of the Farewill user interface"
+          width="200"
+          height="150"
+          loading="lazy"
+        />
       </span>
       <span class="item__content">
         <span class="item__details">
@@ -560,7 +740,13 @@ You can find me talking shit on Mastodon at <a rel="me" href="https://toot.cafe/
   <li class="item">
     <a href="https://medium.com/farewill/how-to-detect-and-use-do-not-track-on-your-website-77f21f62be48">
       <span class="item__image">
-        <img src="/images/data.jpg" alt="A sign that says 'Data'" />
+        <img
+          src="/images/data.jpg"
+          alt="A sign that says 'Data'"
+          width="200"
+          height="150"
+          loading="lazy"
+        />
       </span>
       <span class="item__content">
         <span class="item__details">
@@ -579,7 +765,13 @@ You can find me talking shit on Mastodon at <a rel="me" href="https://toot.cafe/
   <li class="item">
     <a href="https://farewill.com/blog/its-time-to-get-into-tech-debt-4G3XjDJIjYyOEUua0GYu28">
       <span class="item__image">
-        <img src="/images/money.jpg" alt="Some USD money" />
+        <img
+          src="/images/money.jpg"
+          alt="Some USD money"
+          width="200"
+          height="150"
+          loading="lazy"
+        />
       </span>
       <span class="item__content">
         <span class="item__details">
@@ -596,7 +788,13 @@ You can find me talking shit on Mastodon at <a rel="me" href="https://toot.cafe/
   <li class="item">
     <a href="https://medium.com/@zaccolley/hackdays-arent-just-for-the-tech-department-8bd411b4c19e">
       <span class="item__image">
-        <img src="/images/hackdays.jpg" alt="People pointing at a laptop with a website on it" />
+        <img
+          src="/images/hackdays.jpg"
+          alt="People pointing at a laptop with a website on it"
+          width="200"
+          height="150"
+          loading="lazy"
+        />
       </span>
       <span class="item__content">
         <span class="item__details">
@@ -613,7 +811,13 @@ You can find me talking shit on Mastodon at <a rel="me" href="https://toot.cafe/
   <li class="item">
     <a href="https://medium.com/@zaccolley/applying-user-testing-to-technical-documentation-f2dfb1aa1003">
       <span class="item__image">
-        <img src="/images/cowboy.gif" alt="Cowboy on a computer" />
+        <img
+          src="/images/cowboy.gif"
+          alt="Cowboy on a computer"
+          width="200"
+          height="150"
+          loading="lazy"
+        />
       </span>
       <span class="item__content">
         <span class="item__details">
