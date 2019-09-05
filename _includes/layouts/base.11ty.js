@@ -56,6 +56,8 @@ function base(data) {
 
           <footer>
             Last built on ${this.getUTCDateTime()} UTC.
+
+            <img src="https://adalytics-zac.glitch.me/counter.png?fallback=zac.land&color=black" alt="" style="vertical-align: bottom;" aria-hidden="true">
           </footer>
         </div>
       </body>
