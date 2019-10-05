@@ -683,30 +683,6 @@ You can find me talking shit on Mastodon at <a rel="me" href="https://toot.cafe/
       </span>
     </a>
   </li>
-  <li class="item">
-    <a href="https://minecraftexplore.tumblr.com">
-      <span class="item__image">
-        <img
-          src="/images/minecraftexplore.png"
-          alt="Screenshot of the Minecraft Explore website"
-          width="400"
-          height="80"
-          loading="lazy"
-        />
-      </span>
-      <span class="item__content">
-        <span class="item__details">
-          <time class="item__details__time" datetime="2011-02-14">14th February 2011</time>
-          <span class="item__details__emoji" aria-hidden="true">😢</span>
-        </span>
-        <span class="item__title">Minecraft Explore</span>
-        <span class="item__summary">
-          Minecraft blog on Tumblr.
-          <small>No updates now.</small>
-        </span>
-      </span>
-    </a>
-  </li>
 </ol>
 
 <h2>Some things I've written</h2>
