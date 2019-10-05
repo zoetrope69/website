@@ -472,7 +472,7 @@ You can find me talking shit on Mastodon at <a rel="me" href="https://toot.cafe/
     </a>
   </li>
   <li class="item">
-    <a href="https://chrome.google.com/webstore/detail/songkick-spotify-previews/dhiagiejffhdgpipbmcpcncepoicbhkb">
+    <a href="https://github.com/zaccolley/songkick-spotify-previews">
       <span class="item__image">
         <img
           src="/images/songkickspotify.jpg"
