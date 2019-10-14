@@ -1,4 +1,4 @@
-function base(data) {
+function base(data, that = this) {
   const {
     metadata,
     page
@@ -19,7 +19,7 @@ function base(data) {
         <link rel="icon" href="/images/icons/notepad-16x16.png" />
         <link rel="icon" sizes="192x192" href="/images/icons/notepad-192x192.png">
 
-        <style>${this.getStyles()}</style>
+        <style>${that.getStyles()}</style>
 
         <meta name="title" content="${metadata.title}">
         <meta name="description" content="${metadata.description}">
@@ -42,29 +42,68 @@ function base(data) {
       </head>
 
       <body>
+        <a class="skip-to-main-content-link" href="#main">
+          <span aria-hidden="true">⏭️</span>
+          Skip to main content
+        </a>
+      
         <div class="wrapper">
-          <header>
-            <h1>
-              ${metadata.title}
-            </h1>
-            <p>${metadata.description}</p>
+          <header class="header">
+            <div class="header__titles">
+              <span class="header__title">
+                ${metadata.title}
+              </span>
+              <p class="header__subtitle">
+                ${metadata.description}
+              </p>
+            </div>
+
+            <nav class="header__nav">
+              <ul class="header__nav__list">
+                <li class="header__nav__list__item">
+                  <a href="/">
+                    <span aria-hidden="true">🏠</span>
+                    Home
+                  </a>
+                </li>
+                <li class="header__nav__list__item">
+                  <a href="/posts/">
+                    <span aria-hidden="true">📝</span>
+                    Posts
+                  </a>
+                </li>
+                <li class="header__nav__list__item">
+                  <a href="/projects/">
+                    <span aria-hidden="true">🎨</span>
+                    Projects
+                  </a>
+                </li>
+              </ul>
+            </nav>
           </header>
 
-          <main>
+          <main class="main" id="main">
+            <h1>${data.title}</h1>
+
             ${data.content}
           </main>	
 
-          <footer>
-            Last built on ${this.getUTCDateTime()} UTC.
+          <footer class="footer">
+            Last built on ${that.getUTCDateTime()} UTC.
 
-            <span aria-hidden="true">
-              Counter: <img src="https://adalytics-zac.glitch.me/counter.png?fallback=zac.land" alt="">
-            </span>
+            <div class="footer__counter" aria-hidden="true">
+              Counter:
+              <img
+                class="footer__counter__image"
+                src="https://adalytics-zac.glitch.me/counter.png?fallback=zac.land"
+                alt=""
+              >
+            </div>
           </footer>
         </div>
       </body>
     </html>
   `;
-}
+};
 
-module.exports = base
+module.exports = base;
