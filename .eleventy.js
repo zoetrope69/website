@@ -12,6 +12,12 @@ module.exports = (eleventyConfig) => {
     return new Date().toLocaleString('en-GB', { timeZone: 'UTC' })
   });
 
+  eleventyConfig.addShortcode("test", function(data) {
+    console.log('a', data)
+    return `
+      hello
+    `;
+  });
   eleventyConfig.addShortcode("latestLastFmArtists", async function() {
     const artists = await getLastFMArtists();
 
