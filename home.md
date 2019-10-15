@@ -9,6 +9,8 @@ I'm Zac and I like making stuff <span aria-hidden="true">🤹‍♂️🔌🎨</
 
 I'm passionate about removing barriers for people. I'm trying to do this through things like education, accessibility, diversity and inclusion <span aria-hidden="true">🚧🚫</span>.
 
+Check out <a href="/projects">some of my projects</a> <span aria-hidden="true">📝</span> or <a href="/posts">what I've written</a> <span aria-hidden="true">🎨</span>.
+
 One place I used to do this is through co-organising <a href="https://codebar.io">codebar Monthlies</a> <span aria-hidden="true">✨🗣️</span>. I also started and used to run <a href="https://hackpompey.co.uk">hackpompey</a>, a Portsmouth based hack event <span aria-hidden="true">👨‍💻👩‍💻🛠️</span>.
 
 My day job is currently at <a href="https://beano.com">Beano Studios</a> <span aria-hidden="true">🚸💩</span> where I'm a developer. Before that I worked at <a href="https://farewill.com">Farewill</a> <span aria-hidden="true">📝⚰️️</span> and <a href="https://songkick.com">Songkick</a> <span aria-hidden="true">🎤🎫</span>. At the <a href="https://www.port.ac.uk">University of Portsmouth</a> I started a partnership called <a href="https://rosedigital.co.uk">ROSE</a> <span aria-hidden="true">🌹💻🎓</span>.
