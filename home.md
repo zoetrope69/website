@@ -15,7 +15,7 @@ My day job is currently at <a href="https://beano.com">Beano Studios</a> <span a
 
 I like making things, some of my projects are on <a href="https://github.com/zaccolley">GitHub</a> <span aria-hidden="true">🐙🐈</span> and some are on <a href="https://glitch.com/@zaccolley">Glitch</a> <span aria-hidden="true">🎏</span>.
 
-I love <a href="https://www.last.fm/user/zaccolley">listening to music</a> <span aria-hidden="true">🎧🎶</span> and <a href="https://www.songkick.com/users/zaccolley">going to gigs</a> <span aria-hidden="true">👩‍🎤🎸🥁</span>.{% latestLastFmArtists %}
+I love <a href="https://www.last.fm/user/zaccolley">listening to music</a> <span aria-hidden="true">🎧🎶</span> and <a href="https://www.songkick.com/users/zaccolley">going to gigs</a> <span aria-hidden="true">👩‍🎤🎸🥁</span>.{% latestLastFmArtists %}{% latestSongkickGig %}
 
 I sometimes <a href="https://letterboxd.com/zaccolley/">watch films</a> <span aria-hidden="true">🎞</span>️.{% latestLetterboxdFilm %}
 

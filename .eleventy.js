@@ -1,6 +1,7 @@
 const getStyles = require('./functions/styles');
 const getLastFMArtists = require('./functions/lastfm');
 const getLatestLetterboxDiaryEntry = require('./functions/letterboxd');
+const getLatestSongkickGig = require('./functions/songkick');
 
 module.exports = (eleventyConfig) => {
   // Copy different directories and files 
@@ -35,6 +36,18 @@ module.exports = (eleventyConfig) => {
 
     return ` ${lastFilmString}, ${ratingString} <span aria-hidden="true">🍿🤔</span>.`;
   });
+  eleventyConfig.addShortcode("latestSongkickGig", async function() {
+    const songkickGig = await getLatestSongkickGig();
+
+    if (!songkickGig) {
+      return '';
+    }
+
+    const { name, uri } = songkickGig;
+
+    return ` The last gig I went to was <a href="${uri}">${name}</a> <span aria-hidden="true">🎫</span>.`;
+  });
+
 
   return {
     passthroughFileCopy: true
