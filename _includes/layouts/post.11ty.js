@@ -1,12 +1,12 @@
+const { format: dateFormat } = require('date-fns');
 const baseLayout = require('./base.11ty');
 
 function post(data) {
   data.content = `
     <article class="post">
-      <header class="post__header">
-        <h1 class="post__header__title">${data.title}</h1>
-      </header>
-
+      <time class="post__date" datetime="${data.date}">
+        ${dateFormat(new Date(data.date), 'do LLLL yyyy')}
+      </time>
       <div class="post__content">
         ${data.content}
       </div
