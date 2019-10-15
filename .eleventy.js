@@ -33,7 +33,7 @@ module.exports = (eleventyConfig) => {
     const lastFilmString = `The last film I watched was ${film.title}`;
     const ratingString = `<a href="${uri}">I rated it <span aria-label="${rating.score}/5 stars">${rating.text}</span></a>`;
 
-    return ` ${lastFilmString}, ${ratingString}.`;
+    return ` ${lastFilmString}, ${ratingString} <span aria-hidden="true">🍿🤔</span>.`;
   });
 
   return {
