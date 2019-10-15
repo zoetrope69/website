@@ -1,4 +1,10 @@
 require('dotenv').config();
+
+if (!process.env.LASTFM_API_KEY) {
+  console.error('❗ Failed to load in the LASTFM_API_KEY. Is it missing from the `.env` file?');
+  process.exit();
+}
+
 const fetch = require('node-fetch');
 const {
   humanisedList
