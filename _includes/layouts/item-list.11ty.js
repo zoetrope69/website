@@ -1,4 +1,4 @@
-const { format: dateFormat } = require('date-fns')
+const { format: dateFormat } = require('date-fns');
 const baseLayout = require('./base.11ty');
 
 const getItems = (data, isPosts) => {

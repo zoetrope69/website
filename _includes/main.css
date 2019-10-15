@@ -121,6 +121,16 @@ pre {
   padding: 0 1rem;
 }
 
+.header__nav__list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.header__nav__list a {
+  display: block;
+  padding: 1rem;
+}
+
 .main {
   padding-bottom: 5rem;
 }
@@ -144,18 +154,46 @@ pre {
   height: 1em;
 }
 
+.main,
 .post {
   max-width: 40em;
 }
 
-.header__nav__list {
-  display: flex;
-  flex-wrap: wrap;
+.post__date {
+  display: block;
+  margin-top: -1rem;
+  margin-bottom: 1rem;
+  font-size: 0.75em;
+  color: #525248;
 }
 
-.header__nav__list a {
-  display: block;
-  padding: 1rem;
+.post__content ul,
+.post__content ol {
+  margin-bottom: 1.5em;
+}
+
+.post__content li {
+  margin-bottom: 0.5em;
+  line-height: 1.5em;
+}
+
+.post__content li::before {
+  margin-right: 0.25em;
+  font-weight: bold;
+}
+
+.post__content ul li::before {
+  margin-right: 0.5em;
+  content: '●';
+}
+
+.post__content ol {
+  counter-reset: ordered-list;
+}
+
+.post__content ol li::before {
+  counter-increment: ordered-list;
+  content: counter(ordered-list) ". ";
 }
 
 .item {
