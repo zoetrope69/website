@@ -1,5 +1,29 @@
 [
   {
+    "date": "2019-09-05",
+    "image": "/images/example-figma-screenshot.jpg",
+    "externalLink": "https://blog.beano.io/posts/converting-the-beano-logo-to-svg/",
+    "title": "Converting the Beano's Logo to SVG",
+    "description": "See how we made the Beano logo 20 times smaller.",
+    "emoji": "🍑💨"
+  },
+  {
+    "date": "2019-08-22",
+    "image": "/images/woff-monster.png",
+    "externalLink": "https://blog.beano.io/posts/using-woff-2-0/",
+    "title": "Using WOFF 2.0 Can Reduce Your Font Size By 30%",
+    "description": "There are hardly any downsides to using WOFF 2.0, are you using it?",
+    "emoji": "🔡⚡"
+  },
+  {
+    "date": "2019-08-13",
+    "image": "/images/webpack-bundle-analyzer.jpg",
+    "externalLink": "https://blog.beano.io/posts/webpack-bundle-analyzer/",
+    "title": "Optimising JavaScript Bundles with webpack-bundle-analyzer",
+    "description": "How can we tell what we need and don't in our JavaScript bundle?",
+    "emoji": "📦⚡"
+  },
+  {
     "date": "2018-08-21",
     "image": "/images/changing-colours.jpg",
     "externalLink": "https://medium.com/farewill/why-were-changing-our-colours-4ae9a412e542",
