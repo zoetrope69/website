@@ -55,6 +55,12 @@ pre {
   overflow-x: auto;
 }
 
+hr {
+  margin-bottom: 1.5rem;
+  border: none;
+  border-bottom: 2px solid #ebebe5;
+}
+
 .skip-to-main-content-link,
 .skip-to-main-content-link:focus {
   position: absolute;
@@ -165,6 +171,12 @@ pre {
   margin-bottom: 1rem;
   font-size: 0.75em;
   color: #525248;
+}
+
+.post__content img {
+  display: block;
+  max-width: 100%;
+  margin-bottom: 1.5em;
 }
 
 .post__content ul,
