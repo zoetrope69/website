@@ -173,6 +173,12 @@ hr {
   color: #525248;
 }
 
+.post__content blockquote {
+  padding-left: 1em;
+  border-left: 5px solid #eee;
+  font-size: 0.95em;
+}
+
 .post__content img {
   display: block;
   max-width: 100%;

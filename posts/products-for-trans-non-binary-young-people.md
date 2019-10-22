@@ -26,7 +26,7 @@ If you’re not aware, as well as being a boy or girl, other genders such as non
 
 I reached out to to [Arora](https://twitter.com/AroraXD) who runs [Non-Binary in Tech](https://twitter.com/NonBinaryTech), she shared this with me:
 
-“[A survey](https://www.glaad.org/files/aa/2017_GLAAD_Accelerating_Acceptance.pdf) conducted by [Glaad](https://www.glaad.org/) and Harris Poll found that 12% of millenials identify outside of the gender binary. That’s about 1 out of every 8.”
+> [A survey](https://www.glaad.org/files/aa/2017_GLAAD_Accelerating_Acceptance.pdf) conducted by [Glaad](https://www.glaad.org/) and Harris Poll found that 12% of millenials identify outside of the gender binary. That’s about 1 out of every 8.
 
 This is growing more and more with young people. Just over 1 in 4 (27%) of California teens identify as gender-nonconforming according to [a study](https://williamsinstitute.law.ucla.edu/wp-content/uploads/CHIS-Transgender-Teens-FINAL.pdf) by the Williams Institute at the University of California, Los Angeles.
 
@@ -52,7 +52,9 @@ It focuses on young people, specifically Generation Alpha. This is young people 
 
 They are creating a gender-neutral doll for them. Making their products more inclusive is not new to them.
 
-“Most recently, in 2016, Mattel added three new body types to the Barbie doll: tall, petite and, most radically, curvy. It was the first time the company had made a major change to one of the most recognizable brands—and bodies—in the world in the doll’s almost-60-year history. The change helped propel Barbie from a retrograde doll lambasted by feminists for her impossible shape to a modern toy. She is now on the rise. Her sales have been up for the past eight quarters, and she saw a 14% sales bump in the past year alone, according to Mattel.”
+> Most recently, in 2016, Mattel added three new body types to the Barbie doll: tall, petite and, most radically, curvy. It was the first time the company had made a major change to one of the most recognizable brands—and bodies—in the world in the doll’s almost-60-year history.
+
+> The change helped propel Barbie from a retrograde doll lambasted by feminists for her impossible shape to a modern toy. She is now on the rise. Her sales have been up for the past eight quarters, and she saw a 14% sales bump in the past year alone, according to Mattel.
 
 By making their product lines more inclusive they are making a lot of money.
 
