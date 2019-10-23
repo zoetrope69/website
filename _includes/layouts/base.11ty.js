@@ -1,8 +1,18 @@
+const getShareImage = (data) => {
+  if (data.image) {
+    return `${data.metadata.url}${data.image}`;
+  }
+
+  return data.metadata.author.image;
+}
+
 function base(data, that = this) {
   const {
     metadata,
     page
   } = data
+
+  const shareImage = getShareImage(data);
 
   return `
     <!DOCTYPE html>
@@ -29,7 +39,7 @@ function base(data, that = this) {
         <meta property="og:url" content="${metadata.url}${page.url}">
         <meta property="og:title" content="${data.title} | ${metadata.title}">
         <meta property="og:description" content="${data.description || metadata.description}">
-        <meta property="og:image" content="${data.image || metadata.author.image}">
+        <meta property="og:image" content="${shareImage}">
 
         <!-- Twitter -->
         <meta property="twitter:card" content="summary">
@@ -38,8 +48,8 @@ function base(data, that = this) {
         <meta property="twitter:url" content="${metadata.url}${page.url}">
         <meta property="twitter:title" content="${data.title} | ${metadata.title}">
         <meta property="twitter:description" content="${data.description || metadata.description}">
-        <meta property="twitter:image" content="${data.image || metadata.author.image}">
-        
+        <meta property="twitter:image" content="${shareImage}">
+
         <link rel="manifest" href="/manifest.json">
       </head>
 
@@ -48,7 +58,7 @@ function base(data, that = this) {
           <span aria-hidden="true">⏭️</span>
           Skip to main content
         </a>
-      
+
         <div class="wrapper">
           <header class="header">
             <div class="header__titles">
@@ -88,7 +98,7 @@ function base(data, that = this) {
             <h1>${data.title}</h1>
 
             ${data.content}
-          </main>	
+          </main>
 
           <footer class="footer">
             Last built on ${that.getUTCDateTime()} UTC.
