@@ -4,7 +4,7 @@ tags: post
 date: 2019-10-17
 title: Creating products for young trans and non-binary people
 description: An issue with many products I see is they can exclude young people of different genders
-emoji: 🏳️‍⚧️
+emoji: 🏳️‍⚧️💛💜
 image: /images/products-for-trans-non-binary-young-people.png
 ---
 
