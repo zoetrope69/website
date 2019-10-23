@@ -32,7 +32,9 @@ function base(data, that = this) {
         <meta property="og:image" content="${data.image || metadata.author.image}">
 
         <!-- Twitter -->
-        <meta property="twitter:card" content="summary_large_image">
+        <meta property="twitter:card" content="summary">
+        <meta name="twitter:site" content="@zaccolley" />
+        <meta name="twitter:creator" content="@zaccolley" />
         <meta property="twitter:url" content="${metadata.url}${page.url}">
         <meta property="twitter:title" content="${data.title} | ${metadata.title}">
         <meta property="twitter:description" content="${data.description || metadata.description}">
