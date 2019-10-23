@@ -26,7 +26,7 @@ async function getLastFMArtists() {
     !results.weeklyartistchart.artist ||
     results.weeklyartistchart.artist.length === 0
   ) {
-    console.error('No artists found');
+    console.error('Last.fm error: No artists found');
     return [];
   }
 

@@ -1,7 +1,7 @@
 const letterboxd = require('letterboxd');
 
 const LETTERBOXD_USERNAME = 'zaccolley';
- 
+
 async function getLatestLetterboxDiaryEntry () {
   return new Promise((resolve) => {
     letterboxd(LETTERBOXD_USERNAME).then(items => {
@@ -11,7 +11,7 @@ async function getLatestLetterboxDiaryEntry () {
 
       resolve(items[0]);
     }).catch(error => {
-      console.error(error);
+      console.error(`Letterboxd error: ${error}`);
       resolve();
     });
   });
