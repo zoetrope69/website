@@ -16,7 +16,7 @@ If you see something wrong (or even a bit off), [please do reach out to me](mail
 
 ---
 
-We should be making products that support trans/non-binary people. This post is focussed on young trans/non-binary people but twill hopefully help you to build inclusive products for any ages.
+We should be making products that support trans/non-binary people. This post is focussed on young trans/non-binary people but will hopefully help you to build inclusive products for any ages.
 
 ## Where are we currently?
 
