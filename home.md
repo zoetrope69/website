@@ -2,6 +2,7 @@
 layout: layouts/base.11ty.js
 title: About Zac
 permalink: /
+sitemapChangeFrequency: "daily"
 ---
 
 I'm Zac and I like making stuff <span aria-hidden="true">🤹‍♂️🔌🎨</span>.
