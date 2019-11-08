@@ -5,6 +5,15 @@ permalink: /
 sitemapChangeFrequency: "daily"
 ---
 
+<picture>
+    <source srcset="https://www.gravatar.com/avatar/26ab7600fc89f94711ec3b7db40d039b?s=128"
+            media="(min-width: 500px)">
+    <img class="my-face"
+         src="https://www.gravatar.com/avatar/26ab7600fc89f94711ec3b7db40d039b?s=64"
+         alt="Zac in his human form"
+         loading="lazy">
+</picture>
+
 I'm Zac and I like making stuff <span aria-hidden="true">🤹‍♂️🔌🎨</span>.
 
 I'm passionate about removing barriers for people. I'm trying to do this through things like education, accessibility, diversity and inclusion <span aria-hidden="true">🚧🚫</span>.

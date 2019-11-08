@@ -37,7 +37,8 @@ li {
   list-style: none;
 }
 
-h1, h2 {
+h1,
+h2 {
   margin: 1em 0 0.75em;
 }
 
@@ -105,6 +106,10 @@ hr {
   top: 0;
 
   background: linear-gradient(to right, #0000b2, #ef3911, #f1d400, #008414);
+}
+
+.my-face {
+  display: none;
 }
 
 .header__title {
@@ -326,7 +331,26 @@ hr {
   font-weight: 500;
 }
 
+@media (min-width: 320px) {
+  .my-face {
+    display: block;
+    position: absolute;
+    width: 64px;
+    right: 1em;
+    top: 11%;
+    box-shadow: 5px 5px 0 #000;
+    transform: rotate(5deg);
+  }
+}
+
 @media (min-width: 500px) {
+  .my-face {
+    width: 128px;
+    top: 5%;
+    right: 5%;
+    transform: rotate(10deg);
+  }
+
   .items--written .item__media {
     display: block;
   }
@@ -335,6 +359,10 @@ hr {
 @media (min-width: 1200px) {
   body {
     font-size: 20px;
+  }
+
+  .my-face {
+    right: 26%;
   }
 
   .wrapper {
