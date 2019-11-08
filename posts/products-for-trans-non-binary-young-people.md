@@ -8,11 +8,20 @@ emoji: 🏳️‍⚧️💛💜
 image: /images/products-for-trans-non-binary-young-people.png
 ---
 
-**Content warning:** There are references to Gender, Transphobia and the NHS in this post.
+<div class="warning">
+<span class="warning__icon" aria-hidden="true">❗</span>
 
-**Disclaimer:** I am not transgender or non-binary. I'm a cisgender man. So I write this post based on research I've done and people I've talked to.
+## Content warning
 
-If you see something wrong (or even a bit off), [please do reach out to me](mailto:zaccolley@gmail.com) and I'll be happy to improve it.
+There are references to Gender, Transphobia and the NHS in this post.
+
+## Disclaimer
+
+I am not transgender or non-binary. I'm a cisgender man. So I write this post based on research I've done and people I've talked to.
+
+If you see something wrong (or even a bit off), [please do reach out to me](mailto:zaccolley@fastmail.com) and I'll be happy to improve it.
+
+</div>
 
 ---
 

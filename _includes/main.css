@@ -167,7 +167,7 @@ hr {
 
 .main,
 .post {
-  max-width: 40em;
+  max-width: 35em;
 }
 
 .post__date {
@@ -217,6 +217,41 @@ hr {
 .post__content ol li::before {
   counter-increment: ordered-list;
   content: counter(ordered-list) ". ";
+}
+
+.post__content .warning {
+  position: relative;
+  padding: 1em;
+  font-size: 0.85em;
+  background-color: #f9f1f0;
+}
+
+.post__content .warning__icon {
+  position: absolute;
+  right: 1em;
+  top: 0;
+  background: white;
+  padding: 0.5em;
+}
+
+.post__content .warning h2:first-of-type {
+  margin-top: 0;
+}
+
+.post__content .warning p:last-of-type {
+  margin-bottom: 0;
+}
+
+.post__author {
+  position: relative;
+  margin-top: 2em;
+  padding: 1em;
+  font-size: 0.85em;
+  background-color: #f7f7ee;
+}
+
+.post__author h2:first-of-type {
+  margin-top: 0;
 }
 
 .item {
@@ -336,15 +371,24 @@ hr {
     display: block;
     position: absolute;
     width: 64px;
+    background-color: #fff;
+    box-shadow: 5px 5px 0 #020100;
+    transform: rotate(5deg);
+  }
+
+  .my-face--home {
     right: 1em;
     top: 11%;
-    box-shadow: 5px 5px 0 #000;
-    transform: rotate(5deg);
+  }
+
+  .my-face--post {
+    right: 1em;
+    top: -1em;
   }
 }
 
 @media (min-width: 500px) {
-  .my-face {
+  .my-face--home {
     width: 128px;
     top: 5%;
     right: 5%;
@@ -361,8 +405,12 @@ hr {
     font-size: 20px;
   }
 
-  .my-face {
+  .my-face--home {
     right: 26%;
+  }
+
+  .my-face--post {
+    width: 128px;
   }
 
   .wrapper {

@@ -8,7 +8,7 @@ sitemapChangeFrequency: "daily"
 <picture>
     <source srcset="https://www.gravatar.com/avatar/26ab7600fc89f94711ec3b7db40d039b?s=128"
             media="(min-width: 500px)">
-    <img class="my-face"
+    <img class="my-face my-face--home"
          src="https://www.gravatar.com/avatar/26ab7600fc89f94711ec3b7db40d039b?s=64"
          alt="Zac in his human form"
          loading="lazy">
