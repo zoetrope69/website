@@ -28,6 +28,4 @@ I love <a href="https://www.last.fm/user/zaccolley">listening to music</a> <span
 
 I sometimes <a href="https://letterboxd.com/zaccolley/">watch films</a> <span aria-hidden="true">🎞</span>️.{% latestLetterboxdFilm %}
 
-If you want to contact me, emailing works. You can email me at: <a href="mailto:zac@clubpenguin.email">zac@clubpenguin.email</a> <span aria-hidden="true">📧</span>.
-
-You can find me talking shit on Twitter at <a href="https://twitter.com/zaccolley">@zaccolley</a> <span aria-hidden="true">🐦</span>. Some of my photos are on <a href="https://instagram.com/zaccolley/">Instagram</a> <span aria-hidden="true">🖼️📸</span>. I also am on Mastodon at <a rel="me" href="https://toot.cafe/@zac">@zac@toot.cafe</a> <span aria-hidden="true">🐘📯</span>.
+If you want to contact me, emailing works. You can email me at: <a href="mailto:zac@clubpenguin.email">zac@clubpenguin.email</a> <span aria-hidden="true">📧</span>
