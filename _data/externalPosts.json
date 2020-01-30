@@ -1,5 +1,13 @@
 [
   {
+    "date": "2020-01-30",
+    "image": "/images/youtube-embed.png",
+    "externalLink": "https://medium.com/condenastengineering/using-the-youtube-pfp-iframe-embed-config-api-in-react-f1429ef69451",
+    "title": "Using the YouTube PFP iFrame Embed Config API in React",
+    "description": "Implementing YouTube’s Player for Publishers Direct Integration at Condé Nast",
+    "emoji": "💰📹"
+  },
+  {
     "date": "2019-09-05",
     "image": "/images/example-figma-screenshot.jpg",
     "externalLink": "https://blog.beano.io/posts/converting-the-beano-logo-to-svg/",
