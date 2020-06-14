@@ -6,17 +6,17 @@
     "debug": "DEBUG=* eleventy"
   },
   "dependencies": {
-    "@11ty/eleventy": "^0.7.1",
-    "@11ty/eleventy-plugin-rss": "^1.0.6",
+    "@11ty/eleventy": "^0.11.0",
+    "@11ty/eleventy-plugin-rss": "^1.0.7",
     "@11ty/eleventy-plugin-syntaxhighlight": "^2.0.3",
-    "clean-css": "^4.2.1",
-    "date-fns": "^2.4.1",
-    "dotenv": "^8.0.0",
+    "clean-css": "^4.2.3",
+    "date-fns": "^2.14.0",
+    "dotenv": "^8.2.0",
     "html-minifier": "^3.5.21",
     "letterboxd": "^1.0.2",
-    "luxon": "^1.17.2",
+    "luxon": "^1.24.1",
     "markdown-it": "^8.4.1",
-    "markdown-it-anchor": "^5.2.4",
+    "markdown-it-anchor": "^5.3.0",
     "node-fetch": "^2.6.0"
   }
 }
