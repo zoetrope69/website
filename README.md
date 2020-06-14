@@ -18,3 +18,5 @@ npm start
 ## deploy
 
 push to `master` branch on GitHub. Netlify builds from there automatically.
+
+make sure to bump the `service-work.js` version otherwise people may see stale content.

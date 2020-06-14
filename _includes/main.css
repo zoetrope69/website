@@ -9,7 +9,8 @@
 body {
   color: #111;
   font-size: 18px;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial,
+    sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 
   background-color: #020100;
   background-image: linear-gradient(#656565 1px, transparent 1px),
@@ -99,7 +100,7 @@ hr {
 }
 
 .wrapper::before {
-  content: '';
+  content: "";
   position: absolute;
   height: 5px;
   width: 100%;
@@ -118,7 +119,7 @@ hr {
   white-space: nowrap;
 
   color: #000;
-  letter-spacing: .25em;
+  letter-spacing: 0.25em;
   font-family: serif;
   font-weight: 700;
   font-size: 2.5em;
@@ -152,17 +153,6 @@ hr {
   padding-bottom: 1rem;
   font-size: 0.75em;
   color: #525248;
-}
-
-.footer__counter {
-  display: flex;
-  margin-top: 0.5rem;
-  align-items: center;
-}
-
-.footer__counter__image {
-  margin-left: 0.25rem;
-  height: 1em;
 }
 
 .main,
@@ -207,7 +197,7 @@ hr {
 
 .post__content ul li::before {
   margin-right: 0.5em;
-  content: '●';
+  content: "●";
 }
 
 .post__content ol {
@@ -255,7 +245,7 @@ hr {
 }
 
 .item {
-  margin-top: .25em;
+  margin-top: 0.25em;
   margin-bottom: 1em;
 
   border: 1px solid #f2f2d8;
@@ -283,21 +273,20 @@ hr {
   transform: translateY(0%);
 }
 
-.item>a,
-.item>a:focus,
-.item>a:hover {
+.item > a,
+.item > a:focus,
+.item > a:hover {
   display: block;
   height: 100%;
 }
 
-
-.item>a:focus,
-.item>a:hover {
+.item > a:focus,
+.item > a:hover {
   background-color: white;
   box-shadow: none;
 }
 
-.items--written .item>a {
+.items--written .item > a {
   display: flex;
 }
 
@@ -313,11 +302,11 @@ hr {
   display: none;
 }
 
-.item__media>* {
+.item__media > * {
   display: block;
 }
 
-.items--written .item__media>* {
+.items--written .item__media > * {
   width: 200px;
 }
 
@@ -350,8 +339,8 @@ hr {
   margin-top: 0.25em;
 }
 
-.item>a:hover .item__title,
-.item>a:focus .item__title {
+.item > a:hover .item__title,
+.item > a:focus .item__title {
   background-color: #0000b2;
   box-shadow: 0 0 0 2px #0000b2;
 }

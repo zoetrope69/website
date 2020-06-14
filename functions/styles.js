@@ -8,7 +8,7 @@ function getStyles() {
   const cleanCSSOptions = {};
   const cleanCSSOutput = new CleanCSS(cleanCSSOptions).minify(styles);
 
-  return cleanCSSOutput.styles
+  return cleanCSSOutput.styles;
 }
 
 module.exports = getStyles;

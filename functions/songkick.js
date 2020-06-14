@@ -1,38 +1,44 @@
-require('dotenv').config();
+require("dotenv").config();
 
 if (!process.env.SONGKICK_API_KEY) {
-  console.error('❗ Failed to load in the SONGKICK_API_KEY. Is it missing from the `.env` file?');
+  console.error(
+    "❗ Failed to load in the SONGKICK_API_KEY. Is it missing from the `.env` file?"
+  );
   process.exit();
 }
 
-const fetch = require('node-fetch');
+const fetch = require("node-fetch");
 
 const { SONGKICK_API_KEY } = process.env;
-const SONGKICK_API_URI = 'https://api.songkick.com/api/3.0/users';
-const SONGKICK_USERNAME = 'zaccolley';
+const SONGKICK_API_URI = "https://api.songkick.com/api/3.0/users";
+const SONGKICK_USERNAME = "zaccolley";
 
-function getLatestSongkickGig () {
-  return new Promise(resolve => {
-    fetch(`${SONGKICK_API_URI}/${SONGKICK_USERNAME}/gigography.json?apikey=${SONGKICK_API_KEY}&order=desc`)
-      .then(response =>  response.json())
-      .then(response => {
+function getLatestSongkickGig() {
+  return new Promise((resolve) => {
+    fetch(
+      `${SONGKICK_API_URI}/${SONGKICK_USERNAME}/gigography.json?apikey=${SONGKICK_API_KEY}&order=desc`
+    )
+      .then((response) => response.json())
+      .then((response) => {
         if (response.resultsPage.error) {
-          console.error(`Songkick error: ${response.resultsPage.error.message}`);
+          console.error(
+            `Songkick error: ${response.resultsPage.error.message}`
+          );
           return resolve();
         }
 
         const [firstEvent] = response.resultsPage.results.event;
         const { displayName, uri } = firstEvent;
-        const [uriWithNoParams] = uri.split('?');
+        const [uriWithNoParams] = uri.split("?");
 
         const gig = {
           name: displayName,
-          uri: uriWithNoParams
-        }
+          uri: uriWithNoParams,
+        };
 
         resolve(gig);
       })
-      .catch(reason => {
+      .catch((reason) => {
         console.error(reason);
         resolve();
       });

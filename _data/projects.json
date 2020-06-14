@@ -24,7 +24,7 @@
     "description": "A colour combo accessibility Mastodon bot that grabs accessible colours combos from: 'randoma11y.com'"
   },
   {
-    "externalLink": "https://chrome.google.com/webstore/detail/github-glitch-button",
+    "externalLink": "https://chrome.google.com/webstore/detail/github-glitch-button/ffkmmljfhjanmbgokllhenmnkgpipfek",
     "image": "/images/github-glitch-button.png",
     "date": "2018-08-08",
     "emoji": "🎏🐙🐈",
@@ -72,14 +72,6 @@
     "emoji": "🤖↪️"
   },
   {
-    "externalLink": "https://twitter.com/i/moments/951607127893860352",
-    "image": "/images/zaccoin.png",
-    "date": "2018-01-12",
-    "emoji": "💰🌈",
-    "title": "zaccoin",
-    "description": "The soft launch of my very own cryptocurrency"
-  },
-  {
     "externalLink": "https://softdongs.glitch.me",
     "image": "/images/softdongs.jpg",
     "date": "2017-11-26",
@@ -94,14 +86,6 @@
     "emoji": "🎮",
     "title": "food flood",
     "description": "A small food colour filling game"
-  },
-  {
-    "externalLink": "https://twitter.com/zaccolley/status/901121760766173185",
-    "image": "/images/amazoon.png",
-    "date": "2017-08-25",
-    "emoji": "🤖🗣️",
-    "title": "Amazon Alexa #WebVR Simulator™️",
-    "description": "Simulates what it's truly like to own a Amazon Alexa product."
   },
   {
     "externalLink": "https://botsin.space/@socks",
@@ -160,14 +144,6 @@
     "description": "Add 30 second Spotify previews to Songkick."
   },
   {
-    "externalLink": "https://domains.glitch.me/",
-    "image": "/images/domains.png",
-    "date": "2016-12-30",
-    "emoji": "🆒🔗",
-    "title": "domains",
-    "description": "Domain hacks based on words"
-  },
-  {
     "externalLink": "https://github.com/zaccolley/letterboxd",
     "image": "/images/letterboxd.png",
     "date": "2016-10-17",
@@ -184,7 +160,7 @@
     "description": "Fun little birthday card for my Nan."
   },
   {
-    "externalLink": "https://hackpompey.co.uk",
+    "externalLink": "https://rosedigital.co.uk/blog/2014/11/24/hackpompey",
     "image": "/images/hackpompey.jpg",
     "date": "2015-03-02",
     "emoji": "👨‍💻👩‍💻🛠️",

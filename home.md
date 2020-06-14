@@ -20,7 +20,7 @@ I'm passionate about removing barriers for people. I'm trying to do this through
 
 Check out <a href="/projects">some of my projects</a> <span aria-hidden="true">📝</span> or <a href="/posts">what I've written</a> <span aria-hidden="true">🎨</span>.
 
-One place I used to do this is through co-organising <a href="https://codebar.io">codebar Monthlies</a> <span aria-hidden="true">✨🗣️</span>. I also started and used to run <a href="https://hackpompey.co.uk">hackpompey</a>, a Portsmouth based hack event <span aria-hidden="true">👨‍💻👩‍💻🛠️</span>.
+One place I used to do this is through co-organising <a href="https://codebar.io">codebar Monthlies</a> <span aria-hidden="true">✨🗣️</span>. I also started and used to run <a href="https://rosedigital.co.uk/blog/2014/11/24/hackpompey">hackpompey</a>, a Portsmouth based hack event <span aria-hidden="true">👨‍💻👩‍💻🛠️</span>.
 
 I like making things, some of my projects are on <a href="https://github.com/zaccolley">GitHub</a> <span aria-hidden="true">🐙🐈</span> and some are on <a href="https://glitch.com/@zaccolley">Glitch</a> <span aria-hidden="true">🎏</span>.
 

@@ -1,5 +1,5 @@
-const { format: dateFormat } = require('date-fns');
-const baseLayout = require('./base.11ty');
+const { format: dateFormat } = require("date-fns");
+const baseLayout = require("./base.11ty");
 
 const getItems = (data, isPosts) => {
   if (isPosts) {
@@ -7,8 +7,8 @@ const getItems = (data, isPosts) => {
       return data.externalPosts;
     }
 
-    const internalPosts = data.collections.post.map(post => post.data);
-    return [...data.externalPosts, ...internalPosts]
+    const internalPosts = data.collections.post.map((post) => post.data);
+    return [...data.externalPosts, ...internalPosts];
   }
 
   return data.projects;
@@ -34,16 +34,16 @@ const getItemMedia = (item, isPosts) => {
       loading="lazy"
     />
   `;
-}
+};
 
 function itemList(data) {
-  const isPosts = data.layoutType === 'post';
-  
+  const isPosts = data.layoutType === "post";
+
   const items = getItems(data, isPosts);
   const sortedItems = items.sort((a, b) => {
     if (new Date(a.date) <= new Date(b.date)) {
       return 1;
-    };
+    }
 
     return -1;
   });
@@ -51,18 +51,12 @@ function itemList(data) {
   data.content = `
     ${data.content}
     
-    <ol class="items items--${isPosts ? 'written' : 'made'}">
-      ${sortedItems.map((item) => {
-        const {
-          date,
-          description,
-          emoji,
-          externalLink,
-          page,
-          title
-        } = item;
+    <ol class="items items--${isPosts ? "written" : "made"}">
+      ${sortedItems
+        .map((item) => {
+          const { date, description, emoji, externalLink, page, title } = item;
 
-        return `
+          return `
           <li class="item">
             <a href="${externalLink || page.url}">
               <span class="item__media">
@@ -71,7 +65,7 @@ function itemList(data) {
               <span class="item__content">
                 <span class="item__details">
                   <time class="item__details__time" datetime="${date}">
-                    ${dateFormat(new Date(date), 'do LLLL yyyy')}
+                    ${dateFormat(new Date(date), "do LLLL yyyy")}
                   </time>
                   <span class="item__details__emoji" aria-hidden="true">️️️
                   ${emoji}
@@ -87,11 +81,12 @@ function itemList(data) {
             </a>
           </li>
         `;
-      }).join('')}
+        })
+        .join("")}
     </ol>
   `;
 
   return baseLayout(data, this);
-};
+}
 
 module.exports = itemList;
