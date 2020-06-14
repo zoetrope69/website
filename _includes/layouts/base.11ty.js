@@ -4,13 +4,10 @@ const getShareImage = (data) => {
   }
 
   return data.metadata.author.image;
-}
+};
 
 function base(data, that = this) {
-  const {
-    metadata,
-    page
-  } = data
+  const { metadata, page } = data;
 
   const shareImage = getShareImage(data);
 
@@ -18,7 +15,9 @@ function base(data, that = this) {
     <!DOCTYPE html>
     <html lang="en">
       <head>
-        <title>${data.title} | ${metadata.title} - ${metadata.description}</title>
+        <title>${data.title} | ${metadata.title} - ${
+    metadata.description
+  }</title>
 
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -32,22 +31,28 @@ function base(data, that = this) {
         <style>${that.getStyles()}</style>
 
         <meta name="title" content="${data.title} | ${metadata.title}">
-        <meta name="description" content="${data.description || metadata.description}">
+        <meta name="description" content="${
+          data.description || metadata.description
+        }">
 
         <!-- Open Graph / Facebook -->
         <meta property="og:type" content="website">
         <meta property="og:url" content="${metadata.url}${page.url}">
         <meta property="og:title" content="${data.title} | ${metadata.title}">
-        <meta property="og:description" content="${data.description || metadata.description}">
+        <meta property="og:description" content="${
+          data.description || metadata.description
+        }">
         <meta property="og:image" content="${shareImage}">
 
         <!-- Twitter -->
         <meta property="twitter:card" content="summary">
-        <meta name="twitter:site" content="@zaccolley" />
-        <meta name="twitter:creator" content="@zaccolley" />
         <meta property="twitter:url" content="${metadata.url}${page.url}">
-        <meta property="twitter:title" content="${data.title} | ${metadata.title}">
-        <meta property="twitter:description" content="${data.description || metadata.description}">
+        <meta property="twitter:title" content="${data.title} | ${
+    metadata.title
+  }">
+        <meta property="twitter:description" content="${
+          data.description || metadata.description
+        }">
         <meta property="twitter:image" content="${shareImage}">
 
         <link rel="manifest" href="/manifest.json">
@@ -102,20 +107,11 @@ function base(data, that = this) {
 
           <footer class="footer">
             Last built on ${that.getUTCDateTime()} UTC.
-
-            <div class="footer__counter" aria-hidden="true">
-              Counter:
-              <img
-                class="footer__counter__image"
-                src="https://adalytics-zac.glitch.me/counter.png?fallback=zac.land"
-                alt=""
-              >
-            </div>
           </footer>
         </div>
       </body>
     </html>
   `;
-};
+}
 
 module.exports = base;
