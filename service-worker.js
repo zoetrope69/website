@@ -1,4 +1,4 @@
-const version = "1.1.0";
+const version = "1.2.0";
 const cacheName = `zac-land-${version}`;
 
 self.addEventListener("install", (e) => {
@@ -6,8 +6,12 @@ self.addEventListener("install", (e) => {
     caches.open(cacheName).then((cache) => {
       return cache
         .addAll([
-          `/`,
           `/index.html`,
+          `/`,
+          `/projects/`,
+          `/posts/`,
+          `/posts/products-for-trans-non-binary-young-people/`,
+          `/posts/event-content-warnings/`,
           `/images/icons/notepad-16x16.png`,
           `/images/icons/notepad-192x192.png`,
           `/images/icons/notepad-512x512.png`,
