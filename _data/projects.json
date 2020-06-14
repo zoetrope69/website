@@ -24,7 +24,7 @@
     "description": "A colour combo accessibility Mastodon bot that grabs accessible colours combos from: 'randoma11y.com'"
   },
   {
-    "externalLink": "https://chrome.google.com/webstore/detail/github-glitch-button",
+    "externalLink": "https://chrome.google.com/webstore/detail/github-glitch-button/ffkmmljfhjanmbgokllhenmnkgpipfek",
     "image": "/images/github-glitch-button.png",
     "date": "2018-08-08",
     "emoji": "🎏🐙🐈",
@@ -142,14 +142,6 @@
     "emoji": "💠⌛🎶",
     "title": "Songkick Spotify Previews",
     "description": "Add 30 second Spotify previews to Songkick."
-  },
-  {
-    "externalLink": "https://domains.glitch.me/",
-    "image": "/images/domains.png",
-    "date": "2016-12-30",
-    "emoji": "🆒🔗",
-    "title": "domains",
-    "description": "Domain hacks based on words"
   },
   {
     "externalLink": "https://github.com/zaccolley/letterboxd",
