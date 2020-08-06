@@ -28,9 +28,10 @@ module.exports = (eleventyConfig) => {
       return "";
     }
 
-    const { film, rating, uri } = letterboxdDiaryEntry;
+    const { film, rating, uri, isRewatch } = letterboxdDiaryEntry;
 
-    const lastFilmString = `The last film I watched was ${film.title}`;
+    const watchedString = isRewatch ? "rewatched" : "watched";
+    const lastFilmString = `The last film I ${watchedString} was ${film.title}`;
     const ratingString = `<a href="${uri}">I rated it <span aria-label="${rating.score}/5 stars">${rating.text}</span></a>`;
 
     return ` ${lastFilmString}, ${ratingString} <span aria-hidden="true">🝿🤔</span>.`;
