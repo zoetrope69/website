@@ -10,7 +10,7 @@ my [current](https://zac.land) website
 1. get a [last.fm api key](https://www.last.fm/api/) and [songkick api key](https://www.songkick.com/developer) (optional - this project still runs without them)
 1. `npm install`
 
-## develoment
+## development
 
 ```bash
 npm start
