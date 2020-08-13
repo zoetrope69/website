@@ -16,12 +16,12 @@
     "description": "A accessibility Mastodon bot that reminds you to caption your posts' images and videos"
   },
   {
-    "externalLink": "https://botsin.space/@accessibleColors",
+    "externalLink": "https://botsin.space/@randomColorContrasts",
     "image": "/images/accessibleColors.png",
     "date": "2018-08-21",
     "emoji": "⚫🌈⚪",
-    "title": "random colour contrasts",
-    "description": "A colour combo accessibility Mastodon bot that grabs accessible colours combos from: 'randoma11y.com'"
+    "title": "random color contrasts",
+    "description": "A Mastodon bot that grabs color contrast combos from: 'randoma11y.com'"
   },
   {
     "externalLink": "https://chrome.google.com/webstore/detail/github-glitch-button/ffkmmljfhjanmbgokllhenmnkgpipfek",
