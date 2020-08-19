@@ -16,9 +16,9 @@ sitemapChangeFrequency: "daily"
 
 I'm Zac and I like making stuff <span aria-hidden="true">🤹‍♂️🔌🎨</span>.
 
-I'm passionate about removing barriers for people. I'm trying to do this through things like education, accessibility, diversity and inclusion <span aria-hidden="true">🚧🚫</span>.
-
 Check out <a href="/projects">some of my projects</a> <span aria-hidden="true">📝</span> or <a href="/posts">what I've written</a> <span aria-hidden="true">🎨</span>.
+
+I'm passionate about removing barriers for people. I'm trying to do this through things like education, accessibility, diversity and inclusion <span aria-hidden="true">🚧🚫</span>.
 
 One place I used to do this is through co-organising <a href="https://codebar.io">codebar Monthlies</a> <span aria-hidden="true">✨🗣️</span>. I also started and used to run <a href="https://rosedigital.co.uk/blog/2014/11/24/hackpompey">hackpompey</a>, a Portsmouth based hack event <span aria-hidden="true">👨‍💻👩‍💻🛠️</span>.
 
