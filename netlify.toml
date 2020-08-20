@@ -3,33 +3,41 @@
   command = "npm run build"
   
 [[redirects]]
-  from = "https://zaccolley.com"
-  to = "https://zac.land"
+  from = "https://zaccolley.com/"
+  to = "https://zac.land/"
+  status = 301
 
 [[redirects]]
   from = "https://zaccolley.com/*"
   to = "https://zac.land/:splat"
+  status = 301
   
 [[redirects]]
   from = "https://zaccolley.netlify.com"
   to = "https://zac.land"
+  status = 301
 
 [[redirects]]
   from = "https://zaccolley.netlify.com/*"
   to = "https://zac.land/:splat"
+  status = 301
 
 [[redirects]]
  from = "/momanddad"
  to = "https://lynneandpaul.surge.sh"
+ status = 301
 
 [[redirects]]
   from = "/minecraftexplore/*"
   to = "https://zacs-stuff.netlify.com/minecraftexplore/:splat"
+  status = 301
   
 [[redirects]]
   from = "/stuff/christmas2012"
   to = "https://zaccolley-christmas2012.glitch.me/"
+  status = 301
 
 [[redirects]]
   from = "/stuff/*"
   to = "https://zacs-stuff.netlify.com/:splat"
+  status = 301
