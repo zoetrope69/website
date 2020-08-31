@@ -55,6 +55,7 @@ _Search for 'greggs'_
 - The uniform are recolors of the apron and cap in the base game.
 - The sign is a recolor of the Get to Work "Backlit Screen Print Sign, From Andre's Big Banners"
 - Gregg's logo made with the [Nootrasim Simlish font by Franzilla](https://www.modthesims.info/download.php?t=584840)
+- Made with [Sims 4 Studio](https://sims4studio.com/)
 - Thanks to Anna for feedback and testing
 
 ## Planned additions
