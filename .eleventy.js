@@ -5,6 +5,7 @@ const getLatestSongkickGig = require("./functions/songkick");
 
 module.exports = (eleventyConfig) => {
   // Copy different directories and files
+  eleventyConfig.addPassthroughCopy("downloads");
   eleventyConfig.addPassthroughCopy("images");
   eleventyConfig.addPassthroughCopy("manifest.json");
 
