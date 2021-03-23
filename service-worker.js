@@ -1,4 +1,4 @@
-const version = "1.2.0";
+const version = "2.0.0";
 const cacheName = `zac-land-${version}`;
 
 self.addEventListener("install", (e) => {
