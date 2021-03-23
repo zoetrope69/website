@@ -6,10 +6,10 @@ sitemapChangeFrequency: "daily"
 ---
 
 <picture>
-    <source srcset="zac-128.jpg"
+    <source srcset="/images/zac-128.jpg"
             media="(min-width: 500px)">
     <img class="my-face my-face--home"
-         src="zac-64.jpg"
+         src="/images/zac-64.jpg"
          alt="Zac in his human form"
          loading="lazy">
 </picture>

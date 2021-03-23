@@ -14,10 +14,10 @@ function post(data) {
         <h2>About Zac</h2>
         
         <picture>
-          <source srcset="zac-128.jpg"
+          <source srcset="/images/zac-128.jpg"
                   media="(min-width: 1200px)">
           <img class="my-face my-face--post"
-              src="zac-64.jpg"
+              src="/images/zac-64.jpg"
               alt="Zac in his human form"
               loading="lazy">
         </picture>
