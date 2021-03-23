@@ -2,6 +2,13 @@
   publish = "_site"
   command = "npm run build"
   
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    X-Frame-Options = "DENY"
+    X-XSS-Protection = "1; mode=block"
+  
 [[redirects]]
   from = "https://zaccolley.com/"
   to = "https://zac.land/"
