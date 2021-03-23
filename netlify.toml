@@ -8,6 +8,7 @@
     X-Content-Type-Options = "nosniff"
     X-Frame-Options = "DENY"
     X-XSS-Protection = "1; mode=block"
+    Content-Security-Policy = "default-src 'self'; img-src *; media-src *"
   
 [[redirects]]
   from = "https://zaccolley.com/"
