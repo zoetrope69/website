@@ -28,7 +28,7 @@ function base(data, that = this) {
         <link rel="icon" href="/images/icons/notepad-16x16.png" />
         <link rel="icon" sizes="192x192" href="/images/icons/notepad-192x192.png">
 
-        <style>${that.getStyles()}</style>
+        <style nonce="inlined-styles">${that.getStyles()}</style>
 
         <meta name="title" content="${data.title} | ${metadata.title}">
         <meta name="description" content="${
