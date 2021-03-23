@@ -14,10 +14,10 @@ function post(data) {
         <h2>About Zac</h2>
         
         <picture>
-          <source srcset="https://www.gravatar.com/avatar/26ab7600fc89f94711ec3b7db40d039b?s=128"
+          <source srcset="zac-128.jpg"
                   media="(min-width: 1200px)">
           <img class="my-face my-face--post"
-              src="https://www.gravatar.com/avatar/26ab7600fc89f94711ec3b7db40d039b?s=64"
+              src="zac-64.jpg"
               alt="Zac in his human form"
               loading="lazy">
         </picture>
