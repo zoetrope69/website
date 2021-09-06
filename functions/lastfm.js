@@ -7,7 +7,10 @@ if (!process.env.LASTFM_API_KEY) {
   process.exit();
 }
 
-const fetch = require("node-fetch");
+// https://github.com/node-fetch/node-fetch/blob/main/docs/v3-UPGRADE-GUIDE.md#converted-to-es-module
+const fetch = (...args) => {
+  return import("node-fetch").then(({ default: fetch }) => fetch(...args));
+};
 const { humanisedList } = require("./helpers");
 const { LASTFM_API_KEY } = process.env;
 const LASTFM_USERNAME = "zaccolley";
