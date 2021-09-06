@@ -13,7 +13,7 @@
     "date-fns": "2.23.0",
     "dotenv": "10.0.0",
     "html-minifier": "4.0.0",
-    "letterboxd": "2.0.1",
+    "letterboxd": "2.0.0",
     "node-fetch": "3.0.0"
   }
 }
