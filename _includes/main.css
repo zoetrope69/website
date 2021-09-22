@@ -361,7 +361,8 @@ hr {
     display: block;
     position: absolute;
     width: 64px;
-    background-color: #fff;
+    height: 64px;
+    background-color: #8626b9;
     box-shadow: 5px 5px 0 #020100;
     transform: rotate(5deg);
   }
@@ -380,6 +381,7 @@ hr {
 @media (min-width: 500px) {
   .my-face--home {
     width: 128px;
+    height: 128px;
     top: 5%;
     right: 5%;
     transform: rotate(10deg);
@@ -401,6 +403,7 @@ hr {
 
   .my-face--post {
     width: 128px;
+    height: 128px;
   }
 
   .wrapper {
