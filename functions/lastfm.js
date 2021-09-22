@@ -23,6 +23,7 @@ async function getLastFMArtists() {
     .catch(console.error);
 
   if (
+    !results ||
     !results.weeklyartistchart ||
     !results.weeklyartistchart.artist ||
     results.weeklyartistchart.artist.length === 0
