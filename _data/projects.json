@@ -1,5 +1,29 @@
 [
   {
+    "externalLink": "https://ko-fi.xyz",
+    "image": "/images/ko-fi-xyz.png",
+    "date": "2021-09-20",
+    "emoji": "☕️💸",
+    "title": "Ko-fi XYZ",
+    "description": "Unofficial tools to help streamers use Ko-fi"
+  },
+  {
+    "externalLink": "https://github.com/zaccolley/broomyjagrace",
+    "image": "/images/broomy-racer.png",
+    "date": "2021-02-10",
+    "emoji": "🏁🚗",
+    "title": "Broomy Racer",
+    "description": "A Twitch car race mini game"
+  },
+  {
+    "externalLink": "https://localgiving-obs.glitch.me/",
+    "image": "/images/local-giving-obs.png",
+    "date": "2020-12-22",
+    "emoji": "🎗💰",
+    "title": "Localgiving OBS Overlay",
+    "description": "a OBS browser overlay for Localgiving fundraising pages"
+  },
+  {
     "externalLink": "/posts/sims4-loading-screen-override-mod",
     "image": "/images/sims4-loading-screen-override-mod.png",
     "date": "2020-09-07",
