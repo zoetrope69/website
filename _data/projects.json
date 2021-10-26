@@ -152,7 +152,7 @@
     "description": "A choose your own adventure game that (ab)uses push notifications."
   },
   {
-    "externalLink": "https://github.com/zaccolley/microclicker",
+    "externalLink": "https://github.com/zactopus/microclicker",
     "image": "/images/microclicker.jpg",
     "date": "2017-03-08",
     "emoji": "🔎🖱️",
@@ -160,7 +160,7 @@
     "description": "Use the BBC micro:bit as a slide clicker."
   },
   {
-    "externalLink": "https://github.com/zaccolley/now-playing-printer",
+    "externalLink": "https://github.com/zactopus/now-playing-printer",
     "image": "/images/nowplayingprinter.jpg",
     "date": "2017-02-28",
     "emoji": "🎧🔥🖨️🖼️",
@@ -168,7 +168,7 @@
     "description": "Print out the album art music you're currently listening to on a receipt printer."
   },
   {
-    "externalLink": "https://github.com/zaccolley/songkick-pwa",
+    "externalLink": "https://github.com/zactopus/songkick-pwa",
     "image": "/images/songkickpink.jpg",
     "date": "2017-02-25",
     "emoji": "🎵📆💅",
@@ -176,7 +176,7 @@
     "description": "An experimental and unofficial progressive web app for Songkick."
   },
   {
-    "externalLink": "https://github.com/zaccolley/songkick-spotify-previews",
+    "externalLink": "https://github.com/zactopus/songkick-spotify-previews",
     "image": "/images/songkickspotify.jpg",
     "date": "2016-12-12",
     "emoji": "💠⌛🎶",
@@ -184,7 +184,7 @@
     "description": "Add 30 second Spotify previews to Songkick."
   },
   {
-    "externalLink": "https://github.com/zaccolley/letterboxd",
+    "externalLink": "https://github.com/zactopus/letterboxd",
     "image": "/images/letterboxd.png",
     "date": "2016-10-17",
     "emoji": "🎥🎬",
