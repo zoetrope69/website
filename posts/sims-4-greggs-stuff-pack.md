@@ -21,7 +21,7 @@ This is not endorsed by Greggs at all, but if they want to give me a lifetime su
 
 Download and unzip into your Sims 4 mods folder.
 
-<a href="https://github.com/zaccolley/sims-4-greggs-stuff-pack/releases/download/v2.0.0/greggs-stuff-pack.zip" download>Download greggs-stuff-pack.zip v2.0.0</a>
+<a href="https://github.com/zactopus/sims-4-greggs-stuff-pack/releases/download/v2.0.0/greggs-stuff-pack.zip" download>Download greggs-stuff-pack.zip v2.0.0</a>
 
 </div>
 
@@ -68,4 +68,4 @@ _Search for 'greggs'_
 
 ## Development
 
-If you're interested, the resources and work-in-progress files are [over on GitHub](https://github.com/zaccolley/sims-4-greggs-stuff-pack).
+If you're interested, the resources and work-in-progress files are [over on GitHub](https://github.com/zactopus/sims-4-greggs-stuff-pack).
