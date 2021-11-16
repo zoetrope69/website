@@ -1,8 +1,14 @@
-http://*.zaccolley.com/* https://zac.land/:splat 301
-https://*.zaccolley.com/* https://zac.land/:splat 301
+http://www.zaccolley.com/* https://zac.land/:splat 301!
+https://www.zaccolley.com/* https://zac.land/:splat 301!
+http://zaccolley.com/* https://zac.land/:splat 301!
+https://zaccolley.com/* https://zac.land/:splat 301!
 
-http://*.zaccolley.co.uk/* https://zac.land/:splat 301
-https://*.zaccolley.co.uk/* https://zac.land/:splat 301
+http://www.zaccolley.co.uk/* https://zac.land/:splat 301!
+https://www.zaccolley.co.uk/* https://zac.land/:splat 301!
+http://zaccolley.co.uk/* https://zac.land/:splat 301!
+https://zaccolley.co.uk/* https://zac.land/:splat 301!
 
-http://*.zaccolley.uk/* https://zac.land/:splat 301
-https://*.zaccolley.uk/* https://zac.land/:splat 301
+http://www.zaccolley.uk/* https://zac.land/:splat 301!
+https://www.zaccolley.uk/* https://zac.land/:splat 301!
+http://zaccolley.uk/* https://zac.land/:splat 301!
+https://zaccolley.uk/* https://zac.land/:splat 301!
