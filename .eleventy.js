@@ -7,6 +7,7 @@ module.exports = (eleventyConfig) => {
   // Copy different directories and files
   eleventyConfig.addPassthroughCopy("downloads");
   eleventyConfig.addPassthroughCopy("images");
+  eleventyConfig.addPassthroughCopy("_redirects");
   eleventyConfig.addPassthroughCopy("manifest.json");
 
   eleventyConfig.addJavaScriptFunction("getStyles", getStyles);
