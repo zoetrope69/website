@@ -14,41 +14,49 @@
   from = "https://zaccolley.uk/"
   to = "https://zac.land/"
   status = 301
+  force = true
 
 [[redirects]]
   from = "https://zaccolley.uk/*"
   to = "https://zac.land/:splat"
   status = 301
+  force = true
   
 [[redirects]]
   from = "https://zaccolley.co.uk/"
   to = "https://zac.land/"
   status = 301
+  force = true
 
 [[redirects]]
   from = "https://zaccolley.co.uk/*"
   to = "https://zac.land/:splat"
   status = 301
+  force = true
  
 [[redirects]]
   from = "https://zaccolley.com/"
   to = "https://zac.land/"
   status = 301
+  force = true
 
 [[redirects]]
   from = "https://zaccolley.com/*"
   to = "https://zac.land/:splat"
   status = 301
+  force = true
   
 [[redirects]]
   from = "https://zaccolley.netlify.com"
   to = "https://zac.land"
   status = 301
+  force = true
 
 [[redirects]]
   from = "https://zaccolley.netlify.com/*"
   to = "https://zac.land/:splat"
   status = 301
+  force = true
 
 [[redirects]]
  from = "/momanddad"
