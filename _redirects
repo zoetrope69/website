@@ -1,0 +1,8 @@
+http://*.zaccolley.com/* https://zac.land/:splat 301!
+https://*.zaccolley.com/* https://zac.land/:splat 301!
+
+http://*.zaccolley.co.uk/* https://zac.land/:splat 301!
+https://*.zaccolley.co.uk/* https://zac.land/:splat 301!
+
+http://*.zaccolley.uk/* https://zac.land/:splat 301!
+https://*.zaccolley.uk/* https://zac.land/:splat 301!
