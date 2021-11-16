@@ -11,54 +11,6 @@
     Content-Security-Policy = "default-src 'self'; img-src *; media-src *; style-src * 'nonce-inlined-styles'"
 
 [[redirects]]
-  from = "https://zaccolley.uk/"
-  to = "https://zac.land/"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "https://zaccolley.uk/*"
-  to = "https://zac.land/:splat"
-  status = 301
-  force = true
-  
-[[redirects]]
-  from = "https://zaccolley.co.uk/"
-  to = "https://zac.land/"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "https://zaccolley.co.uk/*"
-  to = "https://zac.land/:splat"
-  status = 301
-  force = true
- 
-[[redirects]]
-  from = "https://zaccolley.com/"
-  to = "https://zac.land/"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "https://zaccolley.com/*"
-  to = "https://zac.land/:splat"
-  status = 301
-  force = true
-  
-[[redirects]]
-  from = "https://zaccolley.netlify.com"
-  to = "https://zac.land"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "https://zaccolley.netlify.com/*"
-  to = "https://zac.land/:splat"
-  status = 301
-  force = true
-
-[[redirects]]
  from = "/momanddad"
  to = "https://lynneandpaul.surge.sh"
  status = 301
