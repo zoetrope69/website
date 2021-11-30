@@ -1,4 +1,9 @@
-const letterboxd = require("letterboxd");
+// TODO use import letterboxd from "letterboxd"; when eleventy supports ESM
+const letterboxd = (...args) => {
+  return import("letterboxd").then(({ default: letterboxd }) =>
+    letterboxd(...args)
+  );
+};
 
 const LETTERBOXD_USERNAME = "zaccolley";
 
