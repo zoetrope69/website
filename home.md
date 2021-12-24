@@ -14,7 +14,7 @@ sitemapChangeFrequency: "daily"
          loading="lazy">
 </picture>
 
-I'm Zac and I like making stuff <span aria-hidden="true">🤹‍♂️🔌🎨</span>.
+I'm Zac, pronouns they/them, and I like making stuff <span aria-hidden="true">🤹‍♂️🔌🎨</span>.
 
 Check out <a href="/projects">some of my projects</a> <span aria-hidden="true">📝</span> or <a href="/posts">what I've written</a> <span aria-hidden="true">🎨</span>.
 
