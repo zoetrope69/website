@@ -5,7 +5,7 @@ const letterboxd = (...args) => {
   );
 };
 
-const LETTERBOXD_USERNAME = "zaccolley";
+const LETTERBOXD_USERNAME = "zactopus";
 
 async function getLatestLetterboxDiaryEntry() {
   return new Promise((resolve) => {
