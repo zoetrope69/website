@@ -26,7 +26,7 @@ I like making things, some of my projects are on <a href="https://github.com/zac
 
 I love <a href="https://www.last.fm/user/zaccolley">listening to music</a> <span aria-hidden="true">🎧🎶</span> and <a href="https://www.songkick.com/users/zaccolley">going to gigs</a> <span aria-hidden="true">👩‍🎤🎸🥁</span>.{% latestLastFmArtists %}{% latestSongkickGig %}
 
-I sometimes <a href="https://letterboxd.com/zaccolley/">watch films</a> <span aria-hidden="true">🎞</span>️.{% latestLetterboxdFilm %}
+I sometimes <a href="https://letterboxd.com/zoetrope69/">watch films</a> <span aria-hidden="true">🎞</span>️.{% latestLetterboxdFilm %}
 
 If you want to contact me, emailing works. You can email me at: <a href="mailto:zac@clubpenguin.email">zac@clubpenguin.email</a> <span aria-hidden="true">📧</span>
 
