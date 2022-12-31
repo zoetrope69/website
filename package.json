@@ -10,7 +10,7 @@
     "@11ty/eleventy-plugin-rss": "1.2.0",
     "@11ty/eleventy-plugin-syntaxhighlight": "4.2.0",
     "clean-css": "5.3.1",
-    "date-fns": "2.28.0",
+    "date-fns": "2.29.3",
     "dotenv": "16.0.3",
     "html-minifier": "4.0.0",
     "letterboxd": "3.1.0",
