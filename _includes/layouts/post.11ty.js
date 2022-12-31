@@ -18,7 +18,7 @@ function post(data) {
                   media="(min-width: 1200px)">
           <img class="my-face my-face--post"
               src="/images/zac-64.gif"
-              alt="Zac in his human form"
+              alt="Zac in their human form"
               loading="lazy">
         </picture>
 

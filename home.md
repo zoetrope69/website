@@ -10,7 +10,7 @@ sitemapChangeFrequency: "daily"
             media="(min-width: 500px)">
     <img class="my-face my-face--home"
          src="/images/zac-64.gif"
-         alt="Zac in his human form"
+         alt="Zac in their human form"
          loading="lazy">
 </picture>
 
