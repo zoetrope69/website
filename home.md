@@ -28,6 +28,8 @@ I love <a href="https://www.last.fm/user/zaccolley">listening to music</a> <span
 
 I sometimes <a href="https://letterboxd.com/zoetrope69/">watch films</a> <span aria-hidden="true">🎞</span>️.{% latestLetterboxdFilm %}
 
-If you want to contact me, emailing works. You can email me at: <a href="mailto:zac@clubpenguin.email">zac@clubpenguin.email</a> <span aria-hidden="true">📧</span>
+If you want to contact me, emailing works. You can email me at: <a href="mailto:zac@clubpenguin.email">zac@clubpenguin.email</a> <span aria-hidden="true">📧</span>.
+
+I maintain some bots <em>and rarely toot</em> on <a rel="me" href="https://toot.cafe/@zac">Mastodon</a> <span aria-hidden="true">📯</span>.
 
 And you can <a href="https://ko-fi.com/zactopus">tip me on Ko-fi</a> if you want. <span aria-hidden="true">💸</span>
