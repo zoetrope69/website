@@ -17,7 +17,7 @@ There are references to Gender, Transphobia and the NHS in this post.
 
 ## Disclaimer
 
-I am not transgender or non-binary. I'm a cisgender man. So I write this post based on research I've done and people I've talked to.
+I write this post based on research I've done and people I've talked to.
 
 If you see something wrong (or even a bit off), [please do reach out to me](mailto:zaccolley@fastmail.com) and I'll be happy to improve it.
 
@@ -68,8 +68,6 @@ They are creating a gender-neutral doll for them. Making their products more inc
 By making their product lines more inclusive they are making a lot of money.
 
 Separately, I think it is quite telling that (even with a conservative approach politically from their leadership) they see this as a good thing for their products to represent.
-
-I feel it wouldn't lose a company money but actually make them money.
 
 ## Why is this important?
 
