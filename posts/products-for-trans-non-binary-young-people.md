@@ -19,7 +19,7 @@ There are references to Gender, Transphobia and the NHS in this post.
 
 I write this post based on research I've done and people I've talked to.
 
-If you see something wrong (or even a bit off), [please do reach out to me](mailto:zaccolley@fastmail.com) and I'll be happy to improve it.
+If you see something wrong (or even a bit off), [please do reach out to me](mailto:zcolley@fastmail.com) and I'll be happy to improve it.
 
 </div>
 

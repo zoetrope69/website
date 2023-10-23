@@ -14,7 +14,7 @@ const fetch = (...args) => {
 
 const { SONGKICK_API_KEY } = process.env;
 const SONGKICK_API_URI = "https://api.songkick.com/api/3.0/users";
-const SONGKICK_USERNAME = "zaccolley";
+const SONGKICK_USERNAME = "zoetrope69";
 
 function getLatestSongkickGig() {
   return new Promise((resolve) => {

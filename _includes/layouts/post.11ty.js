@@ -11,22 +11,20 @@ function post(data) {
         ${data.content}
       </div>
       <div class="post__author">
-        <h2>About Zac</h2>
+        <h2>About z</h2>
         
         <picture>
-          <source srcset="/images/zac-128.gif"
+          <source srcset="/images/z-128.gif"
                   media="(min-width: 1200px)">
           <img class="my-face my-face--post"
-              src="/images/zac-64.gif"
-              alt="Zac in their human form"
+              src="/images/z-64.gif"
+              alt="z in their human form"
               loading="lazy">
         </picture>
 
-        <p>I'm Zac and I like making stuff <span aria-hidden="true">🤹‍♂️🔌🎨</span>.</p>
+        <p>I'm z and I like making stuff <span aria-hidden="true">🤹‍♂️🔌🎨</span>.</p>
         
         <p>I'm passionate about removing barriers for people. I'm trying to do this through things like education, accessibility, diversity and inclusion <span aria-hidden="true">🚧🚫</span>.</p>
-        
-        <a href="/">Find out more about me and/get in touch...</a>
       </div>
     </article>
   `;
