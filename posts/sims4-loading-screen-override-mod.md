@@ -23,6 +23,6 @@ I didn't like the default loading screen so I made a mod to do the following:
 
 Download and put in your Sims 4 mod folder.
 
-<a href="/downloads/zaccolley-loading-screen-override.package" download>Download zaccolley-loading-screen-override.package v1.0.0</a>
+<a href="/downloads/zcolley-loading-screen-override.package" download>Download zcolley-loading-screen-override.package v1.0.0</a>
 
 </div>

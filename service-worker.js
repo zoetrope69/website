@@ -1,5 +1,5 @@
-const version = "2.0.0";
-const cacheName = `zac-land-${version}`;
+const version = "3.0.0";
+const cacheName = `zoetrope-fyi-${version}`;
 
 self.addEventListener("install", (e) => {
   e.waitUntil(

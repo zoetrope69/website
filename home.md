@@ -1,20 +1,20 @@
 ---
 layout: layouts/base.11ty.js
-title: About Zac
+title: About z
 permalink: /
 sitemapChangeFrequency: "daily"
 ---
 
 <picture>
-    <source srcset="/images/zac-128.gif"
+    <source srcset="/images/z-128.gif"
             media="(min-width: 500px)">
     <img class="my-face my-face--home"
-         src="/images/zac-64.gif"
-         alt="Zac in their human form"
+         src="/images/z-64.gif"
+         alt="z in their human form"
          loading="lazy">
 </picture>
 
-I'm Zac, pronouns they/them, and I like making stuff <span aria-hidden="true">🤹‍♂️🔌🎨</span>.
+I'm z, pronouns they/them, and I like making stuff <span aria-hidden="true">🤹‍♂️🔌🎨</span>.
 
 Check out <a href="/projects">some of my projects</a> <span aria-hidden="true">📝</span> or <a href="/posts">what I've written</a> <span aria-hidden="true">🎨</span>.
 
@@ -24,12 +24,8 @@ One place I used to do this is through co-organising <a href="https://codebar.io
 
 I like making things, some of my projects are on <a href="https://github.com/zactopus">GitHub</a> <span aria-hidden="true">🐙🐈</span> and some are on <a href="https://glitch.com/@zaccolley">Glitch</a> <span aria-hidden="true">🎏</span>.
 
-I love <a href="https://www.last.fm/user/zaccolley">listening to music</a> <span aria-hidden="true">🎧🎶</span> and <a href="https://www.songkick.com/users/zaccolley">going to gigs</a> <span aria-hidden="true">👩‍🎤🎸🥁</span>.{% latestLastFmArtists %}{% latestSongkickGig %}
+I love <a href="https://www.last.fm/user/zoetrope69">listening to music</a> <span aria-hidden="true">🎧🎶</span> and <a href="https://www.songkick.com/users/zoetrope69">going to gigs</a> <span aria-hidden="true">👩‍🎤🎸🥁</span>.{% latestLastFmArtists %}{% latestSongkickGig %}
 
 I sometimes <a href="https://letterboxd.com/zoetrope69/">watch films</a> <span aria-hidden="true">🎞</span>️.{% latestLetterboxdFilm %}
 
-If you want to contact me, emailing works. You can email me at: <a href="mailto:zac@clubpenguin.email">zac@clubpenguin.email</a> <span aria-hidden="true">📧</span>.
-
-I maintain some bots <em>and rarely toot</em> on <a rel="me" href="https://toot.cafe/@zac">Mastodon</a> <span aria-hidden="true">📯</span>.
-
-And you can <a href="https://ko-fi.com/zactopus">tip me on Ko-fi</a> if you want. <span aria-hidden="true">💸</span>
+If you want to contact me, emailing works. You can email me at: <a href="mailto:z@clubpenguin.email">z@clubpenguin.email</a> <span aria-hidden="true">📧</span>.

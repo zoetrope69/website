@@ -13,7 +13,7 @@ const fetch = (...args) => {
 };
 const { humanisedList } = require("./helpers");
 const { LASTFM_API_KEY } = process.env;
-const LASTFM_USERNAME = "zaccolley";
+const LASTFM_USERNAME = "zoetrope69";
 
 const createLastFMURL = `https://ws.audioscrobbler.com/2.0/?method=user.getweeklyartistchart&user=${LASTFM_USERNAME}&api_key=${LASTFM_API_KEY}&format=json`;
 

@@ -1,10 +1,10 @@
 {
-  "title": "Zac Land",
-  "description": "Zac Colley's personal home page",
-  "url": "https://zac.land",
+  "title": "zoetrope",
+  "description": "z's personal home page",
+  "url": "https://zoetrope.fyi",
   "author": {
-    "name": "Zac Colley",
-    "email": "hi@zaccolley.com",
-    "image": "zac-256.gif"
+    "name": "z colley",
+    "email": "z@clubpenguin.email",
+    "image": "z-256.gif"
   }
 }
