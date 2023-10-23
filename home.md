@@ -28,4 +28,4 @@ I love <a href="https://www.last.fm/user/zoetrope69">listening to music</a> <spa
 
 I sometimes <a href="https://letterboxd.com/zoetrope69/">watch films</a> <span aria-hidden="true">🎞</span>️.{% latestLetterboxdFilm %}
 
-If you want to contact me, emailing works. You can email me at: <a href="mailto:zac@clubpenguin.email">zac@clubpenguin.email</a> <span aria-hidden="true">📧</span>.
+If you want to contact me, emailing works. You can email me at: <a href="mailto:z@clubpenguin.email">z@clubpenguin.email</a> <span aria-hidden="true">📧</span>.
