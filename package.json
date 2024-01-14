@@ -2,6 +2,7 @@
   "private": true,
   "scripts": {
     "start": "eleventy --serve",
+    "dev": "npm start",
     "build": "eleventy",
     "debug": "DEBUG=* eleventy"
   },

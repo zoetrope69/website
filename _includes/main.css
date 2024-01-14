@@ -110,10 +110,6 @@ hr {
   background: linear-gradient(to right, #0000b2, #ef3911, #f1d400, #008414);
 }
 
-.my-face {
-  display: none;
-}
-
 .header__title {
   display: block;
   margin-top: 0.5em;
@@ -356,37 +352,7 @@ hr {
   font-weight: 500;
 }
 
-@media (min-width: 320px) {
-  .my-face {
-    display: block;
-    position: absolute;
-    width: 64px;
-    height: 64px;
-    background-color: #8626b9;
-    box-shadow: 5px 5px 0 #020100;
-    transform: rotate(5deg);
-  }
-
-  .my-face--home {
-    right: 2em;
-    top: 15%;
-  }
-
-  .my-face--post {
-    right: 1em;
-    top: -1em;
-  }
-}
-
 @media (min-width: 500px) {
-  .my-face--home {
-    width: 128px;
-    height: 128px;
-    top: 5%;
-    right: 5%;
-    transform: rotate(10deg);
-  }
-
   .items--written .item__media {
     display: block;
   }
@@ -395,15 +361,6 @@ hr {
 @media (min-width: 1200px) {
   body {
     font-size: 20px;
-  }
-
-  .my-face--home {
-    right: 26%;
-  }
-
-  .my-face--post {
-    width: 128px;
-    height: 128px;
   }
 
   .wrapper {

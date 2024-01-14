@@ -1,12 +1,5 @@
 require("dotenv").config();
 
-if (!process.env.SONGKICK_API_KEY) {
-  console.error(
-    "❗ Failed to load in the SONGKICK_API_KEY. Is it missing from the `.env` file?"
-  );
-  process.exit();
-}
-
 // https://github.com/node-fetch/node-fetch/blob/main/docs/v3-UPGRADE-GUIDE.md#converted-to-es-module
 const fetch = (...args) => {
   return import("node-fetch").then(({ default: fetch }) => fetch(...args));
@@ -18,6 +11,13 @@ const SONGKICK_USERNAME = "zoetrope69";
 
 function getLatestSongkickGig() {
   return new Promise((resolve) => {
+    if (!SONGKICK_API_KEY) {
+      console.error(
+        "❗ Failed to load in the SONGKICK_API_KEY. Is it missing from the `.env` file?"
+      );
+      return resolve();
+    }
+
     fetch(
       `${SONGKICK_API_URI}/${SONGKICK_USERNAME}/gigography.json?apikey=${SONGKICK_API_KEY}&order=desc`
     )
