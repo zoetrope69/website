@@ -1,9 +1,9 @@
 const getShareImage = (data) => {
-  if (data.image) {
-    return `${data.metadata.url}${data.image}`;
+  if (!data.image) {
+    return null;
   }
 
-  return data.metadata.author.image;
+  return `${data.metadata.url}${data.image}`;
 };
 
 function base(data, that = this) {
@@ -23,8 +23,6 @@ function base(data, that = this) {
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ddd">
 
-        <link rel="image_src" href="${data.image || metadata.author.image}">
-
         <link rel="icon" href="/images/icons/notepad-16x16.png" />
         <link rel="icon" sizes="192x192" href="/images/icons/notepad-192x192.png">
 
@@ -42,7 +40,7 @@ function base(data, that = this) {
         <meta property="og:description" content="${
           data.description || metadata.description
         }">
-        <meta property="og:image" content="${shareImage}">
+        ${shareImage ? `<meta property="og:image" content="${shareImage}">` : ''}
 
         <!-- Twitter -->
         <meta property="twitter:card" content="summary">
@@ -53,7 +51,7 @@ function base(data, that = this) {
         <meta property="twitter:description" content="${
           data.description || metadata.description
         }">
-        <meta property="twitter:image" content="${shareImage}">
+        ${shareImage ? `<meta property="twitter:image" content="${shareImage}">` : ''}
 
         <link rel="manifest" href="/manifest.json">
       </head>

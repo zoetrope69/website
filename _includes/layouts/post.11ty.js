@@ -12,15 +12,6 @@ function post(data) {
       </div>
       <div class="post__author">
         <h2>About z</h2>
-        
-        <picture>
-          <source srcset="/images/z-128.gif"
-                  media="(min-width: 1200px)">
-          <img class="my-face my-face--post"
-              src="/images/z-64.gif"
-              alt="z in their human form"
-              loading="lazy">
-        </picture>
 
         <p>I'm z and I like making stuff <span aria-hidden="true">🤹‍♂️🔌🎨</span>.</p>
         

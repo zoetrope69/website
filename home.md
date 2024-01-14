@@ -5,15 +5,6 @@ permalink: /
 sitemapChangeFrequency: "daily"
 ---
 
-<picture>
-    <source srcset="/images/z-128.gif"
-            media="(min-width: 500px)">
-    <img class="my-face my-face--home"
-         src="/images/z-64.gif"
-         alt="z in their human form"
-         loading="lazy">
-</picture>
-
 I'm z, pronouns they/them, and I like making stuff <span aria-hidden="true">🤹‍♂️🔌🎨</span>.
 
 Check out <a href="/projects">some of my projects</a> <span aria-hidden="true">📝</span> or <a href="/posts">what I've written</a> <span aria-hidden="true">🎨</span>.
