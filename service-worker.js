@@ -1,4 +1,4 @@
-const version = "3.0.0";
+const version = "4.0.0";
 const cacheName = `zoetrope-fyi-${version}`;
 
 self.addEventListener("install", (e) => {
@@ -8,7 +8,6 @@ self.addEventListener("install", (e) => {
         .addAll([
           `/index.html`,
           `/`,
-          `/projects/`,
           `/posts/`,
           `/posts/products-for-trans-non-binary-young-people/`,
           `/posts/event-content-warnings/`,

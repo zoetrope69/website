@@ -87,12 +87,6 @@ function base(data, that = this) {
                     Posts
                   </a>
                 </li>
-                <li class="header__nav__list__item">
-                  <a href="/projects/">
-                    <span aria-hidden="true">🎨</span>
-                    Projects
-                  </a>
-                </li>
               </ul>
             </nav>
           </header>
