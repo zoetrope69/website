@@ -1,20 +1,16 @@
 const { format: dateFormat } = require("date-fns");
 const baseLayout = require("./base.11ty");
 
-const getItems = (data, isPosts) => {
-  if (isPosts) {
-    if (!data.collections.post) {
-      return data.externalPosts;
-    }
-
-    const internalPosts = data.collections.post.map((post) => post.data);
-    return [...data.externalPosts, ...internalPosts];
+const getItems = (data) => {
+  if (!data.collections.post) {
+    return data.externalPosts;
   }
 
-  return data.projects;
+  const internalPosts = data.collections.post.map((post) => post.data);
+  return [...data.externalPosts, ...internalPosts];
 };
 
-const getItemMedia = (item, isPosts) => {
+const getItemMedia = (item) => {
   const isVideo = item.video;
 
   if (isVideo) {
@@ -29,17 +25,15 @@ const getItemMedia = (item, isPosts) => {
     <img
       src="${item.image}"
       alt=""
-      width="${isPosts ? 200 : 400}"
-      height="${isPosts ? 150 : 80}"
+      width="200"
+      height="150"
       loading="lazy"
     />
   `;
 };
 
 function itemList(data) {
-  const isPosts = data.layoutType === "post";
-
-  const items = getItems(data, isPosts);
+  const items = getItems(data);
   const sortedItems = items.sort((a, b) => {
     if (new Date(a.date) <= new Date(b.date)) {
       return 1;
@@ -51,7 +45,7 @@ function itemList(data) {
   data.content = `
     ${data.content}
     
-    <ol class="items items--${isPosts ? "written" : "made"}">
+    <ol class="items">
       ${sortedItems
         .map((item) => {
           const { date, description, emoji, externalLink, page, title } = item;
@@ -60,7 +54,7 @@ function itemList(data) {
           <li class="item">
             <a href="${externalLink || page.url}">
               <span class="item__media">
-                ${getItemMedia(item, isPosts)}
+                ${getItemMedia(item)}
               </span>
               <span class="item__content">
                 <span class="item__details">

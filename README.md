@@ -7,7 +7,7 @@ my [current](https://zoetrope.fyi) website
 ## installation
 
 1. copy `.env-example` to `.env`
-1. get a [last.fm api key](https://www.last.fm/api/) and [songkick api key](https://www.songkick.com/developer) (optional - this project still runs without them)
+1. get a [last.fm api key](https://www.last.fm/api/) (optional - this project still runs without them)
 1. `npm install`
 
 ## development
