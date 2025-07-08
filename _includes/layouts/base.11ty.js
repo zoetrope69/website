@@ -22,6 +22,7 @@ function base(data, that = this) {
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ddd">
+        <meta name="generator" content="${ that.eleventy.generator }">
 
         <link rel="icon" href="/images/icons/notepad-16x16.png" />
         <link rel="icon" sizes="192x192" href="/images/icons/notepad-192x192.png">
