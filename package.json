@@ -12,7 +12,7 @@
     "@11ty/eleventy-plugin-syntaxhighlight": "5.0.1",
     "clean-css": "5.3.3",
     "date-fns": "4.1.0",
-    "dotenv": "17.1.0",
+    "dotenv": "17.2.0",
     "letterboxd": "3.1.1",
     "node-fetch": "3.3.2"
   }
