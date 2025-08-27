@@ -12,6 +12,11 @@
     Permissions-Policy = "interest-cohort=()"
 
 [[redirects]]
+  from = "/lsa"
+  to = "https://zoetrope--40c4a110822011f090140224a6c84d84.web.val.run/manifest.json"
+  status = 301
+
+[[redirects]]
  from = "/momanddad"
  to = "https://lynneandpaul.surge.sh"
  status = 301
