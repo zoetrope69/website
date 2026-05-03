@@ -15,7 +15,7 @@ One place I used to do this is through co-organising <a href="https://codebar.io
 
 I like making things, some of my projects are on <a href="https://github.com/zoetrope69">GitHub</a> <span aria-hidden="true">🐙🐈</span>.
 
-I love <a href="https://www.last.fm/user/zoetrope69">listening to music</a> <span aria-hidden="true">🎧🎶</span> and <a href="https://www.songkick.com/users/zoetrope69">going to gigs</a> <span aria-hidden="true">👩‍🎤🎸🥁</span>.
+I love <a href="https://www.last.fm/user/zoetrope69">listening to music</a> <span aria-hidden="true">🎧🎶</span>.
 
 I sometimes <a href="https://letterboxd.com/zoetrope69/">watch films</a> <span aria-hidden="true">🎞</span>️.{% latestLetterboxdFilm %}
 
